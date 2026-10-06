@@ -1,0 +1,179 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Essensplaner einrichten",
+        "description": "Lege die Personen an, für die geplant wird. Verträglichkeiten und Vorlieben bearbeitest du danach in den Optionen.",
+        "data": {
+          "profiles": "Personen (eine pro Zeile)",
+          "import_todo": "Gerichte aus To-do-Liste importieren (optional)"
+        },
+        "data_description": {
+          "import_todo": "Übernimmt die Namen der Einträge als Gerichte ohne Zutaten."
+        }
+      }
+    },
+    "error": {
+      "no_profiles": "Mindestens eine Person angeben."
+    },
+    "abort": {
+      "single_instance_allowed": "Der Essensplaner ist bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Essensplaner",
+        "menu_options": {
+          "settings": "Einstellungen",
+          "profile_add": "Person hinzufügen",
+          "profile_edit": "Person bearbeiten / löschen",
+          "dish_add": "Gericht hinzufügen",
+          "dish_edit": "Gericht bearbeiten / löschen",
+          "import_todo": "Gerichte aus To-do-Liste importieren"
+        }
+      },
+      "settings": {
+        "title": "Einstellungen",
+        "data": {
+          "shopping_list": "Einkaufsliste",
+          "meal_types": "Standard-Mahlzeiten pro Tag"
+        }
+      },
+      "profile_edit": {
+        "title": "Person wählen",
+        "data": {
+          "profile": "Person"
+        }
+      },
+      "profile": {
+        "title": "Person: {name}",
+        "description": "Listen: ein Eintrag pro Zeile (oder durch Komma getrennt). Grundlage sind ausschließlich diese Listen.",
+        "data": {
+          "name": "Name",
+          "servings": "Portionen",
+          "unknown_ingredients": "Zutaten, die in keiner Liste stehen",
+          "tolerated": "Verträglich",
+          "not_tolerated": "Nicht verträglich",
+          "small_amounts": "Nur in kleinen Mengen",
+          "likes": "Vorlieben",
+          "dislikes": "Abneigungen",
+          "max_duration": "Maximale Zubereitungszeit (0 = egal)",
+          "delete": "Diese Person löschen"
+        },
+        "data_description": {
+          "servings": "Wie viele Portionen für diese Person gekocht werden (z. B. 3, wenn das Profil für mehrere Personen steht).",
+          "small_amounts": "Eine Zutat pro Zeile, optional mit Höchstmenge pro Portion, z. B. „10 g Butter“ oder „1 Zehe Knoblauch“.",
+          "dislikes": "Gerichte mit diesen Zutaten, Tags oder Namensteilen werden nicht vorgeschlagen."
+        }
+      },
+      "dish_edit": {
+        "title": "Gericht wählen",
+        "data": {
+          "dish": "Gericht"
+        }
+      },
+      "dish": {
+        "title": "Gericht: {name}",
+        "data": {
+          "name": "Name",
+          "meal_types": "Mahlzeiten",
+          "suitable_for": "Nur für (leer = alle)",
+          "base_servings": "Portionen im Rezept",
+          "duration_min": "Dauer",
+          "ingredients": "Zutaten",
+          "steps": "Zubereitung",
+          "tags": "Tags",
+          "source_url": "Quelle (URL)",
+          "delete": "Dieses Gericht löschen"
+        },
+        "data_description": {
+          "ingredients": "Eine Zutat pro Zeile, z. B. „250 g Hühnerbrust #protein“, „150 g Reis #beilage“, „2 Karotten“, „Salz“. #protein / #beilage markieren die gemeinsame Basis.",
+          "steps": "Ein Schritt pro Zeile.",
+          "tags": "Durch Komma getrennt."
+        }
+      },
+      "import_todo": {
+        "title": "Gerichte importieren",
+        "data": {
+          "entity_id": "To-do-Liste"
+        }
+      }
+    },
+    "error": {
+      "required": "Pflichtfeld.",
+      "no_meal_types": "Mindestens eine Mahlzeit wählen."
+    },
+    "abort": {
+      "not_loaded": "Der Essensplaner ist nicht geladen.",
+      "no_profiles": "Es gibt noch keine Personen.",
+      "no_dishes": "Es gibt noch keine Gerichte.",
+      "import_done": "{count} Gerichte importiert."
+    }
+  },
+  "selector": {
+    "meal_type": {
+      "options": {
+        "breakfast": "Frühstück",
+        "lunch": "Mittagessen",
+        "dinner": "Abendessen",
+        "snack": "Snack"
+      }
+    },
+    "unknown_ingredients": {
+      "options": {
+        "allow": "Erlauben",
+        "warn": "Erlauben, aber warnen",
+        "exclude": "Ausschließen (nur Verträgliches)"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "today": {
+        "name": "Heute {profile}"
+      }
+    }
+  },
+  "services": {
+    "generate_plan": {
+      "name": "Plan erstellen",
+      "description": "Schlägt Gerichte für die gewählten Tage und Mahlzeiten vor.",
+      "fields": {
+        "start_date": {"name": "Startdatum", "description": "Erster Tag (Standard: heute)."},
+        "days": {"name": "Tage", "description": "Anzahl der Tage."},
+        "meal_types": {"name": "Mahlzeiten", "description": "Standard: aus den Einstellungen."},
+        "profiles": {"name": "Personen", "description": "Namen oder IDs; Standard: alle."},
+        "overwrite": {"name": "Überschreiben", "description": "Bereits geplante Mahlzeiten neu planen (manuell gesetzte bleiben)."}
+      }
+    },
+    "push_shopping_list": {
+      "name": "Einkaufsliste übertragen",
+      "description": "Schreibt die zusammengefassten Zutaten in eine To-do-Liste.",
+      "fields": {
+        "start_date": {"name": "Startdatum", "description": "Erster Tag (Standard: heute)."},
+        "days": {"name": "Tage", "description": "Anzahl der Tage."},
+        "entity_id": {"name": "To-do-Liste", "description": "Standard: aus den Einstellungen."},
+        "skip_existing": {"name": "Vorhandene überspringen", "description": "Zutaten, die schon offen auf der Liste stehen, nicht erneut hinzufügen."}
+      }
+    },
+    "set_meal": {
+      "name": "Mahlzeit setzen",
+      "description": "Weist einer Mahlzeit manuell ein Gericht zu (ohne Gericht: entfernen).",
+      "fields": {
+        "date": {"name": "Datum", "description": "Tag der Mahlzeit."},
+        "meal_type": {"name": "Mahlzeit", "description": "Art der Mahlzeit."},
+        "dish": {"name": "Gericht", "description": "Name oder ID; leer lassen zum Entfernen."},
+        "profiles": {"name": "Personen", "description": "Namen oder IDs; Standard: alle."},
+        "servings": {"name": "Portionen", "description": "Standard: Summe der Portionen der Personen."}
+      }
+    }
+  },
+  "exceptions": {
+    "not_loaded": {"message": "Der Essensplaner ist nicht geladen."},
+    "unknown_profile": {"message": "Unbekannte Person: {profile}"},
+    "unknown_dish": {"message": "Unbekanntes Gericht: {dish}"},
+    "no_shopping_list": {"message": "Keine Einkaufsliste gewählt (Optionen oder Parameter entity_id)."},
+    "entity_not_found": {"message": "Entität nicht gefunden: {entity_id}"}
+  }
+}

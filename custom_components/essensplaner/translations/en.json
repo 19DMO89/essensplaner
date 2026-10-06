@@ -1,0 +1,179 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up meal planner",
+        "description": "Add the people you plan for. Edit tolerances and preferences afterwards in the options.",
+        "data": {
+          "profiles": "People (one per line)",
+          "import_todo": "Import dishes from to-do list (optional)"
+        },
+        "data_description": {
+          "import_todo": "Imports item names as dishes without ingredients."
+        }
+      }
+    },
+    "error": {
+      "no_profiles": "Enter at least one person."
+    },
+    "abort": {
+      "single_instance_allowed": "The meal planner is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Meal planner",
+        "menu_options": {
+          "settings": "Settings",
+          "profile_add": "Add person",
+          "profile_edit": "Edit / delete person",
+          "dish_add": "Add dish",
+          "dish_edit": "Edit / delete dish",
+          "import_todo": "Import dishes from to-do list"
+        }
+      },
+      "settings": {
+        "title": "Settings",
+        "data": {
+          "shopping_list": "Shopping list",
+          "meal_types": "Default meals per day"
+        }
+      },
+      "profile_edit": {
+        "title": "Choose person",
+        "data": {
+          "profile": "Person"
+        }
+      },
+      "profile": {
+        "title": "Person: {name}",
+        "description": "Lists: one entry per line (or comma separated). These lists are the only basis for planning.",
+        "data": {
+          "name": "Name",
+          "servings": "Servings",
+          "unknown_ingredients": "Ingredients not in any list",
+          "tolerated": "Tolerated",
+          "not_tolerated": "Not tolerated",
+          "small_amounts": "Only in small amounts",
+          "likes": "Likes",
+          "dislikes": "Dislikes",
+          "max_duration": "Maximum preparation time (0 = any)",
+          "delete": "Delete this person"
+        },
+        "data_description": {
+          "servings": "How many servings to cook for this person (e.g. 3 if the profile stands for several people).",
+          "small_amounts": "One ingredient per line, optionally with a maximum per serving, e.g. \"10 g Butter\" or \"1 Zehe Knoblauch\".",
+          "dislikes": "Dishes with these ingredients, tags or name parts will not be suggested."
+        }
+      },
+      "dish_edit": {
+        "title": "Choose dish",
+        "data": {
+          "dish": "Dish"
+        }
+      },
+      "dish": {
+        "title": "Dish: {name}",
+        "data": {
+          "name": "Name",
+          "meal_types": "Meals",
+          "suitable_for": "Only for (empty = everyone)",
+          "base_servings": "Servings in recipe",
+          "duration_min": "Duration",
+          "ingredients": "Ingredients",
+          "steps": "Preparation",
+          "tags": "Tags",
+          "source_url": "Source (URL)",
+          "delete": "Delete this dish"
+        },
+        "data_description": {
+          "ingredients": "One ingredient per line, e.g. \"250 g chicken breast #protein\", \"150 g rice #side\", \"2 carrots\", \"salt\". #protein / #side mark the shared base.",
+          "steps": "One step per line.",
+          "tags": "Comma separated."
+        }
+      },
+      "import_todo": {
+        "title": "Import dishes",
+        "data": {
+          "entity_id": "To-do list"
+        }
+      }
+    },
+    "error": {
+      "required": "Required.",
+      "no_meal_types": "Choose at least one meal."
+    },
+    "abort": {
+      "not_loaded": "The meal planner is not loaded.",
+      "no_profiles": "There are no people yet.",
+      "no_dishes": "There are no dishes yet.",
+      "import_done": "{count} dishes imported."
+    }
+  },
+  "selector": {
+    "meal_type": {
+      "options": {
+        "breakfast": "Breakfast",
+        "lunch": "Lunch",
+        "dinner": "Dinner",
+        "snack": "Snack"
+      }
+    },
+    "unknown_ingredients": {
+      "options": {
+        "allow": "Allow",
+        "warn": "Allow with warning",
+        "exclude": "Exclude (tolerated only)"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "today": {
+        "name": "Today {profile}"
+      }
+    }
+  },
+  "services": {
+    "generate_plan": {
+      "name": "Generate plan",
+      "description": "Suggests dishes for the chosen days and meals.",
+      "fields": {
+        "start_date": {"name": "Start date", "description": "First day (default: today)."},
+        "days": {"name": "Days", "description": "Number of days."},
+        "meal_types": {"name": "Meals", "description": "Default: from settings."},
+        "profiles": {"name": "People", "description": "Names or IDs; default: everyone."},
+        "overwrite": {"name": "Overwrite", "description": "Re-plan meals that are already planned (manually set ones are kept)."}
+      }
+    },
+    "push_shopping_list": {
+      "name": "Push shopping list",
+      "description": "Writes the combined ingredients to a to-do list.",
+      "fields": {
+        "start_date": {"name": "Start date", "description": "First day (default: today)."},
+        "days": {"name": "Days", "description": "Number of days."},
+        "entity_id": {"name": "To-do list", "description": "Default: from settings."},
+        "skip_existing": {"name": "Skip existing", "description": "Do not add ingredients that are already open on the list."}
+      }
+    },
+    "set_meal": {
+      "name": "Set meal",
+      "description": "Manually assigns a dish to a meal (without dish: remove).",
+      "fields": {
+        "date": {"name": "Date", "description": "Day of the meal."},
+        "meal_type": {"name": "Meal", "description": "Type of meal."},
+        "dish": {"name": "Dish", "description": "Name or ID; leave empty to remove."},
+        "profiles": {"name": "People", "description": "Names or IDs; default: everyone."},
+        "servings": {"name": "Servings", "description": "Default: sum of the people's servings."}
+      }
+    }
+  },
+  "exceptions": {
+    "not_loaded": {"message": "The meal planner is not loaded."},
+    "unknown_profile": {"message": "Unknown person: {profile}"},
+    "unknown_dish": {"message": "Unknown dish: {dish}"},
+    "no_shopping_list": {"message": "No shopping list selected (options or entity_id parameter)."},
+    "entity_not_found": {"message": "Entity not found: {entity_id}"}
+  }
+}

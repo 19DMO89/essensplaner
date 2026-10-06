@@ -1,0 +1,20 @@
+{
+  "entity": {
+    "sensor": {
+      "today": {
+        "default": "mdi:silverware-fork-knife"
+      }
+    }
+  },
+  "services": {
+    "generate_plan": {
+      "service": "mdi:calendar-week"
+    },
+    "push_shopping_list": {
+      "service": "mdi:cart-arrow-down"
+    },
+    "set_meal": {
+      "service": "mdi:food"
+    }
+  }
+}

@@ -91,7 +91,9 @@ async def test_image_upload_rejects_non_images(
     assert resp.status == 400
 
     anon = await hass_client_no_auth()
-    assert (await anon.get("/api/essensplaner/images/..%2F..%2Fsecrets")).status == 404
+    # Path Traversal: blockt bereits HAs Security-Filter (400) oder unsere ID-Prüfung (404)
+    assert (await anon.get("/api/essensplaner/images/..%2F..%2Fsecrets")).status in (400, 404)
+    assert (await anon.get("/api/essensplaner/images/secrets")).status == 404
     assert (await anon.get("/api/essensplaner/images/" + "a" * 32)).status == 404
 
 

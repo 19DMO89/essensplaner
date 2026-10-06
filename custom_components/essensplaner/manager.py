@@ -34,6 +34,7 @@ from .const import (
     STORAGE_VERSION,
     STARTER_TAG,
 )
+from .images import ImageStore, image_url
 from .logic.models import (
     MEAL_TYPES,
     Assignment,
@@ -83,6 +84,7 @@ class EssensplanerManager:
         self.profiles: dict[str, Profile] = {}
         self.plan: Plan = {}
         self.meta: dict[str, Any] = {}
+        self.images = ImageStore(hass)
 
     # ------------------------------------------------------------ Lebenszyklus
 
@@ -125,6 +127,13 @@ class EssensplanerManager:
             self._notify()
 
         return async_track_time_change(self.hass, _midnight, hour=0, minute=0, second=5)
+
+    async def async_cleanup_images(self) -> None:
+        """Bilder löschen, die zu keinem Gericht mehr gehören."""
+        referenced = {d.image["id"] for d in self.dishes.values() if d.image and d.image.get("id")}
+        removed = await self.images.async_cleanup(referenced)
+        if removed:
+            _LOGGER.debug("%s verwaiste Bilder gelöscht", removed)
 
     async def async_shutdown(self) -> None:
         """Ausstehende Änderungen sofort speichern."""
@@ -247,8 +256,15 @@ class EssensplanerManager:
         dish.updated = now
         if existing and "image" not in data:
             dish.image = existing.image
+        old_id = (existing.image or {}).get("id") if existing else None
+        if old_id and old_id != (dish.image or {}).get("id"):
+            self._delete_image(old_id)
         self.dishes[dish.id] = dish
         return dish
+
+    @callback
+    def _delete_image(self, image_id: str) -> None:
+        self.hass.async_create_task(self.images.async_delete(image_id), eager_start=False)
 
     @callback
     def save_dish(self, data: dict[str, Any]) -> Dish:
@@ -282,8 +298,10 @@ class EssensplanerManager:
 
     @callback
     def delete_dish(self, dish_id: str) -> None:
-        if self.dishes.pop(dish_id, None) is None:
+        if (dish := self.dishes.pop(dish_id, None)) is None:
             return
+        if dish.image and dish.image.get("id"):
+            self._delete_image(dish.image["id"])
         for meals in self.plan.values():
             for meal_type, assignments in list(meals.items()):
                 meals[meal_type] = [a for a in assignments if a.dish_id != dish_id]
@@ -319,6 +337,9 @@ class EssensplanerManager:
                         {
                             **a.to_dict(),
                             "dish_name": self.dishes[a.dish_id].name
+                            if a.dish_id in self.dishes
+                            else None,
+                            "image_url": image_url(self.dishes[a.dish_id].image)
                             if a.dish_id in self.dishes
                             else None,
                         }
@@ -396,16 +417,19 @@ class EssensplanerManager:
         profile_refs: list[str] | None = None,
         overwrite: bool = False,
         seed: int | None = None,
+        meals_by_date: dict[str, list[str]] | None = None,
     ) -> PlanResult:
+        """Plan erzeugen. ``meals_by_date`` legt die Mahlzeiten je Tag einzeln fest."""
         meal_types = [m for m in MEAL_TYPES if m in (meal_types or self.default_meal_types)]
+        if meals_by_date is None:
+            meals_by_date = {day: meal_types for day in date_range(start, days)}
+        else:
+            meals_by_date = {
+                day: [m for m in MEAL_TYPES if m in meals] for day, meals in meals_by_date.items()
+            }
         profile_ids = [self.resolve_profile(p) for p in profile_refs] if profile_refs else None
         planner = Planner(self.dishes.values(), self.profiles.values(), random.Random(seed))
-        result = planner.generate(
-            self.plan,
-            {day: meal_types for day in date_range(start, days)},
-            profile_ids,
-            overwrite,
-        )
+        result = planner.generate(self.plan, meals_by_date, profile_ids, overwrite)
         self.plan = result.plan
         self._changed(STORAGE_KEY_PLAN)
         return result
@@ -420,7 +444,7 @@ class EssensplanerManager:
                     "dish_id": a.dish_id,
                     "name": self.dishes[a.dish_id].name,
                     "servings": a.servings,
-                    "image": self.dishes[a.dish_id].image,
+                    "image_url": image_url(self.dishes[a.dish_id].image),
                 }
                 for a in meals.get(meal_type, [])
                 if profile_id in a.profiles and a.dish_id in self.dishes
@@ -440,6 +464,7 @@ class EssensplanerManager:
         days: int,
         entity_id: str | None = None,
         skip_existing: bool = True,
+        keys: list[str] | None = None,
     ) -> dict[str, list[str]]:
         """Einkaufsliste in eine To-do-Liste schreiben."""
         entity_id = entity_id or self.shopping_list_entity
@@ -475,6 +500,8 @@ class EssensplanerManager:
         added: list[str] = []
         skipped: list[str] = []
         for item in self.shopping_items(start, days):
+            if keys is not None and item.key not in keys:
+                continue
             if item.key in existing:
                 skipped.append(item.summary)
                 continue

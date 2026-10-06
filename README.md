@@ -5,9 +5,8 @@ Ernährungsprofilen**. Pro Mahlzeit wird möglichst ein Gericht für alle gekoch
 Unverträglichkeiten nicht geht, bekommt jede Person ein eigenes Gericht, bevorzugt mit
 gemeinsamer Basis (gleiches Protein oder gleiche Beilage).
 
-> **Stand: Phase 1** – Gerichte, Profile, Planer, Einkaufsliste, Services, Sensoren.
-> Bedienung vorerst über die Optionen der Integration und über Aktionen (Services).
-> Panel und Karte folgen in Phase 2, KI-Rezeptsuche in Phase 3, Preisvergleich in Phase 4.
+> **Stand: Phase 2** – Gerichte, Profile, Planer, Einkaufsliste, Panel, Karte, Bilder.
+> KI-Rezeptsuche folgt in Phase 3, Preisvergleich in Phase 4.
 
 ## Installation
 
@@ -22,7 +21,38 @@ gemeinsamer Basis (gleiches Protein oder gleiche Beilage).
 
 Manuell: Ordner `custom_components/essensplaner` nach `config/custom_components/` kopieren.
 
-## Bedienung (Phase 1)
+## Panel
+
+Nach der Einrichtung erscheint **Essensplaner** in der Seitenleiste (auch in der HA-App am Handy):
+
+- **Wochenplan**: Woche vor/zurück, pro Tag und Mahlzeit die Gerichte je Person. Ein Tippen auf
+  das Stift-Symbol öffnet die Mahlzeit: Personen wählen, Gericht suchen (passende zuerst),
+  Portionen anpassen. *Woche planen* füllt die Woche automatisch; pro Tag lässt sich
+  festlegen, welche Mahlzeiten gebraucht werden.
+- **Gerichte**: Suche, Filter nach Mahlzeit und „passt für“, Rezeptansicht mit
+  Portionsrechner und Begründung, warum ein Gericht für eine Person (nicht) passt.
+  Gerichte anlegen und bearbeiten, inklusive Foto (Upload oder Bild-URL übernehmen).
+- **Personen**: Listen für Verträglichkeiten, Vorlieben und Abneigungen bearbeiten.
+- **Einkauf**: Zeitraum wählen, Einträge an- oder abwählen und in eine To-do-Liste übertragen.
+
+Bilder werden lokal unter `config/essensplaner/images/` gespeichert und auf 1280 px verkleinert.
+
+## Karte „Was gibt's heute?“
+
+Die Karte steht im Karten-Dialog des Dashboards unter *Essensplaner – Heute* bereit; eine
+Ressource muss nicht angelegt werden.
+
+```yaml
+type: custom:essensplaner-today-card
+title: Heute bei uns        # optional
+show_images: true           # optional
+day_offset: 1               # optional: 1 = morgen
+profiles: [p_abc123]        # optional: nur diese Personen
+```
+
+Ein Tippen auf ein Gericht öffnet das Rezept im Panel.
+
+## Bedienung über die Optionen
 
 *Einstellungen → Geräte & Dienste → Essensplaner → Konfigurieren* öffnet ein Menü:
 
@@ -124,3 +154,15 @@ pytest
 
 Die reine Planungslogik (`custom_components/essensplaner/logic`) hängt nicht von Home
 Assistant ab. `pytest tests/logic` läuft daher auch ohne HA-Testumgebung (z. B. unter Windows).
+
+Frontend (Lit, gebündelt mit esbuild nach `custom_components/essensplaner/frontend/`):
+
+```bash
+cd frontend
+npm ci
+npm run build          # oder: npm run watch
+python dev/make_mock.py   # Testdaten aus dem Startpaket
+```
+
+`frontend/dev/index.html` zeigt Panel und Karte mit simuliertem Home Assistant
+(z. B. `python -m http.server` im Repo-Wurzelverzeichnis, dann `/frontend/dev/` öffnen).

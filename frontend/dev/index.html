@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Essensplaner Dev</title>
+    <style>
+      :root {
+        --primary-color: #03a9f4;
+        --primary-text-color: #212121;
+        --secondary-text-color: #727272;
+        --text-primary-color: #fff;
+        --primary-background-color: #fafafa;
+        --secondary-background-color: #e5e5e5;
+        --card-background-color: #fff;
+        --divider-color: rgba(0, 0, 0, 0.12);
+        --app-header-background-color: #03a9f4;
+        --app-header-text-color: #fff;
+      }
+      body.dark {
+        --primary-text-color: #e1e1e1;
+        --secondary-text-color: #9b9b9b;
+        --primary-background-color: #111;
+        --secondary-background-color: #282828;
+        --card-background-color: #1c1c1c;
+        --divider-color: rgba(225, 225, 225, 0.12);
+        --app-header-background-color: #101e24;
+      }
+      body {
+        margin: 0;
+        font-family: Roboto, system-ui, sans-serif;
+        background: var(--primary-background-color);
+      }
+      #switch {
+        position: fixed;
+        right: 8px;
+        bottom: 8px;
+        z-index: 100;
+        display: flex;
+        gap: 4px;
+      }
+      #cardhost {
+        max-width: 420px;
+        margin: 16px;
+      }
+      ha-card {
+        display: block;
+        background: var(--card-background-color);
+        border-radius: 12px;
+        color: var(--primary-text-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="switch">
+      <button onclick="show('panel')">Panel</button>
+      <button onclick="show('card')">Karte</button>
+      <button onclick="document.body.classList.toggle('dark')">Dunkel</button>
+    </div>
+    <div id="host"></div>
+    <script type="module" src="./mock-hass.js"></script>
+  </body>
+</html>

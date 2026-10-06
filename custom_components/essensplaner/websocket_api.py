@@ -13,7 +13,9 @@ from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import config_validation as cv
 
 from .const import DOMAIN, MAX_PLAN_DAYS
+from .images import InvalidImage, image_url
 from .logic.compat import check_dish
+from .logic.normalize import parse_ingredient_line
 from .logic.models import MEAL_TYPES
 from .manager import EssensplanerManager
 from .schemas import ASSIGNMENT_SCHEMA, DISH_SCHEMA, PROFILE_SCHEMA
@@ -39,6 +41,10 @@ def async_register_websocket(hass: HomeAssistant) -> None:
         ws_plan_generate,
         ws_shopping_preview,
         ws_shopping_push,
+        ws_image_from_url,
+        ws_subscribe,
+        ws_compat_all,
+        ws_parse_ingredients,
     ):
         websocket_api.async_register_command(hass, handler)
 
@@ -159,17 +165,23 @@ async def ws_plan_set_meal(manager: EssensplanerManager, msg: dict[str, Any]) ->
         vol.Optional("meal_types"): [vol.In(MEAL_TYPES)],
         vol.Optional("profiles"): [str],
         vol.Optional("overwrite", default=False): bool,
+        # Mahlzeiten je Tag: {"2026-10-06": ["lunch", "dinner"], ...}
+        vol.Optional("meals"): {cv.string: [vol.In(MEAL_TYPES)]},
     }
 )
 @websocket_api.async_response
 @_with_manager
 async def ws_plan_generate(manager: EssensplanerManager, msg: dict[str, Any]) -> dict[str, Any]:
+    meals = msg.get("meals")
+    if meals is not None:
+        meals = {cv.date(day).isoformat(): types for day, types in meals.items()}
     result = manager.generate_plan(
         msg["start_date"],
         msg["days"],
         msg.get("meal_types"),
         msg.get("profiles"),
         msg["overwrite"],
+        meals_by_date=meals,
     )
     return {
         "days": manager.days_view(msg["start_date"], msg["days"]),
@@ -190,11 +202,74 @@ async def ws_shopping_preview(manager: EssensplanerManager, msg: dict[str, Any])
         **_RANGE,
         vol.Optional("entity_id"): cv.entity_domain("todo"),
         vol.Optional("skip_existing", default=True): bool,
+        vol.Optional("keys"): [str],
     }
 )
 @websocket_api.async_response
 @_with_manager
 async def ws_shopping_push(manager: EssensplanerManager, msg: dict[str, Any]) -> dict[str, Any]:
     return await manager.async_push_shopping_list(
-        msg["start_date"], msg["days"], msg.get("entity_id"), msg["skip_existing"]
+        msg["start_date"],
+        msg["days"],
+        msg.get("entity_id"),
+        msg["skip_existing"],
+        keys=msg.get("keys"),
     )
+
+
+@websocket_api.websocket_command(
+    {vol.Required("type"): "essensplaner/image/from_url", vol.Required("url"): str}
+)
+@websocket_api.async_response
+@_with_manager
+async def ws_image_from_url(manager: EssensplanerManager, msg: dict[str, Any]) -> dict[str, Any]:
+    try:
+        image_id = await manager.images.async_save_from_url(msg["url"])
+    except InvalidImage as err:
+        raise HomeAssistantError(str(err)) from err
+    image = {"id": image_id, "source": "url", "origin": msg["url"]}
+    return {**image, "url": image_url(image)}
+
+
+@websocket_api.websocket_command({vol.Required("type"): "essensplaner/subscribe"})
+@callback
+def ws_subscribe(
+    hass: HomeAssistant, connection: websocket_api.ActiveConnection, msg: dict[str, Any]
+) -> None:
+    """Meldet jede Datenänderung (Panel und Karte laden dann neu)."""
+    if (manager := _manager(hass, connection, msg["id"])) is None:
+        return
+
+    @callback
+    def _changed() -> None:
+        connection.send_message(websocket_api.event_message(msg["id"], {"changed": True}))
+
+    connection.subscriptions[msg["id"]] = manager.async_add_listener(_changed)
+    connection.send_result(msg["id"])
+
+
+@websocket_api.websocket_command({vol.Required("type"): "essensplaner/compat/all"})
+@websocket_api.async_response
+@_with_manager
+async def ws_compat_all(manager: EssensplanerManager, msg: dict[str, Any]) -> dict[str, Any]:
+    """Status je Gericht und Profil: {dish_id: {profile_id: "ok"|"warn"|"excluded"}}."""
+    return {
+        dish_id: {pid: check_dish(dish, p).status for pid, p in manager.profiles.items()}
+        for dish_id, dish in manager.dishes.items()
+    }
+
+
+@websocket_api.websocket_command(
+    {vol.Required("type"): "essensplaner/parse_ingredients", vol.Required("text"): str}
+)
+@websocket_api.async_response
+@_with_manager
+async def ws_parse_ingredients(
+    manager: EssensplanerManager, msg: dict[str, Any]
+) -> list[dict[str, Any]]:
+    """Zutatenzeilen ("250 g Reis #beilage") in strukturierte Zutaten umwandeln."""
+    result = []
+    for line in msg["text"].splitlines():
+        if (ingredient := parse_ingredient_line(line)) is not None:
+            result.append(ingredient.to_dict())
+    return result

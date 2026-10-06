@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "custom_components" / "essensplaner"))
 
 from logic.compat import check_dish  # noqa: E402
+from logic.ingredients import ingredient_overview  # noqa: E402
 from logic.models import Dish, Profile, plan_to_dict  # noqa: E402
 from logic.planner import Planner, shared_base  # noqa: E402
 from logic.shopping import build_shopping_list  # noqa: E402
@@ -85,6 +86,7 @@ mock = {
     "plan_raw": plan_to_dict(plan),
     "warnings": result.warnings,
     "shopping": [i.to_dict() for i in build_shopping_list(plan, by_id, days)],
+    "ingredients": {p.id: ingredient_overview(dishes, p) for p in profiles},
 }
 out = Path(__file__).with_name("mock-data.json")
 out.write_text(json.dumps(mock, ensure_ascii=False), encoding="utf-8")

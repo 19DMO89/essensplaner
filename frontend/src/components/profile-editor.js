@@ -77,8 +77,10 @@ class ProfileEditor extends EpDialog {
         ...Object.fromEntries(LISTS.map((k) => [k, splitLines(f[k])])),
       };
       if (this.profileId) profile.id = this.profileId;
-      await this.api.saveProfile(profile);
-      this.close();
+      const saved = await this.api.saveProfile(profile);
+      if (this.profileId) this.close();
+      // Neue Person: gleich mit der Zutatenliste weitermachen.
+      else this.emit("ep-open", { type: "ingredients", profileId: saved.id });
     } catch (err) {
       this._error = err.message || String(err);
       this._busy = false;
@@ -136,11 +138,15 @@ class ProfileEditor extends EpDialog {
           )}
         </select>
       </label>
-      ${this._textarea("tolerated", this.t("profile.list_help"))}
-      ${this._textarea("not_tolerated", this.t("profile.list_help"))}
-      ${this._textarea("small_amounts", this.t("profile.small_help"))}
       ${this._textarea("likes", this.t("profile.list_help"))}
       ${this._textarea("dislikes", this.t("profile.list_help"))}
+      <details>
+        <summary>${this.t("profile.as_text")}</summary>
+        <p class="help">${this.t("profile.as_text_help")}</p>
+        ${this._textarea("tolerated", this.t("profile.list_help"))}
+        ${this._textarea("not_tolerated", this.t("profile.list_help"))}
+        ${this._textarea("small_amounts", this.t("profile.small_help"))}
+      </details>
       ${this._error ? html`<p class="error">${this._error}</p>` : ""}
     `;
     const footer = html`

@@ -44,6 +44,7 @@ from .logic.models import (
     plan_from_dict,
     plan_to_dict,
 )
+from .logic.ingredients import ingredient_overview, set_ingredient_state
 from .logic.normalize import normalize_name
 from .logic.planner import Planner, PlanResult, shared_base
 from .logic.shopping import ShoppingItem, build_shopping_list
@@ -232,6 +233,24 @@ class EssensplanerManager:
                 if not meals[meal_type]:
                     del meals[meal_type]
         self._changed(STORAGE_KEY_PROFILES, STORAGE_KEY_PLAN)
+
+    def ingredient_overview(self, profile_id: str) -> list[dict[str, Any]]:
+        """Alle Zutaten mit Zustand für die Klick-Liste eines Profils."""
+        return ingredient_overview(self.dishes.values(), self.profiles[self.resolve_profile(profile_id)])
+
+    @callback
+    def set_ingredient_state(
+        self,
+        profile_id: str,
+        name: str,
+        state: str,
+        max_amount: float | None = None,
+        unit: str | None = None,
+    ) -> None:
+        """Zutat als verträglich / nur wenig / nicht verträglich / offen markieren."""
+        profile = self.profiles[self.resolve_profile(profile_id)]
+        set_ingredient_state(profile, name.strip(), state, max_amount, unit)
+        self._changed(STORAGE_KEY_PROFILES)
 
     # ------------------------------------------------------------------- Gerichte
 

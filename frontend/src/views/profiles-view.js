@@ -20,7 +20,7 @@ class ProfilesView extends EpElement {
       <div class="grid">
         ${this.profiles.map(
           (p) => html`
-            <button class="card profile" @click=${() => this.emit("ep-open", { type: "profile", profileId: p.id })}>
+            <div class="card profile">
               <span class="avatar">${p.name.slice(0, 1).toUpperCase()}</span>
               <span class="info">
                 <span class="name">${p.name}</span>
@@ -35,9 +35,16 @@ class ProfilesView extends EpElement {
                   ${this.t(`profile.unknown.${p.unknown_ingredients}`)} ·
                   <strong>${this.t("profile.fitting", { n: this._fitting(p.id) })}</strong>
                 </span>
+                <span class="actions">
+                  <button class="btn" @click=${() => this.emit("ep-open", { type: "ingredients", profileId: p.id })}>
+                    <ha-icon icon="mdi:format-list-checks"></ha-icon>${this.t("ingr.open")}
+                  </button>
+                  <button class="btn flat" @click=${() => this.emit("ep-open", { type: "profile", profileId: p.id })}>
+                    <ha-icon icon="mdi:pencil"></ha-icon>${this.t("dish.edit")}
+                  </button>
+                </span>
               </span>
-              <ha-icon icon="mdi:chevron-right" class="muted"></ha-icon>
-            </button>
+            </div>
           `
         )}
       </div>
@@ -57,7 +64,7 @@ class ProfilesView extends EpElement {
       }
       .profile {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 12px;
         padding: 14px;
         text-align: left;
@@ -90,6 +97,12 @@ class ProfilesView extends EpElement {
       }
       .small {
         font-size: 13px;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
       }
     `,
   ];

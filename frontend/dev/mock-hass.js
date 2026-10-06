@@ -67,6 +67,21 @@ async function callWS(msg) {
       return mock.shopping;
     case "shopping/push":
       return { added: mock.shopping.filter((i) => msg.keys.includes(i.key)).map((i) => i.summary), skipped: [] };
+    case "profile/ingredients":
+      return structuredClone(mock.ingredients[msg.profile_id] || []);
+    case "profile/set_ingredient": {
+      const list = (mock.ingredients[msg.profile_id] = mock.ingredients[msg.profile_id] || []);
+      let item = list.find((i) => i.name.toLowerCase() === msg.name.toLowerCase());
+      if (!item) list.unshift((item = { name: msg.name, key: msg.name.toLowerCase(), count: 0 }));
+      Object.assign(item, {
+        state: msg.state,
+        explicit: msg.state !== "unknown",
+        by: msg.state !== "unknown" ? msg.name : null,
+        max_amount: msg.max_amount,
+        unit: msg.unit,
+      });
+      return structuredClone(list);
+    }
     case "parse_ingredients":
       return msg.text
         .split("\n")

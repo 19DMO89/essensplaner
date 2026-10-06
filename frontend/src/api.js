@@ -39,6 +39,14 @@ export class Api {
     return this.call("profile/delete", { profile_id: profileId });
   }
 
+  profileIngredients(profileId) {
+    return this.call("profile/ingredients", { profile_id: profileId });
+  }
+
+  setIngredient(params) {
+    return this.call("profile/set_ingredient", params);
+  }
+
   parseIngredients(text) {
     return this.call("parse_ingredients", { text });
   }

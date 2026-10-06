@@ -207,3 +207,61 @@ async def test_sensor_has_image_url(hass: HomeAssistant, manager: EssensplanerMa
     manager.set_meal(dt_util.now().date().isoformat(), "lunch", [{"dish_id": "d_huhn_reis"}])
     meals = manager.today_meals(next(iter(manager.profiles)))
     assert meals["lunch"][0]["image_url"] == f"/api/essensplaner/images/{image_id}"
+
+
+async def test_ingredient_checklist(
+    hass: HomeAssistant, manager: EssensplanerManager, hass_ws_client: Any
+) -> None:
+    client = await hass_ws_client(hass)
+    anna, ben = manager.profiles
+
+    msg = await _call(client, type="essensplaner/profile/ingredients", profile_id=anna)
+    assert msg["success"], msg
+    items = {i["name"]: i for i in msg["result"]}
+    assert items["Reis"]["state"] == "tolerated" and items["Reis"]["explicit"]
+    assert items["Rindfleisch"]["state"] == "unknown"
+    assert msg["result"][0]["count"] >= msg["result"][-1]["count"]
+
+    # Gulasch passt für Anna nicht (Zwiebeln, Rindfleisch unbekannt)
+    assert not manager.profiles[anna].not_tolerated == []
+    for name, state in (("Rindfleisch", "tolerated"), ("Zwiebeln", "tolerated")):
+        msg = await _call(
+            client,
+            type="essensplaner/profile/set_ingredient",
+            profile_id=anna,
+            name=name,
+            state=state,
+        )
+        assert msg["success"], msg
+    profile = manager.profiles[anna]
+    assert "Zwiebel" not in profile.not_tolerated
+    assert {"Rindfleisch", "Zwiebeln"} <= set(profile.tolerated)
+    msg = await _call(client, type="essensplaner/compat/all")
+    assert msg["result"]["d_gulasch"][anna] == "ok"
+
+    # Nur wenig mit Limit, dann zurück auf offen
+    msg = await _call(
+        client,
+        type="essensplaner/profile/set_ingredient",
+        profile_id=anna,
+        name="Butter",
+        state="small",
+        max_amount=10,
+        unit="g",
+    )
+    butter = next(i for i in msg["result"] if i["name"] == "Butter")
+    assert butter["state"] == "small" and butter["max_amount"] == 10
+    msg = await _call(
+        client,
+        type="essensplaner/profile/set_ingredient",
+        profile_id=anna,
+        name="Butter",
+        state="unknown",
+    )
+    assert all(i["name"] != "Butter" for i in msg["result"])  # in keinem Gericht, nicht mehr gelistet
+    assert manager.profiles[anna].small_amounts == []
+
+    msg = await _call(
+        client, type="essensplaner/profile/ingredients", profile_id="gibt es nicht"
+    )
+    assert not msg["success"]

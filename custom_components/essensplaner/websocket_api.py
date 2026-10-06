@@ -15,6 +15,7 @@ from homeassistant.helpers import config_validation as cv
 from .const import DOMAIN, MAX_PLAN_DAYS
 from .images import InvalidImage, image_url
 from .logic.compat import check_dish
+from .logic.ingredients import STATES
 from .logic.normalize import parse_ingredient_line
 from .logic.models import MEAL_TYPES
 from .manager import EssensplanerManager
@@ -45,6 +46,8 @@ def async_register_websocket(hass: HomeAssistant) -> None:
         ws_subscribe,
         ws_compat_all,
         ws_parse_ingredients,
+        ws_profile_ingredients,
+        ws_profile_set_ingredient,
     ):
         websocket_api.async_register_command(hass, handler)
 
@@ -273,3 +276,37 @@ async def ws_parse_ingredients(
         if (ingredient := parse_ingredient_line(line)) is not None:
             result.append(ingredient.to_dict())
     return result
+
+
+@websocket_api.websocket_command(
+    {vol.Required("type"): "essensplaner/profile/ingredients", vol.Required("profile_id"): str}
+)
+@websocket_api.async_response
+@_with_manager
+async def ws_profile_ingredients(
+    manager: EssensplanerManager, msg: dict[str, Any]
+) -> list[dict[str, Any]]:
+    """Alle Zutaten mit Zustand für die Klick-Liste eines Profils."""
+    return manager.ingredient_overview(msg["profile_id"])
+
+
+@websocket_api.websocket_command(
+    {
+        vol.Required("type"): "essensplaner/profile/set_ingredient",
+        vol.Required("profile_id"): str,
+        vol.Required("name"): vol.All(str, vol.Strip, vol.Length(min=1)),
+        vol.Required("state"): vol.In(STATES),
+        vol.Optional("max_amount"): vol.Any(None, vol.All(vol.Coerce(float), vol.Range(min=0))),
+        vol.Optional("unit"): vol.Any(None, str),
+    }
+)
+@websocket_api.async_response
+@_with_manager
+async def ws_profile_set_ingredient(
+    manager: EssensplanerManager, msg: dict[str, Any]
+) -> list[dict[str, Any]]:
+    """Eine Zutat markieren; liefert die aktualisierte Liste."""
+    manager.set_ingredient_state(
+        msg["profile_id"], msg["name"], msg["state"], msg.get("max_amount"), msg.get("unit")
+    )
+    return manager.ingredient_overview(msg["profile_id"])

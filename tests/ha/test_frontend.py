@@ -320,3 +320,16 @@ async def test_options_profile_keeps_groups(
     )
     assert result["type"] is FlowResultType.CREATE_ENTRY
     assert manager.profiles[anna].excluded_groups == ["gluten", "milk"]
+
+
+async def test_profile_groups_overview(
+    hass: HomeAssistant, manager: EssensplanerManager, hass_ws_client: Any
+) -> None:
+    client = await hass_ws_client(hass)
+    anna = next(iter(manager.profiles))
+    manager.set_excluded_groups(anna, ["meat_beef"])
+    msg = await _call(client, type="essensplaner/profile/groups", profile_id=anna)
+    assert msg["success"], msg
+    by = {g["id"]: g for g in msg["result"]}
+    assert by["meat_beef"]["excluded"] and by["meat_beef"]["members"] == ["Rindfleisch"]
+    assert by["gluten"]["count"] == 0 and not by["gluten"]["excluded"]

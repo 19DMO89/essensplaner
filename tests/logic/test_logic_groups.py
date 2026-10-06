@@ -4,7 +4,7 @@ import pytest
 from helpers import dish
 
 from logic.compat import check_dish
-from logic.groups import GROUPS, in_group
+from logic.groups import GROUPS, group_overview, in_group
 from logic.ingredients import ingredient_overview, set_ingredient_state
 from logic.models import Profile
 
@@ -89,3 +89,13 @@ def test_overview_shows_group_reason() -> None:
     assert items["Speck"]["group"] == "meat_pork"
     assert not items["Speck"]["explicit"]
     assert items["Salz"]["group"] is None
+
+
+def test_group_overview_counts() -> None:
+    names = ["Mehl", "Spaghetti", "Reis", "Speck", "Mehl"]
+    by = {g["id"]: g for g in group_overview(names, ["gluten"])}
+    assert by["gluten"]["excluded"] and by["gluten"]["count"] == 2
+    assert by["gluten"]["members"] == ["Mehl", "Spaghetti"]
+    assert by["meat_pork"]["count"] == 1 and not by["meat_pork"]["excluded"]
+    assert by["lupin"]["count"] == 0
+    assert len(by) == len(GROUPS)

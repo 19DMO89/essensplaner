@@ -49,19 +49,19 @@ export class EpElement extends LitElement {
     const allergens = this.groups.filter((g) => g.kind === "allergen");
     return html`
       <div class="group-block">
-        <div class="group-title">${this.t("groups.meat")}</div>
+        <div class="group-title">${this.t("groups.allergens")}</div>
         <div class="chips">
-          ${meat.map((g) => {
-            const eats = !excluded.includes(g.id);
-            return html`<button class="chip ${eats ? "on" : "off-strike"}" ?disabled=${disabled}
-              aria-pressed=${eats} @click=${() => onToggle(g.id)}>${eats ? "✓ " : ""}${this.groupLabel(g.id)}</button>`;
+          ${allergens.map((g) => {
+            const ex = excluded.includes(g.id);
+            return html`<button class="chip ${ex ? "on bad" : ""}" ?disabled=${disabled}
+              aria-pressed=${ex} @click=${() => onToggle(g.id)}>${ex ? "✕ " : ""}${this.groupLabel(g.id)}</button>`;
           })}
         </div>
       </div>
       <div class="group-block">
-        <div class="group-title">${this.t("groups.allergens")}</div>
+        <div class="group-title">${this.t("groups.meat")}</div>
         <div class="chips">
-          ${allergens.map((g) => {
+          ${meat.map((g) => {
             const ex = excluded.includes(g.id);
             return html`<button class="chip ${ex ? "on bad" : ""}" ?disabled=${disabled}
               aria-pressed=${ex} @click=${() => onToggle(g.id)}>${ex ? "✕ " : ""}${this.groupLabel(g.id)}</button>`;

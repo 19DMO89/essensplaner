@@ -50,6 +50,7 @@ def async_register_websocket(hass: HomeAssistant) -> None:
         ws_profile_ingredients,
         ws_profile_set_ingredient,
         ws_profile_set_groups,
+        ws_profile_groups,
     ):
         websocket_api.async_register_command(hass, handler)
 
@@ -330,3 +331,13 @@ async def ws_profile_set_groups(
     """Ausgeschlossene Gruppen (Fleischsorten, Allergene) setzen; liefert die Zutatenliste."""
     manager.set_excluded_groups(msg["profile_id"], msg["excluded_groups"])
     return manager.ingredient_overview(msg["profile_id"])
+
+
+@websocket_api.websocket_command(
+    {vol.Required("type"): "essensplaner/profile/groups", vol.Required("profile_id"): str}
+)
+@websocket_api.async_response
+@_with_manager
+async def ws_profile_groups(manager: EssensplanerManager, msg: dict[str, Any]) -> list[dict[str, Any]]:
+    """Allergene und Fleischsorten mit Zustand und betroffenen Zutaten."""
+    return manager.group_overview(msg["profile_id"])

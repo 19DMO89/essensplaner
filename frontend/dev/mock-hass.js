@@ -69,6 +69,16 @@ async function callWS(msg) {
       return { added: mock.shopping.filter((i) => msg.keys.includes(i.key)).map((i) => i.summary), skipped: [] };
     case "profile/ingredients":
       return structuredClone(mock.ingredients[msg.profile_id] || []);
+    case "profile/groups": {
+      const profile = mock.data.profiles.find((p) => p.id === msg.profile_id);
+      const excluded = profile.excluded_groups || [];
+      return mock.data.groups.map((g) => ({
+        ...g,
+        excluded: excluded.includes(g.id),
+        count: (mock.group_members[g.id] || []).length,
+        members: mock.group_members[g.id] || [],
+      }));
+    }
     case "profile/set_groups": {
       const profile = mock.data.profiles.find((p) => p.id === msg.profile_id);
       profile.excluded_groups = msg.excluded_groups;

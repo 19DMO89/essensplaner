@@ -13,6 +13,7 @@ import "./components/slot-editor.js";
 import "./components/generate-dialog.js";
 import "./components/profile-editor.js";
 import "./components/ingredient-dialog.js";
+import "./components/groups-dialog.js";
 
 const TABS = [
   { id: "plan", icon: "mdi:calendar-week" },
@@ -202,6 +203,9 @@ class EssensplanerPanel extends LitElement {
       case "profile":
         return html`<ep-profile-editor .hass=${c.hass} .api=${c.api} .data=${c.data} .compat=${c.compat}
           .profileId=${d.profileId}></ep-profile-editor>`;
+      case "groups":
+        return html`<ep-groups-dialog .hass=${c.hass} .api=${c.api} .data=${c.data} .compat=${c.compat}
+          .profileId=${d.profileId} .back=${d.back}></ep-groups-dialog>`;
       case "ingredients":
         return html`<ep-ingredient-dialog .hass=${c.hass} .api=${c.api} .data=${c.data} .compat=${c.compat}
           .profileId=${d.profileId}></ep-ingredient-dialog>`;

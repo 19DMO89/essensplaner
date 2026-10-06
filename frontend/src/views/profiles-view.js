@@ -44,6 +44,9 @@ class ProfilesView extends EpElement {
                   <button class="btn" @click=${() => this.emit("ep-open", { type: "ingredients", profileId: p.id })}>
                     <ha-icon icon="mdi:format-list-checks"></ha-icon>${this.t("ingr.open")}
                   </button>
+                  <button class="btn outline" @click=${() => this.emit("ep-open", { type: "groups", profileId: p.id })}>
+                    <ha-icon icon="mdi:alert-circle-outline"></ha-icon>${this.t("groups.button")}
+                  </button>
                   <button class="btn flat" @click=${() => this.emit("ep-open", { type: "profile", profileId: p.id })}>
                     <ha-icon icon="mdi:pencil"></ha-icon>${this.t("dish.edit")}
                   </button>

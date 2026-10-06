@@ -11,8 +11,10 @@ verarbeiteter Produkte.
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
 from functools import lru_cache
+from typing import Any
 
 from .normalize import normalize_tokens
 
@@ -203,3 +205,20 @@ def in_group(group_id: str, ingredient_name: str) -> bool:
 def matching_group(group_ids: list[str], ingredient_name: str) -> str | None:
     """Erste der Gruppen, zu der die Zutat gehört."""
     return next((g for g in group_ids if in_group(g, ingredient_name)), None)
+
+
+def group_overview(ingredient_names: Iterable[str], excluded: list[str]) -> list[dict[str, Any]]:
+    """Alle Gruppen mit Anzahl und Beispielen der betroffenen Zutaten."""
+    names = sorted(set(ingredient_names), key=str.casefold)
+    result = []
+    for group in GROUPS.values():
+        members = [n for n in names if in_group(group.id, n)]
+        result.append(
+            {
+                **group.to_dict(),
+                "excluded": group.id in excluded,
+                "count": len(members),
+                "members": members,
+            }
+        )
+    return result

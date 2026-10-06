@@ -141,7 +141,7 @@ class ProfileEditor extends EpDialog {
         </select>
       </label>
       <div class="field">
-        <span class="label">${this.t("groups.quick")}</span>
+        <span class="label">${this.t("groups.editor_title")}</span>
         ${this.groupChips(f.excluded_groups, (id) =>
           this._set(
             "excluded_groups",

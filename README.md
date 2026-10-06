@@ -34,10 +34,11 @@ Nach der Einrichtung erscheint **Essensplaner** in der Seitenleiste (auch in der
   Gerichte anlegen und bearbeiten, inklusive Foto (Upload oder Bild-URL übernehmen).
 - **Personen**: *Zutaten anklicken* öffnet eine Liste aller Zutaten (häufigste zuerst), in der
   jede Zutat mit einem Klick als verträglich, nur in kleinen Mengen oder nicht verträglich
-  markiert wird. Darüber gibt es eine **Schnellauswahl**: Fleischsorten (Rind, Kalb, Schwein,
-  Geflügel, Lamm, Wild, Fisch, Meeresfrüchte) und die 14 Hauptallergene. Ein Klick schließt
-  alle typischen Zutaten der Gruppe aus, auch in später hinzugefügten Gerichten; einzelne
-  Zutaten lassen sich trotzdem freigeben. Die Gruppen sind eine Auswahlhilfe und ersetzen
+  markiert wird. Der Knopf **Allergene** (auf der Personenkarte und in der Zutatenliste)
+  öffnet die 14 Hauptallergene und die Fleischsorten (Rind, Kalb, Schwein, Geflügel, Lamm,
+  Wild, Fisch, Meeresfrüchte) als Schalter, jeweils mit den betroffenen Zutaten. Ein Schalter
+  schließt alle typischen Zutaten der Gruppe aus, auch in später hinzugefügten Gerichten;
+  einzelne Zutaten lassen sich trotzdem freigeben. Die Gruppen sind eine Auswahlhilfe und ersetzen
   keine Allergenkennzeichnung verarbeiteter Produkte.
 - **Einkauf**: Zeitraum wählen, Einträge an- oder abwählen und in eine To-do-Liste übertragen.
 

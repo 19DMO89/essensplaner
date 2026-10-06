@@ -43,6 +43,10 @@ export class Api {
     return this.call("profile/ingredients", { profile_id: profileId });
   }
 
+  profileGroups(profileId) {
+    return this.call("profile/groups", { profile_id: profileId });
+  }
+
   setGroups(profileId, excludedGroups) {
     return this.call("profile/set_groups", { profile_id: profileId, excluded_groups: excludedGroups });
   }

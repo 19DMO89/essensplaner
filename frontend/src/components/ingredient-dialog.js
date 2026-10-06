@@ -82,23 +82,6 @@ class IngredientDialog extends EpDialog {
     this._pending = pending;
   }
 
-  async _toggleGroup(id) {
-    const profile = this._profile;
-    const current = profile.excluded_groups || [];
-    const next = current.includes(id) ? current.filter((g) => g !== id) : [...current, id];
-    this._groupsBusy = true;
-    this.requestUpdate();
-    try {
-      this._items = await this.api.setGroups(this.profileId, next);
-      // Sofort anzeigen, bis die Daten neu geladen sind.
-      profile.excluded_groups = next;
-    } catch (err) {
-      this._error = err.message || String(err);
-    }
-    this._groupsBusy = false;
-    this.requestUpdate();
-  }
-
   _setLimit(item, text) {
     const limit = parseLimit(text);
     this._set(item, "small", { ...limit, keep: true });
@@ -135,12 +118,24 @@ class IngredientDialog extends EpDialog {
       ${profile.unknown_ingredients === "exclude"
         ? html`<p class="hint">${this.t("ingr.hint_exclude")}</p>`
         : ""}
-      <details class="quick" .open=${this._quickOpen ?? !(profile.excluded_groups || []).length}
-        @toggle=${(e) => (this._quickOpen = e.target.open)}>
-        <summary>${this.t("groups.quick")}</summary>
-        <p class="help">${this.t("groups.help")}</p>
-        ${this.groupChips(profile.excluded_groups || [], (id) => this._toggleGroup(id), this._groupsBusy)}
-      </details>
+      <div class="groupbar">
+        <div class="groupbar-text">
+          <span class="muted">${this.t("groups.bar_title")}</span>
+          ${(profile.excluded_groups || []).length
+            ? html`<span class="chips">${profile.excluded_groups.map(
+                (g) => html`<span class="chip small on bad">${this.groupLabel(g)}</span>`
+              )}</span>`
+            : html`<span class="muted">${this.t("groups.none")}</span>`}
+        </div>
+        <button class="btn outline" @click=${() =>
+          this.emit("ep-open", {
+            type: "groups",
+            profileId: this.profileId,
+            back: { type: "ingredients", profileId: this.profileId },
+          })}>
+          <ha-icon icon="mdi:alert-circle-outline"></ha-icon>${this.t("groups.button")}
+        </button>
+      </div>
       <div class="sticky">
         <input type="search" placeholder=${this.t("ingr.search")} .value=${this._query}
           @input=${(e) => {
@@ -230,16 +225,22 @@ class IngredientDialog extends EpDialog {
   static styles = [
     ...EpDialog.styles,
     css`
-      .quick {
+      .groupbar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
         margin-bottom: 12px;
+        padding: 10px 12px;
         border: 1px solid var(--divider-color, #ddd);
         border-radius: 10px;
-        padding: 8px 12px;
       }
-      .quick summary {
-        font-weight: 500;
-        cursor: pointer;
-        padding: 4px 0;
+      .groupbar-text {
+        flex: 1 1 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13px;
       }
       .hint {
         background: var(--secondary-background-color, #f3f3f3);

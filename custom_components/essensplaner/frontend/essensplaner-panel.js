@@ -1,6 +1,6 @@
-var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,configurable:!0,writable:!0,value:e}):n[t]=e;var d=(n,t,e)=>(te(n,typeof t!="symbol"?t+"":t,e),e);var et=globalThis,st=et.ShadowRoot&&(et.ShadyCSS===void 0||et.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,dt=Symbol(),St=new WeakMap,T=class{constructor(t,e,s){if(this._$cssResult$=!0,s!==dt)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e}get styleSheet(){let t=this.o,e=this.t;if(st&&t===void 0){let s=e!==void 0&&e.length===1;s&&(t=St.get(e)),t===void 0&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),s&&St.set(e,t))}return t}toString(){return this.cssText}},Et=n=>new T(typeof n=="string"?n:n+"",void 0,dt),m=(n,...t)=>{let e=n.length===1?n[0]:t.reduce((s,i,a)=>s+(o=>{if(o._$cssResult$===!0)return o.cssText;if(typeof o=="number")return o;throw Error("Value passed to 'css' function must be a 'css' function result: "+o+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(i)+n[a+1],n[0]);return new T(e,n,dt)},Ct=(n,t)=>{if(st)n.adoptedStyleSheets=t.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(let e of t){let s=document.createElement("style"),i=et.litNonce;i!==void 0&&s.setAttribute("nonce",i),s.textContent=e.cssText,n.appendChild(s)}},ct=st?n=>n:n=>n instanceof CSSStyleSheet?(t=>{let e="";for(let s of t.cssRules)e+=s.cssText;return Et(e)})(n):n;var{is:ee,defineProperty:se,getOwnPropertyDescriptor:ie,getOwnPropertyNames:ae,getOwnPropertySymbols:ne,getPrototypeOf:re}=Object,it=globalThis,It=it.trustedTypes,oe=It?It.emptyScript:"",le=it.reactiveElementPolyfillSupport,O=(n,t)=>n,ut={toAttribute(n,t){switch(t){case Boolean:n=n?oe:null;break;case Object:case Array:n=n==null?n:JSON.stringify(n)}return n},fromAttribute(n,t){let e=n;switch(t){case Boolean:e=n!==null;break;case Number:e=n===null?null:Number(n);break;case Object:case Array:try{e=JSON.parse(n)}catch{e=null}}return e}},Pt=(n,t)=>!ee(n,t),Mt={attribute:!0,type:String,converter:ut,reflect:!1,useDefault:!1,hasChanged:Pt};Symbol.metadata??=Symbol("metadata"),it.litPropertyMetadata??=new WeakMap;var w=class extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??=[]).push(t)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,e=Mt){if(e.state&&(e.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(t)&&((e=Object.create(e)).wrapped=!0),this.elementProperties.set(t,e),!e.noAccessor){let s=Symbol(),i=this.getPropertyDescriptor(t,s,e);i!==void 0&&se(this.prototype,t,i)}}static getPropertyDescriptor(t,e,s){let{get:i,set:a}=ie(this.prototype,t)??{get(){return this[e]},set(o){this[e]=o}};return{get:i,set(o){let l=i?.call(this);a?.call(this,o),this.requestUpdate(t,l,s)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)??Mt}static _$Ei(){if(this.hasOwnProperty(O("elementProperties")))return;let t=re(this);t.finalize(),t.l!==void 0&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties)}static finalize(){if(this.hasOwnProperty(O("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(O("properties"))){let e=this.properties,s=[...ae(e),...ne(e)];for(let i of s)this.createProperty(i,e[i])}let t=this[Symbol.metadata];if(t!==null){let e=litPropertyMetadata.get(t);if(e!==void 0)for(let[s,i]of e)this.elementProperties.set(s,i)}this._$Eh=new Map;for(let[e,s]of this.elementProperties){let i=this._$Eu(e,s);i!==void 0&&this._$Eh.set(i,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(t){let e=[];if(Array.isArray(t)){let s=new Set(t.flat(1/0).reverse());for(let i of s)e.unshift(ct(i))}else t!==void 0&&e.push(ct(t));return e}static _$Eu(t,e){let s=e.attribute;return s===!1?void 0:typeof s=="string"?s:typeof t=="string"?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this))}addController(t){(this._$EO??=new Set).add(t),this.renderRoot!==void 0&&this.isConnected&&t.hostConnected?.()}removeController(t){this._$EO?.delete(t)}_$E_(){let t=new Map,e=this.constructor.elementProperties;for(let s of e.keys())this.hasOwnProperty(s)&&(t.set(s,this[s]),delete this[s]);t.size>0&&(this._$Ep=t)}createRenderRoot(){let t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return Ct(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(!0),this._$EO?.forEach(t=>t.hostConnected?.())}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.())}attributeChangedCallback(t,e,s){this._$AK(t,s)}_$ET(t,e){let s=this.constructor.elementProperties.get(t),i=this.constructor._$Eu(t,s);if(i!==void 0&&s.reflect===!0){let a=(s.converter?.toAttribute!==void 0?s.converter:ut).toAttribute(e,s.type);this._$Em=t,a==null?this.removeAttribute(i):this.setAttribute(i,a),this._$Em=null}}_$AK(t,e){let s=this.constructor,i=s._$Eh.get(t);if(i!==void 0&&this._$Em!==i){let a=s.getPropertyOptions(i),o=typeof a.converter=="function"?{fromAttribute:a.converter}:a.converter?.fromAttribute!==void 0?a.converter:ut;this._$Em=i;let l=o.fromAttribute(e,a.type);this[i]=l??this._$Ej?.get(i)??l,this._$Em=null}}requestUpdate(t,e,s,i=!1,a){if(t!==void 0){let o=this.constructor;if(i===!1&&(a=this[t]),s??=o.getPropertyOptions(t),!((s.hasChanged??Pt)(a,e)||s.useDefault&&s.reflect&&a===this._$Ej?.get(t)&&!this.hasAttribute(o._$Eu(t,s))))return;this.C(t,e,s)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(t,e,{useDefault:s,reflect:i,wrapped:a},o){s&&!(this._$Ej??=new Map).has(t)&&(this._$Ej.set(t,o??e??this[t]),a!==!0||o!==void 0)||(this._$AL.has(t)||(this.hasUpdated||s||(e=void 0),this._$AL.set(t,e)),i===!0&&this._$Em!==t&&(this._$Eq??=new Set).add(t))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}let t=this.scheduleUpdate();return t!=null&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(let[i,a]of this._$Ep)this[i]=a;this._$Ep=void 0}let s=this.constructor.elementProperties;if(s.size>0)for(let[i,a]of s){let{wrapped:o}=a,l=this[i];o!==!0||this._$AL.has(i)||l===void 0||this.C(i,void 0,a,l)}}let t=!1,e=this._$AL;try{t=this.shouldUpdate(e),t?(this.willUpdate(e),this._$EO?.forEach(s=>s.hostUpdate?.()),this.update(e)):this._$EM()}catch(s){throw t=!1,this._$EM(),s}t&&this._$AE(e)}willUpdate(t){}_$AE(t){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return!0}update(t){this._$Eq&&=this._$Eq.forEach(e=>this._$ET(e,this[e])),this._$EM()}updated(t){}firstUpdated(t){}};w.elementStyles=[],w.shadowRootOptions={mode:"open"},w[O("elementProperties")]=new Map,w[O("finalized")]=new Map,le?.({ReactiveElement:w}),(it.reactiveElementVersions??=[]).push("2.1.2");var xt=globalThis,Ut=n=>n,at=xt.trustedTypes,Nt=at?at.createPolicy("lit-html",{createHTML:n=>n}):void 0,jt="$lit$",E=`lit$${Math.random().toFixed(9).slice(2)}$`,Bt="?"+E,he=`<${Bt}>`,M=document,B=()=>M.createComment(""),R=n=>n===null||typeof n!="object"&&typeof n!="function",yt=Array.isArray,pe=n=>yt(n)||typeof n?.[Symbol.iterator]=="function",mt=`[ 	
-\f\r]`,j=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,zt=/-->/g,Dt=/>/g,C=RegExp(`>|${mt}(?:([^\\s"'>=/]+)(${mt}*=${mt}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`,"g"),Lt=/'/g,Tt=/"/g,Rt=/^(?:script|style|textarea|title)$/i,vt=n=>(t,...e)=>({_$litType$:n,strings:t,values:e}),r=vt(1),Ae=vt(2),Se=vt(3),P=Symbol.for("lit-noChange"),_=Symbol.for("lit-nothing"),Ot=new WeakMap,I=M.createTreeWalker(M,129);function Ft(n,t){if(!yt(n)||!n.hasOwnProperty("raw"))throw Error("invalid template strings array");return Nt!==void 0?Nt.createHTML(t):t}var de=(n,t)=>{let e=n.length-1,s=[],i,a=t===2?"<svg>":t===3?"<math>":"",o=j;for(let l=0;l<e;l++){let h=n[l],p,g,u=-1,v=0;for(;v<h.length&&(o.lastIndex=v,g=o.exec(h),g!==null);)v=o.lastIndex,o===j?g[1]==="!--"?o=zt:g[1]!==void 0?o=Dt:g[2]!==void 0?(Rt.test(g[2])&&(i=RegExp("</"+g[2],"g")),o=C):g[3]!==void 0&&(o=C):o===C?g[0]===">"?(o=i??j,u=-1):g[1]===void 0?u=-2:(u=o.lastIndex-g[2].length,p=g[1],o=g[3]===void 0?C:g[3]==='"'?Tt:Lt):o===Tt||o===Lt?o=C:o===zt||o===Dt?o=j:(o=C,i=void 0);let S=o===C&&n[l+1].startsWith("/>")?" ":"";a+=o===j?h+he:u>=0?(s.push(p),h.slice(0,u)+jt+h.slice(u)+E+S):h+E+(u===-2?l:S)}return[Ft(n,a+(n[e]||"<?>")+(t===2?"</svg>":t===3?"</math>":"")),s]},F=class n{constructor({strings:t,_$litType$:e},s){let i;this.parts=[];let a=0,o=0,l=t.length-1,h=this.parts,[p,g]=de(t,e);if(this.el=n.createElement(p,s),I.currentNode=this.el.content,e===2||e===3){let u=this.el.content.firstChild;u.replaceWith(...u.childNodes)}for(;(i=I.nextNode())!==null&&h.length<l;){if(i.nodeType===1){if(i.hasAttributes())for(let u of i.getAttributeNames())if(u.endsWith(jt)){let v=g[o++],S=i.getAttribute(u).split(E),tt=/([.?@])?(.*)/.exec(v);h.push({type:1,index:a,name:tt[2],strings:S,ctor:tt[1]==="."?_t:tt[1]==="?"?ft:tt[1]==="@"?bt:z}),i.removeAttribute(u)}else u.startsWith(E)&&(h.push({type:6,index:a}),i.removeAttribute(u));if(Rt.test(i.tagName)){let u=i.textContent.split(E),v=u.length-1;if(v>0){i.textContent=at?at.emptyScript:"";for(let S=0;S<v;S++)i.append(u[S],B()),I.nextNode(),h.push({type:2,index:++a});i.append(u[v],B())}}}else if(i.nodeType===8)if(i.data===Bt)h.push({type:2,index:a});else{let u=-1;for(;(u=i.data.indexOf(E,u+1))!==-1;)h.push({type:7,index:a}),u+=E.length-1}a++}}static createElement(t,e){let s=M.createElement("template");return s.innerHTML=t,s}};function N(n,t,e=n,s){if(t===P)return t;let i=s!==void 0?e._$Co?.[s]:e._$Cl,a=R(t)?void 0:t._$litDirective$;return i?.constructor!==a&&(i?._$AO?.(!1),a===void 0?i=void 0:(i=new a(n),i._$AT(n,e,s)),s!==void 0?(e._$Co??=[])[s]=i:e._$Cl=i),i!==void 0&&(t=N(n,i._$AS(n,t.values),i,s)),t}var gt=class{constructor(t,e){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){let{el:{content:e},parts:s}=this._$AD,i=(t?.creationScope??M).importNode(e,!0);I.currentNode=i;let a=I.nextNode(),o=0,l=0,h=s[0];for(;h!==void 0;){if(o===h.index){let p;h.type===2?p=new H(a,a.nextSibling,this,t):h.type===1?p=new h.ctor(a,h.name,h.strings,this,t):h.type===6&&(p=new $t(a,this,t)),this._$AV.push(p),h=s[++l]}o!==h?.index&&(a=I.nextNode(),o++)}return I.currentNode=M,i}p(t){let e=0;for(let s of this._$AV)s!==void 0&&(s.strings!==void 0?(s._$AI(t,s,e),e+=s.strings.length-2):s._$AI(t[e])),e++}},H=class n{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,e,s,i){this.type=2,this._$AH=_,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=s,this.options=i,this._$Cv=i?.isConnected??!0}get parentNode(){let t=this._$AA.parentNode,e=this._$AM;return e!==void 0&&t?.nodeType===11&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=N(this,t,e),R(t)?t===_||t==null||t===""?(this._$AH!==_&&this._$AR(),this._$AH=_):t!==this._$AH&&t!==P&&this._(t):t._$litType$!==void 0?this.$(t):t.nodeType!==void 0?this.T(t):pe(t)?this.k(t):this._(t)}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t))}_(t){this._$AH!==_&&R(this._$AH)?this._$AA.nextSibling.data=t:this.T(M.createTextNode(t)),this._$AH=t}$(t){let{values:e,_$litType$:s}=t,i=typeof s=="number"?this._$AC(t):(s.el===void 0&&(s.el=F.createElement(Ft(s.h,s.h[0]),this.options)),s);if(this._$AH?._$AD===i)this._$AH.p(e);else{let a=new gt(i,this),o=a.u(this.options);a.p(e),this.T(o),this._$AH=a}}_$AC(t){let e=Ot.get(t.strings);return e===void 0&&Ot.set(t.strings,e=new F(t)),e}k(t){yt(this._$AH)||(this._$AH=[],this._$AR());let e=this._$AH,s,i=0;for(let a of t)i===e.length?e.push(s=new n(this.O(B()),this.O(B()),this,this.options)):s=e[i],s._$AI(a),i++;i<e.length&&(this._$AR(s&&s._$AB.nextSibling,i),e.length=i)}_$AR(t=this._$AA.nextSibling,e){for(this._$AP?.(!1,!0,e);t!==this._$AB;){let s=Ut(t).nextSibling;Ut(t).remove(),t=s}}setConnected(t){this._$AM===void 0&&(this._$Cv=t,this._$AP?.(t))}},z=class{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,e,s,i,a){this.type=1,this._$AH=_,this._$AN=void 0,this.element=t,this.name=e,this._$AM=i,this.options=a,s.length>2||s[0]!==""||s[1]!==""?(this._$AH=Array(s.length-1).fill(new String),this.strings=s):this._$AH=_}_$AI(t,e=this,s,i){let a=this.strings,o=!1;if(a===void 0)t=N(this,t,e,0),o=!R(t)||t!==this._$AH&&t!==P,o&&(this._$AH=t);else{let l=t,h,p;for(t=a[0],h=0;h<a.length-1;h++)p=N(this,l[s+h],e,h),p===P&&(p=this._$AH[h]),o||=!R(p)||p!==this._$AH[h],p===_?t=_:t!==_&&(t+=(p??"")+a[h+1]),this._$AH[h]=p}o&&!i&&this.j(t)}j(t){t===_?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"")}},_t=class extends z{constructor(){super(...arguments),this.type=3}j(t){this.element[this.name]=t===_?void 0:t}},ft=class extends z{constructor(){super(...arguments),this.type=4}j(t){this.element.toggleAttribute(this.name,!!t&&t!==_)}},bt=class extends z{constructor(t,e,s,i,a){super(t,e,s,i,a),this.type=5}_$AI(t,e=this){if((t=N(this,t,e,0)??_)===P)return;let s=this._$AH,i=t===_&&s!==_||t.capture!==s.capture||t.once!==s.once||t.passive!==s.passive,a=t!==_&&(s===_||i);i&&this.element.removeEventListener(this.name,this,s),a&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t)}},$t=class{constructor(t,e,s){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=s}get _$AU(){return this._$AM._$AU}_$AI(t){N(this,t)}};var ce=xt.litHtmlPolyfillSupport;ce?.(F,H),(xt.litHtmlVersions??=[]).push("3.3.3");var Ht=(n,t,e)=>{let s=e?.renderBefore??t,i=s._$litPart$;if(i===void 0){let a=e?.renderBefore??null;s._$litPart$=i=new H(t.insertBefore(B(),a),a,void 0,e??{})}return i._$AI(n),i};var wt=globalThis,$=class extends w{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){let t=super.createRenderRoot();return this.renderOptions.renderBefore??=t.firstChild,t}update(t){let e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=Ht(e,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return P}};$._$litElement$=!0,$.finalized=!0,wt.litElementHydrateSupport?.({LitElement:$});var ue=wt.litElementPolyfillSupport;ue?.({LitElement:$});(wt.litElementVersions??=[]).push("4.2.2");var x=["breakfast","lunch","dinner","snack"],nt=class{constructor(t){this.hass=t}call(t,e={}){return this.hass.callWS({type:`essensplaner/${t}`,...e})}data(){return this.call("data")}compat(){return this.call("compat/all")}dishCheck(t){return this.call("dish/check",{dish_id:t})}saveDish(t){return this.call("dish/save",{dish:t})}deleteDish(t){return this.call("dish/delete",{dish_id:t})}saveProfile(t){return this.call("profile/save",{profile:t})}deleteProfile(t){return this.call("profile/delete",{profile_id:t})}profileIngredients(t){return this.call("profile/ingredients",{profile_id:t})}setGroups(t,e){return this.call("profile/set_groups",{profile_id:t,excluded_groups:e})}setIngredient(t){return this.call("profile/set_ingredient",t)}parseIngredients(t){return this.call("parse_ingredients",{text:t})}plan(t,e){return this.call("plan/get",{start_date:t,days:e})}setMeal(t,e,s){return this.call("plan/set_meal",{date:t,meal_type:e,assignments:s})}generate(t){return this.call("plan/generate",t)}shoppingPreview(t,e){return this.call("shopping/preview",{start_date:t,days:e})}shoppingPush(t){return this.call("shopping/push",t)}imageFromUrl(t){return this.call("image/from_url",{url:t})}async uploadImage(t){let e=new FormData;e.append("file",t);let s=await this.hass.fetchWithAuth("/api/essensplaner/upload",{method:"POST",body:e}),i=await s.json();if(!s.ok)throw new Error(i.message||s.statusText);return{id:i.id,source:i.source}}subscribe(t){return this.hass.connection.subscribeMessage(t,{type:"essensplaner/subscribe"})}};function D(n){return n&&n.id?`/api/essensplaner/images/${n.id}`:null}function y(n){let t=n.getFullYear(),e=String(n.getMonth()+1).padStart(2,"0"),s=String(n.getDate()).padStart(2,"0");return`${t}-${e}-${s}`}function L(n){let[t,e,s]=n.split("-").map(Number);return new Date(t,e-1,s)}function U(n,t){let e=new Date(n);return e.setDate(e.getDate()+t),e}function Wt(n){let t=new Date(n.getFullYear(),n.getMonth(),n.getDate()),e=(t.getDay()+6)%7;return U(t,-e)}function Zt(n){let t=new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate())),e=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-e);let s=new Date(Date.UTC(t.getUTCFullYear(),0,1));return Math.ceil(((t-s)/864e5+1)/7)}var qt={protein:"#protein",side:"#beilage",veg:"#gemuese"};function k(n){if(n==null)return"";let t=Math.round(n*100)/100;return String(t).replace(".",",")}function Gt(n){let t=[];return n.amount!==null&&n.amount!==void 0&&(t.push(k(n.amount)),n.unit&&t.push(n.unit)),t.push(n.name),qt[n.role]&&t.push(qt[n.role]),t.join(" ")}function Kt(n,t){if(n.amount===null||n.amount===void 0)return"";let e=n.amount*t;return["g","ml"].includes(n.unit)&&e>=20?e=Math.round(e/5)*5:(!n.unit||["Stk","Zehe","Dose","Pkg","Bund","Becher","Glas"].includes(n.unit))&&(e=Math.round(e*2)/2),n.unit==="g"&&e>=1e3?`${k(e/1e3)} kg`:n.unit==="ml"&&e>=1e3?`${k(e/1e3)} l`:n.unit?`${k(e)} ${n.unit}`:k(e)}var me={title:"Essensplaner","tab.plan":"Wochenplan","tab.dishes":"Gerichte","tab.profiles":"Personen","tab.shopping":"Einkauf","meal.breakfast":"Fr\xFChst\xFCck","meal.lunch":"Mittag","meal.dinner":"Abend","meal.snack":"Snack","plan.week":"KW {week}","plan.today":"Heute","plan.generate":"Woche planen","plan.empty":"Nichts geplant","plan.add_meal":"Mahlzeit","plan.shared":"Gemeinsam: {items}","plan.servings":"{n} Port.","gen.title":"Woche planen","gen.days":"Tage und Mahlzeiten","gen.profiles":"F\xFCr wen?","gen.overwrite":"Bereits geplante Mahlzeiten neu planen (manuell gesetzte bleiben)","gen.run":"Planen","gen.done":"Plan erstellt: {n} Gerichte eingeplant.","gen.no_dish":"{day} {meal}: kein passendes Gericht f\xFCr {profiles}","slot.title":"{day} \xB7 {meal}","slot.for":"F\xFCr","slot.add":"Gericht w\xE4hlen","slot.remove":"Entfernen","slot.search":"Gericht suchen \u2026","slot.show_all_meals":"Alle Mahlzeitentypen","slot.show_unsuitable":"Auch unpassende zeigen","slot.no_profiles":"W\xE4hle zuerst mindestens eine Person.","slot.nothing":"Noch kein Gericht f\xFCr diese Mahlzeit.","dishes.search":"Suchen \u2026","dishes.new":"Neues Gericht","dishes.all_meals":"Alle","dishes.fits":"Passt f\xFCr","dishes.anyone":"Egal","dishes.count":"{n} Gerichte","dishes.none":"Keine Gerichte gefunden.","dish.minutes":"{n} Min.","dish.servings":"Portionen","dish.ingredients":"Zutaten","dish.steps":"Zubereitung","dish.source":"Quelle","dish.compat":"Vertr\xE4glichkeit","dish.edit":"Bearbeiten","edit.new_title":"Neues Gericht","edit.title":"Gericht bearbeiten","edit.name":"Name","edit.meal_types":"Mahlzeiten","edit.suitable_for":"Nur f\xFCr (keine Auswahl = alle)","edit.base_servings":"Portionen im Rezept","edit.duration":"Dauer (Minuten)","edit.tags":"Tags (durch Komma getrennt)","edit.ingredients":"Zutaten (eine pro Zeile)","edit.ingredients_help":"z. B. \u201E250 g H\xFChnerbrust #protein\u201C, \u201E150 g Reis #beilage\u201C, \u201E2 Karotten\u201C, \u201ESalz\u201C","edit.steps":"Zubereitung (ein Schritt pro Zeile)","edit.source_url":"Quelle (URL)","edit.image":"Bild","edit.upload":"Foto hochladen","edit.image_url":"Bild-URL","edit.image_from_url":"\xDCbernehmen","edit.image_remove":"Bild entfernen","edit.uploading":"Wird hochgeladen \u2026","profile.new":"Neue Person","profile.title":"Person bearbeiten","profile.name":"Name","profile.servings":"Portionen","profile.unknown":"Zutaten, die in keiner Liste stehen","profile.unknown.allow":"Erlauben","profile.unknown.warn":"Erlauben, aber warnen","profile.unknown.exclude":"Ausschlie\xDFen (nur Vertr\xE4gliches)","profile.max_duration":"Maximale Zubereitungszeit (Minuten, leer = egal)","profile.tolerated":"Vertr\xE4glich","profile.not_tolerated":"Nicht vertr\xE4glich","profile.small_amounts":"Nur in kleinen Mengen","profile.small_help":"Eine Zutat pro Zeile, optional mit H\xF6chstmenge pro Portion, z. B. \u201E10 g Butter\u201C","profile.likes":"Vorlieben","profile.dislikes":"Abneigungen","profile.list_help":"Ein Eintrag pro Zeile","profile.summary":"{tol} vertr\xE4glich \xB7 {not} nicht vertr\xE4glich \xB7 {small} kleine Mengen","profile.fitting":"{n} passende Gerichte","shop.start":"Ab","shop.days":"Tage","shop.target":"To-do-Liste","shop.skip_existing":"Was schon offen auf der Liste steht, \xFCberspringen","shop.push":"In Liste \xFCbertragen","shop.empty":"Im gew\xE4hlten Zeitraum ist nichts geplant.","shop.result":"{added} hinzugef\xFCgt, {skipped} \xFCbersprungen.","shop.no_target":"Bitte eine To-do-Liste w\xE4hlen.","shop.select_all":"Alle","shop.select_none":"Keine","common.save":"Speichern","common.cancel":"Abbrechen","common.close":"Schlie\xDFen","common.delete":"L\xF6schen","common.confirm_delete":"Wirklich l\xF6schen?","common.add":"Hinzuf\xFCgen","common.loading":"L\xE4dt \u2026","common.error":"Fehler: {msg}","status.ok":"passt","status.warn":"mit Hinweis","status.excluded":"passt nicht","reason.not_suitable":"nicht f\xFCr diese Person vorgesehen","reason.too_long":"dauert zu lange ({duration} Min.)","reason.dislike":"Abneigung: {term}","reason.not_tolerated":"{ingredient} nicht vertr\xE4glich","reason.small_amount":"{ingredient} nur in kleinen Mengen","reason.small_amount_unchecked":"{ingredient}: Menge nicht pr\xFCfbar","reason.small_amount_exceeded":"{ingredient}: {amount} {unit} pro Portion (max. {max})","reason.unknown_ingredient":"{ingredient} steht in keiner Liste","reason.no_ingredients":"keine Zutaten hinterlegt","ingr.open":"Zutaten anklicken","ingr.title":"Vertr\xE4glichkeit \xB7 {name}","ingr.search":"Zutat suchen oder neu eingeben \u2026","ingr.filter.all":"Alle","ingr.filter.unknown":"Offen","ingr.filter.tolerated":"Vertr\xE4glich","ingr.filter.small":"Nur wenig","ingr.filter.not_tolerated":"Nicht vertr\xE4glich","ingr.state.tolerated":"vertr\xE4glich","ingr.state.small":"nur in kleinen Mengen","ingr.state.not_tolerated":"nicht vertr\xE4glich","ingr.by.tolerated":"vertr\xE4glich durch \u201E{term}\u201C","ingr.by.small":"nur wenig durch \u201E{term}\u201C","ingr.by.not_tolerated":"nicht vertr\xE4glich durch \u201E{term}\u201C","ingr.count":"in {n} Gerichten","ingr.no_dish":"in keinem Gericht","ingr.limit":"H\xF6chstens pro Portion:","ingr.add":"hinzuf\xFCgen:","ingr.none":"Keine Zutaten in dieser Auswahl.","ingr.done":"Fertig","ingr.hint_exclude":"Offene Zutaten gelten f\xFCr diese Person als nicht vertr\xE4glich. Gerichte werden erst vorgeschlagen, wenn alle ihre Zutaten als vertr\xE4glich markiert sind.","groups.quick":"Schnellauswahl: Fleisch, Fisch & Allergene","groups.help":"Ein Klick schlie\xDFt alle typischen Zutaten einer Gruppe aus \u2013 auch in neuen Gerichten. Einzelne Zutaten kannst du unten trotzdem mit \u2713 freigeben.","groups.meat":"Isst (durchgestrichen = isst nicht):","groups.allergens":"Allergien & Unvertr\xE4glichkeiten (rot = vertr\xE4gt nicht):","groups.without":"ohne {group}","ingr.by_group":"nicht vertr\xE4glich durch \u201E{group}\u201C","reason.group_excluded":"{ingredient}: {group}","profile.as_text":"Vertr\xE4glichkeit als Text bearbeiten","profile.as_text_help":"Dieselben Listen wie bei \u201EZutaten anklicken\u201C, hier als Text.","card.title":"Was gibt's heute?","card.title_label":"Titel","card.tomorrow":"Was gibt's morgen?","card.nothing":"Heute ist nichts geplant.","card.not_loaded":"Essensplaner ist nicht eingerichtet."},kt={title:"Meal planner","tab.plan":"Week","tab.dishes":"Dishes","tab.profiles":"People","tab.shopping":"Shopping","meal.breakfast":"Breakfast","meal.lunch":"Lunch","meal.dinner":"Dinner","meal.snack":"Snack","plan.week":"Week {week}","plan.today":"Today","plan.generate":"Plan week","plan.empty":"Nothing planned","plan.add_meal":"Meal","plan.shared":"Shared: {items}","plan.servings":"{n} serv.","gen.title":"Plan week","gen.days":"Days and meals","gen.profiles":"For whom?","gen.overwrite":"Re-plan meals that are already planned (manual ones are kept)","gen.run":"Plan","gen.done":"Plan created: {n} dishes planned.","gen.no_dish":"{day} {meal}: no suitable dish for {profiles}","slot.title":"{day} \xB7 {meal}","slot.for":"For","slot.add":"Choose dish","slot.remove":"Remove","slot.search":"Search dish \u2026","slot.show_all_meals":"All meal types","slot.show_unsuitable":"Show unsuitable too","slot.no_profiles":"Select at least one person first.","slot.nothing":"No dish for this meal yet.","dishes.search":"Search \u2026","dishes.new":"New dish","dishes.all_meals":"All","dishes.fits":"Suits","dishes.anyone":"Anyone","dishes.count":"{n} dishes","dishes.none":"No dishes found.","dish.minutes":"{n} min","dish.servings":"Servings","dish.ingredients":"Ingredients","dish.steps":"Preparation","dish.source":"Source","dish.compat":"Suitability","dish.edit":"Edit","edit.new_title":"New dish","edit.title":"Edit dish","edit.name":"Name","edit.meal_types":"Meals","edit.suitable_for":"Only for (none selected = everyone)","edit.base_servings":"Servings in recipe","edit.duration":"Duration (minutes)","edit.tags":"Tags (comma separated)","edit.ingredients":"Ingredients (one per line)","edit.ingredients_help":'e.g. "250 g chicken breast #protein", "150 g rice #side", "2 carrots", "salt"',"edit.steps":"Preparation (one step per line)","edit.source_url":"Source (URL)","edit.image":"Image","edit.upload":"Upload photo","edit.image_url":"Image URL","edit.image_from_url":"Use","edit.image_remove":"Remove image","edit.uploading":"Uploading \u2026","profile.new":"New person","profile.title":"Edit person","profile.name":"Name","profile.servings":"Servings","profile.unknown":"Ingredients not in any list","profile.unknown.allow":"Allow","profile.unknown.warn":"Allow with warning","profile.unknown.exclude":"Exclude (tolerated only)","profile.max_duration":"Maximum preparation time (minutes, empty = any)","profile.tolerated":"Tolerated","profile.not_tolerated":"Not tolerated","profile.small_amounts":"Only in small amounts","profile.small_help":'One ingredient per line, optionally with a maximum per serving, e.g. "10 g butter"',"profile.likes":"Likes","profile.dislikes":"Dislikes","profile.list_help":"One entry per line","profile.summary":"{tol} tolerated \xB7 {not} not tolerated \xB7 {small} small amounts","profile.fitting":"{n} suitable dishes","shop.start":"From","shop.days":"Days","shop.target":"To-do list","shop.skip_existing":"Skip items already open on the list","shop.push":"Send to list","shop.empty":"Nothing planned in this period.","shop.result":"{added} added, {skipped} skipped.","shop.no_target":"Please choose a to-do list.","shop.select_all":"All","shop.select_none":"None","common.save":"Save","common.cancel":"Cancel","common.close":"Close","common.delete":"Delete","common.confirm_delete":"Really delete?","common.add":"Add","common.loading":"Loading \u2026","common.error":"Error: {msg}","status.ok":"suitable","status.warn":"with note","status.excluded":"not suitable","reason.not_suitable":"not intended for this person","reason.too_long":"takes too long ({duration} min)","reason.dislike":"dislike: {term}","reason.not_tolerated":"{ingredient} not tolerated","reason.small_amount":"{ingredient} only in small amounts","reason.small_amount_unchecked":"{ingredient}: amount cannot be checked","reason.small_amount_exceeded":"{ingredient}: {amount} {unit} per serving (max {max})","reason.unknown_ingredient":"{ingredient} is not in any list","reason.no_ingredients":"no ingredients","ingr.open":"Tick ingredients","ingr.title":"Tolerances \xB7 {name}","ingr.search":"Search or enter new ingredient \u2026","ingr.filter.all":"All","ingr.filter.unknown":"Open","ingr.filter.tolerated":"Tolerated","ingr.filter.small":"Small amounts","ingr.filter.not_tolerated":"Not tolerated","ingr.state.tolerated":"tolerated","ingr.state.small":"only in small amounts","ingr.state.not_tolerated":"not tolerated","ingr.by.tolerated":'tolerated via "{term}"',"ingr.by.small":'small amounts via "{term}"',"ingr.by.not_tolerated":'not tolerated via "{term}"',"ingr.count":"in {n} dishes","ingr.no_dish":"in no dish","ingr.limit":"Maximum per serving:","ingr.add":"add:","ingr.none":"No ingredients in this selection.","ingr.done":"Done","ingr.hint_exclude":"Open ingredients count as not tolerated for this person. Dishes are only suggested once all their ingredients are marked as tolerated.","groups.quick":"Quick select: meat, fish & allergens","groups.help":"One click excludes all typical ingredients of a group \u2013 also in new dishes. You can still allow single ingredients below with \u2713.","groups.meat":"Eats (struck through = doesn't eat):","groups.allergens":"Allergies & intolerances (red = not tolerated):","groups.without":"no {group}","ingr.by_group":'not tolerated via "{group}"',"reason.group_excluded":"{ingredient}: {group}","profile.as_text":"Edit tolerances as text","profile.as_text_help":'The same lists as in "Tick ingredients", as text.',"card.title":"What's for today?","card.title_label":"Title","card.tomorrow":"What's for tomorrow?","card.nothing":"Nothing planned for today.","card.not_loaded":"Meal planner is not set up."},ge={de:me,en:kt};function rt(n,t,e={}){let s=n&&n.language&&n.language.split("-")[0]||"en",a=(ge[s]||kt)[t]??kt[t]??t;for(let[o,l]of Object.entries(e))a=a.replaceAll(`{${o}}`,String(l));return a}function A(n,t){let e=n&&n.language||"de";return t.toLocaleDateString(e,{weekday:"short",day:"numeric",month:"numeric"})}var b=m`
+var ee=Object.defineProperty;var se=(a,t,e)=>t in a?ee(a,t,{enumerable:!0,configurable:!0,writable:!0,value:e}):a[t]=e;var d=(a,t,e)=>(se(a,typeof t!="symbol"?t+"":t,e),e);var st=globalThis,it=st.ShadowRoot&&(st.ShadyCSS===void 0||st.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,ct=Symbol(),Et=new WeakMap,D=class{constructor(t,e,s){if(this._$cssResult$=!0,s!==ct)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e}get styleSheet(){let t=this.o,e=this.t;if(it&&t===void 0){let s=e!==void 0&&e.length===1;s&&(t=Et.get(e)),t===void 0&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),s&&Et.set(e,t))}return t}toString(){return this.cssText}},It=a=>new D(typeof a=="string"?a:a+"",void 0,ct),u=(a,...t)=>{let e=a.length===1?a[0]:t.reduce((s,i,n)=>s+(o=>{if(o._$cssResult$===!0)return o.cssText;if(typeof o=="number")return o;throw Error("Value passed to 'css' function must be a 'css' function result: "+o+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(i)+a[n+1],a[0]);return new D(e,a,ct)},Ct=(a,t)=>{if(it)a.adoptedStyleSheets=t.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(let e of t){let s=document.createElement("style"),i=st.litNonce;i!==void 0&&s.setAttribute("nonce",i),s.textContent=e.cssText,a.appendChild(s)}},ut=it?a=>a:a=>a instanceof CSSStyleSheet?(t=>{let e="";for(let s of t.cssRules)e+=s.cssText;return It(e)})(a):a;var{is:ie,defineProperty:ne,getOwnPropertyDescriptor:ae,getOwnPropertyNames:re,getOwnPropertySymbols:oe,getPrototypeOf:le}=Object,nt=globalThis,Mt=nt.trustedTypes,pe=Mt?Mt.emptyScript:"",de=nt.reactiveElementPolyfillSupport,O=(a,t)=>a,mt={toAttribute(a,t){switch(t){case Boolean:a=a?pe:null;break;case Object:case Array:a=a==null?a:JSON.stringify(a)}return a},fromAttribute(a,t){let e=a;switch(t){case Boolean:e=a!==null;break;case Number:e=a===null?null:Number(a);break;case Object:case Array:try{e=JSON.parse(a)}catch{e=null}}return e}},Pt=(a,t)=>!ie(a,t),zt={attribute:!0,type:String,converter:mt,reflect:!1,useDefault:!1,hasChanged:Pt};Symbol.metadata??=Symbol("metadata"),nt.litPropertyMetadata??=new WeakMap;var w=class extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??=[]).push(t)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,e=zt){if(e.state&&(e.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(t)&&((e=Object.create(e)).wrapped=!0),this.elementProperties.set(t,e),!e.noAccessor){let s=Symbol(),i=this.getPropertyDescriptor(t,s,e);i!==void 0&&ne(this.prototype,t,i)}}static getPropertyDescriptor(t,e,s){let{get:i,set:n}=ae(this.prototype,t)??{get(){return this[e]},set(o){this[e]=o}};return{get:i,set(o){let p=i?.call(this);n?.call(this,o),this.requestUpdate(t,p,s)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)??zt}static _$Ei(){if(this.hasOwnProperty(O("elementProperties")))return;let t=le(this);t.finalize(),t.l!==void 0&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties)}static finalize(){if(this.hasOwnProperty(O("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(O("properties"))){let e=this.properties,s=[...re(e),...oe(e)];for(let i of s)this.createProperty(i,e[i])}let t=this[Symbol.metadata];if(t!==null){let e=litPropertyMetadata.get(t);if(e!==void 0)for(let[s,i]of e)this.elementProperties.set(s,i)}this._$Eh=new Map;for(let[e,s]of this.elementProperties){let i=this._$Eu(e,s);i!==void 0&&this._$Eh.set(i,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(t){let e=[];if(Array.isArray(t)){let s=new Set(t.flat(1/0).reverse());for(let i of s)e.unshift(ut(i))}else t!==void 0&&e.push(ut(t));return e}static _$Eu(t,e){let s=e.attribute;return s===!1?void 0:typeof s=="string"?s:typeof t=="string"?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this))}addController(t){(this._$EO??=new Set).add(t),this.renderRoot!==void 0&&this.isConnected&&t.hostConnected?.()}removeController(t){this._$EO?.delete(t)}_$E_(){let t=new Map,e=this.constructor.elementProperties;for(let s of e.keys())this.hasOwnProperty(s)&&(t.set(s,this[s]),delete this[s]);t.size>0&&(this._$Ep=t)}createRenderRoot(){let t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return Ct(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(!0),this._$EO?.forEach(t=>t.hostConnected?.())}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.())}attributeChangedCallback(t,e,s){this._$AK(t,s)}_$ET(t,e){let s=this.constructor.elementProperties.get(t),i=this.constructor._$Eu(t,s);if(i!==void 0&&s.reflect===!0){let n=(s.converter?.toAttribute!==void 0?s.converter:mt).toAttribute(e,s.type);this._$Em=t,n==null?this.removeAttribute(i):this.setAttribute(i,n),this._$Em=null}}_$AK(t,e){let s=this.constructor,i=s._$Eh.get(t);if(i!==void 0&&this._$Em!==i){let n=s.getPropertyOptions(i),o=typeof n.converter=="function"?{fromAttribute:n.converter}:n.converter?.fromAttribute!==void 0?n.converter:mt;this._$Em=i;let p=o.fromAttribute(e,n.type);this[i]=p??this._$Ej?.get(i)??p,this._$Em=null}}requestUpdate(t,e,s,i=!1,n){if(t!==void 0){let o=this.constructor;if(i===!1&&(n=this[t]),s??=o.getPropertyOptions(t),!((s.hasChanged??Pt)(n,e)||s.useDefault&&s.reflect&&n===this._$Ej?.get(t)&&!this.hasAttribute(o._$Eu(t,s))))return;this.C(t,e,s)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(t,e,{useDefault:s,reflect:i,wrapped:n},o){s&&!(this._$Ej??=new Map).has(t)&&(this._$Ej.set(t,o??e??this[t]),n!==!0||o!==void 0)||(this._$AL.has(t)||(this.hasUpdated||s||(e=void 0),this._$AL.set(t,e)),i===!0&&this._$Em!==t&&(this._$Eq??=new Set).add(t))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}let t=this.scheduleUpdate();return t!=null&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(let[i,n]of this._$Ep)this[i]=n;this._$Ep=void 0}let s=this.constructor.elementProperties;if(s.size>0)for(let[i,n]of s){let{wrapped:o}=n,p=this[i];o!==!0||this._$AL.has(i)||p===void 0||this.C(i,void 0,n,p)}}let t=!1,e=this._$AL;try{t=this.shouldUpdate(e),t?(this.willUpdate(e),this._$EO?.forEach(s=>s.hostUpdate?.()),this.update(e)):this._$EM()}catch(s){throw t=!1,this._$EM(),s}t&&this._$AE(e)}willUpdate(t){}_$AE(t){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return!0}update(t){this._$Eq&&=this._$Eq.forEach(e=>this._$ET(e,this[e])),this._$EM()}updated(t){}firstUpdated(t){}};w.elementStyles=[],w.shadowRootOptions={mode:"open"},w[O("elementProperties")]=new Map,w[O("finalized")]=new Map,de?.({ReactiveElement:w}),(nt.reactiveElementVersions??=[]).push("2.1.2");var yt=globalThis,Ut=a=>a,at=yt.trustedTypes,Lt=at?at.createPolicy("lit-html",{createHTML:a=>a}):void 0,Bt="$lit$",E=`lit$${Math.random().toFixed(9).slice(2)}$`,Ft="?"+E,he=`<${Ft}>`,M=document,B=()=>M.createComment(""),F=a=>a===null||typeof a!="object"&&typeof a!="function",vt=Array.isArray,ce=a=>vt(a)||typeof a?.[Symbol.iterator]=="function",gt=`[ 	
+\f\r]`,j=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Nt=/-->/g,Tt=/>/g,I=RegExp(`>|${gt}(?:([^\\s"'>=/]+)(${gt}*=${gt}*(?:[^ 	
+\f\r"'\`<>=]|("|')|))|$)`,"g"),Dt=/'/g,Ot=/"/g,Rt=/^(?:script|style|textarea|title)$/i,wt=a=>(t,...e)=>({_$litType$:a,strings:t,values:e}),r=wt(1),Ee=wt(2),Ie=wt(3),z=Symbol.for("lit-noChange"),f=Symbol.for("lit-nothing"),jt=new WeakMap,C=M.createTreeWalker(M,129);function Ht(a,t){if(!vt(a)||!a.hasOwnProperty("raw"))throw Error("invalid template strings array");return Lt!==void 0?Lt.createHTML(t):t}var ue=(a,t)=>{let e=a.length-1,s=[],i,n=t===2?"<svg>":t===3?"<math>":"",o=j;for(let p=0;p<e;p++){let l=a[p],h,g,m=-1,v=0;for(;v<l.length&&(o.lastIndex=v,g=o.exec(l),g!==null);)v=o.lastIndex,o===j?g[1]==="!--"?o=Nt:g[1]!==void 0?o=Tt:g[2]!==void 0?(Rt.test(g[2])&&(i=RegExp("</"+g[2],"g")),o=I):g[3]!==void 0&&(o=I):o===I?g[0]===">"?(o=i??j,m=-1):g[1]===void 0?m=-2:(m=o.lastIndex-g[2].length,h=g[1],o=g[3]===void 0?I:g[3]==='"'?Ot:Dt):o===Ot||o===Dt?o=I:o===Nt||o===Tt?o=j:(o=I,i=void 0);let S=o===I&&a[p+1].startsWith("/>")?" ":"";n+=o===j?l+he:m>=0?(s.push(h),l.slice(0,m)+Bt+l.slice(m)+E+S):l+E+(m===-2?p:S)}return[Ht(a,n+(a[e]||"<?>")+(t===2?"</svg>":t===3?"</math>":"")),s]},R=class a{constructor({strings:t,_$litType$:e},s){let i;this.parts=[];let n=0,o=0,p=t.length-1,l=this.parts,[h,g]=ue(t,e);if(this.el=a.createElement(h,s),C.currentNode=this.el.content,e===2||e===3){let m=this.el.content.firstChild;m.replaceWith(...m.childNodes)}for(;(i=C.nextNode())!==null&&l.length<p;){if(i.nodeType===1){if(i.hasAttributes())for(let m of i.getAttributeNames())if(m.endsWith(Bt)){let v=g[o++],S=i.getAttribute(m).split(E),et=/([.?@])?(.*)/.exec(v);l.push({type:1,index:n,name:et[2],strings:S,ctor:et[1]==="."?_t:et[1]==="?"?bt:et[1]==="@"?$t:L}),i.removeAttribute(m)}else m.startsWith(E)&&(l.push({type:6,index:n}),i.removeAttribute(m));if(Rt.test(i.tagName)){let m=i.textContent.split(E),v=m.length-1;if(v>0){i.textContent=at?at.emptyScript:"";for(let S=0;S<v;S++)i.append(m[S],B()),C.nextNode(),l.push({type:2,index:++n});i.append(m[v],B())}}}else if(i.nodeType===8)if(i.data===Ft)l.push({type:2,index:n});else{let m=-1;for(;(m=i.data.indexOf(E,m+1))!==-1;)l.push({type:7,index:n}),m+=E.length-1}n++}}static createElement(t,e){let s=M.createElement("template");return s.innerHTML=t,s}};function U(a,t,e=a,s){if(t===z)return t;let i=s!==void 0?e._$Co?.[s]:e._$Cl,n=F(t)?void 0:t._$litDirective$;return i?.constructor!==n&&(i?._$AO?.(!1),n===void 0?i=void 0:(i=new n(a),i._$AT(a,e,s)),s!==void 0?(e._$Co??=[])[s]=i:e._$Cl=i),i!==void 0&&(t=U(a,i._$AS(a,t.values),i,s)),t}var ft=class{constructor(t,e){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){let{el:{content:e},parts:s}=this._$AD,i=(t?.creationScope??M).importNode(e,!0);C.currentNode=i;let n=C.nextNode(),o=0,p=0,l=s[0];for(;l!==void 0;){if(o===l.index){let h;l.type===2?h=new H(n,n.nextSibling,this,t):l.type===1?h=new l.ctor(n,l.name,l.strings,this,t):l.type===6&&(h=new xt(n,this,t)),this._$AV.push(h),l=s[++p]}o!==l?.index&&(n=C.nextNode(),o++)}return C.currentNode=M,i}p(t){let e=0;for(let s of this._$AV)s!==void 0&&(s.strings!==void 0?(s._$AI(t,s,e),e+=s.strings.length-2):s._$AI(t[e])),e++}},H=class a{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,e,s,i){this.type=2,this._$AH=f,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=s,this.options=i,this._$Cv=i?.isConnected??!0}get parentNode(){let t=this._$AA.parentNode,e=this._$AM;return e!==void 0&&t?.nodeType===11&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=U(this,t,e),F(t)?t===f||t==null||t===""?(this._$AH!==f&&this._$AR(),this._$AH=f):t!==this._$AH&&t!==z&&this._(t):t._$litType$!==void 0?this.$(t):t.nodeType!==void 0?this.T(t):ce(t)?this.k(t):this._(t)}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t))}_(t){this._$AH!==f&&F(this._$AH)?this._$AA.nextSibling.data=t:this.T(M.createTextNode(t)),this._$AH=t}$(t){let{values:e,_$litType$:s}=t,i=typeof s=="number"?this._$AC(t):(s.el===void 0&&(s.el=R.createElement(Ht(s.h,s.h[0]),this.options)),s);if(this._$AH?._$AD===i)this._$AH.p(e);else{let n=new ft(i,this),o=n.u(this.options);n.p(e),this.T(o),this._$AH=n}}_$AC(t){let e=jt.get(t.strings);return e===void 0&&jt.set(t.strings,e=new R(t)),e}k(t){vt(this._$AH)||(this._$AH=[],this._$AR());let e=this._$AH,s,i=0;for(let n of t)i===e.length?e.push(s=new a(this.O(B()),this.O(B()),this,this.options)):s=e[i],s._$AI(n),i++;i<e.length&&(this._$AR(s&&s._$AB.nextSibling,i),e.length=i)}_$AR(t=this._$AA.nextSibling,e){for(this._$AP?.(!1,!0,e);t!==this._$AB;){let s=Ut(t).nextSibling;Ut(t).remove(),t=s}}setConnected(t){this._$AM===void 0&&(this._$Cv=t,this._$AP?.(t))}},L=class{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,e,s,i,n){this.type=1,this._$AH=f,this._$AN=void 0,this.element=t,this.name=e,this._$AM=i,this.options=n,s.length>2||s[0]!==""||s[1]!==""?(this._$AH=Array(s.length-1).fill(new String),this.strings=s):this._$AH=f}_$AI(t,e=this,s,i){let n=this.strings,o=!1;if(n===void 0)t=U(this,t,e,0),o=!F(t)||t!==this._$AH&&t!==z,o&&(this._$AH=t);else{let p=t,l,h;for(t=n[0],l=0;l<n.length-1;l++)h=U(this,p[s+l],e,l),h===z&&(h=this._$AH[l]),o||=!F(h)||h!==this._$AH[l],h===f?t=f:t!==f&&(t+=(h??"")+n[l+1]),this._$AH[l]=h}o&&!i&&this.j(t)}j(t){t===f?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"")}},_t=class extends L{constructor(){super(...arguments),this.type=3}j(t){this.element[this.name]=t===f?void 0:t}},bt=class extends L{constructor(){super(...arguments),this.type=4}j(t){this.element.toggleAttribute(this.name,!!t&&t!==f)}},$t=class extends L{constructor(t,e,s,i,n){super(t,e,s,i,n),this.type=5}_$AI(t,e=this){if((t=U(this,t,e,0)??f)===z)return;let s=this._$AH,i=t===f&&s!==f||t.capture!==s.capture||t.once!==s.once||t.passive!==s.passive,n=t!==f&&(s===f||i);i&&this.element.removeEventListener(this.name,this,s),n&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t)}},xt=class{constructor(t,e,s){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=s}get _$AU(){return this._$AM._$AU}_$AI(t){U(this,t)}};var me=yt.litHtmlPolyfillSupport;me?.(R,H),(yt.litHtmlVersions??=[]).push("3.3.3");var Wt=(a,t,e)=>{let s=e?.renderBefore??t,i=s._$litPart$;if(i===void 0){let n=e?.renderBefore??null;s._$litPart$=i=new H(t.insertBefore(B(),n),n,void 0,e??{})}return i._$AI(a),i};var kt=globalThis,$=class extends w{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){let t=super.createRenderRoot();return this.renderOptions.renderBefore??=t.firstChild,t}update(t){let e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=Wt(e,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return z}};$._$litElement$=!0,$.finalized=!0,kt.litElementHydrateSupport?.({LitElement:$});var ge=kt.litElementPolyfillSupport;ge?.({LitElement:$});(kt.litElementVersions??=[]).push("4.2.2");var x=["breakfast","lunch","dinner","snack"],rt=class{constructor(t){this.hass=t}call(t,e={}){return this.hass.callWS({type:`essensplaner/${t}`,...e})}data(){return this.call("data")}compat(){return this.call("compat/all")}dishCheck(t){return this.call("dish/check",{dish_id:t})}saveDish(t){return this.call("dish/save",{dish:t})}deleteDish(t){return this.call("dish/delete",{dish_id:t})}saveProfile(t){return this.call("profile/save",{profile:t})}deleteProfile(t){return this.call("profile/delete",{profile_id:t})}profileIngredients(t){return this.call("profile/ingredients",{profile_id:t})}profileGroups(t){return this.call("profile/groups",{profile_id:t})}setGroups(t,e){return this.call("profile/set_groups",{profile_id:t,excluded_groups:e})}setIngredient(t){return this.call("profile/set_ingredient",t)}parseIngredients(t){return this.call("parse_ingredients",{text:t})}plan(t,e){return this.call("plan/get",{start_date:t,days:e})}setMeal(t,e,s){return this.call("plan/set_meal",{date:t,meal_type:e,assignments:s})}generate(t){return this.call("plan/generate",t)}shoppingPreview(t,e){return this.call("shopping/preview",{start_date:t,days:e})}shoppingPush(t){return this.call("shopping/push",t)}imageFromUrl(t){return this.call("image/from_url",{url:t})}async uploadImage(t){let e=new FormData;e.append("file",t);let s=await this.hass.fetchWithAuth("/api/essensplaner/upload",{method:"POST",body:e}),i=await s.json();if(!s.ok)throw new Error(i.message||s.statusText);return{id:i.id,source:i.source}}subscribe(t){return this.hass.connection.subscribeMessage(t,{type:"essensplaner/subscribe"})}};function N(a){return a&&a.id?`/api/essensplaner/images/${a.id}`:null}function y(a){let t=a.getFullYear(),e=String(a.getMonth()+1).padStart(2,"0"),s=String(a.getDate()).padStart(2,"0");return`${t}-${e}-${s}`}function T(a){let[t,e,s]=a.split("-").map(Number);return new Date(t,e-1,s)}function P(a,t){let e=new Date(a);return e.setDate(e.getDate()+t),e}function Zt(a){let t=new Date(a.getFullYear(),a.getMonth(),a.getDate()),e=(t.getDay()+6)%7;return P(t,-e)}function Gt(a){let t=new Date(Date.UTC(a.getFullYear(),a.getMonth(),a.getDate())),e=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-e);let s=new Date(Date.UTC(t.getUTCFullYear(),0,1));return Math.ceil(((t-s)/864e5+1)/7)}var qt={protein:"#protein",side:"#beilage",veg:"#gemuese"};function k(a){if(a==null)return"";let t=Math.round(a*100)/100;return String(t).replace(".",",")}function Kt(a){let t=[];return a.amount!==null&&a.amount!==void 0&&(t.push(k(a.amount)),a.unit&&t.push(a.unit)),t.push(a.name),qt[a.role]&&t.push(qt[a.role]),t.join(" ")}function Yt(a,t){if(a.amount===null||a.amount===void 0)return"";let e=a.amount*t;return["g","ml"].includes(a.unit)&&e>=20?e=Math.round(e/5)*5:(!a.unit||["Stk","Zehe","Dose","Pkg","Bund","Becher","Glas"].includes(a.unit))&&(e=Math.round(e*2)/2),a.unit==="g"&&e>=1e3?`${k(e/1e3)} kg`:a.unit==="ml"&&e>=1e3?`${k(e/1e3)} l`:a.unit?`${k(e)} ${a.unit}`:k(e)}var fe={title:"Essensplaner","tab.plan":"Wochenplan","tab.dishes":"Gerichte","tab.profiles":"Personen","tab.shopping":"Einkauf","meal.breakfast":"Fr\xFChst\xFCck","meal.lunch":"Mittag","meal.dinner":"Abend","meal.snack":"Snack","plan.week":"KW {week}","plan.today":"Heute","plan.generate":"Woche planen","plan.empty":"Nichts geplant","plan.add_meal":"Mahlzeit","plan.shared":"Gemeinsam: {items}","plan.servings":"{n} Port.","gen.title":"Woche planen","gen.days":"Tage und Mahlzeiten","gen.profiles":"F\xFCr wen?","gen.overwrite":"Bereits geplante Mahlzeiten neu planen (manuell gesetzte bleiben)","gen.run":"Planen","gen.done":"Plan erstellt: {n} Gerichte eingeplant.","gen.no_dish":"{day} {meal}: kein passendes Gericht f\xFCr {profiles}","slot.title":"{day} \xB7 {meal}","slot.for":"F\xFCr","slot.add":"Gericht w\xE4hlen","slot.remove":"Entfernen","slot.search":"Gericht suchen \u2026","slot.show_all_meals":"Alle Mahlzeitentypen","slot.show_unsuitable":"Auch unpassende zeigen","slot.no_profiles":"W\xE4hle zuerst mindestens eine Person.","slot.nothing":"Noch kein Gericht f\xFCr diese Mahlzeit.","dishes.search":"Suchen \u2026","dishes.new":"Neues Gericht","dishes.all_meals":"Alle","dishes.fits":"Passt f\xFCr","dishes.anyone":"Egal","dishes.count":"{n} Gerichte","dishes.none":"Keine Gerichte gefunden.","dish.minutes":"{n} Min.","dish.servings":"Portionen","dish.ingredients":"Zutaten","dish.steps":"Zubereitung","dish.source":"Quelle","dish.compat":"Vertr\xE4glichkeit","dish.edit":"Bearbeiten","edit.new_title":"Neues Gericht","edit.title":"Gericht bearbeiten","edit.name":"Name","edit.meal_types":"Mahlzeiten","edit.suitable_for":"Nur f\xFCr (keine Auswahl = alle)","edit.base_servings":"Portionen im Rezept","edit.duration":"Dauer (Minuten)","edit.tags":"Tags (durch Komma getrennt)","edit.ingredients":"Zutaten (eine pro Zeile)","edit.ingredients_help":"z. B. \u201E250 g H\xFChnerbrust #protein\u201C, \u201E150 g Reis #beilage\u201C, \u201E2 Karotten\u201C, \u201ESalz\u201C","edit.steps":"Zubereitung (ein Schritt pro Zeile)","edit.source_url":"Quelle (URL)","edit.image":"Bild","edit.upload":"Foto hochladen","edit.image_url":"Bild-URL","edit.image_from_url":"\xDCbernehmen","edit.image_remove":"Bild entfernen","edit.uploading":"Wird hochgeladen \u2026","profile.new":"Neue Person","profile.title":"Person bearbeiten","profile.name":"Name","profile.servings":"Portionen","profile.unknown":"Zutaten, die in keiner Liste stehen","profile.unknown.allow":"Erlauben","profile.unknown.warn":"Erlauben, aber warnen","profile.unknown.exclude":"Ausschlie\xDFen (nur Vertr\xE4gliches)","profile.max_duration":"Maximale Zubereitungszeit (Minuten, leer = egal)","profile.tolerated":"Vertr\xE4glich","profile.not_tolerated":"Nicht vertr\xE4glich","profile.small_amounts":"Nur in kleinen Mengen","profile.small_help":"Eine Zutat pro Zeile, optional mit H\xF6chstmenge pro Portion, z. B. \u201E10 g Butter\u201C","profile.likes":"Vorlieben","profile.dislikes":"Abneigungen","profile.list_help":"Ein Eintrag pro Zeile","profile.summary":"{tol} vertr\xE4glich \xB7 {not} nicht vertr\xE4glich \xB7 {small} kleine Mengen","profile.fitting":"{n} passende Gerichte","shop.start":"Ab","shop.days":"Tage","shop.target":"To-do-Liste","shop.skip_existing":"Was schon offen auf der Liste steht, \xFCberspringen","shop.push":"In Liste \xFCbertragen","shop.empty":"Im gew\xE4hlten Zeitraum ist nichts geplant.","shop.result":"{added} hinzugef\xFCgt, {skipped} \xFCbersprungen.","shop.no_target":"Bitte eine To-do-Liste w\xE4hlen.","shop.select_all":"Alle","shop.select_none":"Keine","common.save":"Speichern","common.cancel":"Abbrechen","common.close":"Schlie\xDFen","common.delete":"L\xF6schen","common.confirm_delete":"Wirklich l\xF6schen?","common.add":"Hinzuf\xFCgen","common.loading":"L\xE4dt \u2026","common.error":"Fehler: {msg}","status.ok":"passt","status.warn":"mit Hinweis","status.excluded":"passt nicht","reason.not_suitable":"nicht f\xFCr diese Person vorgesehen","reason.too_long":"dauert zu lange ({duration} Min.)","reason.dislike":"Abneigung: {term}","reason.not_tolerated":"{ingredient} nicht vertr\xE4glich","reason.small_amount":"{ingredient} nur in kleinen Mengen","reason.small_amount_unchecked":"{ingredient}: Menge nicht pr\xFCfbar","reason.small_amount_exceeded":"{ingredient}: {amount} {unit} pro Portion (max. {max})","reason.unknown_ingredient":"{ingredient} steht in keiner Liste","reason.no_ingredients":"keine Zutaten hinterlegt","ingr.open":"Zutaten anklicken","ingr.title":"Vertr\xE4glichkeit \xB7 {name}","ingr.search":"Zutat suchen oder neu eingeben \u2026","ingr.filter.all":"Alle","ingr.filter.unknown":"Offen","ingr.filter.tolerated":"Vertr\xE4glich","ingr.filter.small":"Nur wenig","ingr.filter.not_tolerated":"Nicht vertr\xE4glich","ingr.state.tolerated":"vertr\xE4glich","ingr.state.small":"nur in kleinen Mengen","ingr.state.not_tolerated":"nicht vertr\xE4glich","ingr.by.tolerated":"vertr\xE4glich durch \u201E{term}\u201C","ingr.by.small":"nur wenig durch \u201E{term}\u201C","ingr.by.not_tolerated":"nicht vertr\xE4glich durch \u201E{term}\u201C","ingr.count":"in {n} Gerichten","ingr.no_dish":"in keinem Gericht","ingr.limit":"H\xF6chstens pro Portion:","ingr.add":"hinzuf\xFCgen:","ingr.none":"Keine Zutaten in dieser Auswahl.","ingr.done":"Fertig","ingr.hint_exclude":"Offene Zutaten gelten f\xFCr diese Person als nicht vertr\xE4glich. Gerichte werden erst vorgeschlagen, wenn alle ihre Zutaten als vertr\xE4glich markiert sind.","groups.button":"Allergene","groups.title":"Allergene & Fleisch \xB7 {name}","groups.intro":"Schalter an = vertr\xE4gt bzw. isst die Person nicht. Alle typischen Zutaten der Gruppe gelten dann als nicht vertr\xE4glich \u2013 auch in Gerichten, die sp\xE4ter dazukommen. Einzelne Zutaten lassen sich in der Zutatenliste trotzdem mit \u2713 freigeben.","groups.allergens_title":"Allergien & Unvertr\xE4glichkeiten","groups.meat_title":"Fleisch & Fisch \u2013 isst die Person nicht","groups.affects":"betrifft {n} Zutaten deiner Gerichte","groups.affects_one":"betrifft 1 Zutat deiner Gerichte","groups.affects_none":"kommt in deinen Gerichten derzeit nicht vor","groups.show_all":"alle {n} zeigen","groups.active":"{n} ausgeschlossen","groups.back":"Zur\xFCck zur Zutatenliste","groups.bar_title":"Ausgeschlossen (Allergene & Fleisch):","groups.none":"nichts ausgeschlossen","groups.editor_title":"Allergene & Fleisch (rot = ausgeschlossen)","groups.disclaimer":"Die Gruppen sind eine Auswahlhilfe und ersetzen keine Allergenkennzeichnung verarbeiteter Produkte.","groups.meat":"Isst nicht:","groups.allergens":"Allergien & Unvertr\xE4glichkeiten:","groups.without":"ohne {group}","ingr.by_group":"nicht vertr\xE4glich durch \u201E{group}\u201C","reason.group_excluded":"{ingredient}: {group}","profile.as_text":"Vertr\xE4glichkeit als Text bearbeiten","profile.as_text_help":"Dieselben Listen wie bei \u201EZutaten anklicken\u201C, hier als Text.","card.title":"Was gibt's heute?","card.title_label":"Titel","card.tomorrow":"Was gibt's morgen?","card.nothing":"Heute ist nichts geplant.","card.not_loaded":"Essensplaner ist nicht eingerichtet."},At={title:"Meal planner","tab.plan":"Week","tab.dishes":"Dishes","tab.profiles":"People","tab.shopping":"Shopping","meal.breakfast":"Breakfast","meal.lunch":"Lunch","meal.dinner":"Dinner","meal.snack":"Snack","plan.week":"Week {week}","plan.today":"Today","plan.generate":"Plan week","plan.empty":"Nothing planned","plan.add_meal":"Meal","plan.shared":"Shared: {items}","plan.servings":"{n} serv.","gen.title":"Plan week","gen.days":"Days and meals","gen.profiles":"For whom?","gen.overwrite":"Re-plan meals that are already planned (manual ones are kept)","gen.run":"Plan","gen.done":"Plan created: {n} dishes planned.","gen.no_dish":"{day} {meal}: no suitable dish for {profiles}","slot.title":"{day} \xB7 {meal}","slot.for":"For","slot.add":"Choose dish","slot.remove":"Remove","slot.search":"Search dish \u2026","slot.show_all_meals":"All meal types","slot.show_unsuitable":"Show unsuitable too","slot.no_profiles":"Select at least one person first.","slot.nothing":"No dish for this meal yet.","dishes.search":"Search \u2026","dishes.new":"New dish","dishes.all_meals":"All","dishes.fits":"Suits","dishes.anyone":"Anyone","dishes.count":"{n} dishes","dishes.none":"No dishes found.","dish.minutes":"{n} min","dish.servings":"Servings","dish.ingredients":"Ingredients","dish.steps":"Preparation","dish.source":"Source","dish.compat":"Suitability","dish.edit":"Edit","edit.new_title":"New dish","edit.title":"Edit dish","edit.name":"Name","edit.meal_types":"Meals","edit.suitable_for":"Only for (none selected = everyone)","edit.base_servings":"Servings in recipe","edit.duration":"Duration (minutes)","edit.tags":"Tags (comma separated)","edit.ingredients":"Ingredients (one per line)","edit.ingredients_help":'e.g. "250 g chicken breast #protein", "150 g rice #side", "2 carrots", "salt"',"edit.steps":"Preparation (one step per line)","edit.source_url":"Source (URL)","edit.image":"Image","edit.upload":"Upload photo","edit.image_url":"Image URL","edit.image_from_url":"Use","edit.image_remove":"Remove image","edit.uploading":"Uploading \u2026","profile.new":"New person","profile.title":"Edit person","profile.name":"Name","profile.servings":"Servings","profile.unknown":"Ingredients not in any list","profile.unknown.allow":"Allow","profile.unknown.warn":"Allow with warning","profile.unknown.exclude":"Exclude (tolerated only)","profile.max_duration":"Maximum preparation time (minutes, empty = any)","profile.tolerated":"Tolerated","profile.not_tolerated":"Not tolerated","profile.small_amounts":"Only in small amounts","profile.small_help":'One ingredient per line, optionally with a maximum per serving, e.g. "10 g butter"',"profile.likes":"Likes","profile.dislikes":"Dislikes","profile.list_help":"One entry per line","profile.summary":"{tol} tolerated \xB7 {not} not tolerated \xB7 {small} small amounts","profile.fitting":"{n} suitable dishes","shop.start":"From","shop.days":"Days","shop.target":"To-do list","shop.skip_existing":"Skip items already open on the list","shop.push":"Send to list","shop.empty":"Nothing planned in this period.","shop.result":"{added} added, {skipped} skipped.","shop.no_target":"Please choose a to-do list.","shop.select_all":"All","shop.select_none":"None","common.save":"Save","common.cancel":"Cancel","common.close":"Close","common.delete":"Delete","common.confirm_delete":"Really delete?","common.add":"Add","common.loading":"Loading \u2026","common.error":"Error: {msg}","status.ok":"suitable","status.warn":"with note","status.excluded":"not suitable","reason.not_suitable":"not intended for this person","reason.too_long":"takes too long ({duration} min)","reason.dislike":"dislike: {term}","reason.not_tolerated":"{ingredient} not tolerated","reason.small_amount":"{ingredient} only in small amounts","reason.small_amount_unchecked":"{ingredient}: amount cannot be checked","reason.small_amount_exceeded":"{ingredient}: {amount} {unit} per serving (max {max})","reason.unknown_ingredient":"{ingredient} is not in any list","reason.no_ingredients":"no ingredients","ingr.open":"Tick ingredients","ingr.title":"Tolerances \xB7 {name}","ingr.search":"Search or enter new ingredient \u2026","ingr.filter.all":"All","ingr.filter.unknown":"Open","ingr.filter.tolerated":"Tolerated","ingr.filter.small":"Small amounts","ingr.filter.not_tolerated":"Not tolerated","ingr.state.tolerated":"tolerated","ingr.state.small":"only in small amounts","ingr.state.not_tolerated":"not tolerated","ingr.by.tolerated":'tolerated via "{term}"',"ingr.by.small":'small amounts via "{term}"',"ingr.by.not_tolerated":'not tolerated via "{term}"',"ingr.count":"in {n} dishes","ingr.no_dish":"in no dish","ingr.limit":"Maximum per serving:","ingr.add":"add:","ingr.none":"No ingredients in this selection.","ingr.done":"Done","ingr.hint_exclude":"Open ingredients count as not tolerated for this person. Dishes are only suggested once all their ingredients are marked as tolerated.","groups.button":"Allergens","groups.title":"Allergens & meat \xB7 {name}","groups.intro":"Switch on = this person does not tolerate or eat it. All typical ingredients of the group then count as not tolerated \u2013 also in dishes added later. Single ingredients can still be allowed in the ingredient list with \u2713.","groups.allergens_title":"Allergies & intolerances","groups.meat_title":"Meat & fish \u2013 does not eat","groups.affects":"affects {n} ingredients of your dishes","groups.affects_one":"affects 1 ingredient of your dishes","groups.affects_none":"currently not in any of your dishes","groups.show_all":"show all {n}","groups.active":"{n} excluded","groups.back":"Back to ingredient list","groups.bar_title":"Excluded (allergens & meat):","groups.none":"nothing excluded","groups.editor_title":"Allergens & meat (red = excluded)","groups.disclaimer":"The groups are a selection aid and do not replace allergen labelling of processed products.","groups.meat":"Does not eat:","groups.allergens":"Allergies & intolerances:","groups.without":"no {group}","ingr.by_group":'not tolerated via "{group}"',"reason.group_excluded":"{ingredient}: {group}","profile.as_text":"Edit tolerances as text","profile.as_text_help":'The same lists as in "Tick ingredients", as text.',"card.title":"What's for today?","card.title_label":"Title","card.tomorrow":"What's for tomorrow?","card.nothing":"Nothing planned for today.","card.not_loaded":"Meal planner is not set up."},_e={de:fe,en:At};function ot(a,t,e={}){let s=a&&a.language&&a.language.split("-")[0]||"en",n=(_e[s]||At)[t]??At[t]??t;for(let[o,p]of Object.entries(e))n=n.replaceAll(`{${o}}`,String(p));return n}function A(a,t){let e=a&&a.language||"de";return t.toLocaleDateString(e,{weekday:"short",day:"numeric",month:"numeric"})}var b=u`
   :host {
     --ep-radius: var(--ha-card-border-radius, 12px);
     --ep-gap: 12px;
@@ -212,7 +212,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
   ha-icon {
     --mdc-icon-size: 22px;
   }
-`,Yt=m`
+`,Vt=u`
   .backdrop {
     position: fixed;
     inset: 0;
@@ -273,32 +273,32 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       border-radius: 0;
     }
   }
-`;var f=class extends ${t(t,e){return rt(this.hass,t,e)}get profiles(){return this.data&&this.data.profiles||[]}get dishes(){return this.data&&this.data.dishes||[]}dish(t){return this.dishes.find(e=>e.id===t)}profileName(t){let e=this.profiles.find(s=>s.id===t);return e?e.name:"?"}get groups(){return this.data&&this.data.groups||[]}groupLabel(t){let e=this.groups.find(i=>i.id===t);return e?(this.hass&&this.hass.language||"de").startsWith("de")?e.label_de:e.label_en:t}groupChips(t,e,s=!1){let i=this.groups.filter(o=>o.kind==="meat"),a=this.groups.filter(o=>o.kind==="allergen");return r`
-      <div class="group-block">
-        <div class="group-title">${this.t("groups.meat")}</div>
-        <div class="chips">
-          ${i.map(o=>{let l=!t.includes(o.id);return r`<button class="chip ${l?"on":"off-strike"}" ?disabled=${s}
-              aria-pressed=${l} @click=${()=>e(o.id)}>${l?"\u2713 ":""}${this.groupLabel(o.id)}</button>`})}
-        </div>
-      </div>
+`;var _=class extends ${t(t,e){return ot(this.hass,t,e)}get profiles(){return this.data&&this.data.profiles||[]}get dishes(){return this.data&&this.data.dishes||[]}dish(t){return this.dishes.find(e=>e.id===t)}profileName(t){let e=this.profiles.find(s=>s.id===t);return e?e.name:"?"}get groups(){return this.data&&this.data.groups||[]}groupLabel(t){let e=this.groups.find(i=>i.id===t);return e?(this.hass&&this.hass.language||"de").startsWith("de")?e.label_de:e.label_en:t}groupChips(t,e,s=!1){let i=this.groups.filter(o=>o.kind==="meat"),n=this.groups.filter(o=>o.kind==="allergen");return r`
       <div class="group-block">
         <div class="group-title">${this.t("groups.allergens")}</div>
         <div class="chips">
-          ${a.map(o=>{let l=t.includes(o.id);return r`<button class="chip ${l?"on bad":""}" ?disabled=${s}
-              aria-pressed=${l} @click=${()=>e(o.id)}>${l?"\u2715 ":""}${this.groupLabel(o.id)}</button>`})}
+          ${n.map(o=>{let p=t.includes(o.id);return r`<button class="chip ${p?"on bad":""}" ?disabled=${s}
+              aria-pressed=${p} @click=${()=>e(o.id)}>${p?"\u2715 ":""}${this.groupLabel(o.id)}</button>`})}
         </div>
       </div>
-    `}thumb(t,e=48){let s=t&&D(t.image),i=`width:${e}px;height:${e}px`;return s?r`<img class="thumb" style=${i} src=${s} alt="" loading="lazy" />`:r`<span class="thumb" style=${i}><ha-icon icon="mdi:silverware-fork-knife"></ha-icon></span>`}compatDots(t){let e=this.compat&&this.compat[t]||{};return r`${this.profiles.map(s=>r`<span
+      <div class="group-block">
+        <div class="group-title">${this.t("groups.meat")}</div>
+        <div class="chips">
+          ${i.map(o=>{let p=t.includes(o.id);return r`<button class="chip ${p?"on bad":""}" ?disabled=${s}
+              aria-pressed=${p} @click=${()=>e(o.id)}>${p?"\u2715 ":""}${this.groupLabel(o.id)}</button>`})}
+        </div>
+      </div>
+    `}thumb(t,e=48){let s=t&&N(t.image),i=`width:${e}px;height:${e}px`;return s?r`<img class="thumb" style=${i} src=${s} alt="" loading="lazy" />`:r`<span class="thumb" style=${i}><ha-icon icon="mdi:silverware-fork-knife"></ha-icon></span>`}compatDots(t){let e=this.compat&&this.compat[t]||{};return r`${this.profiles.map(s=>r`<span
         class="dot ${e[s.id]||"excluded"}"
         title="${s.name}: ${this.t(`status.${e[s.id]||"excluded"}`)}"
         >${s.name.slice(0,1).toUpperCase()}</span
-      >`)}`}emit(t,e={}){this.dispatchEvent(new CustomEvent(t,{detail:e,bubbles:!0,composed:!0}))}};d(f,"properties",{hass:{attribute:!1},api:{attribute:!1},data:{attribute:!1},compat:{attribute:!1}});var q=class extends f{constructor(){super(),this._offset=0,this._days=null,this._extraMeals={},this._loadedKey=null}get _start(){return U(Wt(new Date),this._offset*7)}updated(t){let e=`${this.revision}|${this._offset}`;this.api&&e!==this._loadedKey&&(this._loadedKey=e,this._load())}async _load(){let t=y(this._start);try{let e=await this.api.plan(t,7);t===y(this._start)&&(this._days=e)}catch{this._days={}}}_shift(t){this._offset+=t,this._days=null}_mealsFor(t,e){let s=this.data&&this.data.default_meal_types||["lunch","dinner"],i=this._extraMeals[t]||[];return x.filter(a=>s.includes(a)||e[a]||i.includes(a))}_addMeal(t,e){this._extraMeals={...this._extraMeals,[t]:[...this._extraMeals[t]||[],e]},this._editSlot(t,e,[])}_editSlot(t,e,s){this.emit("ep-open",{type:"slot",date:t,mealType:e,assignments:s})}render(){let t=this._start,e=U(t,6),s=y(new Date);return r`
+      >`)}`}emit(t,e={}){this.dispatchEvent(new CustomEvent(t,{detail:e,bubbles:!0,composed:!0}))}};d(_,"properties",{hass:{attribute:!1},api:{attribute:!1},data:{attribute:!1},compat:{attribute:!1}});var W=class extends _{constructor(){super(),this._offset=0,this._days=null,this._extraMeals={},this._loadedKey=null}get _start(){return P(Zt(new Date),this._offset*7)}updated(t){let e=`${this.revision}|${this._offset}`;this.api&&e!==this._loadedKey&&(this._loadedKey=e,this._load())}async _load(){let t=y(this._start);try{let e=await this.api.plan(t,7);t===y(this._start)&&(this._days=e)}catch{this._days={}}}_shift(t){this._offset+=t,this._days=null}_mealsFor(t,e){let s=this.data&&this.data.default_meal_types||["lunch","dinner"],i=this._extraMeals[t]||[];return x.filter(n=>s.includes(n)||e[n]||i.includes(n))}_addMeal(t,e){this._extraMeals={...this._extraMeals,[t]:[...this._extraMeals[t]||[],e]},this._editSlot(t,e,[])}_editSlot(t,e,s){this.emit("ep-open",{type:"slot",date:t,mealType:e,assignments:s})}render(){let t=this._start,e=P(t,6),s=y(new Date);return r`
       <div class="weekbar">
         <button class="icon-btn" @click=${()=>this._shift(-1)} aria-label="prev">
           <ha-icon icon="mdi:chevron-left"></ha-icon>
         </button>
         <div class="week">
-          <div class="kw">${this.t("plan.week",{week:Zt(t)})}</div>
+          <div class="kw">${this.t("plan.week",{week:Gt(t)})}</div>
           <div class="muted range">${A(this.hass,t)} – ${A(this.hass,e)}</div>
         </div>
         <button class="icon-btn" @click=${()=>this._shift(1)} aria-label="next">
@@ -310,18 +310,18 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         </button>
       </div>
       ${this._days?r`<div class="days">
-            ${[0,1,2,3,4,5,6].map(i=>{let a=U(t,i),o=y(a);return this._renderDay(o,a,this._days[o]||{},o===s)})}
+            ${[0,1,2,3,4,5,6].map(i=>{let n=P(t,i),o=y(n);return this._renderDay(o,n,this._days[o]||{},o===s)})}
           </div>`:r`<p class="muted center">${this.t("common.loading")}</p>`}
-    `}_renderDay(t,e,s,i){let a=this._mealsFor(t,s),o=x.filter(l=>!a.includes(l));return r`
+    `}_renderDay(t,e,s,i){let n=this._mealsFor(t,s),o=x.filter(p=>!n.includes(p));return r`
       <section class="card day ${i?"today":""}">
         <h3>
           ${A(this.hass,e)}
           ${i?r`<span class="chip small on">${this.t("plan.today")}</span>`:""}
         </h3>
-        ${a.map(l=>this._renderMeal(t,l,s[l]))}
+        ${n.map(p=>this._renderMeal(t,p,s[p]))}
         ${o.length?r`<div class="chips add">
-              ${o.map(l=>r`<button class="chip small" @click=${()=>this._addMeal(t,l)}>
-                  + ${this.t(`meal.${l}`)}
+              ${o.map(p=>r`<button class="chip small" @click=${()=>this._addMeal(t,p)}>
+                  + ${this.t(`meal.${p}`)}
                 </button>`)}
             </div>`:""}
       </section>
@@ -335,7 +335,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
             <ha-icon icon=${i.length?"mdi:pencil":"mdi:plus"}></ha-icon>
           </button>
         </div>
-        ${i.length?i.map(a=>this._renderAssignment(a)):r`<button class="empty" @click=${()=>this._editSlot(t,e,[])}>
+        ${i.length?i.map(n=>this._renderAssignment(n)):r`<button class="empty" @click=${()=>this._editSlot(t,e,[])}>
               ${this.t("plan.empty")}
             </button>`}
       </div>
@@ -353,7 +353,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
           </span>
         </span>
       </button>
-    `}};d(q,"properties",{...f.properties,revision:{type:Number},_offset:{state:!0},_days:{state:!0},_extraMeals:{state:!0}}),d(q,"styles",[b,m`
+    `}};d(W,"properties",{..._.properties,revision:{type:Number},_offset:{state:!0},_days:{state:!0},_extraMeals:{state:!0}}),d(W,"styles",[b,u`
       .weekbar {
         display: flex;
         align-items: center;
@@ -464,7 +464,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
           flex: 1 0 100%;
         }
       }
-    `]);customElements.define("ep-plan-view",q);var ot=60,W=class extends f{constructor(){super(),this._query="",this._meal="",this._fits="",this._limit=ot}get _filtered(){let t=this._query.toLowerCase().split(/\s+/).filter(Boolean);return this.dishes.filter(e=>!this._meal||e.meal_types.includes(this._meal)).filter(e=>{if(!this._fits)return!0;let s=(this.compat[e.id]||{})[this._fits];return s==="ok"||s==="warn"}).filter(e=>{if(!t.length)return!0;let s=[e.name,...e.tags,...e.ingredients.map(i=>i.name)].join(" ").toLowerCase();return t.every(i=>s.includes(i))}).sort((e,s)=>e.name.localeCompare(s.name,"de"))}_setQuery(t){this._query=t.target.value,this._limit=ot}render(){let t=this._filtered;return r`
+    `]);customElements.define("ep-plan-view",W);var lt=60,q=class extends _{constructor(){super(),this._query="",this._meal="",this._fits="",this._limit=lt}get _filtered(){let t=this._query.toLowerCase().split(/\s+/).filter(Boolean);return this.dishes.filter(e=>!this._meal||e.meal_types.includes(this._meal)).filter(e=>{if(!this._fits)return!0;let s=(this.compat[e.id]||{})[this._fits];return s==="ok"||s==="warn"}).filter(e=>{if(!t.length)return!0;let s=[e.name,...e.tags,...e.ingredients.map(i=>i.name)].join(" ").toLowerCase();return t.every(i=>s.includes(i))}).sort((e,s)=>e.name.localeCompare(s.name,"de"))}_setQuery(t){this._query=t.target.value,this._limit=lt}render(){let t=this._filtered;return r`
       <div class="filters">
         <input type="search" .value=${this._query} @input=${this._setQuery} placeholder=${this.t("dishes.search")} />
         <div class="row wrap">
@@ -497,8 +497,8 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
             ${t.slice(0,this._limit).map(e=>this._renderDish(e))}
           </div>`:r`<p class="muted">${this.t("dishes.none")}</p>`}
       ${t.length>this._limit?r`<div class="more">
-            <button class="btn outline" @click=${()=>this._limit+=ot}>
-              + ${Math.min(ot,t.length-this._limit)}
+            <button class="btn outline" @click=${()=>this._limit+=lt}>
+              + ${Math.min(lt,t.length-this._limit)}
             </button>
           </div>`:""}
     `}_renderDish(t){return r`
@@ -513,7 +513,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
           <span class="dots">${this.compatDots(t.id)}</span>
         </span>
       </button>
-    `}};d(W,"properties",{...f.properties,_query:{state:!0},_meal:{state:!0},_fits:{state:!0},_limit:{state:!0}}),d(W,"styles",[b,m`
+    `}};d(q,"properties",{..._.properties,_query:{state:!0},_meal:{state:!0},_fits:{state:!0},_limit:{state:!0}}),d(q,"styles",[b,u`
       .filters {
         display: flex;
         flex-direction: column;
@@ -566,7 +566,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         text-align: center;
         margin-top: 12px;
       }
-    `]);customElements.define("ep-dishes-view",W);var lt=class extends f{_fitting(t){return Object.values(this.compat||{}).filter(e=>e[t]==="ok"||e[t]==="warn").length}render(){return r`
+    `]);customElements.define("ep-dishes-view",q);var pt=class extends _{_fitting(t){return Object.values(this.compat||{}).filter(e=>e[t]==="ok"||e[t]==="warn").length}render(){return r`
       <div class="row top">
         <span class="spacer"></span>
         <button class="btn" @click=${()=>this.emit("ep-open",{type:"profile",profileId:null})}>
@@ -591,6 +591,9 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
                   <button class="btn" @click=${()=>this.emit("ep-open",{type:"ingredients",profileId:t.id})}>
                     <ha-icon icon="mdi:format-list-checks"></ha-icon>${this.t("ingr.open")}
                   </button>
+                  <button class="btn outline" @click=${()=>this.emit("ep-open",{type:"groups",profileId:t.id})}>
+                    <ha-icon icon="mdi:alert-circle-outline"></ha-icon>${this.t("groups.button")}
+                  </button>
                   <button class="btn flat" @click=${()=>this.emit("ep-open",{type:"profile",profileId:t.id})}>
                     <ha-icon icon="mdi:pencil"></ha-icon>${this.t("dish.edit")}
                   </button>
@@ -599,7 +602,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
             </div>
           `)}
       </div>
-    `}};d(lt,"styles",[b,m`
+    `}};d(pt,"styles",[b,u`
       .top {
         margin-bottom: 12px;
       }
@@ -650,7 +653,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         gap: 6px;
         margin-top: 8px;
       }
-    `]);customElements.define("ep-profiles-view",lt);var Z=class extends f{constructor(){super(),this._start=y(new Date),this._days=7,this._items=null,this._excluded=new Set,this._target=null,this._skip=!0,this._busy=!1,this._message=null,this._loadedKey=null}get _todoLists(){return Object.keys(this.hass&&this.hass.states||{}).filter(t=>t.startsWith("todo.")).sort()}updated(){let t=`${this.revision}|${this._start}|${this._days}`;this.api&&t!==this._loadedKey&&(this._loadedKey=t,this._load()),this._target===null&&this.data&&(this._target=this.data.shopping_list||this._todoLists[0]||"")}async _load(){try{this._items=await this.api.shoppingPreview(this._start,this._days)}catch(t){this._items=[],this._message={error:!0,text:this.t("common.error",{msg:t.message})}}}_toggle(t){let e=new Set(this._excluded);e.has(t)?e.delete(t):e.add(t),this._excluded=e}_selectAll(t){this._excluded=t?new Set:new Set((this._items||[]).map(e=>e.key))}async _push(){if(!this._target){this._message={error:!0,text:this.t("shop.no_target")};return}this._busy=!0,this._message=null;try{let t=await this.api.shoppingPush({start_date:this._start,days:this._days,entity_id:this._target,skip_existing:this._skip,keys:this._items.filter(e=>!this._excluded.has(e.key)).map(e=>e.key)});this._message={text:this.t("shop.result",{added:t.added.length,skipped:t.skipped.length})}}catch(t){this._message={error:!0,text:this.t("common.error",{msg:t.message})}}this._busy=!1}_name(t){let e=this.hass.states[t];return e&&e.attributes.friendly_name||t}render(){let t=this._items,e=t?t.filter(s=>!this._excluded.has(s.key)).length:0;return r`
+    `]);customElements.define("ep-profiles-view",pt);var Z=class extends _{constructor(){super(),this._start=y(new Date),this._days=7,this._items=null,this._excluded=new Set,this._target=null,this._skip=!0,this._busy=!1,this._message=null,this._loadedKey=null}get _todoLists(){return Object.keys(this.hass&&this.hass.states||{}).filter(t=>t.startsWith("todo.")).sort()}updated(){let t=`${this.revision}|${this._start}|${this._days}`;this.api&&t!==this._loadedKey&&(this._loadedKey=t,this._load()),this._target===null&&this.data&&(this._target=this.data.shopping_list||this._todoLists[0]||"")}async _load(){try{this._items=await this.api.shoppingPreview(this._start,this._days)}catch(t){this._items=[],this._message={error:!0,text:this.t("common.error",{msg:t.message})}}}_toggle(t){let e=new Set(this._excluded);e.has(t)?e.delete(t):e.add(t),this._excluded=e}_selectAll(t){this._excluded=t?new Set:new Set((this._items||[]).map(e=>e.key))}async _push(){if(!this._target){this._message={error:!0,text:this.t("shop.no_target")};return}this._busy=!0,this._message=null;try{let t=await this.api.shoppingPush({start_date:this._start,days:this._days,entity_id:this._target,skip_existing:this._skip,keys:this._items.filter(e=>!this._excluded.has(e.key)).map(e=>e.key)});this._message={text:this.t("shop.result",{added:t.added.length,skipped:t.skipped.length})}}catch(t){this._message={error:!0,text:this.t("common.error",{msg:t.message})}}this._busy=!1}_name(t){let e=this.hass.states[t];return e&&e.attributes.friendly_name||t}render(){let t=this._items,e=t?t.filter(s=>!this._excluded.has(s.key)).length:0;return r`
       <div class="card settings">
         <div class="row wrap">
           <label class="field grow">
@@ -700,7 +703,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
                 </li>`)}
             </ul>
           `:r`<p class="muted">${this.t("shop.empty")}</p>`:r`<p class="muted">${this.t("common.loading")}</p>`}
-    `}};d(Z,"properties",{...f.properties,revision:{type:Number},_start:{state:!0},_days:{state:!0},_items:{state:!0},_excluded:{state:!0},_target:{state:!0},_skip:{state:!0},_busy:{state:!0},_message:{state:!0}}),d(Z,"styles",[b,m`
+    `}};d(Z,"properties",{..._.properties,revision:{type:Number},_start:{state:!0},_days:{state:!0},_items:{state:!0},_excluded:{state:!0},_target:{state:!0},_skip:{state:!0},_busy:{state:!0},_message:{state:!0}}),d(Z,"styles",[b,u`
       .settings {
         padding: 14px;
         margin-bottom: 12px;
@@ -752,7 +755,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         font-weight: 500;
         white-space: nowrap;
       }
-    `]);customElements.define("ep-shopping-view",Z);var c=class extends f{constructor(){super(),this._onKey=t=>{t.key==="Escape"&&this.close()}}connectedCallback(){super.connectedCallback(),window.addEventListener("keydown",this._onKey)}disconnectedCallback(){super.disconnectedCallback(),window.removeEventListener("keydown",this._onKey)}close(){this.emit("ep-close")}shell(t,e,s=""){return r`
+    `]);customElements.define("ep-shopping-view",Z);var c=class extends _{constructor(){super(),this._onKey=t=>{t.key==="Escape"&&this.close()}}connectedCallback(){super.connectedCallback(),window.addEventListener("keydown",this._onKey)}disconnectedCallback(){super.disconnectedCallback(),window.removeEventListener("keydown",this._onKey)}close(){this.emit("ep-close")}shell(t,e,s=""){return r`
       <div class="backdrop" @click=${i=>i.target===i.currentTarget&&this.close()}>
         <div class="dialog" role="dialog" aria-modal="true" aria-label=${t}>
           <header>
@@ -765,7 +768,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
           ${s?r`<footer>${s}</footer>`:""}
         </div>
       </div>
-    `}};d(c,"styles",[b,Yt]);var G=class extends c{constructor(){super(),this._servings=null,this._check=null,this._checkedId=null}updated(t){this.dishId&&this.dishId!==this._checkedId&&this.api&&(this._checkedId=this.dishId,this._servings=null,this.api.dishCheck(this.dishId).then(e=>this._check=e).catch(()=>this._check={}))}_reason(t){return this.t(`reason.${t.code}`,t.group?{...t,group:this.groupLabel(t.group)}:t)}render(){let t=this.dish(this.dishId);if(!t)return"";let e=this._servings??this.servings??t.base_servings,s=e/(t.base_servings||1),i=D(t.image),a=r`
+    `}};d(c,"styles",[b,Vt]);var G=class extends c{constructor(){super(),this._servings=null,this._check=null,this._checkedId=null}updated(t){this.dishId&&this.dishId!==this._checkedId&&this.api&&(this._checkedId=this.dishId,this._servings=null,this.api.dishCheck(this.dishId).then(e=>this._check=e).catch(()=>this._check={}))}_reason(t){return this.t(`reason.${t.code}`,t.group?{...t,group:this.groupLabel(t.group)}:t)}render(){let t=this.dish(this.dishId);if(!t)return"";let e=this._servings??this.servings??t.base_servings,s=e/(t.base_servings||1),i=N(t.image),n=r`
       ${i?r`<img class="hero" src=${i} alt="" />`:""}
       <div class="meta row">
         ${t.duration_min?r`<span class="row"><ha-icon icon="mdi:timer-outline"></ha-icon>${this.t("dish.minutes",{n:t.duration_min})}</span>`:""}
@@ -779,28 +782,28 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
           <ha-icon icon="mdi:plus"></ha-icon>
         </button>
       </div>
-      ${t.tags.length?r`<div class="chips">${t.tags.map(l=>r`<span class="chip small">${l}</span>`)}</div>`:""}
+      ${t.tags.length?r`<div class="chips">${t.tags.map(p=>r`<span class="chip small">${p}</span>`)}</div>`:""}
 
       <h3>${this.t("dish.ingredients")}</h3>
       <ul class="ingredients">
-        ${t.ingredients.map(l=>r`<li><span class="amount">${Kt(l,s)}</span><span>${l.name}</span></li>`)}
+        ${t.ingredients.map(p=>r`<li><span class="amount">${Yt(p,s)}</span><span>${p.name}</span></li>`)}
       </ul>
 
       ${t.steps.length?r`<h3>${this.t("dish.steps")}</h3>
             <ol class="steps">
-              ${t.steps.map(l=>r`<li>${l}</li>`)}
+              ${t.steps.map(p=>r`<li>${p}</li>`)}
             </ol>`:""}
       ${t.source_url?r`<p><a href=${t.source_url} target="_blank" rel="noopener">${this.t("dish.source")}</a></p>`:""}
 
       <h3>${this.t("dish.compat")}</h3>
-      ${this._check?this.profiles.map(l=>{let h=this._check[l.id]||{status:"excluded",reasons:[]},p=h.reasons.filter(g=>g.status!=="ok");return r`<div class="compat">
+      ${this._check?this.profiles.map(p=>{let l=this._check[p.id]||{status:"excluded",reasons:[]},h=l.reasons.filter(g=>g.status!=="ok");return r`<div class="compat">
               <div class="row">
-                <span class="dot ${h.status}">${l.name.slice(0,1).toUpperCase()}</span>
-                <strong>${l.name}</strong>
-                <span class="status-${h.status}">${this.t(`status.${h.status}`)}</span>
+                <span class="dot ${l.status}">${p.name.slice(0,1).toUpperCase()}</span>
+                <strong>${p.name}</strong>
+                <span class="status-${l.status}">${this.t(`status.${l.status}`)}</span>
               </div>
-              ${p.length?r`<ul class="reasons">
-                    ${p.map(g=>r`<li class="status-${g.status}">${this._reason(g)}</li>`)}
+              ${h.length?r`<ul class="reasons">
+                    ${h.map(g=>r`<li class="status-${g.status}">${this._reason(g)}</li>`)}
                   </ul>`:""}
             </div>`}):r`<p class="muted">${this.t("common.loading")}</p>`}
     `,o=r`
@@ -808,7 +811,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       <button class="btn" @click=${()=>this.emit("ep-open",{type:"dish",dishId:t.id})}>
         <ha-icon icon="mdi:pencil"></ha-icon>${this.t("dish.edit")}
       </button>
-    `;return this.shell(t.name,a,o)}};d(G,"properties",{...c.properties,dishId:{attribute:!1},servings:{attribute:!1},_servings:{state:!0},_check:{state:!0}}),d(G,"styles",[...c.styles,m`
+    `;return this.shell(t.name,n,o)}};d(G,"properties",{...c.properties,dishId:{attribute:!1},servings:{attribute:!1},_servings:{state:!0},_check:{state:!0}}),d(G,"styles",[...c.styles,u`
       .hero {
         width: 100%;
         max-height: 260px;
@@ -855,13 +858,13 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         padding: 0;
         font-size: 13px;
       }
-    `]);customElements.define("ep-recipe-dialog",G);var K=class extends c{constructor(){super(),this._form=null,this._busy=!1,this._imageBusy=!1,this._error=null,this._confirmDelete=!1,this._imageUrlInput="",this._initFor=void 0}willUpdate(){if(this.data&&this._initFor!==this.dishId){this._initFor=this.dishId;let t=this.dishId?this.dish(this.dishId):null;this._form={name:t?t.name:"",meal_types:t?[...t.meal_types]:["lunch","dinner"],suitable_for:t?[...t.suitable_for]:[],base_servings:t?t.base_servings:2,duration_min:t&&t.duration_min?t.duration_min:"",tags:t?t.tags.join(", "):"",ingredients:t?t.ingredients.map(Gt).join(`
+    `]);customElements.define("ep-recipe-dialog",G);var K=class extends c{constructor(){super(),this._form=null,this._busy=!1,this._imageBusy=!1,this._error=null,this._confirmDelete=!1,this._imageUrlInput="",this._initFor=void 0}willUpdate(){if(this.data&&this._initFor!==this.dishId){this._initFor=this.dishId;let t=this.dishId?this.dish(this.dishId):null;this._form={name:t?t.name:"",meal_types:t?[...t.meal_types]:["lunch","dinner"],suitable_for:t?[...t.suitable_for]:[],base_servings:t?t.base_servings:2,duration_min:t&&t.duration_min?t.duration_min:"",tags:t?t.tags.join(", "):"",ingredients:t?t.ingredients.map(Kt).join(`
 `):"",steps:t?t.steps.join(`
-`):"",source_url:t&&t.source_url||"",image:t?t.image:null}}}_set(t,e){this._form={...this._form,[t]:e}}_toggle(t,e){let s=this._form[t];this._set(t,s.includes(e)?s.filter(i=>i!==e):[...s,e])}async _upload(t){let e=t.target.files&&t.target.files[0];e&&(await this._withImageBusy(()=>this.api.uploadImage(e)),t.target.value="")}async _fromUrl(){let t=this._imageUrlInput.trim();t&&(await this._withImageBusy(async()=>{let e=await this.api.imageFromUrl(t);return{id:e.id,source:e.source,origin:e.origin}}),this._imageUrlInput="")}async _withImageBusy(t){this._imageBusy=!0,this._error=null;try{this._set("image",await t())}catch(e){this._error=e.message||String(e)}this._imageBusy=!1}async _save(){let t=this._form;if(!t.name.trim()){this._error=`${this.t("edit.name")}?`;return}this._busy=!0,this._error=null;try{let e=await this.api.parseIngredients(t.ingredients),s={name:t.name.trim(),meal_types:t.meal_types.length?t.meal_types:["lunch","dinner"],suitable_for:t.suitable_for,base_servings:Number(t.base_servings)||2,duration_min:t.duration_min?Number(t.duration_min):null,tags:t.tags.split(",").map(a=>a.trim()).filter(Boolean),ingredients:e,steps:t.steps.split(`
-`).map(a=>a.trim()).filter(Boolean),source_url:t.source_url.trim()||null,image:t.image||null};this.dishId&&(s.id=this.dishId);let i=await this.api.saveDish(s);this.emit("ep-open",{type:"recipe",dishId:i.id})}catch(e){this._error=e.message||String(e)}this._busy=!1}async _delete(){if(!this._confirmDelete){this._confirmDelete=!0;return}this._busy=!0;try{await this.api.deleteDish(this.dishId),this.close()}catch(t){this._error=t.message||String(t),this._busy=!1}}render(){let t=this._form;if(!t)return"";let e=D(t.image),s=r`
+`):"",source_url:t&&t.source_url||"",image:t?t.image:null}}}_set(t,e){this._form={...this._form,[t]:e}}_toggle(t,e){let s=this._form[t];this._set(t,s.includes(e)?s.filter(i=>i!==e):[...s,e])}async _upload(t){let e=t.target.files&&t.target.files[0];e&&(await this._withImageBusy(()=>this.api.uploadImage(e)),t.target.value="")}async _fromUrl(){let t=this._imageUrlInput.trim();t&&(await this._withImageBusy(async()=>{let e=await this.api.imageFromUrl(t);return{id:e.id,source:e.source,origin:e.origin}}),this._imageUrlInput="")}async _withImageBusy(t){this._imageBusy=!0,this._error=null;try{this._set("image",await t())}catch(e){this._error=e.message||String(e)}this._imageBusy=!1}async _save(){let t=this._form;if(!t.name.trim()){this._error=`${this.t("edit.name")}?`;return}this._busy=!0,this._error=null;try{let e=await this.api.parseIngredients(t.ingredients),s={name:t.name.trim(),meal_types:t.meal_types.length?t.meal_types:["lunch","dinner"],suitable_for:t.suitable_for,base_servings:Number(t.base_servings)||2,duration_min:t.duration_min?Number(t.duration_min):null,tags:t.tags.split(",").map(n=>n.trim()).filter(Boolean),ingredients:e,steps:t.steps.split(`
+`).map(n=>n.trim()).filter(Boolean),source_url:t.source_url.trim()||null,image:t.image||null};this.dishId&&(s.id=this.dishId);let i=await this.api.saveDish(s);this.emit("ep-open",{type:"recipe",dishId:i.id})}catch(e){this._error=e.message||String(e)}this._busy=!1}async _delete(){if(!this._confirmDelete){this._confirmDelete=!0;return}this._busy=!0;try{await this.api.deleteDish(this.dishId),this.close()}catch(t){this._error=t.message||String(t),this._busy=!1}}render(){let t=this._form;if(!t)return"";let e=N(t.image),s=r`
       <label class="field">
         <span>${this.t("edit.name")}</span>
-        <input type="text" .value=${t.name} @input=${a=>this._set("name",a.target.value)} />
+        <input type="text" .value=${t.name} @input=${n=>this._set("name",n.target.value)} />
       </label>
 
       <div class="field">
@@ -881,7 +884,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
             type="url"
             placeholder=${this.t("edit.image_url")}
             .value=${this._imageUrlInput}
-            @input=${a=>this._imageUrlInput=a.target.value}
+            @input=${n=>this._imageUrlInput=n.target.value}
           />
           <button class="btn outline" ?disabled=${!this._imageUrlInput||this._imageBusy} @click=${this._fromUrl}>
             ${this.t("edit.image_from_url")}
@@ -893,8 +896,8 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       <div class="field">
         <span class="label">${this.t("edit.meal_types")}</span>
         <div class="chips">
-          ${x.map(a=>r`<button class="chip ${t.meal_types.includes(a)?"on":""}" @click=${()=>this._toggle("meal_types",a)}>
-              ${this.t(`meal.${a}`)}
+          ${x.map(n=>r`<button class="chip ${t.meal_types.includes(n)?"on":""}" @click=${()=>this._toggle("meal_types",n)}>
+              ${this.t(`meal.${n}`)}
             </button>`)}
         </div>
       </div>
@@ -902,8 +905,8 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       <div class="field">
         <span class="label">${this.t("edit.suitable_for")}</span>
         <div class="chips">
-          ${this.profiles.map(a=>r`<button class="chip ${t.suitable_for.includes(a.id)?"on":""}" @click=${()=>this._toggle("suitable_for",a.id)}>
-              ${a.name}
+          ${this.profiles.map(n=>r`<button class="chip ${t.suitable_for.includes(n.id)?"on":""}" @click=${()=>this._toggle("suitable_for",n.id)}>
+              ${n.name}
             </button>`)}
         </div>
       </div>
@@ -912,34 +915,34 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         <label class="field">
           <span>${this.t("edit.base_servings")}</span>
           <input type="number" min="0.5" step="0.5" inputmode="decimal" .value=${String(t.base_servings)}
-            @input=${a=>this._set("base_servings",a.target.value)} />
+            @input=${n=>this._set("base_servings",n.target.value)} />
         </label>
         <label class="field">
           <span>${this.t("edit.duration")}</span>
           <input type="number" min="0" step="5" inputmode="numeric" .value=${String(t.duration_min)}
-            @input=${a=>this._set("duration_min",a.target.value)} />
+            @input=${n=>this._set("duration_min",n.target.value)} />
         </label>
       </div>
 
       <label class="field">
         <span>${this.t("edit.ingredients")}</span>
-        <textarea rows="8" .value=${t.ingredients} @input=${a=>this._set("ingredients",a.target.value)}></textarea>
+        <textarea rows="8" .value=${t.ingredients} @input=${n=>this._set("ingredients",n.target.value)}></textarea>
         <div class="help">${this.t("edit.ingredients_help")}</div>
       </label>
 
       <label class="field">
         <span>${this.t("edit.steps")}</span>
-        <textarea rows="6" .value=${t.steps} @input=${a=>this._set("steps",a.target.value)}></textarea>
+        <textarea rows="6" .value=${t.steps} @input=${n=>this._set("steps",n.target.value)}></textarea>
       </label>
 
       <label class="field">
         <span>${this.t("edit.tags")}</span>
-        <input type="text" .value=${t.tags} @input=${a=>this._set("tags",a.target.value)} />
+        <input type="text" .value=${t.tags} @input=${n=>this._set("tags",n.target.value)} />
       </label>
 
       <label class="field">
         <span>${this.t("edit.source_url")}</span>
-        <input type="url" .value=${t.source_url} @input=${a=>this._set("source_url",a.target.value)} />
+        <input type="url" .value=${t.source_url} @input=${n=>this._set("source_url",n.target.value)} />
       </label>
 
       ${this._error?r`<p class="error">${this._error}</p>`:""}
@@ -950,7 +953,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       <span class="spacer"></span>
       <button class="btn flat" @click=${()=>this.close()}>${this.t("common.cancel")}</button>
       <button class="btn" ?disabled=${this._busy||this._imageBusy} @click=${this._save}>${this.t("common.save")}</button>
-    `;return this.shell(this.dishId?this.t("edit.title"):this.t("edit.new_title"),s,i)}};d(K,"properties",{...c.properties,dishId:{attribute:!1},_form:{state:!0},_busy:{state:!0},_imageBusy:{state:!0},_error:{state:!0},_confirmDelete:{state:!0},_imageUrlInput:{state:!0}}),d(K,"styles",[...c.styles,m`
+    `;return this.shell(this.dishId?this.t("edit.title"):this.t("edit.new_title"),s,i)}};d(K,"properties",{...c.properties,dishId:{attribute:!1},_form:{state:!0},_busy:{state:!0},_imageBusy:{state:!0},_error:{state:!0},_confirmDelete:{state:!0},_imageUrlInput:{state:!0}}),d(K,"styles",[...c.styles,u`
       .label {
         display: block;
         font-size: 13px;
@@ -988,16 +991,16 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       .two > * {
         flex: 1;
       }
-    `]);customElements.define("ep-dish-editor",K);var ht={ok:0,warn:1,excluded:2},At=40,Y=class extends c{constructor(){super(),this._list=null,this._for=[],this._query="",this._allMeals=!1,this._unsuitable=!1,this._busy=!1,this._error=null}willUpdate(){this._list===null&&this.data&&(this._list=(this.assignments||[]).map(t=>({dish_id:t.dish_id,profiles:[...t.profiles],servings:t.servings})),this._resetFor())}_resetFor(){let t=new Set(this._list.flatMap(s=>s.profiles)),e=this.profiles.map(s=>s.id).filter(s=>!t.has(s));this._for=e.length?e:this.profiles.map(s=>s.id)}_servingsFor(t){return t.reduce((e,s)=>{let i=this.profiles.find(a=>a.id===s);return e+(i?i.servings:1)},0)}_toggleFor(t){this._for=this._for.includes(t)?this._for.filter(e=>e!==t):[...this._for,t]}_status(t){let e=this.compat&&this.compat[t]||{};return this._for.reduce((s,i)=>{let a=e[i]||"excluded";return ht[a]>ht[s]?a:s},"ok")}get _candidates(){let t=this._query.toLowerCase().split(/\s+/).filter(Boolean);return this.dishes.filter(e=>this._allMeals||e.meal_types.includes(this.mealType)).filter(e=>!t.length||t.every(s=>e.name.toLowerCase().includes(s))).map(e=>({dish:e,status:this._status(e.id)})).filter(e=>this._unsuitable||e.status!=="excluded").sort((e,s)=>ht[e.status]-ht[s.status]||e.dish.name.localeCompare(s.dish.name,"de"))}_choose(t){if(!this._for.length)return;let e=this._list.map(s=>({...s,profiles:s.profiles.filter(i=>!this._for.includes(i))})).filter(s=>s.profiles.length).map(s=>({...s,servings:this._servingsFor(s.profiles)}));e.push({dish_id:t.id,profiles:[...this._for],servings:this._servingsFor(this._for)}),this._list=e,this._query="",this._resetFor()}_remove(t){this._list=this._list.filter((e,s)=>s!==t),this._resetFor()}_setServings(t,e){let s=[...this._list];s[t]={...s[t],servings:Math.max(.5,Number(e)||1)},this._list=s}async _save(){this._busy=!0,this._error=null;try{await this.api.setMeal(this.date,this.mealType,this._list),this.close()}catch(t){this._error=t.message||String(t),this._busy=!1}}render(){if(!this._list)return"";let t=this.t("slot.title",{day:A(this.hass,L(this.date)),meal:this.t(`meal.${this.mealType}`)}),e=this._candidates,s=r`
+    `]);customElements.define("ep-dish-editor",K);var dt={ok:0,warn:1,excluded:2},St=40,Y=class extends c{constructor(){super(),this._list=null,this._for=[],this._query="",this._allMeals=!1,this._unsuitable=!1,this._busy=!1,this._error=null}willUpdate(){this._list===null&&this.data&&(this._list=(this.assignments||[]).map(t=>({dish_id:t.dish_id,profiles:[...t.profiles],servings:t.servings})),this._resetFor())}_resetFor(){let t=new Set(this._list.flatMap(s=>s.profiles)),e=this.profiles.map(s=>s.id).filter(s=>!t.has(s));this._for=e.length?e:this.profiles.map(s=>s.id)}_servingsFor(t){return t.reduce((e,s)=>{let i=this.profiles.find(n=>n.id===s);return e+(i?i.servings:1)},0)}_toggleFor(t){this._for=this._for.includes(t)?this._for.filter(e=>e!==t):[...this._for,t]}_status(t){let e=this.compat&&this.compat[t]||{};return this._for.reduce((s,i)=>{let n=e[i]||"excluded";return dt[n]>dt[s]?n:s},"ok")}get _candidates(){let t=this._query.toLowerCase().split(/\s+/).filter(Boolean);return this.dishes.filter(e=>this._allMeals||e.meal_types.includes(this.mealType)).filter(e=>!t.length||t.every(s=>e.name.toLowerCase().includes(s))).map(e=>({dish:e,status:this._status(e.id)})).filter(e=>this._unsuitable||e.status!=="excluded").sort((e,s)=>dt[e.status]-dt[s.status]||e.dish.name.localeCompare(s.dish.name,"de"))}_choose(t){if(!this._for.length)return;let e=this._list.map(s=>({...s,profiles:s.profiles.filter(i=>!this._for.includes(i))})).filter(s=>s.profiles.length).map(s=>({...s,servings:this._servingsFor(s.profiles)}));e.push({dish_id:t.id,profiles:[...this._for],servings:this._servingsFor(this._for)}),this._list=e,this._query="",this._resetFor()}_remove(t){this._list=this._list.filter((e,s)=>s!==t),this._resetFor()}_setServings(t,e){let s=[...this._list];s[t]={...s[t],servings:Math.max(.5,Number(e)||1)},this._list=s}async _save(){this._busy=!0,this._error=null;try{await this.api.setMeal(this.date,this.mealType,this._list),this.close()}catch(t){this._error=t.message||String(t),this._busy=!1}}render(){if(!this._list)return"";let t=this.t("slot.title",{day:A(this.hass,T(this.date)),meal:this.t(`meal.${this.mealType}`)}),e=this._candidates,s=r`
       ${this._list.length?r`<ul class="current">
-            ${this._list.map((a,o)=>{let l=this.dish(a.dish_id);return r`<li class="row">
-                ${this.thumb(l,40)}
+            ${this._list.map((n,o)=>{let p=this.dish(n.dish_id);return r`<li class="row">
+                ${this.thumb(p,40)}
                 <span class="text">
-                  <span class="name">${l?l.name:"?"}</span>
-                  <span class="chips">${a.profiles.map(h=>r`<span class="chip small">${this.profileName(h)}</span>`)}</span>
+                  <span class="name">${p?p.name:"?"}</span>
+                  <span class="chips">${n.profiles.map(l=>r`<span class="chip small">${this.profileName(l)}</span>`)}</span>
                 </span>
                 <input class="servings" type="number" min="0.5" step="0.5" inputmode="decimal"
-                  .value=${String(a.servings)} @change=${h=>this._setServings(o,h.target.value)}
+                  .value=${String(n.servings)} @change=${l=>this._setServings(o,l.target.value)}
                   aria-label=${this.t("dish.servings")} />
                 <button class="icon-btn" @click=${()=>this._remove(o)} aria-label=${this.t("slot.remove")}>
                   <ha-icon icon="mdi:delete-outline"></ha-icon>
@@ -1009,37 +1012,37 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       <div class="row for">
         <span class="muted">${this.t("slot.for")}:</span>
         <div class="chips">
-          ${this.profiles.map(a=>r`<button class="chip ${this._for.includes(a.id)?"on":""}" @click=${()=>this._toggleFor(a.id)}>
-              ${a.name}
+          ${this.profiles.map(n=>r`<button class="chip ${this._for.includes(n.id)?"on":""}" @click=${()=>this._toggleFor(n.id)}>
+              ${n.name}
             </button>`)}
         </div>
       </div>
       <input type="search" placeholder=${this.t("slot.search")} .value=${this._query}
-        @input=${a=>this._query=a.target.value} />
+        @input=${n=>this._query=n.target.value} />
       <div class="row toggles">
         <label class="row"><input type="checkbox" .checked=${this._allMeals}
-          @change=${a=>this._allMeals=a.target.checked} />${this.t("slot.show_all_meals")}</label>
+          @change=${n=>this._allMeals=n.target.checked} />${this.t("slot.show_all_meals")}</label>
         <label class="row"><input type="checkbox" .checked=${this._unsuitable}
-          @change=${a=>this._unsuitable=a.target.checked} />${this.t("slot.show_unsuitable")}</label>
+          @change=${n=>this._unsuitable=n.target.checked} />${this.t("slot.show_unsuitable")}</label>
       </div>
       ${this._for.length?r`<ul class="candidates">
-            ${e.slice(0,At).map(a=>r`<li>
-                <button class="candidate" @click=${()=>this._choose(a.dish)}>
-                  ${this.thumb(a.dish,40)}
+            ${e.slice(0,St).map(n=>r`<li>
+                <button class="candidate" @click=${()=>this._choose(n.dish)}>
+                  ${this.thumb(n.dish,40)}
                   <span class="text">
-                    <span class="name">${a.dish.name}</span>
-                    <span class="small status-${a.status}">${this.t(`status.${a.status}`)}</span>
+                    <span class="name">${n.dish.name}</span>
+                    <span class="small status-${n.status}">${this.t(`status.${n.status}`)}</span>
                   </span>
-                  <span class="dots">${this.compatDots(a.dish.id)}</span>
+                  <span class="dots">${this.compatDots(n.dish.id)}</span>
                 </button>
               </li>`)}
           </ul>
-          ${e.length>At?r`<p class="muted small">+ ${e.length-At} …</p>`:""}`:r`<p class="muted">${this.t("slot.no_profiles")}</p>`}
+          ${e.length>St?r`<p class="muted small">+ ${e.length-St} …</p>`:""}`:r`<p class="muted">${this.t("slot.no_profiles")}</p>`}
       ${this._error?r`<p class="error">${this._error}</p>`:""}
     `,i=r`
       <button class="btn flat" @click=${()=>this.close()}>${this.t("common.cancel")}</button>
       <button class="btn" ?disabled=${this._busy} @click=${this._save}>${this.t("common.save")}</button>
-    `;return this.shell(t,s,i)}};d(Y,"properties",{...c.properties,date:{attribute:!1},mealType:{attribute:!1},assignments:{attribute:!1},_list:{state:!0},_for:{state:!0},_query:{state:!0},_allMeals:{state:!0},_unsuitable:{state:!0},_busy:{state:!0},_error:{state:!0}}),d(Y,"styles",[...c.styles,m`
+    `;return this.shell(t,s,i)}};d(Y,"properties",{...c.properties,date:{attribute:!1},mealType:{attribute:!1},assignments:{attribute:!1},_list:{state:!0},_for:{state:!0},_query:{state:!0},_allMeals:{state:!0},_unsuitable:{state:!0},_busy:{state:!0},_error:{state:!0}}),d(Y,"styles",[...c.styles,u`
       h3 {
         font-size: 15px;
         margin: 16px 0 8px;
@@ -1108,7 +1111,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         display: flex;
         gap: 3px;
       }
-    `]);customElements.define("ep-slot-editor",Y);var V=class extends c{constructor(){super(),this._meals=null,this._for=null,this._overwrite=!1,this._busy=!1,this._result=null,this._error=null}get _days(){let t=L(this.start);return[0,1,2,3,4,5,6].map(e=>y(U(t,e)))}willUpdate(){if(this._meals===null&&this.data&&this.start){let t=this.data.default_meal_types||["lunch","dinner"];this._meals=Object.fromEntries(this._days.map(e=>[e,[...t]])),this._for=this.profiles.map(e=>e.id)}}_toggleMeal(t,e){let s=this._meals[t];this._meals={...this._meals,[t]:s.includes(e)?s.filter(i=>i!==e):[...s,e]}}_toggleColumn(t){let e=this._days.every(s=>this._meals[s].includes(t));this._meals=Object.fromEntries(this._days.map(s=>{let i=this._meals[s].filter(a=>a!==t);return[s,e?i:[...i,t]]}))}_toggleFor(t){this._for=this._for.includes(t)?this._for.filter(e=>e!==t):[...this._for,t]}async _run(){this._busy=!0,this._error=null;try{let t=await this.api.generate({start_date:this.start,days:7,meals:this._meals,profiles:this._for,overwrite:this._overwrite});this._result=t}catch(t){this._error=t.message||String(t)}this._busy=!1}_countPlanned(t){let e=0;for(let s of Object.values(t.days))for(let i of Object.values(s))e+=i.assignments.length;return e}render(){if(!this._meals)return"";if(this._result)return this._renderResult();let t=r`
+    `]);customElements.define("ep-slot-editor",Y);var V=class extends c{constructor(){super(),this._meals=null,this._for=null,this._overwrite=!1,this._busy=!1,this._result=null,this._error=null}get _days(){let t=T(this.start);return[0,1,2,3,4,5,6].map(e=>y(P(t,e)))}willUpdate(){if(this._meals===null&&this.data&&this.start){let t=this.data.default_meal_types||["lunch","dinner"];this._meals=Object.fromEntries(this._days.map(e=>[e,[...t]])),this._for=this.profiles.map(e=>e.id)}}_toggleMeal(t,e){let s=this._meals[t];this._meals={...this._meals,[t]:s.includes(e)?s.filter(i=>i!==e):[...s,e]}}_toggleColumn(t){let e=this._days.every(s=>this._meals[s].includes(t));this._meals=Object.fromEntries(this._days.map(s=>{let i=this._meals[s].filter(n=>n!==t);return[s,e?i:[...i,t]]}))}_toggleFor(t){this._for=this._for.includes(t)?this._for.filter(e=>e!==t):[...this._for,t]}async _run(){this._busy=!0,this._error=null;try{let t=await this.api.generate({start_date:this.start,days:7,meals:this._meals,profiles:this._for,overwrite:this._overwrite});this._result=t}catch(t){this._error=t.message||String(t)}this._busy=!1}_countPlanned(t){let e=0;for(let s of Object.values(t.days))for(let i of Object.values(s))e+=i.assignments.length;return e}render(){if(!this._meals)return"";if(this._result)return this._renderResult();let t=r`
       <h3>${this.t("gen.days")}</h3>
       <table class="grid">
         <thead>
@@ -1119,7 +1122,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         </thead>
         <tbody>
           ${this._days.map(s=>r`<tr>
-              <th class="day">${A(this.hass,L(s))}</th>
+              <th class="day">${A(this.hass,T(s))}</th>
               ${x.map(i=>r`<td>
                   <input type="checkbox" .checked=${this._meals[s].includes(i)} @change=${()=>this._toggleMeal(s,i)}
                     aria-label="${s} ${i}" />
@@ -1149,10 +1152,10 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       <p class="status-ok">${this.t("gen.done",{n:this._countPlanned(t)})}</p>
       ${t.warnings.length?r`<ul class="warnings">
             ${t.warnings.map(s=>r`<li class="status-warn">
-                ${this.t("gen.no_dish",{day:A(this.hass,L(s.date)),meal:this.t(`meal.${s.meal_type}`),profiles:s.profiles.map(i=>this.profileName(i)).join(", ")})}
+                ${this.t("gen.no_dish",{day:A(this.hass,T(s.date)),meal:this.t(`meal.${s.meal_type}`),profiles:s.profiles.map(i=>this.profileName(i)).join(", ")})}
               </li>`)}
           </ul>`:""}
-    `;return this.shell(this.t("gen.title"),e,r`<button class="btn" @click=${()=>this.close()}>${this.t("common.close")}</button>`)}};d(V,"properties",{...c.properties,start:{attribute:!1},_meals:{state:!0},_for:{state:!0},_overwrite:{state:!0},_busy:{state:!0},_result:{state:!0},_error:{state:!0}}),d(V,"styles",[...c.styles,m`
+    `;return this.shell(this.t("gen.title"),e,r`<button class="btn" @click=${()=>this.close()}>${this.t("common.close")}</button>`)}};d(V,"properties",{...c.properties,start:{attribute:!1},_meals:{state:!0},_for:{state:!0},_overwrite:{state:!0},_busy:{state:!0},_result:{state:!0},_error:{state:!0}}),d(V,"styles",[...c.styles,u`
       h3 {
         font-size: 15px;
         margin: 4px 0 8px;
@@ -1193,9 +1196,9 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       .warnings {
         padding-left: 18px;
       }
-    `]);customElements.define("ep-generate-dialog",V);var Vt=["tolerated","not_tolerated","likes","dislikes"],_e=["exclude","warn","allow"];function fe(n){return n.split(/[\n,;]+/).map(t=>t.trim()).filter(Boolean)}var pt=class extends c{constructor(){super(),this._form=null,this._busy=!1,this._error=null,this._confirmDelete=!1,this._initFor=void 0}willUpdate(){if(this.data&&this._initFor!==this.profileId){this._initFor=this.profileId;let t=this.profileId?this.profiles.find(e=>e.id===this.profileId):null;this._form={name:t?t.name:"",servings:t?t.servings:1,unknown_ingredients:t?t.unknown_ingredients:"exclude",max_duration:t&&t.max_duration?t.max_duration:"",excluded_groups:t?[...t.excluded_groups||[]]:[],small_amounts:t?t.small_amounts.map(e=>e.max_amount!==null&&e.max_amount!==void 0?[k(e.max_amount),e.unit,e.name].filter(Boolean).join(" "):e.name).join(`
-`):"",...Object.fromEntries(Vt.map(e=>[e,t?t[e].join(`
-`):""]))}}}_set(t,e){this._form={...this._form,[t]:e}}async _save(){let t=this._form;if(!t.name.trim()){this._error=`${this.t("profile.name")}?`;return}this._busy=!0,this._error=null;try{let e=await this.api.parseIngredients(t.small_amounts),s={name:t.name.trim(),servings:Number(t.servings)||1,unknown_ingredients:t.unknown_ingredients,max_duration:t.max_duration?Number(t.max_duration):null,excluded_groups:t.excluded_groups,small_amounts:e.map(a=>({name:a.name,max_amount:a.amount,unit:a.unit})),...Object.fromEntries(Vt.map(a=>[a,fe(t[a])]))};this.profileId&&(s.id=this.profileId);let i=await this.api.saveProfile(s);this.profileId?this.close():this.emit("ep-open",{type:"ingredients",profileId:i.id})}catch(e){this._error=e.message||String(e),this._busy=!1}}async _delete(){if(!this._confirmDelete){this._confirmDelete=!0;return}this._busy=!0;try{await this.api.deleteProfile(this.profileId),this.close()}catch(t){this._error=t.message||String(t),this._busy=!1}}_textarea(t,e){return r`<label class="field">
+    `]);customElements.define("ep-generate-dialog",V);var Qt=["tolerated","not_tolerated","likes","dislikes"],be=["exclude","warn","allow"];function $e(a){return a.split(/[\n,;]+/).map(t=>t.trim()).filter(Boolean)}var ht=class extends c{constructor(){super(),this._form=null,this._busy=!1,this._error=null,this._confirmDelete=!1,this._initFor=void 0}willUpdate(){if(this.data&&this._initFor!==this.profileId){this._initFor=this.profileId;let t=this.profileId?this.profiles.find(e=>e.id===this.profileId):null;this._form={name:t?t.name:"",servings:t?t.servings:1,unknown_ingredients:t?t.unknown_ingredients:"exclude",max_duration:t&&t.max_duration?t.max_duration:"",excluded_groups:t?[...t.excluded_groups||[]]:[],small_amounts:t?t.small_amounts.map(e=>e.max_amount!==null&&e.max_amount!==void 0?[k(e.max_amount),e.unit,e.name].filter(Boolean).join(" "):e.name).join(`
+`):"",...Object.fromEntries(Qt.map(e=>[e,t?t[e].join(`
+`):""]))}}}_set(t,e){this._form={...this._form,[t]:e}}async _save(){let t=this._form;if(!t.name.trim()){this._error=`${this.t("profile.name")}?`;return}this._busy=!0,this._error=null;try{let e=await this.api.parseIngredients(t.small_amounts),s={name:t.name.trim(),servings:Number(t.servings)||1,unknown_ingredients:t.unknown_ingredients,max_duration:t.max_duration?Number(t.max_duration):null,excluded_groups:t.excluded_groups,small_amounts:e.map(n=>({name:n.name,max_amount:n.amount,unit:n.unit})),...Object.fromEntries(Qt.map(n=>[n,$e(t[n])]))};this.profileId&&(s.id=this.profileId);let i=await this.api.saveProfile(s);this.profileId?this.close():this.emit("ep-open",{type:"ingredients",profileId:i.id})}catch(e){this._error=e.message||String(e),this._busy=!1}}async _delete(){if(!this._confirmDelete){this._confirmDelete=!0;return}this._busy=!0;try{await this.api.deleteProfile(this.profileId),this.close()}catch(t){this._error=t.message||String(t),this._busy=!1}}_textarea(t,e){return r`<label class="field">
       <span>${this.t(`profile.${t}`)}</span>
       <textarea rows="4" .value=${this._form[t]} @input=${s=>this._set(t,s.target.value)}></textarea>
       <div class="help">${e}</div>
@@ -1219,12 +1222,12 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       <label class="field">
         <span>${this.t("profile.unknown")}</span>
         <select @change=${i=>this._set("unknown_ingredients",i.target.value)}>
-          ${_e.map(i=>r`<option value=${i} ?selected=${t.unknown_ingredients===i}>${this.t(`profile.unknown.${i}`)}</option>`)}
+          ${be.map(i=>r`<option value=${i} ?selected=${t.unknown_ingredients===i}>${this.t(`profile.unknown.${i}`)}</option>`)}
         </select>
       </label>
       <div class="field">
-        <span class="label">${this.t("groups.quick")}</span>
-        ${this.groupChips(t.excluded_groups,i=>this._set("excluded_groups",t.excluded_groups.includes(i)?t.excluded_groups.filter(a=>a!==i):[...t.excluded_groups,i]))}
+        <span class="label">${this.t("groups.editor_title")}</span>
+        ${this.groupChips(t.excluded_groups,i=>this._set("excluded_groups",t.excluded_groups.includes(i)?t.excluded_groups.filter(n=>n!==i):[...t.excluded_groups,i]))}
       </div>
       ${this._textarea("likes",this.t("profile.list_help"))}
       ${this._textarea("dislikes",this.t("profile.list_help"))}
@@ -1243,20 +1246,23 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
       <span class="spacer"></span>
       <button class="btn flat" @click=${()=>this.close()}>${this.t("common.cancel")}</button>
       <button class="btn" ?disabled=${this._busy} @click=${this._save}>${this.t("common.save")}</button>
-    `;return this.shell(this.profileId?this.t("profile.title"):this.t("profile.new"),e,s)}};d(pt,"properties",{...c.properties,profileId:{attribute:!1},_form:{state:!0},_busy:{state:!0},_error:{state:!0},_confirmDelete:{state:!0}});customElements.define("ep-profile-editor",pt);var Qt=["all","unknown","tolerated","small","not_tolerated"],be=[{state:"tolerated",icon:"mdi:check",cls:"ok"},{state:"small",icon:"mdi:approximately-equal",cls:"warn"},{state:"not_tolerated",icon:"mdi:close",cls:"bad"}],Q=80;function $e(n){let t=/^\s*(\d+(?:[.,]\d+)?)\s*(.*)$/.exec(n||"");return t?{max_amount:Number(t[1].replace(",",".")),unit:t[2].trim()||null}:{max_amount:null,unit:null}}var J=class extends c{constructor(){super(),this._items=null,this._filter="all",this._query="",this._limit=Q,this._pending=new Set,this._error=null,this._loadedFor=null}updated(){this.api&&this.profileId&&this._loadedFor!==this.profileId&&(this._loadedFor=this.profileId,this.api.profileIngredients(this.profileId).then(t=>this._items=t).catch(t=>this._error=t.message||String(t)))}get _profile(){return this.profiles.find(t=>t.id===this.profileId)}get _visible(){let t=this._query.toLowerCase().split(/\s+/).filter(Boolean);return(this._items||[]).filter(e=>this._filter==="all"||e.state===this._filter).filter(e=>!t.length||t.every(s=>e.name.toLowerCase().includes(s)))}async _set(t,e,s={}){let i=t.explicit&&t.state===e&&!s.keep?"unknown":e;this._pending=new Set([...this._pending,t.name]),this._error=null;try{this._items=await this.api.setIngredient({profile_id:this.profileId,name:t.name,state:i,max_amount:s.max_amount??t.max_amount??null,unit:s.unit??t.unit??null})}catch(o){this._error=o.message||String(o)}let a=new Set(this._pending);a.delete(t.name),this._pending=a}async _toggleGroup(t){let e=this._profile,s=e.excluded_groups||[],i=s.includes(t)?s.filter(a=>a!==t):[...s,t];this._groupsBusy=!0,this.requestUpdate();try{this._items=await this.api.setGroups(this.profileId,i),e.excluded_groups=i}catch(a){this._error=a.message||String(a)}this._groupsBusy=!1,this.requestUpdate()}_setLimit(t,e){let s=$e(e);this._set(t,"small",{...s,keep:!0})}_addNew(t){let e=this._query.trim();e&&(this._set({name:e,state:"unknown",explicit:!1},t),this._query="")}_counts(){let t=Object.fromEntries(Qt.map(e=>[e,0]));for(let e of this._items||[])t.all+=1,t[e.state]+=1;return t}render(){let t=this._profile;if(!t)return"";let e=this.t("ingr.title",{name:t.name});if(!this._items)return this.shell(e,r`<p class="muted">${this._error||this.t("common.loading")}</p>`);let s=this._counts(),i=this._visible,a=this._query.trim().toLowerCase(),o=a&&this._items.some(p=>p.name.toLowerCase()===a),l=r`
+    `;return this.shell(this.profileId?this.t("profile.title"):this.t("profile.new"),e,s)}};d(ht,"properties",{...c.properties,profileId:{attribute:!1},_form:{state:!0},_busy:{state:!0},_error:{state:!0},_confirmDelete:{state:!0}});customElements.define("ep-profile-editor",ht);var Jt=["all","unknown","tolerated","small","not_tolerated"],xe=[{state:"tolerated",icon:"mdi:check",cls:"ok"},{state:"small",icon:"mdi:approximately-equal",cls:"warn"},{state:"not_tolerated",icon:"mdi:close",cls:"bad"}],Q=80;function ye(a){let t=/^\s*(\d+(?:[.,]\d+)?)\s*(.*)$/.exec(a||"");return t?{max_amount:Number(t[1].replace(",",".")),unit:t[2].trim()||null}:{max_amount:null,unit:null}}var J=class extends c{constructor(){super(),this._items=null,this._filter="all",this._query="",this._limit=Q,this._pending=new Set,this._error=null,this._loadedFor=null}updated(){this.api&&this.profileId&&this._loadedFor!==this.profileId&&(this._loadedFor=this.profileId,this.api.profileIngredients(this.profileId).then(t=>this._items=t).catch(t=>this._error=t.message||String(t)))}get _profile(){return this.profiles.find(t=>t.id===this.profileId)}get _visible(){let t=this._query.toLowerCase().split(/\s+/).filter(Boolean);return(this._items||[]).filter(e=>this._filter==="all"||e.state===this._filter).filter(e=>!t.length||t.every(s=>e.name.toLowerCase().includes(s)))}async _set(t,e,s={}){let i=t.explicit&&t.state===e&&!s.keep?"unknown":e;this._pending=new Set([...this._pending,t.name]),this._error=null;try{this._items=await this.api.setIngredient({profile_id:this.profileId,name:t.name,state:i,max_amount:s.max_amount??t.max_amount??null,unit:s.unit??t.unit??null})}catch(o){this._error=o.message||String(o)}let n=new Set(this._pending);n.delete(t.name),this._pending=n}_setLimit(t,e){let s=ye(e);this._set(t,"small",{...s,keep:!0})}_addNew(t){let e=this._query.trim();e&&(this._set({name:e,state:"unknown",explicit:!1},t),this._query="")}_counts(){let t=Object.fromEntries(Jt.map(e=>[e,0]));for(let e of this._items||[])t.all+=1,t[e.state]+=1;return t}render(){let t=this._profile;if(!t)return"";let e=this.t("ingr.title",{name:t.name});if(!this._items)return this.shell(e,r`<p class="muted">${this._error||this.t("common.loading")}</p>`);let s=this._counts(),i=this._visible,n=this._query.trim().toLowerCase(),o=n&&this._items.some(h=>h.name.toLowerCase()===n),p=r`
       ${t.unknown_ingredients==="exclude"?r`<p class="hint">${this.t("ingr.hint_exclude")}</p>`:""}
-      <details class="quick" .open=${this._quickOpen??!(t.excluded_groups||[]).length}
-        @toggle=${p=>this._quickOpen=p.target.open}>
-        <summary>${this.t("groups.quick")}</summary>
-        <p class="help">${this.t("groups.help")}</p>
-        ${this.groupChips(t.excluded_groups||[],p=>this._toggleGroup(p),this._groupsBusy)}
-      </details>
+      <div class="groupbar">
+        <div class="groupbar-text">
+          <span class="muted">${this.t("groups.bar_title")}</span>
+          ${(t.excluded_groups||[]).length?r`<span class="chips">${t.excluded_groups.map(h=>r`<span class="chip small on bad">${this.groupLabel(h)}</span>`)}</span>`:r`<span class="muted">${this.t("groups.none")}</span>`}
+        </div>
+        <button class="btn outline" @click=${()=>this.emit("ep-open",{type:"groups",profileId:this.profileId,back:{type:"ingredients",profileId:this.profileId}})}>
+          <ha-icon icon="mdi:alert-circle-outline"></ha-icon>${this.t("groups.button")}
+        </button>
+      </div>
       <div class="sticky">
         <input type="search" placeholder=${this.t("ingr.search")} .value=${this._query}
-          @input=${p=>{this._query=p.target.value,this._limit=Q}} />
+          @input=${h=>{this._query=h.target.value,this._limit=Q}} />
         <div class="chips filters">
-          ${Qt.map(p=>r`<button class="chip small ${this._filter===p?"on":""}"
-              @click=${()=>{this._filter=p,this._limit=Q}}>${this.t(`ingr.filter.${p}`)} (${s[p]})</button>`)}
+          ${Jt.map(h=>r`<button class="chip small ${this._filter===h?"on":""}"
+              @click=${()=>{this._filter=h,this._limit=Q}}>${this.t(`ingr.filter.${h}`)} (${s[h]})</button>`)}
         </div>
         <div class="legend muted">
           <span><span class="mini ok">✓</span>${this.t("ingr.state.tolerated")}</span>
@@ -1265,21 +1271,21 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         </div>
       </div>
 
-      ${a&&!o?r`<div class="item new">
+      ${n&&!o?r`<div class="item new">
             <span class="text"><span class="name">„${this._query.trim()}“ ${this.t("ingr.add")}</span></span>
-            ${this._buttons({name:this._query.trim(),state:"unknown",explicit:!1},p=>this._addNew(p))}
+            ${this._buttons({name:this._query.trim(),state:"unknown",explicit:!1},h=>this._addNew(h))}
           </div>`:""}
 
       <ul class="list">
-        ${i.slice(0,this._limit).map(p=>this._renderItem(p))}
+        ${i.slice(0,this._limit).map(h=>this._renderItem(h))}
       </ul>
       ${i.length>this._limit?r`<div class="more"><button class="btn outline" @click=${()=>this._limit+=Q}>
             + ${Math.min(Q,i.length-this._limit)}</button></div>`:""}
-      ${!i.length&&!a?r`<p class="muted">${this.t("ingr.none")}</p>`:""}
+      ${!i.length&&!n?r`<p class="muted">${this.t("ingr.none")}</p>`:""}
       ${this._error?r`<p class="error">${this._error}</p>`:""}
-    `,h=r`<button class="btn" @click=${()=>this.close()}>${this.t("ingr.done")}</button>`;return this.shell(e,l,h)}_buttons(t,e){let s=this._pending.has(t.name);return r`<span class="seg">
-      ${be.map(i=>{let a=t.state===i.state,o=a?t.explicit?`on ${i.cls}`:`implied ${i.cls}`:"";return r`<button class="segbtn ${o}" ?disabled=${s}
-          aria-pressed=${a&&t.explicit} aria-label=${this.t(`ingr.state.${i.state}`)}
+    `,l=r`<button class="btn" @click=${()=>this.close()}>${this.t("ingr.done")}</button>`;return this.shell(e,p,l)}_buttons(t,e){let s=this._pending.has(t.name);return r`<span class="seg">
+      ${xe.map(i=>{let n=t.state===i.state,o=n?t.explicit?`on ${i.cls}`:`implied ${i.cls}`:"";return r`<button class="segbtn ${o}" ?disabled=${s}
+          aria-pressed=${n&&t.explicit} aria-label=${this.t(`ingr.state.${i.state}`)}
           title=${this.t(`ingr.state.${i.state}`)}
           @click=${()=>e(i.state)}>${i.cls==="ok"?"\u2713":i.cls==="warn"?"\u2248":"\u2715"}</button>`})}
     </span>`}_renderItem(t){let e=t.max_amount!==null&&t.max_amount!==void 0?[k(t.max_amount),t.unit].filter(Boolean).join(" "):"";return r`<li class="item">
@@ -1298,17 +1304,23 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
             </label>`:""}
       </span>
       ${this._buttons(t,s=>this._set(t,s))}
-    </li>`}};d(J,"properties",{...c.properties,profileId:{attribute:!1},_items:{state:!0},_filter:{state:!0},_query:{state:!0},_limit:{state:!0},_pending:{state:!0},_error:{state:!0}}),d(J,"styles",[...c.styles,m`
-      .quick {
+    </li>`}};d(J,"properties",{...c.properties,profileId:{attribute:!1},_items:{state:!0},_filter:{state:!0},_query:{state:!0},_limit:{state:!0},_pending:{state:!0},_error:{state:!0}}),d(J,"styles",[...c.styles,u`
+      .groupbar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
         margin-bottom: 12px;
+        padding: 10px 12px;
         border: 1px solid var(--divider-color, #ddd);
         border-radius: 10px;
-        padding: 8px 12px;
       }
-      .quick summary {
-        font-weight: 500;
-        cursor: pointer;
-        padding: 4px 0;
+      .groupbar-text {
+        flex: 1 1 200px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13px;
       }
       .hint {
         background: var(--secondary-background-color, #f3f3f3);
@@ -1444,7 +1456,126 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         text-align: center;
         margin-top: 12px;
       }
-    `]);customElements.define("ep-ingredient-dialog",J);var Jt=[{id:"plan",icon:"mdi:calendar-week"},{id:"dishes",icon:"mdi:silverware-fork-knife"},{id:"profiles",icon:"mdi:account-heart"},{id:"shopping",icon:"mdi:cart"}],X=class extends ${constructor(){super(),this._tab="plan",this._data=null,this._compat={},this._revision=0,this._dialog=null,this._error=null,this._unsub=null,this._api=null}t(t,e){return rt(this.hass,t,e)}connectedCallback(){super.connectedCallback();let t=new URLSearchParams(window.location.search);t.get("tab")&&Jt.some(e=>e.id===t.get("tab"))&&(this._tab=t.get("tab")),this._openDishId=t.get("dish"),this.hass&&this._start()}disconnectedCallback(){super.disconnectedCallback(),this._unsub&&(this._unsub.then(t=>t()).catch(()=>{}),this._unsub=null)}updated(t){t.has("hass")&&this.hass&&(this._api?this._api.hass=this.hass:this._start())}_start(){this._unsub||!this.hass||(this._api=new nt(this.hass),this._load(),this._unsub=this._api.subscribe(()=>this._load()))}async _load(){try{let[t,e]=await Promise.all([this._api.data(),this._api.compat()]);this._data=t,this._compat=e,this._revision+=1,this._error=null,this._openDishId&&t.dishes.some(s=>s.id===this._openDishId)&&(this._dialog={type:"recipe",dishId:this._openDishId},this._openDishId=null)}catch(t){this._error=t.message||String(t)}}_toggleMenu(){this.dispatchEvent(new CustomEvent("hass-toggle-menu",{bubbles:!0,composed:!0}))}_setTab(t){this._tab=t;let e=new URL(window.location.href);e.searchParams.set("tab",t),e.searchParams.delete("dish"),history.replaceState(null,"",e)}_onOpen(t){this._dialog=t.detail}_closeDialog(){this._dialog=null}render(){if(!this.hass)return r``;let t={hass:this.hass,api:this._api,data:this._data,compat:this._compat};return r`
+    `]);customElements.define("ep-ingredient-dialog",J);var Xt=6,X=class extends c{constructor(){super(),this._groups=null,this._expanded=new Set,this._busy=!1,this._error=null,this._loadedFor=null}updated(){this.api&&this.profileId&&this._loadedFor!==this.profileId&&(this._loadedFor=this.profileId,this._load())}async _load(){try{this._groups=await this.api.profileGroups(this.profileId)}catch(t){this._error=t.message||String(t)}}close(){this.back?this.emit("ep-open",this.back):super.close()}async _toggle(t){let e=this._groups.filter(i=>i.excluded).map(i=>i.id),s=t.excluded?e.filter(i=>i!==t.id):[...e,t.id];this._groups=this._groups.map(i=>i.id===t.id?{...i,excluded:!i.excluded}:i),this._busy=!0,this._error=null;try{await this.api.setGroups(this.profileId,s)}catch(i){this._error=i.message||String(i),await this._load()}this._busy=!1}_toggleExpand(t){let e=new Set(this._expanded);e.has(t)?e.delete(t):e.add(t),this._expanded=e}_row(t){let e=this._expanded.has(t.id),s=e?t.members:t.members.slice(0,Xt);return r`<li class="row-item ${t.excluded?"excluded":""}">
+      <button class="switch-row" role="switch" aria-checked=${t.excluded} ?disabled=${this._busy}
+        @click=${()=>this._toggle(t)}>
+        <span class="text">
+          <span class="name">${this.groupLabel(t.id)}</span>
+          <span class="sub muted">
+            ${t.count===1?this.t("groups.affects_one"):t.count?this.t("groups.affects",{n:t.count}):this.t("groups.affects_none")}
+          </span>
+        </span>
+        <span class="switch ${t.excluded?"on":""}" aria-hidden="true"><span class="knob"></span></span>
+      </button>
+      ${t.count?r`<div class="members muted">
+            ${s.join(", ")}${!e&&t.count>Xt?r` … <button class="link" @click=${()=>this._toggleExpand(t.id)}>
+                  ${this.t("groups.show_all",{n:t.count})}</button>`:""}
+          </div>`:""}
+    </li>`}render(){let t=this.profiles.find(l=>l.id===this.profileId);if(!t)return"";let e=this.t("groups.title",{name:t.name});if(!this._groups)return this.shell(e,r`<p class="muted">${this._error||this.t("common.loading")}</p>`);let s=this._groups.filter(l=>l.kind==="allergen"),i=this._groups.filter(l=>l.kind==="meat"),n=this._groups.filter(l=>l.excluded).length,o=r`
+      <p class="help intro">${this.t("groups.intro")}</p>
+      <h3>${this.t("groups.allergens_title")}</h3>
+      <ul class="list">${s.map(l=>this._row(l))}</ul>
+      <h3>${this.t("groups.meat_title")}</h3>
+      <ul class="list">${i.map(l=>this._row(l))}</ul>
+      <p class="help">${this.t("groups.disclaimer")}</p>
+      ${this._error?r`<p class="error">${this._error}</p>`:""}
+    `,p=r`
+      <span class="muted count">${this.t("groups.active",{n})}</span>
+      <span class="spacer"></span>
+      ${this.back?r`<button class="btn" @click=${()=>this.close()}>${this.t("groups.back")}</button>`:r`
+            <button class="btn flat" @click=${()=>this.emit("ep-open",{type:"ingredients",profileId:this.profileId})}>
+              ${this.t("ingr.open")}
+            </button>
+            <button class="btn" @click=${()=>this.close()}>${this.t("ingr.done")}</button>
+          `}
+    `;return this.shell(e,o,p)}};d(X,"properties",{...c.properties,profileId:{attribute:!1},back:{attribute:!1},_groups:{state:!0},_expanded:{state:!0},_busy:{state:!0},_error:{state:!0}}),d(X,"styles",[...c.styles,u`
+      .intro {
+        margin-top: 0;
+      }
+      h3 {
+        font-size: 15px;
+        margin: 18px 0 6px;
+      }
+      .list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .row-item {
+        border-bottom: 1px solid var(--divider-color, #eee);
+        padding: 4px 0 8px;
+      }
+      .switch-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        min-height: 52px;
+        padding: 4px 0;
+        border: none;
+        background: transparent;
+        color: inherit;
+        text-align: left;
+      }
+      .text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+      .name {
+        font-weight: 500;
+        font-size: 15px;
+      }
+      .excluded .name {
+        color: var(--ep-bad);
+      }
+      .sub {
+        font-size: 12px;
+      }
+      .switch {
+        flex: none;
+        width: 48px;
+        height: 28px;
+        border-radius: 14px;
+        background: var(--divider-color, #ccc);
+        position: relative;
+        transition: background 0.15s;
+      }
+      .switch .knob {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        transition: left 0.15s;
+      }
+      .switch.on {
+        background: var(--ep-bad);
+      }
+      .switch.on .knob {
+        left: 23px;
+      }
+      .members {
+        font-size: 12px;
+        line-height: 1.4;
+      }
+      .link {
+        border: none;
+        background: none;
+        padding: 0;
+        color: var(--primary-color);
+        font-size: 12px;
+      }
+      .count {
+        font-size: 13px;
+        align-self: center;
+      }
+    `]);customElements.define("ep-groups-dialog",X);var te=[{id:"plan",icon:"mdi:calendar-week"},{id:"dishes",icon:"mdi:silverware-fork-knife"},{id:"profiles",icon:"mdi:account-heart"},{id:"shopping",icon:"mdi:cart"}],tt=class extends ${constructor(){super(),this._tab="plan",this._data=null,this._compat={},this._revision=0,this._dialog=null,this._error=null,this._unsub=null,this._api=null}t(t,e){return ot(this.hass,t,e)}connectedCallback(){super.connectedCallback();let t=new URLSearchParams(window.location.search);t.get("tab")&&te.some(e=>e.id===t.get("tab"))&&(this._tab=t.get("tab")),this._openDishId=t.get("dish"),this.hass&&this._start()}disconnectedCallback(){super.disconnectedCallback(),this._unsub&&(this._unsub.then(t=>t()).catch(()=>{}),this._unsub=null)}updated(t){t.has("hass")&&this.hass&&(this._api?this._api.hass=this.hass:this._start())}_start(){this._unsub||!this.hass||(this._api=new rt(this.hass),this._load(),this._unsub=this._api.subscribe(()=>this._load()))}async _load(){try{let[t,e]=await Promise.all([this._api.data(),this._api.compat()]);this._data=t,this._compat=e,this._revision+=1,this._error=null,this._openDishId&&t.dishes.some(s=>s.id===this._openDishId)&&(this._dialog={type:"recipe",dishId:this._openDishId},this._openDishId=null)}catch(t){this._error=t.message||String(t)}}_toggleMenu(){this.dispatchEvent(new CustomEvent("hass-toggle-menu",{bubbles:!0,composed:!0}))}_setTab(t){this._tab=t;let e=new URL(window.location.href);e.searchParams.set("tab",t),e.searchParams.delete("dish"),history.replaceState(null,"",e)}_onOpen(t){this._dialog=t.detail}_closeDialog(){this._dialog=null}render(){if(!this.hass)return r``;let t={hass:this.hass,api:this._api,data:this._data,compat:this._compat};return r`
       <div class="toolbar">
         ${this.narrow?r`<button class="icon-btn menu" @click=${this._toggleMenu} aria-label="Menu">
               <ha-icon icon="mdi:menu"></ha-icon>
@@ -1452,7 +1583,7 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
         <div class="title">${this.t("title")}</div>
       </div>
       <nav class="tabs" role="tablist">
-        ${Jt.map(e=>r`<button
+        ${te.map(e=>r`<button
             role="tab"
             class="tab ${this._tab===e.id?"active":""}"
             aria-selected=${this._tab===e.id}
@@ -1483,8 +1614,9 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
           .dishId=${e.dishId}></ep-dish-editor>`;case"slot":return r`<ep-slot-editor .hass=${t.hass} .api=${t.api} .data=${t.data} .compat=${t.compat}
           .date=${e.date} .mealType=${e.mealType} .assignments=${e.assignments}></ep-slot-editor>`;case"generate":return r`<ep-generate-dialog .hass=${t.hass} .api=${t.api} .data=${t.data} .compat=${t.compat}
           .start=${e.start}></ep-generate-dialog>`;case"profile":return r`<ep-profile-editor .hass=${t.hass} .api=${t.api} .data=${t.data} .compat=${t.compat}
-          .profileId=${e.profileId}></ep-profile-editor>`;case"ingredients":return r`<ep-ingredient-dialog .hass=${t.hass} .api=${t.api} .data=${t.data} .compat=${t.compat}
-          .profileId=${e.profileId}></ep-ingredient-dialog>`;default:return""}}};d(X,"properties",{hass:{attribute:!1},narrow:{type:Boolean},route:{attribute:!1},panel:{attribute:!1},_tab:{state:!0},_data:{state:!0},_compat:{state:!0},_revision:{state:!0},_dialog:{state:!0},_error:{state:!0}}),d(X,"styles",[b,m`
+          .profileId=${e.profileId}></ep-profile-editor>`;case"groups":return r`<ep-groups-dialog .hass=${t.hass} .api=${t.api} .data=${t.data} .compat=${t.compat}
+          .profileId=${e.profileId} .back=${e.back}></ep-groups-dialog>`;case"ingredients":return r`<ep-ingredient-dialog .hass=${t.hass} .api=${t.api} .data=${t.data} .compat=${t.compat}
+          .profileId=${e.profileId}></ep-ingredient-dialog>`;default:return""}}};d(tt,"properties",{hass:{attribute:!1},narrow:{type:Boolean},route:{attribute:!1},panel:{attribute:!1},_tab:{state:!0},_data:{state:!0},_compat:{state:!0},_revision:{state:!0},_dialog:{state:!0},_error:{state:!0}}),d(tt,"styles",[b,u`
       :host {
         display: block;
         min-height: 100vh;
@@ -1552,4 +1684,4 @@ var Xt=Object.defineProperty;var te=(n,t,e)=>t in n?Xt(n,t,{enumerable:!0,config
           font-size: 14px;
         }
       }
-    `]);customElements.define("essensplaner-panel",X);
+    `]);customElements.define("essensplaner-panel",tt);

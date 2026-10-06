@@ -32,6 +32,45 @@ export class EpElement extends LitElement {
     return profile ? profile.name : "?";
   }
 
+  get groups() {
+    return (this.data && this.data.groups) || [];
+  }
+
+  groupLabel(id) {
+    const group = this.groups.find((g) => g.id === id);
+    if (!group) return id;
+    const lang = (this.hass && this.hass.language) || "de";
+    return lang.startsWith("de") ? group.label_de : group.label_en;
+  }
+
+  /** Schnellauswahl: Fleischsorten (an = isst es) und Allergene (an = ausgeschlossen). */
+  groupChips(excluded, onToggle, disabled = false) {
+    const meat = this.groups.filter((g) => g.kind === "meat");
+    const allergens = this.groups.filter((g) => g.kind === "allergen");
+    return html`
+      <div class="group-block">
+        <div class="group-title">${this.t("groups.meat")}</div>
+        <div class="chips">
+          ${meat.map((g) => {
+            const eats = !excluded.includes(g.id);
+            return html`<button class="chip ${eats ? "on" : "off-strike"}" ?disabled=${disabled}
+              aria-pressed=${eats} @click=${() => onToggle(g.id)}>${eats ? "✓ " : ""}${this.groupLabel(g.id)}</button>`;
+          })}
+        </div>
+      </div>
+      <div class="group-block">
+        <div class="group-title">${this.t("groups.allergens")}</div>
+        <div class="chips">
+          ${allergens.map((g) => {
+            const ex = excluded.includes(g.id);
+            return html`<button class="chip ${ex ? "on bad" : ""}" ?disabled=${disabled}
+              aria-pressed=${ex} @click=${() => onToggle(g.id)}>${ex ? "✕ " : ""}${this.groupLabel(g.id)}</button>`;
+          })}
+        </div>
+      </div>
+    `;
+  }
+
   /** Bild oder Platzhalter-Icon. */
   thumb(dish, size = 48) {
     const url = dish && imageUrl(dish.image);

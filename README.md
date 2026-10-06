@@ -32,7 +32,13 @@ Nach der Einrichtung erscheint **Essensplaner** in der Seitenleiste (auch in der
 - **Gerichte**: Suche, Filter nach Mahlzeit und „passt für“, Rezeptansicht mit
   Portionsrechner und Begründung, warum ein Gericht für eine Person (nicht) passt.
   Gerichte anlegen und bearbeiten, inklusive Foto (Upload oder Bild-URL übernehmen).
-- **Personen**: Listen für Verträglichkeiten, Vorlieben und Abneigungen bearbeiten.
+- **Personen**: *Zutaten anklicken* öffnet eine Liste aller Zutaten (häufigste zuerst), in der
+  jede Zutat mit einem Klick als verträglich, nur in kleinen Mengen oder nicht verträglich
+  markiert wird. Darüber gibt es eine **Schnellauswahl**: Fleischsorten (Rind, Kalb, Schwein,
+  Geflügel, Lamm, Wild, Fisch, Meeresfrüchte) und die 14 Hauptallergene. Ein Klick schließt
+  alle typischen Zutaten der Gruppe aus, auch in später hinzugefügten Gerichten; einzelne
+  Zutaten lassen sich trotzdem freigeben. Die Gruppen sind eine Auswahlhilfe und ersetzen
+  keine Allergenkennzeichnung verarbeiteter Produkte.
 - **Einkauf**: Zeitraum wählen, Einträge an- oder abwählen und in eine To-do-Liste übertragen.
 
 Bilder werden lokal unter `config/essensplaner/images/` gespeichert und auf 1280 px verkleinert.

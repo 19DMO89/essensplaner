@@ -133,6 +133,22 @@ export const sharedStyles = css`
     border-color: var(--primary-color);
     color: var(--text-primary-color, #fff);
   }
+  .chip.on.bad {
+    background: var(--ep-bad);
+    border-color: var(--ep-bad);
+  }
+  .chip.off-strike {
+    text-decoration: line-through;
+    color: var(--secondary-text-color);
+  }
+  .group-block {
+    margin-bottom: 10px;
+  }
+  .group-title {
+    font-size: 13px;
+    color: var(--secondary-text-color);
+    margin-bottom: 6px;
+  }
   .chip.small {
     min-height: 22px;
     padding: 1px 8px;

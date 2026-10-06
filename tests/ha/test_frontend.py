@@ -265,3 +265,58 @@ async def test_ingredient_checklist(
         client, type="essensplaner/profile/ingredients", profile_id="gibt es nicht"
     )
     assert not msg["success"]
+
+
+async def test_groups_quick_select(
+    hass: HomeAssistant, manager: EssensplanerManager, hass_ws_client: Any
+) -> None:
+    client = await hass_ws_client(hass)
+    anna, ben = manager.profiles
+
+    msg = await _call(client, type="essensplaner/data")
+    groups = {g["id"]: g for g in msg["result"]["groups"]}
+    assert groups["gluten"]["kind"] == "allergen"
+    assert groups["meat_beef"]["label_de"] == "Rind"
+
+    # Ben verträgt alles -> Gulasch passt; ohne Rind nicht mehr
+    msg = await _call(client, type="essensplaner/compat/all")
+    assert msg["result"]["d_gulasch"][ben] == "ok"
+    msg = await _call(
+        client, type="essensplaner/profile/set_groups", profile_id=ben, excluded_groups=["meat_beef"]
+    )
+    assert msg["success"], msg
+    rind = next(i for i in msg["result"] if i["name"] == "Rindfleisch")
+    assert rind["state"] == "not_tolerated" and rind["group"] == "meat_beef"
+    assert manager.profiles[ben].excluded_groups == ["meat_beef"]
+    msg = await _call(client, type="essensplaner/compat/all")
+    assert msg["result"]["d_gulasch"][ben] == "excluded"
+
+    msg = await _call(
+        client, type="essensplaner/profile/set_groups", profile_id=ben, excluded_groups=["unbekannt"]
+    )
+    assert not msg["success"]
+
+
+async def test_options_profile_keeps_groups(
+    hass: HomeAssistant, manager: EssensplanerManager
+) -> None:
+    from homeassistant.data_entry_flow import FlowResultType
+
+    anna = next(iter(manager.profiles))
+    manager.set_excluded_groups(anna, ["gluten", "milk"])
+    result = await hass.config_entries.options.async_init(manager.entry.entry_id)
+    result = await hass.config_entries.options.async_configure(
+        result["flow_id"], {"next_step_id": "profile_edit"}
+    )
+    result = await hass.config_entries.options.async_configure(result["flow_id"], {"profile": anna})
+    result = await hass.config_entries.options.async_configure(
+        result["flow_id"],
+        {
+            "name": "Anna",
+            "servings": 1,
+            "unknown_ingredients": "exclude",
+            "excluded_groups": ["gluten", "milk"],
+        },
+    )
+    assert result["type"] is FlowResultType.CREATE_ENTRY
+    assert manager.profiles[anna].excluded_groups == ["gluten", "milk"]

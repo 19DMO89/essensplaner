@@ -78,11 +78,12 @@ def _apply_synonyms(token: str) -> str:
     return token
 
 
-def normalize_tokens(name: str) -> tuple[str, ...]:
-    """Zerlege einen Zutatennamen in normalisierte Wort-Stämme."""
+def normalize_tokens(name: str, stem: bool = True) -> tuple[str, ...]:
+    """Zerlege einen Zutatennamen in normalisierte Wort-Stämme (oder ganze Wörter)."""
     text = name.lower().translate(_UMLAUTS).replace("-", " ")
     text = _NON_WORD.sub(" ", text)
-    return tuple(_stem(_apply_synonyms(t)) for t in _SPACES.split(text.strip()) if t)
+    tokens = (_apply_synonyms(t) for t in _SPACES.split(text.strip()) if t)
+    return tuple(_stem(t) if stem else t for t in tokens)
 
 
 def normalize_name(name: str) -> str:

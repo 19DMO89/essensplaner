@@ -31,6 +31,11 @@ class ProfilesView extends EpElement {
                     small: p.small_amounts.length,
                   })}
                 </span>
+                ${(p.excluded_groups || []).length
+                  ? html`<span class="chips">${p.excluded_groups.map(
+                      (g) => html`<span class="chip small">${this.t("groups.without", { group: this.groupLabel(g) })}</span>`
+                    )}</span>`
+                  : ""}
                 <span class="small">
                   ${this.t(`profile.unknown.${p.unknown_ingredients}`)} ·
                   <strong>${this.t("profile.fitting", { n: this._fitting(p.id) })}</strong>

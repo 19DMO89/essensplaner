@@ -82,6 +82,23 @@ class IngredientDialog extends EpDialog {
     this._pending = pending;
   }
 
+  async _toggleGroup(id) {
+    const profile = this._profile;
+    const current = profile.excluded_groups || [];
+    const next = current.includes(id) ? current.filter((g) => g !== id) : [...current, id];
+    this._groupsBusy = true;
+    this.requestUpdate();
+    try {
+      this._items = await this.api.setGroups(this.profileId, next);
+      // Sofort anzeigen, bis die Daten neu geladen sind.
+      profile.excluded_groups = next;
+    } catch (err) {
+      this._error = err.message || String(err);
+    }
+    this._groupsBusy = false;
+    this.requestUpdate();
+  }
+
   _setLimit(item, text) {
     const limit = parseLimit(text);
     this._set(item, "small", { ...limit, keep: true });
@@ -118,6 +135,12 @@ class IngredientDialog extends EpDialog {
       ${profile.unknown_ingredients === "exclude"
         ? html`<p class="hint">${this.t("ingr.hint_exclude")}</p>`
         : ""}
+      <details class="quick" .open=${this._quickOpen ?? !(profile.excluded_groups || []).length}
+        @toggle=${(e) => (this._quickOpen = e.target.open)}>
+        <summary>${this.t("groups.quick")}</summary>
+        <p class="help">${this.t("groups.help")}</p>
+        ${this.groupChips(profile.excluded_groups || [], (id) => this._toggleGroup(id), this._groupsBusy)}
+      </details>
       <div class="sticky">
         <input type="search" placeholder=${this.t("ingr.search")} .value=${this._query}
           @input=${(e) => {
@@ -188,6 +211,9 @@ class IngredientDialog extends EpDialog {
             ? html` · <span class="status-${item.state === "tolerated" ? "ok" : item.state === "small" ? "warn" : "excluded"}">
                 ${this.t(`ingr.by.${item.state}`, { term: item.by })}</span>`
             : ""}
+          ${item.group
+            ? html` · <span class="status-excluded">${this.t("ingr.by_group", { group: this.groupLabel(item.group) })}</span>`
+            : ""}
         </span>
         ${item.state === "small" && item.explicit
           ? html`<label class="limit">
@@ -204,6 +230,17 @@ class IngredientDialog extends EpDialog {
   static styles = [
     ...EpDialog.styles,
     css`
+      .quick {
+        margin-bottom: 12px;
+        border: 1px solid var(--divider-color, #ddd);
+        border-radius: 10px;
+        padding: 8px 12px;
+      }
+      .quick summary {
+        font-weight: 500;
+        cursor: pointer;
+        padding: 4px 0;
+      }
       .hint {
         background: var(--secondary-background-color, #f3f3f3);
         border-left: 4px solid var(--ep-warn);

@@ -100,6 +100,8 @@ class Profile:
     dislikes: list[str] = field(default_factory=list)
     max_duration: int | None = None
     unknown_ingredients: str = UNKNOWN_EXCLUDE
+    # Ausgeschlossene Zutatengruppen (Fleischsorten, Allergene), siehe groups.py
+    excluded_groups: list[str] = field(default_factory=list)
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Profile:
@@ -118,6 +120,7 @@ class Profile:
             dislikes=_str_list(data.get("dislikes")),
             max_duration=int(max_duration) if max_duration else None,
             unknown_ingredients=mode if mode in UNKNOWN_MODES else UNKNOWN_EXCLUDE,
+            excluded_groups=_str_list(data.get("excluded_groups")),
         )
 
     def to_dict(self) -> dict[str, Any]:

@@ -69,6 +69,18 @@ async function callWS(msg) {
       return { added: mock.shopping.filter((i) => msg.keys.includes(i.key)).map((i) => i.summary), skipped: [] };
     case "profile/ingredients":
       return structuredClone(mock.ingredients[msg.profile_id] || []);
+    case "profile/set_groups": {
+      const profile = mock.data.profiles.find((p) => p.id === msg.profile_id);
+      profile.excluded_groups = msg.excluded_groups;
+      for (const item of mock.ingredients[msg.profile_id] || []) {
+        if (item.explicit) continue;
+        const group = msg.excluded_groups.find((g) => (mock.group_members[g] || []).includes(item.name));
+        if (group) Object.assign(item, { state: "not_tolerated", group, by: null });
+        else if (item.group) Object.assign(item, { state: "unknown", group: null });
+      }
+      notify();
+      return structuredClone(mock.ingredients[msg.profile_id]);
+    }
     case "profile/set_ingredient": {
       const list = (mock.ingredients[msg.profile_id] = mock.ingredients[msg.profile_id] || []);
       let item = list.find((i) => i.name.toLowerCase() === msg.name.toLowerCase());

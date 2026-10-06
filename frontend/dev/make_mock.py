@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "custom_components" / "essensplaner"))
 
 from logic.compat import check_dish  # noqa: E402
+from logic.groups import GROUPS, in_group  # noqa: E402
 from logic.ingredients import ingredient_overview  # noqa: E402
 from logic.models import Dish, Profile, plan_to_dict  # noqa: E402
 from logic.planner import Planner, shared_base  # noqa: E402
@@ -79,6 +80,7 @@ mock = {
         "meal_types": ["breakfast", "lunch", "dinner", "snack"],
         "default_meal_types": ["lunch", "dinner"],
         "shopping_list": "todo.einkaufsliste",
+        "groups": [g.to_dict() for g in GROUPS.values()],
     },
     "compat": {d.id: {p.id: check_dish(d, p).status for p in profiles} for d in dishes},
     "checks": {d.id: {p.id: check_dish(d, p).to_dict() for p in profiles} for d in dishes},
@@ -87,6 +89,9 @@ mock = {
     "warnings": result.warnings,
     "shopping": [i.to_dict() for i in build_shopping_list(plan, by_id, days)],
     "ingredients": {p.id: ingredient_overview(dishes, p) for p in profiles},
+    "group_members": {
+        g: sorted({i.name for d in dishes for i in d.ingredients if in_group(g, i.name)}) for g in GROUPS
+    },
 }
 out = Path(__file__).with_name("mock-data.json")
 out.write_text(json.dumps(mock, ensure_ascii=False), encoding="utf-8")

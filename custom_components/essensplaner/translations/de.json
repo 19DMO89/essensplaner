@@ -56,6 +56,7 @@
           "name": "Name",
           "servings": "Portionen",
           "unknown_ingredients": "Zutaten, die in keiner Liste stehen",
+          "excluded_groups": "Ausgeschlossen (Fleischsorten, Allergene)",
           "tolerated": "Verträglich",
           "not_tolerated": "Nicht verträglich",
           "small_amounts": "Nur in kleinen Mengen",
@@ -67,7 +68,8 @@
         "data_description": {
           "servings": "Wie viele Portionen für diese Person gekocht werden (z. B. 3, wenn das Profil für mehrere Personen steht).",
           "small_amounts": "Eine Zutat pro Zeile, optional mit Höchstmenge pro Portion, z. B. „10 g Butter“ oder „1 Zehe Knoblauch“.",
-          "dislikes": "Gerichte mit diesen Zutaten, Tags oder Namensteilen werden nicht vorgeschlagen."
+          "dislikes": "Gerichte mit diesen Zutaten, Tags oder Namensteilen werden nicht vorgeschlagen.",
+          "excluded_groups": "Alle typischen Zutaten dieser Gruppen gelten als nicht verträglich. Einzelne Zutaten lassen sich als verträglich freigeben."
         }
       },
       "dish_edit": {
@@ -132,6 +134,31 @@
         "allow": "Erlauben",
         "warn": "Erlauben, aber warnen",
         "exclude": "Ausschließen (nur Verträgliches)"
+      }
+    },
+    "group": {
+      "options": {
+        "meat_beef": "Ohne Rind",
+        "meat_veal": "Ohne Kalb",
+        "meat_pork": "Ohne Schwein",
+        "meat_poultry": "Ohne Geflügel",
+        "meat_lamb": "Ohne Lamm & Schaf",
+        "meat_game": "Ohne Wild",
+        "fish": "Ohne Fisch",
+        "seafood": "Ohne Meeresfrüchte",
+        "gluten": "Gluten (Weizen, Dinkel, Roggen, Gerste, Hafer)",
+        "crustaceans": "Krebstiere",
+        "eggs": "Eier",
+        "peanuts": "Erdnüsse",
+        "soy": "Soja",
+        "milk": "Milch (inkl. Laktose)",
+        "nuts": "Schalenfrüchte (Nüsse)",
+        "celery": "Sellerie",
+        "mustard": "Senf",
+        "sesame": "Sesam",
+        "sulphites": "Sulfite (Wein, Trockenobst)",
+        "lupin": "Lupinen",
+        "molluscs": "Weichtiere"
       }
     }
   },

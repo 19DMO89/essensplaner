@@ -28,7 +28,7 @@ class RecipeDialog extends EpDialog {
   }
 
   _reason(r) {
-    return this.t(`reason.${r.code}`, r);
+    return this.t(`reason.${r.code}`, r.group ? { ...r, group: this.groupLabel(r.group) } : r);
   }
 
   render() {

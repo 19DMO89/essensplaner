@@ -15,6 +15,7 @@ from homeassistant.helpers import config_validation as cv
 from .const import DOMAIN, MAX_PLAN_DAYS
 from .images import InvalidImage, image_url
 from .logic.compat import check_dish
+from .logic.groups import GROUP_IDS, GROUPS
 from .logic.ingredients import STATES
 from .logic.normalize import parse_ingredient_line
 from .logic.models import MEAL_TYPES
@@ -48,6 +49,7 @@ def async_register_websocket(hass: HomeAssistant) -> None:
         ws_parse_ingredients,
         ws_profile_ingredients,
         ws_profile_set_ingredient,
+        ws_profile_set_groups,
     ):
         websocket_api.async_register_command(hass, handler)
 
@@ -83,6 +85,7 @@ def _data(manager: EssensplanerManager) -> dict[str, Any]:
         "meal_types": list(MEAL_TYPES),
         "default_meal_types": manager.default_meal_types,
         "shopping_list": manager.shopping_list_entity,
+        "groups": [g.to_dict() for g in GROUPS.values()],
     }
 
 
@@ -309,4 +312,21 @@ async def ws_profile_set_ingredient(
     manager.set_ingredient_state(
         msg["profile_id"], msg["name"], msg["state"], msg.get("max_amount"), msg.get("unit")
     )
+    return manager.ingredient_overview(msg["profile_id"])
+
+
+@websocket_api.websocket_command(
+    {
+        vol.Required("type"): "essensplaner/profile/set_groups",
+        vol.Required("profile_id"): str,
+        vol.Required("excluded_groups"): [vol.In(GROUP_IDS)],
+    }
+)
+@websocket_api.async_response
+@_with_manager
+async def ws_profile_set_groups(
+    manager: EssensplanerManager, msg: dict[str, Any]
+) -> list[dict[str, Any]]:
+    """Ausgeschlossene Gruppen (Fleischsorten, Allergene) setzen; liefert die Zutatenliste."""
+    manager.set_excluded_groups(msg["profile_id"], msg["excluded_groups"])
     return manager.ingredient_overview(msg["profile_id"])

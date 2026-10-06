@@ -6,6 +6,7 @@ from collections import Counter
 from collections.abc import Iterable
 from typing import Any
 
+from .groups import matching_group
 from .models import Dish, Profile, SmallAmount
 from .normalize import matches_loose, matches_strict, normalize_name
 
@@ -16,18 +17,29 @@ STATE_UNKNOWN = "unknown"
 STATES = (STATE_TOLERATED, STATE_NOT_TOLERATED, STATE_SMALL, STATE_UNKNOWN)
 
 
-def _state_for(name: str, profile: Profile) -> tuple[str, str | None, SmallAmount | None]:
-    """Zustand einer Zutat für ein Profil – gleiche Reihenfolge wie ``check_dish``."""
+def _state_for(
+    name: str, profile: Profile
+) -> tuple[str, str | None, SmallAmount | None, str | None]:
+    """Zustand einer Zutat für ein Profil – gleiche Reihenfolge wie ``check_dish``.
+
+    Liefert (Zustand, auslösender Eintrag, Kleinmengen-Eintrag, auslösende Gruppe).
+    """
     for term in profile.not_tolerated:
         if matches_loose(term, name):
-            return STATE_NOT_TOLERATED, term, None
+            return STATE_NOT_TOLERATED, term, None, None
     for small in profile.small_amounts:
         if matches_loose(small.name, name):
-            return STATE_SMALL, small.name, small
+            return STATE_SMALL, small.name, small, None
+    key = normalize_name(name)
+    for term in profile.tolerated:
+        if normalize_name(term) == key:
+            return STATE_TOLERATED, term, None, None
+    if (group := matching_group(profile.excluded_groups, name)) is not None:
+        return STATE_NOT_TOLERATED, None, None, group
     for term in profile.tolerated:
         if matches_strict(term, name):
-            return STATE_TOLERATED, term, None
-    return STATE_UNKNOWN, None, None
+            return STATE_TOLERATED, term, None, None
+    return STATE_UNKNOWN, None, None, None
 
 
 def ingredient_overview(dishes: Iterable[Dish], profile: Profile) -> list[dict[str, Any]]:
@@ -59,7 +71,7 @@ def ingredient_overview(dishes: Iterable[Dish], profile: Profile) -> list[dict[s
     items = []
     for key, counter in names.items():
         name = counter.most_common(1)[0][0]
-        state, by, small = _state_for(name, profile)
+        state, by, small, group = _state_for(name, profile)
         items.append(
             {
                 "key": key,
@@ -67,6 +79,7 @@ def ingredient_overview(dishes: Iterable[Dish], profile: Profile) -> list[dict[s
                 "count": dish_count[key],
                 "state": state,
                 "by": by,
+                "group": group,
                 "explicit": by is not None and normalize_name(by) == key,
                 "max_amount": small.max_amount if small else None,
                 "unit": small.unit if small else None,

@@ -41,6 +41,7 @@ class ProfileEditor extends EpDialog {
         servings: p ? p.servings : 1,
         unknown_ingredients: p ? p.unknown_ingredients : "exclude",
         max_duration: p && p.max_duration ? p.max_duration : "",
+        excluded_groups: p ? [...(p.excluded_groups || [])] : [],
         small_amounts: p
           ? p.small_amounts
               .map((s) => (s.max_amount !== null && s.max_amount !== undefined
@@ -73,6 +74,7 @@ class ProfileEditor extends EpDialog {
         servings: Number(f.servings) || 1,
         unknown_ingredients: f.unknown_ingredients,
         max_duration: f.max_duration ? Number(f.max_duration) : null,
+        excluded_groups: f.excluded_groups,
         small_amounts: small.map((i) => ({ name: i.name, max_amount: i.amount, unit: i.unit })),
         ...Object.fromEntries(LISTS.map((k) => [k, splitLines(f[k])])),
       };
@@ -138,6 +140,15 @@ class ProfileEditor extends EpDialog {
           )}
         </select>
       </label>
+      <div class="field">
+        <span class="label">${this.t("groups.quick")}</span>
+        ${this.groupChips(f.excluded_groups, (id) =>
+          this._set(
+            "excluded_groups",
+            f.excluded_groups.includes(id) ? f.excluded_groups.filter((g) => g !== id) : [...f.excluded_groups, id]
+          )
+        )}
+      </div>
       ${this._textarea("likes", this.t("profile.list_help"))}
       ${this._textarea("dislikes", this.t("profile.list_help"))}
       <details>

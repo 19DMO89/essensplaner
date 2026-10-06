@@ -42,6 +42,7 @@ from .const import (
     DEFAULT_PROFILES,
     DOMAIN,
 )
+from .logic.groups import GROUP_IDS
 from .logic.models import MEAL_TYPES, UNKNOWN_EXCLUDE, UNKNOWN_MODES, Dish, Profile
 from .logic.normalize import format_ingredient_line, parse_ingredient_line
 from .manager import EssensplanerManager
@@ -228,6 +229,7 @@ class EssensplanerOptionsFlow(OptionsFlow):
                 "likes": _split(user_input.get("likes")),
                 "dislikes": _split(user_input.get("dislikes")),
                 "max_duration": user_input.get("max_duration") or None,
+                "excluded_groups": user_input.get("excluded_groups") or [],
             }
             if not str(data["name"]).strip():
                 errors["name"] = "required"
@@ -248,6 +250,7 @@ class EssensplanerOptionsFlow(OptionsFlow):
             "likes": _join(profile.likes),
             "dislikes": _join(profile.dislikes),
             "max_duration": profile.max_duration or 0,
+            "excluded_groups": profile.excluded_groups,
         }
         fields: dict[Any, Any] = {
             vol.Required("name"): TextSelector(),
@@ -257,6 +260,14 @@ class EssensplanerOptionsFlow(OptionsFlow):
             vol.Required("unknown_ingredients"): SelectSelector(
                 SelectSelectorConfig(
                     options=list(UNKNOWN_MODES), translation_key="unknown_ingredients"
+                )
+            ),
+            vol.Optional("excluded_groups"): SelectSelector(
+                SelectSelectorConfig(
+                    options=list(GROUP_IDS),
+                    multiple=True,
+                    mode=SelectSelectorMode.LIST,
+                    translation_key="group",
                 )
             ),
             vol.Optional("tolerated"): MULTILINE,

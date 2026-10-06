@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import voluptuous as vol
 
+from .logic.groups import GROUP_IDS
 from .logic.models import MEAL_TYPES, ROLES, UNKNOWN_MODES
 
 _STR_LIST = [vol.All(str, vol.Strip)]
@@ -65,6 +66,7 @@ PROFILE_SCHEMA = vol.Schema(
         vol.Optional("dislikes"): _STR_LIST,
         vol.Optional("max_duration"): vol.Any(None, vol.All(vol.Coerce(int), vol.Range(min=0))),
         vol.Optional("unknown_ingredients"): vol.In(UNKNOWN_MODES),
+        vol.Optional("excluded_groups"): [vol.In(GROUP_IDS)],
     },
     extra=vol.REMOVE_EXTRA,
 )

@@ -1,6 +1,7 @@
 """Prüft Gerichte gegen Ernährungsprofile.
 
-Einzige Grundlage sind die Listen im Profil. Es gibt keine eingebauten Diätregeln.
+Grundlage sind ausschließlich die Listen im Profil und die dort gewählten
+Zutatengruppen (Fleischsorten, Allergene). Es gibt keine eingebauten Diätregeln.
 """
 
 from __future__ import annotations
@@ -8,8 +9,9 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
+from .groups import matching_group
 from .models import UNKNOWN_ALLOW, UNKNOWN_EXCLUDE, Dish, Profile
-from .normalize import matches_loose, matches_strict, normalize_unit, to_base
+from .normalize import matches_loose, matches_strict, normalize_name, normalize_unit, to_base
 
 STATUS_OK = "ok"
 STATUS_WARN = "warn"
@@ -74,6 +76,16 @@ def check_dish(dish: Dish, profile: Profile) -> CompatResult:
         small = next((s for s in profile.small_amounts if matches_loose(s.name, ing.name)), None)
         if small is not None:
             _check_small_amount(result, dish, ing.name, ing.amount, ing.unit, small)
+            continue
+
+        # Ausdrücklich (genau diese Zutat) als verträglich markiert: hat Vorrang vor Gruppen.
+        key = normalize_name(ing.name)
+        if any(normalize_name(t) == key for t in profile.tolerated):
+            continue
+
+        group = matching_group(profile.excluded_groups, ing.name)
+        if group is not None:
+            result.add(STATUS_EXCLUDED, "group_excluded", ingredient=ing.name, group=group)
             continue
 
         if any(matches_strict(t, ing.name) for t in profile.tolerated):

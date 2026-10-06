@@ -56,6 +56,7 @@
           "name": "Name",
           "servings": "Servings",
           "unknown_ingredients": "Ingredients not in any list",
+          "excluded_groups": "Excluded (meat types, allergens)",
           "tolerated": "Tolerated",
           "not_tolerated": "Not tolerated",
           "small_amounts": "Only in small amounts",
@@ -67,7 +68,8 @@
         "data_description": {
           "servings": "How many servings to cook for this person (e.g. 3 if the profile stands for several people).",
           "small_amounts": "One ingredient per line, optionally with a maximum per serving, e.g. \"10 g Butter\" or \"1 Zehe Knoblauch\".",
-          "dislikes": "Dishes with these ingredients, tags or name parts will not be suggested."
+          "dislikes": "Dishes with these ingredients, tags or name parts will not be suggested.",
+          "excluded_groups": "All typical ingredients of these groups count as not tolerated. Single ingredients can be allowed individually."
         }
       },
       "dish_edit": {
@@ -132,6 +134,31 @@
         "allow": "Allow",
         "warn": "Allow with warning",
         "exclude": "Exclude (tolerated only)"
+      }
+    },
+    "group": {
+      "options": {
+        "meat_beef": "No beef",
+        "meat_veal": "No veal",
+        "meat_pork": "No pork",
+        "meat_poultry": "No poultry",
+        "meat_lamb": "No lamb & mutton",
+        "meat_game": "No game",
+        "fish": "No fish",
+        "seafood": "No seafood",
+        "gluten": "Gluten (wheat, spelt, rye, barley, oats)",
+        "crustaceans": "Crustaceans",
+        "eggs": "Eggs",
+        "peanuts": "Peanuts",
+        "soy": "Soy",
+        "milk": "Milk (incl. lactose)",
+        "nuts": "Tree nuts",
+        "celery": "Celery",
+        "mustard": "Mustard",
+        "sesame": "Sesame",
+        "sulphites": "Sulphites (wine, dried fruit)",
+        "lupin": "Lupin",
+        "molluscs": "Molluscs"
       }
     }
   },

@@ -44,6 +44,7 @@ from .logic.models import (
     plan_from_dict,
     plan_to_dict,
 )
+from .logic.groups import GROUP_IDS
 from .logic.ingredients import ingredient_overview, set_ingredient_state
 from .logic.normalize import normalize_name
 from .logic.planner import Planner, PlanResult, shared_base
@@ -237,6 +238,13 @@ class EssensplanerManager:
     def ingredient_overview(self, profile_id: str) -> list[dict[str, Any]]:
         """Alle Zutaten mit Zustand für die Klick-Liste eines Profils."""
         return ingredient_overview(self.dishes.values(), self.profiles[self.resolve_profile(profile_id)])
+
+    @callback
+    def set_excluded_groups(self, profile_id: str, groups: list[str]) -> None:
+        """Ausgeschlossene Zutatengruppen eines Profils setzen."""
+        profile = self.profiles[self.resolve_profile(profile_id)]
+        profile.excluded_groups = [g for g in GROUP_IDS if g in groups]
+        self._changed(STORAGE_KEY_PROFILES)
 
     @callback
     def set_ingredient_state(

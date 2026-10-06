@@ -11,7 +11,7 @@
         },
         "data_description": {
           "import_todo": "Imports item names as dishes without ingredients.",
-          "import_starter": "About 190 dishes with ingredients and preparation (home cooking, international, vegetarian, breakfast, snacks). Can be edited or deleted afterwards."
+          "import_starter": "More than 300 dishes with ingredients and preparation (home cooking, international, vegetarian, gentle diet, healthy, breakfast, snacks). Can be edited or deleted afterwards."
         }
       }
     },
@@ -100,7 +100,7 @@
       },
       "import_starter": {
         "title": "Import starter pack",
-        "description": "Imports about 190 dishes with ingredients and preparation. Dishes with the same name are skipped. Imported dishes are tagged \"Startpaket\"."
+        "description": "Imports more than 300 dishes with ingredients and preparation. Dishes with the same name are skipped. Imported dishes are tagged \"Startpaket\"."
       },
       "import_todo": {
         "title": "Import dishes",

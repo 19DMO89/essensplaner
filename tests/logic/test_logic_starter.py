@@ -17,7 +17,10 @@ KNOWN_UNITS = {
     "Pkg", "Zehe", "Scheibe", "Becher", "Tasse", "Handvoll", "Glas", "Msp",
 }
 # Wörter, die als Mengenangabe gemeint sind, aber nicht als Einheit erkannt würden.
-PSEUDO_UNITS = {"stange", "kopf", "zweig", "würfel", "knolle", "blatt", "paar", "stück", "dosen"}
+PSEUDO_UNITS = {
+    "stange", "kopf", "zweig", "würfel", "knolle", "blatt", "paar", "stück", "dosen", "kistchen",
+    "schale", "netz", "beutel", "tüte",
+}
 
 
 def _load_all() -> list[dict]:
@@ -31,7 +34,7 @@ STARTER = _load_all()
 
 
 def test_starter_size_and_coverage() -> None:
-    assert len(STARTER) >= 150
+    assert len(STARTER) >= 300
     per_meal = Counter(m for d in STARTER for m in d["meal_types"])
     assert per_meal["breakfast"] >= 15
     assert per_meal["lunch"] >= 100

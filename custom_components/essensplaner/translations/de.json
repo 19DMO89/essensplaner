@@ -11,7 +11,7 @@
         },
         "data_description": {
           "import_todo": "Übernimmt die Namen der Einträge als Gerichte ohne Zutaten.",
-          "import_starter": "Rund 190 Gerichte mit Zutaten und Zubereitung (Hausmannskost, international, vegetarisch, Frühstück, Snacks). Lassen sich danach bearbeiten oder löschen."
+          "import_starter": "Über 300 Gerichte mit Zutaten und Zubereitung (Hausmannskost, international, vegetarisch, Schonkost, gesund, Frühstück, Snacks). Lassen sich danach bearbeiten oder löschen."
         }
       }
     },
@@ -100,7 +100,7 @@
       },
       "import_starter": {
         "title": "Startpaket importieren",
-        "description": "Importiert rund 190 Gerichte mit Zutaten und Zubereitung. Gerichte, die es mit gleichem Namen schon gibt, werden übersprungen. Importierte Gerichte haben den Tag „Startpaket“."
+        "description": "Importiert über 300 Gerichte mit Zutaten und Zubereitung. Gerichte, die es mit gleichem Namen schon gibt, werden übersprungen. Importierte Gerichte haben den Tag „Startpaket“."
       },
       "import_todo": {
         "title": "Gerichte importieren",

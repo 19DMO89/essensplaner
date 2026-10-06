@@ -1,0 +1,686 @@
+# Startpaket: Schonkost / darmfreundlich
+#
+# Milde, leicht verdauliche Gerichte: wenig Fett, sanft gegart, ohne Zwiebel,
+# Knoblauch und Schärfe, kurze Zutatenlisten. Der Tag "schonkost" ist nur eine
+# Beschreibung – ob ein Gericht passt, entscheiden die Listen der jeweiligen Person.
+
+= Haferschleim
+mahlzeit: frühstück
+portionen: 2
+dauer: 10
+tags: schonkost, darmfreundlich, mild, vegan
+- 60 g Haferflocken #beilage
+- 500 ml Wasser
+- 1 Prise Salz
+1. Haferflocken mit Wasser und Salz aufkochen.
+2. Unter Rühren 8–10 Minuten sämig köcheln, nach Wunsch durch ein Sieb streichen.
+
+= Reisschleim mit Karotten
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 35
+tags: schonkost, darmfreundlich, mild, vegan
+- 80 g Reis #beilage
+- 2 Karotten
+- 800 ml Wasser
+- 1 Prise Salz
+1. Reis mit Wasser und Salz aufkochen und 20 Minuten köcheln.
+2. Karotten klein schneiden, zugeben und 10 Minuten weich kochen.
+3. Fein pürieren und lauwarm servieren.
+
+= Karotten-Erdäpfel-Stampf mit Putenbrust
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, darmfreundlich, mild
+- 300 g Putenbrust #protein
+- 400 g Erdäpfel #beilage
+- 300 g Karotten
+- 1 TL Butter
+- 1 EL Öl
+- Salz
+1. Erdäpfel und Karotten schälen, würfeln und in Salzwasser weich kochen.
+2. Abgießen und mit Butter grob stampfen.
+3. Putenbrust salzen und in wenig Öl bei mittlerer Hitze von beiden Seiten je 5 Minuten braten.
+
+= Gedünstete Forelle mit Salzerdäpfeln
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, darmfreundlich, fisch, mild
+- 2 Forellenfilets #protein
+- 500 g Erdäpfel #beilage
+- 1 Zucchini
+- 1 TL Butter
+- 1 EL Dill
+- Salz
+1. Erdäpfel schälen und in Salzwasser kochen.
+2. Zucchini in Scheiben schneiden und mit wenig Wasser 5 Minuten dünsten.
+3. Forellenfilets salzen, auf die Zucchini legen und zugedeckt 6–8 Minuten gar ziehen lassen. Mit Butter und Dill servieren.
+
+= Pochierter Lachs mit Reis und Zucchini
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, darmfreundlich, fisch, mild
+- 250 g Lachsfilet #protein
+- 150 g Reis #beilage
+- 1 Zucchini
+- 1 l Wasser
+- 1 EL Dill
+- Salz
+1. Reis nach Packungsangabe kochen.
+2. Wasser mit Salz aufkochen, Hitze reduzieren und den Lachs darin 8 Minuten pochieren.
+3. Zucchini würfeln und weich dünsten. Alles mit Dill anrichten.
+
+= Kalbsschnitzel natur mit Karottenpüree
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, darmfreundlich, mild
+- 2 Kalbsschnitzel #protein
+- 400 g Karotten
+- 200 g Erdäpfel #beilage
+- 1 TL Butter
+- 1 EL Öl
+- Salz
+1. Karotten und Erdäpfel weich kochen und mit Butter fein pürieren, salzen.
+2. Schnitzel dünn klopfen, salzen und in wenig Öl von beiden Seiten je 2–3 Minuten braten.
+
+= Klare Hühnerbrühe mit Karotten
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 90
+tags: schonkost, darmfreundlich, suppe, mild
+- 800 g Hühnerkeulen #protein
+- 4 Karotten
+- 1 Petersilienwurzel
+- 2 l Wasser
+- 100 g Suppennudeln #beilage
+- Salz
+- 1 EL Petersilie
+1. Hühnerkeulen mit kaltem Wasser und Salz aufsetzen, aufkochen, Schaum abschöpfen und 60 Minuten leise köcheln.
+2. Karotten und Petersilienwurzel in Scheiben schneiden und 15 Minuten mitkochen.
+3. Fleisch auslösen, Nudeln in der Brühe garen und mit Petersilie servieren.
+
+= Kürbis-Karotten-Suppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: schonkost, darmfreundlich, suppe, vegan
+- 600 g Hokkaidokürbis
+- 300 g Karotten
+- 1 Erdapfel #beilage
+- 1 l Wasser
+- 1 EL Öl
+- Salz
+- 1 Prise Muskat
+1. Kürbis, Karotten und Erdapfel würfeln und in Öl kurz anschwitzen.
+2. Mit Wasser aufgießen und 20 Minuten weich kochen.
+3. Fein pürieren und mit Salz und Muskat abschmecken.
+
+= Zucchinicremesuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 25
+tags: schonkost, darmfreundlich, suppe, vegetarisch
+- 3 Zucchini
+- 2 Erdäpfel #beilage
+- 900 ml Wasser
+- 100 ml Milch
+- 1 TL Butter
+- Salz
+- 1 EL Dill
+1. Zucchini und Erdäpfel würfeln, in Butter kurz anschwitzen.
+2. Mit Wasser aufgießen und 15 Minuten kochen.
+3. Milch zugeben, pürieren, salzen und mit Dill bestreuen.
+
+= Pastinakensuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: schonkost, darmfreundlich, suppe, vegetarisch
+- 600 g Pastinaken
+- 1 Erdapfel #beilage
+- 1 l Wasser
+- 100 ml Schlagobers
+- 1 TL Butter
+- Salz
+- 1 Prise Muskat
+1. Pastinaken und Erdapfel schälen, würfeln und in Butter anschwitzen.
+2. Mit Wasser aufgießen und 20 Minuten weich kochen.
+3. Obers zugeben, fein pürieren und abschmecken.
+
+= Milde Erdäpfel-Karotten-Suppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: schonkost, darmfreundlich, suppe, vegan
+- 500 g Erdäpfel #beilage
+- 300 g Karotten
+- 1 l Wasser
+- 1 EL Öl
+- Salz
+- 1 EL Petersilie
+1. Erdäpfel und Karotten würfeln und in Öl kurz anschwitzen.
+2. Mit Wasser aufgießen und 20 Minuten kochen.
+3. Pürieren, salzen und mit Petersilie bestreuen.
+
+= Putenbrust mit Reis und Zucchinigemüse
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, darmfreundlich, mild
+- 300 g Putenbrust #protein
+- 150 g Reis #beilage
+- 2 Zucchini
+- 1 EL Öl
+- Salz
+- 1 EL Petersilie
+1. Reis kochen.
+2. Putenbrust in Streifen schneiden, salzen und in Öl hell anbraten.
+3. Zucchini würfeln, zugeben und zugedeckt weich dünsten. Mit Petersilie servieren.
+
+= Gedämpfter Kabeljau mit Kartoffelpüree
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, darmfreundlich, fisch, mild
+- 300 g Kabeljaufilet #protein
+- 600 g mehlige Erdäpfel #beilage
+- 150 ml Milch
+- 1 TL Butter
+- 1 Zitrone
+- Salz
+1. Erdäpfel kochen und mit warmer Milch und Butter zu Püree stampfen.
+2. Kabeljau salzen und über Dampf oder in wenig Wasser 8 Minuten garen.
+3. Mit etwas Zitronensaft servieren.
+
+= Hühnerbrust in Kräutersauce mit Nudeln
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, mild, kinder
+- 300 g Hühnerbrust #protein
+- 200 g Bandnudeln #beilage
+- 200 ml Milch
+- 1 TL Mehl
+- 1 TL Butter
+- 1 EL Petersilie
+- 1 EL Dill
+- Salz
+1. Nudeln kochen. Hühnerbrust in Würfel schneiden und in wenig Wasser 10 Minuten gar ziehen lassen.
+2. Butter schmelzen, Mehl einrühren, mit Milch aufgießen und zu einer leichten Sauce kochen.
+3. Kräuter und Fleisch zugeben, salzen und mit den Nudeln servieren.
+
+= Hirsebrei mit Apfel
+mahlzeit: frühstück
+portionen: 2
+dauer: 20
+tags: schonkost, darmfreundlich, süß, vegetarisch
+- 80 g Hirse #beilage
+- 400 ml Milch
+- 1 Apfel
+- 1 Prise Zimt
+- 1 TL Honig
+1. Hirse heiß abspülen, mit Milch aufkochen und 15 Minuten quellen lassen.
+2. Apfel schälen, reiben und unterrühren, mit Zimt und Honig abschmecken.
+
+= Bananen-Reis-Brei
+mahlzeit: snack, frühstück
+portionen: 2
+dauer: 25
+tags: schonkost, darmfreundlich, süß, vegan
+- 80 g Reis #beilage
+- 400 ml Wasser
+- 1 Banane
+1. Reis im Wasser sehr weich kochen.
+2. Mit der Banane fein pürieren und lauwarm essen.
+
+= Apfelmus selbstgemacht
+mahlzeit: snack
+portionen: 4
+dauer: 20
+tags: schonkost, darmfreundlich, süß, vegan
+- 1 kg Äpfel
+- 100 ml Wasser
+- 1 Prise Zimt
+1. Äpfel schälen, entkernen und würfeln.
+2. Mit Wasser zugedeckt 10–15 Minuten weich dünsten.
+3. Fein pürieren und nach Wunsch mit Zimt würzen.
+
+= Gedünstete Birne mit Zimt
+mahlzeit: snack
+portionen: 2
+dauer: 15
+tags: schonkost, darmfreundlich, süß, vegan
+- 2 Birnen
+- 100 ml Wasser
+- 1 Prise Zimt
+1. Birnen schälen, vierteln und entkernen.
+2. Mit Wasser und Zimt zugedeckt 8–10 Minuten weich dünsten.
+
+= Zwieback mit Bananenmus
+mahlzeit: snack
+portionen: 1
+dauer: 5
+tags: schonkost, darmfreundlich, schnell, vegan
+- 4 Zwieback #beilage
+- 1 Banane
+1. Banane zerdrücken und auf den Zwieback streichen.
+
+= Polenta mit Karottengemüse
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 25
+tags: schonkost, darmfreundlich, vegetarisch, glutenfrei
+- 120 g Polenta #beilage
+- 500 ml Wasser
+- 400 g Karotten
+- 1 TL Butter
+- Salz
+- 1 EL Petersilie
+1. Wasser mit Salz aufkochen, Polenta einrühren und 10 Minuten unter Rühren quellen lassen, Butter unterrühren.
+2. Karotten in Scheiben schneiden und mit wenig Wasser und Salz weich dünsten.
+3. Mit Petersilie bestreuen.
+
+= Kartoffelpüree mit pochiertem Ei
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 25
+tags: schonkost, darmfreundlich, vegetarisch
+- 600 g mehlige Erdäpfel #beilage
+- 150 ml Milch
+- 1 TL Butter
+- 4 Eier #protein
+- 1 EL Essig
+- Salz
+1. Erdäpfel kochen und mit warmer Milch und Butter zu Püree stampfen, salzen.
+2. Wasser mit Essig zum Sieden bringen, Eier einzeln hineingleiten lassen und 4 Minuten pochieren.
+
+= Weiches Rührei mit Weißbrot
+mahlzeit: frühstück, abend
+portionen: 2
+dauer: 10
+tags: schonkost, mild, schnell, vegetarisch
+- 4 Eier #protein
+- 2 EL Milch
+- 1 TL Butter
+- 4 Scheiben Weißbrot #beilage
+- Salz
+1. Eier mit Milch und Salz verquirlen.
+2. In Butter bei kleiner Hitze langsam cremig stocken lassen und mit Weißbrot servieren.
+
+= Putenlaibchen mit Kartoffelpüree
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: schonkost, mild, kinder
+- 500 g Putenfaschiertes #protein
+- 1 Ei
+- 3 EL Semmelbrösel
+- 1 EL Petersilie
+- 2 EL Öl
+- 1 kg mehlige Erdäpfel #beilage
+- 250 ml Milch
+- 1 TL Butter
+- Salz
+1. Faschiertes mit Ei, Bröseln, Petersilie und Salz verkneten, kleine Laibchen formen.
+2. In wenig Öl bei mittlerer Hitze von beiden Seiten je 5 Minuten braten.
+3. Erdäpfel kochen und mit Milch und Butter zu Püree stampfen.
+
+= Lachslaibchen mit Reis
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, fisch, mild
+- 250 g Lachsfilet #protein
+- 1 Ei
+- 2 EL Semmelbrösel
+- 1 EL Dill
+- 1 EL Öl
+- 150 g Reis #beilage
+- Salz
+1. Reis kochen. Lachs fein hacken und mit Ei, Bröseln, Dill und Salz mischen.
+2. Kleine Laibchen formen und in Öl von beiden Seiten je 3–4 Minuten braten.
+
+= Nudeln mit Zucchini-Frischkäse-Sauce
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 20
+tags: schonkost, mild, vegetarisch, schnell
+- 200 g Penne #beilage
+- 2 Zucchini
+- 100 g Frischkäse #protein
+- 100 ml Wasser
+- 1 TL Öl
+- Salz
+1. Nudeln kochen.
+2. Zucchini fein würfeln und in Öl mit Wasser weich dünsten.
+3. Frischkäse einrühren, salzen und mit den Nudeln mischen.
+
+= Reisnudeln mit Hühnerbrust und Karotten
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 20
+tags: schonkost, mild, glutenfrei, asiatisch
+- 150 g Reisnudeln #beilage
+- 250 g Hühnerbrust #protein
+- 2 Karotten
+- 1 Zucchini
+- 1 EL Öl
+- Salz
+1. Reisnudeln nach Packungsangabe einweichen.
+2. Hühnerbrust in Streifen schneiden und in Öl hell braten.
+3. Karotten und Zucchini in feine Streifen schneiden, mitdünsten, Nudeln untermischen und salzen.
+
+= Hühnerbrust mit Kürbispüree
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, darmfreundlich, mild, herbst
+- 300 g Hühnerbrust #protein
+- 500 g Hokkaidokürbis
+- 1 Erdapfel #beilage
+- 1 TL Butter
+- 1 EL Öl
+- Salz
+1. Kürbis und Erdapfel würfeln, in Salzwasser weich kochen und mit Butter pürieren.
+2. Hühnerbrust salzen und in wenig Öl von beiden Seiten je 5–6 Minuten braten.
+
+= Hirse mit gedünstetem Gemüse
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 25
+tags: schonkost, darmfreundlich, vegan, glutenfrei
+- 120 g Hirse #beilage
+- 300 ml Wasser
+- 2 Karotten
+- 1 Zucchini
+- 1 EL Öl
+- Salz
+- 1 EL Petersilie
+1. Hirse heiß abspülen und mit Wasser und Salz 15 Minuten quellen lassen.
+2. Karotten und Zucchini würfeln und mit wenig Wasser weich dünsten.
+3. Mit Hirse, Öl und Petersilie mischen.
+
+= Klare Rindsuppe mit Fadennudeln
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 150
+tags: schonkost, suppe, österreichisch
+- 600 g Suppenfleisch vom Rind #protein
+- 3 Karotten
+- 1 Petersilienwurzel
+- 2 l Wasser
+- 100 g Fadennudeln #beilage
+- Salz
+- 1 EL Schnittlauch
+1. Fleisch in kaltem Wasser aufsetzen, aufkochen, Schaum abschöpfen und 2 Stunden leise köcheln.
+2. Karotten und Petersilienwurzel die letzten 30 Minuten mitkochen.
+3. Suppe abseihen, Fadennudeln darin garen und mit Schnittlauch servieren.
+
+= Milder Erdäpfel-Zucchini-Auflauf
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 55
+tags: schonkost, auflauf, vegetarisch
+- 800 g Erdäpfel #beilage
+- 2 Zucchini
+- 300 ml Milch
+- 2 Eier #protein
+- 60 g Käse
+- 1 Prise Muskat
+- Salz
+1. Erdäpfel in dünne Scheiben schneiden und 5 Minuten vorkochen, Zucchini in Scheiben schneiden.
+2. Abwechselnd in eine Form schichten, Milch mit Eiern, Salz und Muskat verquirlen und darübergießen.
+3. Mit Käse bestreuen und bei 180 °C 35 Minuten backen.
+
+= Topfencreme mit Banane
+mahlzeit: snack, frühstück
+portionen: 2
+dauer: 5
+tags: schonkost, süß, schnell, vegetarisch
+- 250 g Topfen #protein
+- 4 EL Milch
+- 1 Banane
+- 1 TL Honig
+1. Topfen mit Milch und Honig cremig rühren.
+2. Banane in Scheiben schneiden und darauf verteilen.
+
+= Joghurt mit geriebenem Apfel
+mahlzeit: snack, frühstück
+portionen: 1
+dauer: 5
+tags: schonkost, darmfreundlich, süß, schnell, vegetarisch
+- 150 g Naturjoghurt #protein
+- 1 Apfel
+- 1 Prise Zimt
+1. Apfel schälen und fein reiben, unter den Joghurt rühren und mit Zimt bestreuen.
+
+= Kalbsgeschnetzeltes mit Reis
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, mild
+- 300 g Kalbfleisch #protein
+- 150 g Reis #beilage
+- 150 ml Schlagobers
+- 100 ml Wasser
+- 1 TL Öl
+- 1 EL Petersilie
+- Salz
+1. Reis kochen.
+2. Kalbfleisch in feine Streifen schneiden und in Öl kurz hell anbraten.
+3. Mit Wasser und Obers aufgießen, kurz einkochen, salzen und mit Petersilie servieren.
+
+= Seelachs in Dillsauce mit Erdäpfeln
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, fisch, mild
+- 300 g Seelachsfilet #protein
+- 500 g Erdäpfel #beilage
+- 200 ml Milch
+- 1 TL Mehl
+- 1 TL Butter
+- 2 EL Dill
+- Salz
+1. Erdäpfel kochen.
+2. Butter schmelzen, Mehl einrühren, mit Milch aufgießen und kurz köcheln, Dill zugeben und salzen.
+3. Fisch in Stücken in die Sauce legen und zugedeckt 8 Minuten gar ziehen lassen.
+
+= Putenragout mit Nudeln
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 35
+tags: schonkost, mild, kinder
+- 500 g Putenbrust #protein
+- 300 g Karotten
+- 150 g Erbsen
+- 300 ml Wasser
+- 100 ml Schlagobers
+- 1 EL Öl
+- 300 g Bandnudeln #beilage
+- Salz
+1. Putenbrust würfeln und in Öl hell anbraten.
+2. Karotten in Scheiben, Erbsen und Wasser zugeben und 15 Minuten köcheln.
+3. Obers einrühren, salzen und mit den Nudeln servieren.
+
+= Couscous mit gedünstetem Gemüse und Huhn
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 25
+tags: schonkost, mild
+- 120 g Couscous #beilage
+- 250 g Hühnerbrust #protein
+- 1 Zucchini
+- 2 Karotten
+- 200 ml Wasser
+- 1 EL Öl
+- Salz
+1. Couscous mit heißem gesalzenem Wasser übergießen und 5 Minuten quellen lassen.
+2. Hühnerbrust würfeln und in Öl hell braten.
+3. Gemüse würfeln, zugeben und weich dünsten, mit dem Couscous mischen.
+
+= Süßkartoffelpüree mit Hühnerbrust
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, darmfreundlich, mild, glutenfrei
+- 300 g Hühnerbrust #protein
+- 2 Süßkartoffeln #beilage
+- 1 Karotte
+- 1 TL Butter
+- 1 EL Öl
+- Salz
+1. Süßkartoffeln und Karotte schälen, würfeln und weich kochen, mit Butter pürieren und salzen.
+2. Hühnerbrust salzen und in Öl von beiden Seiten je 5–6 Minuten braten.
+
+= Fenchel-Karotten-Gemüse mit Reis
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 30
+tags: schonkost, darmfreundlich, vegan, glutenfrei
+- 150 g Reis #beilage
+- 1 Fenchel
+- 3 Karotten
+- 200 ml Wasser
+- 1 EL Öl
+- Salz
+1. Reis kochen.
+2. Fenchel und Karotten in feine Streifen schneiden und in Öl kurz anschwitzen.
+3. Mit Wasser zugedeckt 15 Minuten weich dünsten, salzen und mit Reis servieren.
+
+= Gekochtes Rindfleisch mit Wurzelgemüse
+mahlzeit: mittag
+portionen: 4
+dauer: 150
+tags: schonkost, österreichisch, mild
+- 800 g Tafelspitz #protein
+- 4 Karotten
+- 1 Petersilienwurzel
+- 2 l Wasser
+- 800 g Erdäpfel #beilage
+- 1 EL Schnittlauch
+- Salz
+1. Fleisch in kochendes Salzwasser legen und 2 Stunden leise köcheln.
+2. Wurzelgemüse die letzten 20 Minuten mitkochen, Erdäpfel separat kochen.
+3. Fleisch in Scheiben schneiden, mit Gemüse, etwas Suppe und Schnittlauch servieren.
+
+= Hühnerbrust-Erdäpfel-Auflauf
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 50
+tags: schonkost, auflauf, mild
+- 400 g Hühnerbrust #protein
+- 800 g Erdäpfel #beilage
+- 2 Karotten
+- 300 ml Milch
+- 2 Eier
+- 50 g Käse
+- Salz
+1. Erdäpfel und Karotten in Scheiben schneiden und 5 Minuten vorkochen, Hühnerbrust würfeln.
+2. Alles in eine Form schichten, Milch mit Eiern und Salz verquirlen und darübergießen.
+3. Mit Käse bestreuen und bei 180 °C 30 Minuten backen.
+
+= Reiswaffeln mit Banane
+mahlzeit: snack
+portionen: 1
+dauer: 3
+tags: schonkost, darmfreundlich, schnell, vegan
+- 3 Reiswaffeln #beilage
+- 1 Banane
+1. Banane in Scheiben schneiden und auf die Reiswaffeln legen.
+
+= Weißbrot mit Putenschinken und Gurke
+mahlzeit: abend, frühstück
+portionen: 2
+dauer: 5
+tags: schonkost, kalt, schnell
+- 4 Scheiben Weißbrot #beilage
+- 100 g Putenschinken #protein
+- 20 g Butter
+- 0,5 Gurke
+1. Brot mit Butter bestreichen, mit Putenschinken und geschälten Gurkenscheiben belegen.
+
+= Grießsuppe mit Karotten
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 25
+tags: schonkost, darmfreundlich, suppe
+- 60 g Grieß #beilage
+- 2 Karotten
+- 1 l Wasser
+- 1 TL Butter
+- 1 Ei
+- Salz
+- 1 EL Petersilie
+1. Grieß in Butter hell anrösten, mit Wasser aufgießen und salzen.
+2. Karotten fein würfeln, zugeben und 15 Minuten köcheln.
+3. Ei verquirlen und einlaufen lassen, mit Petersilie servieren.
+
+= Zartes Hühnerfrikassee mit Reis
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: schonkost, mild
+- 500 g Hühnerbrust #protein
+- 250 g Reis #beilage
+- 3 Karotten
+- 150 g Erbsen
+- 500 ml Wasser
+- 150 ml Milch
+- 2 EL Mehl
+- 1 TL Butter
+- Salz
+1. Hühnerbrust im gesalzenen Wasser 15 Minuten gar ziehen lassen, herausnehmen und würfeln.
+2. Butter und Mehl anschwitzen, mit Kochwasser und Milch zu einer Sauce kochen.
+3. Karotten und Erbsen darin weich kochen, Fleisch zugeben und mit Reis servieren.
+
+= Pürierte Gemüsesuppe mit Hirse
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: schonkost, darmfreundlich, suppe, vegan
+- 2 Karotten
+- 1 Zucchini
+- 200 g Hokkaidokürbis
+- 60 g Hirse #beilage
+- 1,2 l Wasser
+- 1 EL Öl
+- Salz
+1. Gemüse würfeln und in Öl kurz anschwitzen, mit Wasser aufgießen.
+2. Hirse zugeben und 20 Minuten köcheln.
+3. Fein pürieren und salzen.
+
+= Kartoffel-Karotten-Puffer aus dem Ofen
+mahlzeit: mittag, abend
+portionen: 2
+dauer: 40
+tags: schonkost, ofen, vegetarisch
+- 400 g Erdäpfel #beilage
+- 2 Karotten
+- 1 Ei #protein
+- 2 EL Haferflocken
+- 1 EL Öl
+- 150 g Naturjoghurt
+- Salz
+1. Erdäpfel und Karotten fein reiben und ausdrücken, mit Ei, Haferflocken und Salz mischen.
+2. Kleine Puffer auf ein mit Öl bestrichenes Blech setzen und bei 200 °C 25 Minuten backen, einmal wenden.
+3. Mit Joghurt servieren.
+
+= Bananen-Hafer-Muffins
+mahlzeit: snack, frühstück
+portionen: 12
+dauer: 35
+tags: schonkost, süß, backen, vegetarisch
+- 3 Bananen
+- 2 Eier
+- 200 g Haferflocken #beilage
+- 150 ml Milch
+- 1 TL Backpulver
+- 2 EL Honig
+1. Ofen auf 180 °C vorheizen. Bananen zerdrücken und mit Eiern, Milch und Honig verrühren.
+2. Haferflocken und Backpulver unterrühren und in Muffinförmchen füllen.
+3. 20–25 Minuten backen.

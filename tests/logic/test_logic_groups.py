@@ -41,6 +41,13 @@ from logic.models import Profile
         ("Sojasprossen", set()),
         ("Milchreis", set()),
         ("Butterschmalz", {"milk"}),
+        ("Schmalz", {"meat_pork"}),
+        ("Camembert", {"milk"}),
+        ("Reisbandnudeln", set()),
+        ("Putenfaschiertes", {"meat_poultry"}),
+        ("Suppenfleisch vom Rind", {"meat_beef"}),
+        ("japanische Currypaste", {"gluten"}),
+        ("Buchweizenmehl", set()),
     ],
 )
 def test_group_membership(name: str, groups: set[str]) -> None:

@@ -6,6 +6,7 @@ import io
 from typing import Any
 
 from aiohttp import FormData
+import pytest
 from PIL import Image
 
 from homeassistant.core import HomeAssistant, ServiceCall
@@ -333,3 +334,82 @@ async def test_profile_groups_overview(
     by = {g["id"]: g for g in msg["result"]}
     assert by["meat_beef"]["excluded"] and by["meat_beef"]["members"] == ["Rindfleisch"]
     assert by["gluten"]["count"] == 0 and not by["gluten"]["excluded"]
+
+
+async def test_alternatives_and_choose(
+    hass: HomeAssistant, manager: EssensplanerManager, hass_ws_client: Any
+) -> None:
+    client = await hass_ws_client(hass)
+    anna, ben = manager.profiles
+    # Drittes Gericht für Ben, damit es für ihn eine Auswahl gibt
+    manager.save_dish(
+        {
+            "id": "d_schnitzel",
+            "name": "Schnitzel",
+            "ingredients": [{"name": "Schweinsschnitzel", "amount": 400, "unit": "g", "role": "protein"}],
+        }
+    )
+    today = dt_util.now().date().isoformat()
+    msg = await _call(
+        client,
+        type="essensplaner/plan/generate",
+        start_date=today,
+        days=1,
+        meals={today: ["lunch"]},
+        profiles=[ben],
+        alternatives=1,
+        overwrite=True,
+    )
+    assert msg["success"], msg
+    [assignment] = msg["result"]["days"][today]["lunch"]["assignments"]
+    assert not assignment["chosen"]
+    assert len(assignment["alternative_dishes"]) == 1
+    alt = assignment["alternative_dishes"][0]
+    assert alt["dish_id"] != assignment["dish_id"] and alt["dish_name"]
+
+    # Ein Gericht, das nicht zur Auswahl steht, wird abgelehnt
+    invalid = ({"d_schnitzel", "d_huhn_reis", "d_gulasch"} - {assignment["dish_id"], alt["dish_id"]}).pop()
+    msg = await _call(
+        client, type="essensplaner/plan/choose", date=today, meal_type="lunch", index=0,
+        dish_id=invalid,
+    )
+    assert not msg["success"] and msg["error"]["code"] == "invalid"
+
+    # Alternative nehmen
+    msg = await _call(
+        client, type="essensplaner/plan/choose", date=today, meal_type="lunch", index=0,
+        dish_id=alt["dish_id"],
+    )
+    assert msg["success"], msg
+    chosen = manager.plan[today]["lunch"][0]
+    assert chosen.dish_id == alt["dish_id"]
+    assert chosen.chosen and chosen.locked and chosen.alternatives == []
+
+    # Einkaufsliste enthält nur das gewählte Gericht
+    items = {i.name for i in manager.shopping_items(dt_util.now().date(), 1)}
+    names = {i.name for i in manager.dishes[alt["dish_id"]].ingredients}
+    assert items == names
+
+
+async def test_choose_meal_service(hass: HomeAssistant, manager: EssensplanerManager) -> None:
+    from homeassistant.exceptions import ServiceValidationError
+
+    today = dt_util.now().date().isoformat()
+    manager.plan[today] = {}
+    manager.set_meal(today, "dinner", [{"dish_id": "d_huhn_reis"}])
+    manager.plan[today]["dinner"][0].alternatives = ["d_gulasch"]
+    manager.plan[today]["dinner"][0].chosen = False
+    await hass.services.async_call(
+        "essensplaner",
+        "choose_meal",
+        {"date": today, "meal_type": "dinner", "dish": "Gulasch"},
+        blocking=True,
+    )
+    assert manager.plan[today]["dinner"][0].dish_id == "d_gulasch"
+    with pytest.raises(ServiceValidationError):
+        await hass.services.async_call(
+            "essensplaner",
+            "choose_meal",
+            {"date": today, "meal_type": "lunch", "dish": "Gulasch"},
+            blocking=True,
+        )

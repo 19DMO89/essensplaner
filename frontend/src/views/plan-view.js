@@ -135,10 +135,60 @@ class PlanView extends EpElement {
           </button>
         </div>
         ${assignments.length
-          ? assignments.map((a) => this._renderAssignment(a))
+          ? assignments.map((a, i) =>
+              !a.chosen && a.alternative_dishes && a.alternative_dishes.length
+                ? this._renderChoice(day, meal, i, a)
+                : this._renderAssignment(a)
+            )
           : html`<button class="empty" @click=${() => this._editSlot(day, meal, [])}>
               ${this.t("plan.empty")}
             </button>`}
+      </div>
+    `;
+  }
+
+  async _choose(day, meal, index, dishId) {
+    this._choosing = `${day}|${meal}|${index}`;
+    this.requestUpdate();
+    try {
+      await this.api.choose(day, meal, index, dishId);
+    } finally {
+      this._choosing = null;
+      this.requestUpdate();
+    }
+  }
+
+  /** Vorschlag + Alternativen: Gericht per ✓ auswählen. */
+  _renderChoice(day, meal, index, a) {
+    const busy = this._choosing === `${day}|${meal}|${index}`;
+    const options = [
+      { dish_id: a.dish_id, dish_name: a.dish_name },
+      ...a.alternative_dishes,
+    ];
+    return html`
+      <div class="choice">
+        <div class="choice-head">
+          <span class="choice-title">${this.t("plan.choose")}</span>
+          <span class="who">
+            ${a.profiles.map((p) => html`<span class="chip small">${this.profileName(p)}</span>`)}
+          </span>
+        </div>
+        ${options.map(
+          (o, n) => html`
+            ${n ? html`<div class="or">${this.t("plan.or")}</div>` : ""}
+            <div class="option">
+              <button class="assignment"
+                @click=${() => this.emit("ep-open", { type: "recipe", dishId: o.dish_id, servings: a.servings })}>
+                ${this.thumb(this.dish(o.dish_id), 40)}
+                <span class="text"><span class="dish-name">${o.dish_name}</span></span>
+              </button>
+              <button class="pick" ?disabled=${busy} @click=${() => this._choose(day, meal, index, o.dish_id)}
+                aria-label="${this.t("plan.pick")}: ${o.dish_name}" title=${this.t("plan.pick")}>
+                ✓
+              </button>
+            </div>
+          `
+        )}
       </div>
     `;
   }
@@ -269,6 +319,58 @@ class PlanView extends EpElement {
       }
       .add {
         margin-top: 6px;
+      }
+      .choice {
+        border: 1px dashed var(--primary-color);
+        border-radius: 10px;
+        padding: 6px 8px;
+        margin: 4px 0;
+      }
+      .choice-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 2px;
+      }
+      .choice-title {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+      .option {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .option .assignment {
+        flex: 1;
+        min-width: 0;
+      }
+      .or {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--secondary-text-color);
+        margin: 0 0 0 54px;
+      }
+      .pick {
+        flex: none;
+        width: 44px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid var(--ep-ok);
+        background: transparent;
+        color: var(--ep-ok);
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .pick:hover {
+        background: var(--ep-ok);
+        color: #fff;
+      }
+      .pick[disabled] {
+        opacity: 0.5;
       }
       @media (max-width: 600px) {
         .btn {

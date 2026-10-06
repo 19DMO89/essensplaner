@@ -76,6 +76,7 @@ async def test_options_settings(hass: HomeAssistant, manager: EssensplanerManage
     )
     assert result["type"] is FlowResultType.CREATE_ENTRY
     assert manager.default_meal_types == ["dinner"]
+    assert manager.default_alternatives == 1
     assert manager.shopping_list_entity == "todo.anders"
 
 

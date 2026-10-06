@@ -16,9 +16,11 @@ from homeassistant.util import dt as dt_util
 import voluptuous as vol
 
 from .const import (
+    ATTR_ALTERNATIVES,
     ATTR_DATE,
     ATTR_DAYS,
     ATTR_DISH,
+    ATTR_INDEX,
     ATTR_MEAL_TYPE,
     ATTR_MEAL_TYPES,
     ATTR_OVERWRITE,
@@ -28,7 +30,9 @@ from .const import (
     ATTR_SKIP_EXISTING,
     ATTR_START_DATE,
     DOMAIN,
+    MAX_ALTERNATIVES,
     MAX_PLAN_DAYS,
+    SERVICE_CHOOSE_MEAL,
     SERVICE_GENERATE_PLAN,
     SERVICE_PUSH_SHOPPING_LIST,
     SERVICE_SET_MEAL,
@@ -46,6 +50,18 @@ GENERATE_PLAN_SCHEMA = vol.Schema(
         vol.Optional(ATTR_PROFILES): vol.All(cv.ensure_list, [cv.string]),
         vol.Optional(ATTR_OVERWRITE, default=False): cv.boolean,
         vol.Optional(ATTR_SEED): vol.Coerce(int),
+        vol.Optional(ATTR_ALTERNATIVES): vol.All(
+            vol.Coerce(int), vol.Range(min=0, max=MAX_ALTERNATIVES)
+        ),
+    }
+)
+
+CHOOSE_MEAL_SCHEMA = vol.Schema(
+    {
+        vol.Required(ATTR_DATE): cv.date,
+        vol.Required(ATTR_MEAL_TYPE): vol.In(MEAL_TYPES),
+        vol.Required(ATTR_DISH): cv.string,
+        vol.Optional(ATTR_INDEX, default=0): vol.All(vol.Coerce(int), vol.Range(min=0)),
     }
 )
 
@@ -92,6 +108,7 @@ def async_register_services(hass: HomeAssistant) -> None:
             call.data.get(ATTR_PROFILES),
             call.data[ATTR_OVERWRITE],
             call.data.get(ATTR_SEED),
+            alternatives=call.data.get(ATTR_ALTERNATIVES),
         )
         return {"days": manager.days_view(start, days), "warnings": result.warnings}
 
@@ -116,6 +133,21 @@ def async_register_services(hass: HomeAssistant) -> None:
         )
         return manager.days_view(day, 1)
 
+    async def choose_meal(call: ServiceCall) -> ServiceResponse:
+        manager = get_manager(hass)
+        day = call.data[ATTR_DATE]
+        manager.choose_dish(
+            day.isoformat(), call.data[ATTR_MEAL_TYPE], call.data[ATTR_INDEX], call.data[ATTR_DISH]
+        )
+        return manager.days_view(day, 1)
+
+    hass.services.async_register(
+        DOMAIN,
+        SERVICE_CHOOSE_MEAL,
+        choose_meal,
+        schema=CHOOSE_MEAL_SCHEMA,
+        supports_response=SupportsResponse.OPTIONAL,
+    )
     hass.services.async_register(
         DOMAIN,
         SERVICE_GENERATE_PLAN,

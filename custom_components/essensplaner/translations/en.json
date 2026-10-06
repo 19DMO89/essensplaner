@@ -40,7 +40,11 @@
         "title": "Settings",
         "data": {
           "shopping_list": "Shopping list",
-          "meal_types": "Default meals per day"
+          "meal_types": "Default meals per day",
+          "alternatives": "Alternatives per dish"
+        },
+        "data_description": {
+          "alternatives": "How many alternative dishes the planner suggests in addition; you then choose."
         }
       },
       "profile_edit": {
@@ -193,6 +197,10 @@
         "overwrite": {
           "name": "Overwrite",
           "description": "Re-plan meals that are already planned (manually set ones are kept)."
+        },
+        "alternatives": {
+          "name": "Alternatives",
+          "description": "Number of alternative dishes to choose from (default: from settings)."
         }
       }
     },
@@ -243,6 +251,28 @@
           "description": "Default: sum of the people's servings."
         }
       }
+    },
+    "choose_meal": {
+      "name": "Choose dish",
+      "description": "Chooses between the suggested dish and its alternatives.",
+      "fields": {
+        "date": {
+          "name": "Date",
+          "description": "Day of the meal."
+        },
+        "meal_type": {
+          "name": "Meal",
+          "description": "Type of meal."
+        },
+        "dish": {
+          "name": "Dish",
+          "description": "Name or ID of the chosen dish."
+        },
+        "index": {
+          "name": "Position",
+          "description": "Which assignment of the meal (0 = first)."
+        }
+      }
     }
   },
   "exceptions": {
@@ -260,6 +290,12 @@
     },
     "entity_not_found": {
       "message": "Entity not found: {entity_id}"
+    },
+    "no_meal": {
+      "message": "Nothing planned for {date} ({meal_type})."
+    },
+    "not_an_option": {
+      "message": "{dish} is not an option for this meal."
     }
   }
 }

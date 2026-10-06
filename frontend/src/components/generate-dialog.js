@@ -11,6 +11,7 @@ class GenerateDialog extends EpDialog {
     _meals: { state: true },
     _for: { state: true },
     _overwrite: { state: true },
+    _alternatives: { state: true },
     _busy: { state: true },
     _result: { state: true },
     _error: { state: true },
@@ -21,6 +22,7 @@ class GenerateDialog extends EpDialog {
     this._meals = null;
     this._for = null;
     this._overwrite = false;
+    this._alternatives = null;
     this._busy = false;
     this._result = null;
     this._error = null;
@@ -36,6 +38,7 @@ class GenerateDialog extends EpDialog {
       const defaults = this.data.default_meal_types || ["lunch", "dinner"];
       this._meals = Object.fromEntries(this._days.map((d) => [d, [...defaults]]));
       this._for = this.profiles.map((p) => p.id);
+      this._alternatives = this.data.alternatives ?? 1;
     }
   }
 
@@ -71,6 +74,7 @@ class GenerateDialog extends EpDialog {
         meals: this._meals,
         profiles: this._for,
         overwrite: this._overwrite,
+        alternatives: this._alternatives,
       });
       this._result = result;
     } catch (err) {
@@ -83,6 +87,14 @@ class GenerateDialog extends EpDialog {
     let n = 0;
     for (const meals of Object.values(result.days)) {
       for (const slot of Object.values(meals)) n += slot.assignments.length;
+    }
+    return n;
+  }
+
+  _countOpen(result) {
+    let n = 0;
+    for (const meals of Object.values(result.days)) {
+      for (const slot of Object.values(meals)) n += slot.assignments.filter((a) => !a.chosen).length;
     }
     return n;
   }
@@ -125,6 +137,15 @@ class GenerateDialog extends EpDialog {
         )}
       </div>
 
+      <label class="field alt">
+        <span>${this.t("gen.alternatives")}</span>
+        <select @change=${(e) => (this._alternatives = Number(e.target.value))}>
+          ${[0, 1, 2, 3].map(
+            (n) => html`<option value=${n} ?selected=${n === this._alternatives}>
+              ${n === 0 ? this.t("gen.alternatives_none") : n}</option>`
+          )}
+        </select>
+      </label>
       <label class="row overwrite">
         <input type="checkbox" .checked=${this._overwrite} @change=${(e) => (this._overwrite = e.target.checked)} />
         <span>${this.t("gen.overwrite")}</span>
@@ -144,6 +165,7 @@ class GenerateDialog extends EpDialog {
     const r = this._result;
     const body = html`
       <p class="status-ok">${this.t("gen.done", { n: this._countPlanned(r) })}</p>
+      ${this._countOpen(r) ? html`<p>${this.t("gen.choose_hint", { n: this._countOpen(r) })}</p>` : ""}
       ${r.warnings.length
         ? html`<ul class="warnings">
             ${r.warnings.map(
@@ -204,6 +226,9 @@ class GenerateDialog extends EpDialog {
       }
       .overwrite {
         align-items: flex-start;
+      }
+      .alt select {
+        max-width: 160px;
       }
       .warnings {
         padding-left: 18px;

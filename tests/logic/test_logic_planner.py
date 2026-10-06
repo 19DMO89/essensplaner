@@ -128,3 +128,39 @@ def test_shopping_list_mixed_units() -> None:
     items = {i.key: i for i in build_shopping_list(plan, dishes, DAYS)}
     assert items["kartoffel"].summary == "Kartoffeln – 1,5 kg + 2 Stk"
     assert items["petersili"].summary == "Petersilie"
+
+
+def test_alternatives_offered_for_same_profiles() -> None:
+    planner = _planner(seed=2)
+    result = planner.generate({}, {d: [MEAL_LUNCH, MEAL_DINNER] for d in DAYS[:3]}, alternatives=1)
+    for day in DAYS[:3]:
+        for slot in result.plan[day].values():
+            for a in slot:
+                assert len(a.alternatives) <= 1
+                assert a.dish_id not in a.alternatives
+                assert a.chosen == (not a.alternatives)
+                for alt in a.alternatives:
+                    # Alternative passt für alle Personen der Zuweisung
+                    assert all(planner.compat(alt, p).usable for p in a.profiles)
+                    assert MEAL_LUNCH in planner.dishes[alt].meal_types
+
+
+def test_alternatives_vary_and_can_be_zero() -> None:
+    dishes = [dish(f"d{i}", f"Gericht {i}", ["100 g Reis"]) for i in range(10)]
+    planner = Planner(dishes, [profile_a()], random.Random(1))
+    result = planner.generate({}, {d: [MEAL_LUNCH] for d in DAYS}, alternatives=1)
+    alts = [result.plan[d][MEAL_LUNCH][0].alternatives[0] for d in DAYS]
+    mains = [result.plan[d][MEAL_LUNCH][0].dish_id for d in DAYS]
+    assert len(set(alts)) >= 5  # Alternativen wiederholen sich kaum
+    assert all(a != m for a, m in zip(alts, mains))
+
+    none = Planner(dishes, [profile_a()], random.Random(1)).generate({}, {DAYS[0]: [MEAL_LUNCH]})
+    assert none.plan[DAYS[0]][MEAL_LUNCH][0].alternatives == []
+    assert none.plan[DAYS[0]][MEAL_LUNCH][0].chosen
+
+
+def test_assignment_backwards_compatible() -> None:
+    old = Assignment.from_dict({"dish_id": "x", "profiles": ["a"], "servings": 1})
+    assert old.alternatives == [] and old.chosen
+    new = Assignment.from_dict({"dish_id": "x", "profiles": ["a"], "servings": 1, "alternatives": ["y"]})
+    assert not new.chosen

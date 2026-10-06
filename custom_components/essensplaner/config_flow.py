@@ -32,11 +32,13 @@ from homeassistant.helpers.selector import (
 )
 
 from .const import (
+    CONF_ALTERNATIVES,
     CONF_IMPORT_STARTER,
     CONF_IMPORT_TODO,
     CONF_INITIAL_PROFILES,
     CONF_MEAL_TYPES,
     CONF_SHOPPING_LIST,
+    DEFAULT_ALTERNATIVES,
     DEFAULT_IMPORT_TODO,
     DEFAULT_MEAL_TYPES,
     DEFAULT_PROFILES,
@@ -159,7 +161,10 @@ class EssensplanerOptionsFlow(OptionsFlow):
             if not user_input.get(CONF_MEAL_TYPES):
                 errors[CONF_MEAL_TYPES] = "no_meal_types"
             else:
-                options = {CONF_MEAL_TYPES: user_input[CONF_MEAL_TYPES]}
+                options = {
+                    CONF_MEAL_TYPES: user_input[CONF_MEAL_TYPES],
+                    CONF_ALTERNATIVES: int(user_input.get(CONF_ALTERNATIVES, DEFAULT_ALTERNATIVES)),
+                }
                 if user_input.get(CONF_SHOPPING_LIST):
                     options[CONF_SHOPPING_LIST] = user_input[CONF_SHOPPING_LIST]
                 return self.async_create_entry(data=options)
@@ -174,6 +179,12 @@ class EssensplanerOptionsFlow(OptionsFlow):
                 vol.Required(
                     CONF_MEAL_TYPES, default=options.get(CONF_MEAL_TYPES, DEFAULT_MEAL_TYPES)
                 ): MEAL_TYPE_SELECTOR,
+                vol.Required(
+                    CONF_ALTERNATIVES,
+                    default=options.get(CONF_ALTERNATIVES, DEFAULT_ALTERNATIVES),
+                ): NumberSelector(
+                    NumberSelectorConfig(min=0, max=3, step=1, mode=NumberSelectorMode.BOX)
+                ),
             }
         )
         return self.async_show_form(step_id="settings", data_schema=schema, errors=errors)

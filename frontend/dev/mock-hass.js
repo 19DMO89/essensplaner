@@ -60,6 +60,14 @@ async function callWS(msg) {
       notify();
       return {};
     }
+    case "plan/choose": {
+      const slot = mock.plan[msg.date][msg.meal_type];
+      const a = slot.assignments[msg.index];
+      const names = Object.fromEntries(mock.data.dishes.map((d) => [d.id, d.name]));
+      Object.assign(a, { dish_id: msg.dish_id, dish_name: names[msg.dish_id], alternative_dishes: [], alternatives: [], chosen: true, locked: true });
+      notify();
+      return {};
+    }
     case "plan/generate":
       notify();
       return { days: mock.plan, warnings: mock.warnings };

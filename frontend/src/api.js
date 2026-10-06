@@ -67,6 +67,10 @@ export class Api {
     return this.call("plan/set_meal", { date, meal_type: mealType, assignments });
   }
 
+  choose(date, mealType, index, dishId) {
+    return this.call("plan/choose", { date, meal_type: mealType, index, dish_id: dishId });
+  }
+
   generate(params) {
     return this.call("plan/generate", params);
   }

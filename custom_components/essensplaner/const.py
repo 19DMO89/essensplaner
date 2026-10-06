@@ -17,6 +17,9 @@ STARTER_TAG: Final = "Startpaket"
 # Optionen
 CONF_SHOPPING_LIST: Final = "shopping_list"
 CONF_MEAL_TYPES: Final = "meal_types"
+CONF_ALTERNATIVES: Final = "alternatives"
+DEFAULT_ALTERNATIVES: Final = 1
+MAX_ALTERNATIVES: Final = 3
 DEFAULT_MEAL_TYPES: Final = [MEAL_LUNCH, MEAL_DINNER]
 DEFAULT_PROFILES: Final = ["Person A", "Person B"]
 DEFAULT_IMPORT_TODO: Final = "todo.gerichte"
@@ -42,7 +45,10 @@ ATTR_DATE: Final = "date"
 ATTR_MEAL_TYPE: Final = "meal_type"
 ATTR_DISH: Final = "dish"
 ATTR_SERVINGS: Final = "servings"
+ATTR_ALTERNATIVES: Final = "alternatives"
+ATTR_INDEX: Final = "index"
 
 SERVICE_GENERATE_PLAN: Final = "generate_plan"
 SERVICE_PUSH_SHOPPING_LIST: Final = "push_shopping_list"
 SERVICE_SET_MEAL: Final = "set_meal"
+SERVICE_CHOOSE_MEAL: Final = "choose_meal"

@@ -21,6 +21,7 @@ W_SHARED = 4.0
 W_REPEAT_WEEK = 6.0
 W_REPEAT_DAY = 4.0
 W_RANDOM = 2.0
+W_REPEAT_ALT = 3.0  # Alternativen sollen sich ebenfalls abwechseln
 
 
 def base_components(dish: Dish) -> set[str]:
@@ -65,6 +66,8 @@ class Planner:
         self.rng = rng or random.Random()
         self._compat: dict[tuple[str, str], CompatResult] = {}
         self._base = {d.id: base_components(d) for d in self.dishes.values()}
+        self._alt_usage: Counter[str] = Counter()
+        self._alternatives = 0
 
     def compat(self, dish_id: str, profile_id: str) -> CompatResult:
         key = (dish_id, profile_id)
@@ -78,12 +81,17 @@ class Planner:
         meals_by_date: dict[str, list[str]],
         profile_ids: list[str] | None = None,
         overwrite: bool = False,
+        alternatives: int = 0,
     ) -> PlanResult:
         """Fülle die angefragten Mahlzeiten.
 
         Ohne ``overwrite`` bleiben belegte Mahlzeiten unverändert. Mit ``overwrite``
         werden nur manuell gesetzte (``locked``) Zuweisungen behalten.
+        ``alternatives`` legt fest, wie viele Alternativ-Gerichte je Zuweisung
+        zur Auswahl vorgeschlagen werden.
         """
+        self._alternatives = max(0, alternatives)
+        self._alt_usage = Counter()
         profile_ids = [p for p in (profile_ids or list(self.profiles)) if p in self.profiles]
         new_plan: Plan = {day: dict(meals) for day, meals in plan.items()}
         result = PlanResult(plan=new_plan)
@@ -121,6 +129,7 @@ class Planner:
                 )
                 for assignment in chosen:
                     week_usage[assignment.dish_id] += 1
+                    self._alt_usage.update(assignment.alternatives)
                     result.filled.append(
                         {"date": day, "meal_type": meal_type, **assignment.to_dict()}
                     )
@@ -162,6 +171,7 @@ class Planner:
                     candidates.append((dish, covers))
 
             best: tuple[float, Dish, list[str]] | None = None
+            scored: list[tuple[float, Dish, list[str]]] = []
             for dish, covers in candidates:
                 score = W_COVER * len(covers)
                 for p in covers:
@@ -187,22 +197,54 @@ class Planner:
                 score -= W_REPEAT_WEEK * week_usage[dish.id]
                 score -= W_REPEAT_DAY * day_usage[dish.id]
                 score += W_RANDOM * self.rng.random()
+                scored.append((score, dish, covers))
                 if best is None or score > best[0]:
                     best = (score, dish, covers)
             if best is None:
                 break
             _, dish, covers = best
+            alternatives = self._pick_alternatives(scored, dish, covers, used_here, day_usage)
             chosen.append(
                 Assignment(
                     dish_id=dish.id,
                     profiles=covers,
                     servings=sum(self.profiles[p].servings for p in covers),
+                    alternatives=alternatives,
+                    chosen=not alternatives,
                 )
             )
             used_here.add(dish.id)
+            used_here.update(alternatives)
             slot_base |= self._base[dish.id]
             remaining = [p for p in remaining if p not in covers]
         return chosen, remaining
+
+
+    def _pick_alternatives(
+        self,
+        scored: list[tuple[float, Dish, list[str]]],
+        best: Dish,
+        covers: list[str],
+        used_here: set[str],
+        day_usage: Counter[str],
+    ) -> list[str]:
+        """Nächstbeste Gerichte, die für alle Profile des gewählten Gerichts passen."""
+        if not self._alternatives:
+            return []
+        need = set(covers)
+        ranked = sorted(
+            (
+                (score - W_REPEAT_ALT * self._alt_usage[dish.id], dish)
+                for score, dish, dish_covers in scored
+                if dish.id != best.id
+                and dish.id not in used_here
+                and not day_usage[dish.id]
+                and need <= set(dish_covers)
+            ),
+            key=lambda item: item[0],
+            reverse=True,
+        )
+        return [dish.id for _, dish in ranked[: self._alternatives]]
 
 
 def scale_factor(dish: Dish, servings: float) -> float:

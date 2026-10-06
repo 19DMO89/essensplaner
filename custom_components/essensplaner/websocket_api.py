@@ -12,7 +12,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import config_validation as cv
 
-from .const import DOMAIN, MAX_PLAN_DAYS
+from .const import DOMAIN, MAX_ALTERNATIVES, MAX_PLAN_DAYS
 from .images import InvalidImage, image_url
 from .logic.compat import check_dish
 from .logic.groups import GROUP_IDS, GROUPS
@@ -51,6 +51,7 @@ def async_register_websocket(hass: HomeAssistant) -> None:
         ws_profile_set_ingredient,
         ws_profile_set_groups,
         ws_profile_groups,
+        ws_plan_choose,
     ):
         websocket_api.async_register_command(hass, handler)
 
@@ -87,6 +88,7 @@ def _data(manager: EssensplanerManager) -> dict[str, Any]:
         "default_meal_types": manager.default_meal_types,
         "shopping_list": manager.shopping_list_entity,
         "groups": [g.to_dict() for g in GROUPS.values()],
+        "alternatives": manager.default_alternatives,
     }
 
 
@@ -174,6 +176,7 @@ async def ws_plan_set_meal(manager: EssensplanerManager, msg: dict[str, Any]) ->
         vol.Optional("overwrite", default=False): bool,
         # Mahlzeiten je Tag: {"2026-10-06": ["lunch", "dinner"], ...}
         vol.Optional("meals"): {cv.string: [vol.In(MEAL_TYPES)]},
+        vol.Optional("alternatives"): vol.All(vol.Coerce(int), vol.Range(min=0, max=MAX_ALTERNATIVES)),
     }
 )
 @websocket_api.async_response
@@ -189,6 +192,7 @@ async def ws_plan_generate(manager: EssensplanerManager, msg: dict[str, Any]) ->
         msg.get("profiles"),
         msg["overwrite"],
         meals_by_date=meals,
+        alternatives=msg.get("alternatives"),
     )
     return {
         "days": manager.days_view(msg["start_date"], msg["days"]),
@@ -341,3 +345,20 @@ async def ws_profile_set_groups(
 async def ws_profile_groups(manager: EssensplanerManager, msg: dict[str, Any]) -> list[dict[str, Any]]:
     """Allergene und Fleischsorten mit Zustand und betroffenen Zutaten."""
     return manager.group_overview(msg["profile_id"])
+
+
+@websocket_api.websocket_command(
+    {
+        vol.Required("type"): "essensplaner/plan/choose",
+        vol.Required("date"): cv.date,
+        vol.Required("meal_type"): vol.In(MEAL_TYPES),
+        vol.Required("index"): vol.All(vol.Coerce(int), vol.Range(min=0)),
+        vol.Required("dish_id"): str,
+    }
+)
+@websocket_api.async_response
+@_with_manager
+async def ws_plan_choose(manager: EssensplanerManager, msg: dict[str, Any]) -> dict[str, Any]:
+    """Vorgeschlagenes Gericht oder Alternative auswählen."""
+    manager.choose_dish(msg["date"].isoformat(), msg["meal_type"], msg["index"], msg["dish_id"])
+    return manager.days_view(msg["date"], 1)

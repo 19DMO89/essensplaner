@@ -51,7 +51,7 @@ profiles = [
 monday = date.today() - timedelta(days=date.today().weekday())
 days = [(monday + timedelta(days=i)).isoformat() for i in range(7)]
 planner = Planner(dishes, profiles, random.Random(4))
-result = planner.generate({}, {d: ["lunch", "dinner"] for d in days})
+result = planner.generate({}, {d: ["lunch", "dinner"] for d in days}, alternatives=1)
 plan = result.plan
 by_id = {d.id: d for d in dishes}
 
@@ -63,7 +63,15 @@ def days_view(start_days):
         view[day] = {
             meal: {
                 "assignments": [
-                    {**a.to_dict(), "dish_name": by_id[a.dish_id].name, "image_url": None}
+                    {
+                        **a.to_dict(),
+                        "dish_name": by_id[a.dish_id].name,
+                        "image_url": None,
+                        "alternative_dishes": [
+                            {"dish_id": x, "dish_name": by_id[x].name, "image_url": None}
+                            for x in a.alternatives
+                        ],
+                    }
                     for a in assignments
                 ],
                 "shared_base": shared_base(by_id[a.dish_id] for a in assignments),
@@ -81,6 +89,7 @@ mock = {
         "default_meal_types": ["lunch", "dinner"],
         "shopping_list": "todo.einkaufsliste",
         "groups": [g.to_dict() for g in GROUPS.values()],
+        "alternatives": 1,
     },
     "compat": {d.id: {p.id: check_dish(d, p).status for p in profiles} for d in dishes},
     "checks": {d.id: {p.id: check_dish(d, p).to_dict() for p in profiles} for d in dishes},

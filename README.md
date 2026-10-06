@@ -28,7 +28,9 @@ Nach der Einrichtung erscheint **Essensplaner** in der Seitenleiste (auch in der
 - **Wochenplan**: Woche vor/zurück, pro Tag und Mahlzeit die Gerichte je Person. Ein Tippen auf
   das Stift-Symbol öffnet die Mahlzeit: Personen wählen, Gericht suchen (passende zuerst),
   Portionen anpassen. *Woche planen* füllt die Woche automatisch; pro Tag lässt sich
-  festlegen, welche Mahlzeiten gebraucht werden.
+  festlegen, welche Mahlzeiten gebraucht werden. Zu jedem Gericht schlägt der Planer
+  **Alternativen** vor (Standard 1, einstellbar 0–3), die für dieselben Personen passen –
+  mit ✓ wählst du, was es gibt. Bis dahin wird für den Einkauf der erste Vorschlag verwendet.
 - **Gerichte**: Suche, Filter nach Mahlzeit und „passt für“, Rezeptansicht mit
   Portionsrechner und Begründung, warum ein Gericht für eine Person (nicht) passt.
   Gerichte anlegen und bearbeiten, inklusive Foto (Upload oder Bild-URL übernehmen).
@@ -130,6 +132,13 @@ data:
   days: 7
   overwrite: false       # true: neu planen, manuell gesetzte Mahlzeiten bleiben
 
+# Zwischen Vorschlag und Alternative wählen
+action: essensplaner.choose_meal
+data:
+  date: "2026-10-07"
+  meal_type: dinner
+  dish: Kürbisrisotto
+
 # Gericht manuell setzen (nur für eine Person; die anderen behalten ihr Gericht)
 action: essensplaner.set_meal
 data:
@@ -145,7 +154,7 @@ data:
   entity_id: todo.einkaufsliste   # optional, sonst aus den Einstellungen
 ```
 
-Alle drei Aktionen liefern auf Wunsch eine Antwort (`response_variable`) mit dem Plan bzw.
+Alle Aktionen liefern auf Wunsch eine Antwort (`response_variable`) mit dem Plan bzw.
 den hinzugefügten Einträgen.
 
 ## Entitäten

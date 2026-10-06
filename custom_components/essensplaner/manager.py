@@ -19,11 +19,13 @@ from homeassistant.helpers.storage import Store
 from homeassistant.util import dt as dt_util
 
 from .const import (
+    CONF_ALTERNATIVES,
     CONF_IMPORT_STARTER,
     CONF_IMPORT_TODO,
     CONF_INITIAL_PROFILES,
     CONF_MEAL_TYPES,
     CONF_SHOPPING_LIST,
+    DEFAULT_ALTERNATIVES,
     DEFAULT_MEAL_TYPES,
     DOMAIN,
     PLAN_HISTORY_DAYS,
@@ -192,6 +194,10 @@ class EssensplanerManager:
     @property
     def default_meal_types(self) -> list[str]:
         return list(self.entry.options.get(CONF_MEAL_TYPES, DEFAULT_MEAL_TYPES))
+
+    @property
+    def default_alternatives(self) -> int:
+        return int(self.entry.options.get(CONF_ALTERNATIVES, DEFAULT_ALTERNATIVES))
 
     @property
     def shopping_list_entity(self) -> str | None:
@@ -375,6 +381,15 @@ class EssensplanerManager:
                             "image_url": image_url(self.dishes[a.dish_id].image)
                             if a.dish_id in self.dishes
                             else None,
+                            "alternative_dishes": [
+                                {
+                                    "dish_id": alt,
+                                    "dish_name": self.dishes[alt].name,
+                                    "image_url": image_url(self.dishes[alt].image),
+                                }
+                                for alt in a.alternatives
+                                if alt in self.dishes
+                            ],
                         }
                         for a in meals[meal_type]
                     ],
@@ -403,6 +418,30 @@ class EssensplanerManager:
             meals.pop(meal_type, None)
             if not meals:
                 del self.plan[day]
+        self._changed(STORAGE_KEY_PLAN)
+
+    @callback
+    def choose_dish(self, day: str, meal_type: str, index: int, dish_ref: str) -> None:
+        """Zwischen vorgeschlagenem Gericht und Alternativen wählen."""
+        assignments = self.plan.get(day, {}).get(meal_type, [])
+        if not 0 <= index < len(assignments):
+            raise ServiceValidationError(
+                translation_domain=DOMAIN,
+                translation_key="no_meal",
+                translation_placeholders={"date": day, "meal_type": meal_type},
+            )
+        assignment = assignments[index]
+        dish_id = self.resolve_dish(dish_ref)
+        if dish_id != assignment.dish_id and dish_id not in assignment.alternatives:
+            raise ServiceValidationError(
+                translation_domain=DOMAIN,
+                translation_key="not_an_option",
+                translation_placeholders={"dish": self.dishes[dish_id].name},
+            )
+        assignment.dish_id = dish_id
+        assignment.alternatives = []
+        assignment.chosen = True
+        assignment.locked = True
         self._changed(STORAGE_KEY_PLAN)
 
     @callback
@@ -451,6 +490,7 @@ class EssensplanerManager:
         overwrite: bool = False,
         seed: int | None = None,
         meals_by_date: dict[str, list[str]] | None = None,
+        alternatives: int | None = None,
     ) -> PlanResult:
         """Plan erzeugen. ``meals_by_date`` legt die Mahlzeiten je Tag einzeln fest."""
         meal_types = [m for m in MEAL_TYPES if m in (meal_types or self.default_meal_types)]
@@ -462,7 +502,9 @@ class EssensplanerManager:
             }
         profile_ids = [self.resolve_profile(p) for p in profile_refs] if profile_refs else None
         planner = Planner(self.dishes.values(), self.profiles.values(), random.Random(seed))
-        result = planner.generate(self.plan, meals_by_date, profile_ids, overwrite)
+        if alternatives is None:
+            alternatives = self.default_alternatives
+        result = planner.generate(self.plan, meals_by_date, profile_ids, overwrite, alternatives)
         self.plan = result.plan
         self._changed(STORAGE_KEY_PLAN)
         return result
@@ -478,6 +520,10 @@ class EssensplanerManager:
                     "name": self.dishes[a.dish_id].name,
                     "servings": a.servings,
                     "image_url": image_url(self.dishes[a.dish_id].image),
+                    "chosen": a.chosen,
+                    "alternatives": [
+                        self.dishes[alt].name for alt in a.alternatives if alt in self.dishes
+                    ],
                 }
                 for a in meals.get(meal_type, [])
                 if profile_id in a.profiles and a.dish_id in self.dishes

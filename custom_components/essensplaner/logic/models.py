@@ -177,14 +177,20 @@ class Assignment:
     profiles: list[str]
     servings: float
     locked: bool = False  # manuell gesetzt -> wird beim Generieren nicht ersetzt
+    # Alternativ-Gerichte für dieselben Profile; ``chosen`` = Auswahl getroffen.
+    alternatives: list[str] = field(default_factory=list)
+    chosen: bool = True
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Assignment:
+        alternatives = _str_list(data.get("alternatives"))
         return cls(
             dish_id=str(data["dish_id"]),
             profiles=_str_list(data.get("profiles")),
             servings=float(data.get("servings") or 1),
             locked=bool(data.get("locked", False)),
+            alternatives=alternatives,
+            chosen=bool(data.get("chosen", not alternatives)),
         )
 
     def to_dict(self) -> dict[str, Any]:

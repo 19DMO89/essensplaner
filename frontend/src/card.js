@@ -144,6 +144,9 @@ class EssensplanerTodayCard extends LitElement {
                 : ""}
               <span class="text">
                 <span class="name">${a.dish_name}</span>
+                ${!a.chosen && a.alternative_dishes && a.alternative_dishes.length
+                  ? html`<span class="alt">${this.t("plan.or")} ${a.alternative_dishes.map((x) => x.dish_name).join(", ")}</span>`
+                  : ""}
                 <span class="who">${a.profiles.map((p) => this._profileName(p)).join(", ")}</span>
               </span>
             </button>`;
@@ -200,6 +203,11 @@ class EssensplanerTodayCard extends LitElement {
       }
       .who {
         font-size: 13px;
+        color: var(--secondary-text-color);
+      }
+      .alt {
+        font-size: 13px;
+        font-style: italic;
         color: var(--secondary-text-color);
       }
     `,

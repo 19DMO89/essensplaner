@@ -16,6 +16,7 @@ class ShoppingView extends EpElement {
     _skip: { state: true },
     _busy: { state: true },
     _message: { state: true },
+    _open: { state: true },
   };
 
   constructor() {
@@ -28,6 +29,7 @@ class ShoppingView extends EpElement {
     this._skip = true;
     this._busy = false;
     this._message = null;
+    this._open = 0;
     this._loadedKey = null;
   }
 
@@ -50,7 +52,15 @@ class ShoppingView extends EpElement {
 
   async _load() {
     try {
-      this._items = await this.api.shoppingPreview(this._start, this._days);
+      const [items, plan] = await Promise.all([
+        this.api.shoppingPreview(this._start, this._days),
+        this.api.plan(this._start, this._days),
+      ]);
+      this._items = items;
+      this._open = Object.values(plan)
+        .flatMap((meals) => Object.values(meals))
+        .flatMap((slot) => slot.assignments)
+        .filter((a) => !a.chosen).length;
     } catch (err) {
       this._items = [];
       this._message = { error: true, text: this.t("common.error", { msg: err.message }) };
@@ -138,6 +148,7 @@ class ShoppingView extends EpElement {
           </button>
         </div>
       </div>
+      ${this._open ? html`<p class="open-hint">${this.t("shop.open_choices", { n: this._open })}</p>` : ""}
       ${!items
         ? html`<p class="muted">${this.t("common.loading")}</p>`
         : !items.length
@@ -193,6 +204,13 @@ class ShoppingView extends EpElement {
       }
       .select {
         margin-bottom: 8px;
+      }
+      .open-hint {
+        background: var(--secondary-background-color, #f3f3f3);
+        border-left: 4px solid var(--ep-warn);
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 13px;
       }
       .list {
         list-style: none;

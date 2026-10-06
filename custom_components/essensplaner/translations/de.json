@@ -40,7 +40,11 @@
         "title": "Einstellungen",
         "data": {
           "shopping_list": "Einkaufsliste",
-          "meal_types": "Standard-Mahlzeiten pro Tag"
+          "meal_types": "Standard-Mahlzeiten pro Tag",
+          "alternatives": "Alternativen pro Gericht"
+        },
+        "data_description": {
+          "alternatives": "So viele Alternativ-Gerichte schlägt der Planer zusätzlich vor; du wählst dann aus."
         }
       },
       "profile_edit": {
@@ -193,6 +197,10 @@
         "overwrite": {
           "name": "Überschreiben",
           "description": "Bereits geplante Mahlzeiten neu planen (manuell gesetzte bleiben)."
+        },
+        "alternatives": {
+          "name": "Alternativen",
+          "description": "Anzahl Alternativ-Gerichte zur Auswahl (Standard: aus den Einstellungen)."
         }
       }
     },
@@ -243,6 +251,28 @@
           "description": "Standard: Summe der Portionen der Personen."
         }
       }
+    },
+    "choose_meal": {
+      "name": "Gericht auswählen",
+      "description": "Wählt zwischen vorgeschlagenem Gericht und Alternativen.",
+      "fields": {
+        "date": {
+          "name": "Datum",
+          "description": "Tag der Mahlzeit."
+        },
+        "meal_type": {
+          "name": "Mahlzeit",
+          "description": "Art der Mahlzeit."
+        },
+        "dish": {
+          "name": "Gericht",
+          "description": "Name oder ID des gewählten Gerichts."
+        },
+        "index": {
+          "name": "Position",
+          "description": "Welche Zuweisung der Mahlzeit (0 = erste)."
+        }
+      }
     }
   },
   "exceptions": {
@@ -260,6 +290,12 @@
     },
     "entity_not_found": {
       "message": "Entität nicht gefunden: {entity_id}"
+    },
+    "no_meal": {
+      "message": "Für {date} ({meal_type}) ist nichts geplant."
+    },
+    "not_an_option": {
+      "message": "{dish} steht für diese Mahlzeit nicht zur Auswahl."
     }
   }
 }

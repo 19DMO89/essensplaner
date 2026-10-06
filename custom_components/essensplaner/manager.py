@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from datetime import date, datetime, timedelta
 import logging
+from pathlib import Path
 import random
 from typing import Any
 
@@ -18,6 +19,7 @@ from homeassistant.helpers.storage import Store
 from homeassistant.util import dt as dt_util
 
 from .const import (
+    CONF_IMPORT_STARTER,
     CONF_IMPORT_TODO,
     CONF_INITIAL_PROFILES,
     CONF_MEAL_TYPES,
@@ -30,6 +32,7 @@ from .const import (
     STORAGE_KEY_PLAN,
     STORAGE_KEY_PROFILES,
     STORAGE_VERSION,
+    STARTER_TAG,
 )
 from .logic.models import (
     MEAL_TYPES,
@@ -43,8 +46,20 @@ from .logic.models import (
 from .logic.normalize import normalize_name
 from .logic.planner import Planner, PlanResult, shared_base
 from .logic.shopping import ShoppingItem, build_shopping_list
+from .logic.starter import parse_dish_file
 
 _LOGGER = logging.getLogger(__name__)
+
+
+STARTER_DIR = Path(__file__).parent / "data" / "starter"
+
+
+def read_starter_dishes() -> list[dict[str, Any]]:
+    """Gerichte des Startpakets lesen (blockierend, im Executor aufrufen)."""
+    dishes: list[dict[str, Any]] = []
+    for path in sorted(STARTER_DIR.glob("*.txt")):
+        dishes.extend(parse_dish_file(path.read_text(encoding="utf-8"), path.name))
+    return dishes
 
 
 def date_range(start: date, days: int) -> list[str]:
@@ -88,6 +103,9 @@ class EssensplanerManager:
         if not self.profiles:
             for name in self.entry.data.get(CONF_INITIAL_PROFILES, []):
                 self.save_profile({"name": name})
+        if self.entry.data.get(CONF_IMPORT_STARTER):
+            count = await self.async_import_starter()
+            _LOGGER.info("%s Gerichte aus dem Startpaket importiert", count)
         if source := self.entry.data.get(CONF_IMPORT_TODO):
             try:
                 count = await self.async_import_from_todo(source)
@@ -221,8 +239,7 @@ class EssensplanerManager:
             translation_placeholders={"dish": ref},
         )
 
-    @callback
-    def save_dish(self, data: dict[str, Any]) -> Dish:
+    def _put_dish(self, data: dict[str, Any]) -> Dish:
         now = dt_util.utcnow().isoformat()
         existing = self.dishes.get(data.get("id") or "")
         dish = Dish.from_dict(data)
@@ -231,8 +248,37 @@ class EssensplanerManager:
         if existing and "image" not in data:
             dish.image = existing.image
         self.dishes[dish.id] = dish
+        return dish
+
+    @callback
+    def save_dish(self, data: dict[str, Any]) -> Dish:
+        dish = self._put_dish(data)
         self._changed(STORAGE_KEY_DISHES)
         return dish
+
+    @callback
+    def add_dishes(self, dishes: list[dict[str, Any]], tag: str | None = None) -> int:
+        """Mehrere neue Gerichte anlegen; gleichnamige werden übersprungen."""
+        known = {normalize_name(d.name) for d in self.dishes.values()}
+        count = 0
+        for data in dishes:
+            key = normalize_name(data["name"])
+            if not key or key in known:
+                continue
+            known.add(key)
+            data = {**data, "id": None}
+            if tag:
+                data["tags"] = [*data.get("tags", []), tag]
+            self._put_dish(data)
+            count += 1
+        if count:
+            self._changed(STORAGE_KEY_DISHES)
+        return count
+
+    async def async_import_starter(self) -> int:
+        """Mitgeliefertes Startpaket importieren."""
+        dishes = await self.hass.async_add_executor_job(read_starter_dishes)
+        return self.add_dishes(dishes, tag=STARTER_TAG)
 
     @callback
     def delete_dish(self, dish_id: str) -> None:
@@ -256,16 +302,9 @@ class EssensplanerManager:
             return_response=True,
         )
         items = (response or {}).get(entity_id, {}).get("items", [])
-        known = {normalize_name(d.name) for d in self.dishes.values()}
-        count = 0
-        for item in items:
-            name = str(item.get("summary", "")).strip()
-            if not name or normalize_name(name) in known:
-                continue
-            known.add(normalize_name(name))
-            self.save_dish({"name": name})
-            count += 1
-        return count
+        return self.add_dishes(
+            [{"name": str(item.get("summary", "")).strip()} for item in items]
+        )
 
     # ----------------------------------------------------------------------- Plan
 

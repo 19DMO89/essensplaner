@@ -6,10 +6,12 @@
         "description": "Lege die Personen an, für die geplant wird. Verträglichkeiten und Vorlieben bearbeitest du danach in den Optionen.",
         "data": {
           "profiles": "Personen (eine pro Zeile)",
+          "import_starter": "Startpaket mit fertigen Gerichten importieren",
           "import_todo": "Gerichte aus To-do-Liste importieren (optional)"
         },
         "data_description": {
-          "import_todo": "Übernimmt die Namen der Einträge als Gerichte ohne Zutaten."
+          "import_todo": "Übernimmt die Namen der Einträge als Gerichte ohne Zutaten.",
+          "import_starter": "Rund 190 Gerichte mit Zutaten und Zubereitung (Hausmannskost, international, vegetarisch, Frühstück, Snacks). Lassen sich danach bearbeiten oder löschen."
         }
       }
     },
@@ -30,6 +32,7 @@
           "profile_edit": "Person bearbeiten / löschen",
           "dish_add": "Gericht hinzufügen",
           "dish_edit": "Gericht bearbeiten / löschen",
+          "import_starter": "Startpaket importieren",
           "import_todo": "Gerichte aus To-do-Liste importieren"
         }
       },
@@ -93,6 +96,10 @@
           "tags": "Durch Komma getrennt."
         }
       },
+      "import_starter": {
+        "title": "Startpaket importieren",
+        "description": "Importiert rund 190 Gerichte mit Zutaten und Zubereitung. Gerichte, die es mit gleichem Namen schon gibt, werden übersprungen. Importierte Gerichte haben den Tag „Startpaket“."
+      },
       "import_todo": {
         "title": "Gerichte importieren",
         "data": {
@@ -140,40 +147,92 @@
       "name": "Plan erstellen",
       "description": "Schlägt Gerichte für die gewählten Tage und Mahlzeiten vor.",
       "fields": {
-        "start_date": {"name": "Startdatum", "description": "Erster Tag (Standard: heute)."},
-        "days": {"name": "Tage", "description": "Anzahl der Tage."},
-        "meal_types": {"name": "Mahlzeiten", "description": "Standard: aus den Einstellungen."},
-        "profiles": {"name": "Personen", "description": "Namen oder IDs; Standard: alle."},
-        "overwrite": {"name": "Überschreiben", "description": "Bereits geplante Mahlzeiten neu planen (manuell gesetzte bleiben)."}
+        "start_date": {
+          "name": "Startdatum",
+          "description": "Erster Tag (Standard: heute)."
+        },
+        "days": {
+          "name": "Tage",
+          "description": "Anzahl der Tage."
+        },
+        "meal_types": {
+          "name": "Mahlzeiten",
+          "description": "Standard: aus den Einstellungen."
+        },
+        "profiles": {
+          "name": "Personen",
+          "description": "Namen oder IDs; Standard: alle."
+        },
+        "overwrite": {
+          "name": "Überschreiben",
+          "description": "Bereits geplante Mahlzeiten neu planen (manuell gesetzte bleiben)."
+        }
       }
     },
     "push_shopping_list": {
       "name": "Einkaufsliste übertragen",
       "description": "Schreibt die zusammengefassten Zutaten in eine To-do-Liste.",
       "fields": {
-        "start_date": {"name": "Startdatum", "description": "Erster Tag (Standard: heute)."},
-        "days": {"name": "Tage", "description": "Anzahl der Tage."},
-        "entity_id": {"name": "To-do-Liste", "description": "Standard: aus den Einstellungen."},
-        "skip_existing": {"name": "Vorhandene überspringen", "description": "Zutaten, die schon offen auf der Liste stehen, nicht erneut hinzufügen."}
+        "start_date": {
+          "name": "Startdatum",
+          "description": "Erster Tag (Standard: heute)."
+        },
+        "days": {
+          "name": "Tage",
+          "description": "Anzahl der Tage."
+        },
+        "entity_id": {
+          "name": "To-do-Liste",
+          "description": "Standard: aus den Einstellungen."
+        },
+        "skip_existing": {
+          "name": "Vorhandene überspringen",
+          "description": "Zutaten, die schon offen auf der Liste stehen, nicht erneut hinzufügen."
+        }
       }
     },
     "set_meal": {
       "name": "Mahlzeit setzen",
       "description": "Weist einer Mahlzeit manuell ein Gericht zu (ohne Gericht: entfernen).",
       "fields": {
-        "date": {"name": "Datum", "description": "Tag der Mahlzeit."},
-        "meal_type": {"name": "Mahlzeit", "description": "Art der Mahlzeit."},
-        "dish": {"name": "Gericht", "description": "Name oder ID; leer lassen zum Entfernen."},
-        "profiles": {"name": "Personen", "description": "Namen oder IDs; Standard: alle."},
-        "servings": {"name": "Portionen", "description": "Standard: Summe der Portionen der Personen."}
+        "date": {
+          "name": "Datum",
+          "description": "Tag der Mahlzeit."
+        },
+        "meal_type": {
+          "name": "Mahlzeit",
+          "description": "Art der Mahlzeit."
+        },
+        "dish": {
+          "name": "Gericht",
+          "description": "Name oder ID; leer lassen zum Entfernen."
+        },
+        "profiles": {
+          "name": "Personen",
+          "description": "Namen oder IDs; Standard: alle."
+        },
+        "servings": {
+          "name": "Portionen",
+          "description": "Standard: Summe der Portionen der Personen."
+        }
       }
     }
   },
   "exceptions": {
-    "not_loaded": {"message": "Der Essensplaner ist nicht geladen."},
-    "unknown_profile": {"message": "Unbekannte Person: {profile}"},
-    "unknown_dish": {"message": "Unbekanntes Gericht: {dish}"},
-    "no_shopping_list": {"message": "Keine Einkaufsliste gewählt (Optionen oder Parameter entity_id)."},
-    "entity_not_found": {"message": "Entität nicht gefunden: {entity_id}"}
+    "not_loaded": {
+      "message": "Der Essensplaner ist nicht geladen."
+    },
+    "unknown_profile": {
+      "message": "Unbekannte Person: {profile}"
+    },
+    "unknown_dish": {
+      "message": "Unbekanntes Gericht: {dish}"
+    },
+    "no_shopping_list": {
+      "message": "Keine Einkaufsliste gewählt (Optionen oder Parameter entity_id)."
+    },
+    "entity_not_found": {
+      "message": "Entität nicht gefunden: {entity_id}"
+    }
   }
 }

@@ -5,8 +5,10 @@ from __future__ import annotations
 from homeassistant import config_entries
 from homeassistant.core import HomeAssistant, SupportsResponse
 from homeassistant.data_entry_flow import FlowResultType
+from homeassistant.util import dt as dt_util
 
 from custom_components.essensplaner.const import (
+    CONF_IMPORT_STARTER,
     CONF_INITIAL_PROFILES,
     CONF_MEAL_TYPES,
     CONF_SHOPPING_LIST,
@@ -30,11 +32,24 @@ async def test_user_flow_creates_profiles(hass: HomeAssistant) -> None:
         result["flow_id"], {CONF_INITIAL_PROFILES: "Anna\n\nBen\n"}
     )
     assert result["type"] is FlowResultType.CREATE_ENTRY
-    assert result["data"] == {CONF_INITIAL_PROFILES: ["Anna", "Ben"]}
+    assert result["data"] == {CONF_INITIAL_PROFILES: ["Anna", "Ben"], CONF_IMPORT_STARTER: True}
     await hass.async_block_till_done()
 
     entry = result["result"]
     assert [p.name for p in entry.runtime_data.profiles.values()] == ["Anna", "Ben"]
+    # Startpaket wurde importiert
+    assert len(entry.runtime_data.dishes) >= 150
+
+
+async def test_user_flow_without_starter(hass: HomeAssistant) -> None:
+    result = await hass.config_entries.flow.async_init(
+        DOMAIN, context={"source": config_entries.SOURCE_USER}
+    )
+    result = await hass.config_entries.flow.async_configure(
+        result["flow_id"], {CONF_INITIAL_PROFILES: "Anna", CONF_IMPORT_STARTER: False}
+    )
+    await hass.async_block_till_done()
+    assert result["result"].runtime_data.dishes == {}
 
 
 async def test_single_instance(hass: HomeAssistant, manager: EssensplanerManager) -> None:
@@ -168,3 +183,27 @@ async def test_options_import_todo(hass: HomeAssistant, manager: EssensplanerMan
     assert result["reason"] == "import_done"
     assert result["description_placeholders"] == {"count": "1"}  # Gulasch existiert schon
     assert any(d.name == "Linsencurry" and not d.ingredients for d in manager.dishes.values())
+
+
+async def test_options_import_starter(hass: HomeAssistant, manager: EssensplanerManager) -> None:
+    result = await _open_menu(hass, manager, "import_starter")
+    assert result["step_id"] == "import_starter"
+    result = await hass.config_entries.options.async_configure(result["flow_id"], {})
+    assert result["type"] is FlowResultType.ABORT
+    count = int(result["description_placeholders"]["count"])
+    assert count >= 150
+    assert len(manager.dishes) == count + 2
+    assert all("Startpaket" in d.tags for d in manager.dishes.values() if d.id not in ("d_huhn_reis", "d_gulasch"))
+
+    # Zweiter Import legt nichts doppelt an
+    result = await _open_menu(hass, manager, "import_starter")
+    result = await hass.config_entries.options.async_configure(result["flow_id"], {})
+    assert result["description_placeholders"] == {"count": "0"}
+
+    # Mit dem Startpaket lässt sich eine ganze Woche für alle Mahlzeiten planen
+    ben = list(manager.profiles)[1]
+    plan = manager.generate_plan(
+        dt_util.now().date(), 7, ["breakfast", "lunch", "dinner", "snack"], [ben], seed=1
+    )
+    assert plan.warnings == []
+    assert len(plan.filled) == 28

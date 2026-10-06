@@ -32,6 +32,7 @@ from homeassistant.helpers.selector import (
 )
 
 from .const import (
+    CONF_IMPORT_STARTER,
     CONF_IMPORT_TODO,
     CONF_INITIAL_PROFILES,
     CONF_MEAL_TYPES,
@@ -84,7 +85,10 @@ class EssensplanerConfigFlow(ConfigFlow, domain=DOMAIN):
             if not profiles:
                 errors[CONF_INITIAL_PROFILES] = "no_profiles"
             else:
-                data: dict[str, Any] = {CONF_INITIAL_PROFILES: profiles}
+                data: dict[str, Any] = {
+                    CONF_INITIAL_PROFILES: profiles,
+                    CONF_IMPORT_STARTER: user_input.get(CONF_IMPORT_STARTER, True),
+                }
                 if user_input.get(CONF_IMPORT_TODO):
                     data[CONF_IMPORT_TODO] = user_input[CONF_IMPORT_TODO]
                 return self.async_create_entry(
@@ -101,6 +105,7 @@ class EssensplanerConfigFlow(ConfigFlow, domain=DOMAIN):
                 vol.Required(
                     CONF_INITIAL_PROFILES, default=_join(list(DEFAULT_PROFILES))
                 ): MULTILINE,
+                vol.Optional(CONF_IMPORT_STARTER, default=True): BooleanSelector(),
                 vol.Optional(
                     CONF_IMPORT_TODO, description={"suggested_value": import_suggestion}
                 ): TODO_ENTITY,
@@ -140,6 +145,7 @@ class EssensplanerOptionsFlow(OptionsFlow):
                 "profile_edit",
                 "dish_add",
                 "dish_edit",
+                "import_starter",
                 "import_todo",
             ],
         )
@@ -386,6 +392,19 @@ class EssensplanerOptionsFlow(OptionsFlow):
         )
 
     # ------------------------------------------------------------------ Import
+
+    async def async_step_import_starter(
+        self, user_input: dict[str, Any] | None = None
+    ) -> ConfigFlowResult:
+        manager = self._manager
+        if manager is None:
+            return self.async_abort(reason="not_loaded")
+        if user_input is not None:
+            count = await manager.async_import_starter()
+            return self.async_abort(
+                reason="import_done", description_placeholders={"count": str(count)}
+            )
+        return self.async_show_form(step_id="import_starter", data_schema=vol.Schema({}))
 
     async def async_step_import_todo(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
         manager = self._manager

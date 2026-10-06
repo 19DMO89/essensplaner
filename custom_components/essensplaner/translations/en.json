@@ -6,10 +6,12 @@
         "description": "Add the people you plan for. Edit tolerances and preferences afterwards in the options.",
         "data": {
           "profiles": "People (one per line)",
+          "import_starter": "Import starter pack with ready-made dishes",
           "import_todo": "Import dishes from to-do list (optional)"
         },
         "data_description": {
-          "import_todo": "Imports item names as dishes without ingredients."
+          "import_todo": "Imports item names as dishes without ingredients.",
+          "import_starter": "About 190 dishes with ingredients and preparation (home cooking, international, vegetarian, breakfast, snacks). Can be edited or deleted afterwards."
         }
       }
     },
@@ -30,6 +32,7 @@
           "profile_edit": "Edit / delete person",
           "dish_add": "Add dish",
           "dish_edit": "Edit / delete dish",
+          "import_starter": "Import starter pack",
           "import_todo": "Import dishes from to-do list"
         }
       },
@@ -93,6 +96,10 @@
           "tags": "Comma separated."
         }
       },
+      "import_starter": {
+        "title": "Import starter pack",
+        "description": "Imports about 190 dishes with ingredients and preparation. Dishes with the same name are skipped. Imported dishes are tagged \"Startpaket\"."
+      },
       "import_todo": {
         "title": "Import dishes",
         "data": {
@@ -140,40 +147,92 @@
       "name": "Generate plan",
       "description": "Suggests dishes for the chosen days and meals.",
       "fields": {
-        "start_date": {"name": "Start date", "description": "First day (default: today)."},
-        "days": {"name": "Days", "description": "Number of days."},
-        "meal_types": {"name": "Meals", "description": "Default: from settings."},
-        "profiles": {"name": "People", "description": "Names or IDs; default: everyone."},
-        "overwrite": {"name": "Overwrite", "description": "Re-plan meals that are already planned (manually set ones are kept)."}
+        "start_date": {
+          "name": "Start date",
+          "description": "First day (default: today)."
+        },
+        "days": {
+          "name": "Days",
+          "description": "Number of days."
+        },
+        "meal_types": {
+          "name": "Meals",
+          "description": "Default: from settings."
+        },
+        "profiles": {
+          "name": "People",
+          "description": "Names or IDs; default: everyone."
+        },
+        "overwrite": {
+          "name": "Overwrite",
+          "description": "Re-plan meals that are already planned (manually set ones are kept)."
+        }
       }
     },
     "push_shopping_list": {
       "name": "Push shopping list",
       "description": "Writes the combined ingredients to a to-do list.",
       "fields": {
-        "start_date": {"name": "Start date", "description": "First day (default: today)."},
-        "days": {"name": "Days", "description": "Number of days."},
-        "entity_id": {"name": "To-do list", "description": "Default: from settings."},
-        "skip_existing": {"name": "Skip existing", "description": "Do not add ingredients that are already open on the list."}
+        "start_date": {
+          "name": "Start date",
+          "description": "First day (default: today)."
+        },
+        "days": {
+          "name": "Days",
+          "description": "Number of days."
+        },
+        "entity_id": {
+          "name": "To-do list",
+          "description": "Default: from settings."
+        },
+        "skip_existing": {
+          "name": "Skip existing",
+          "description": "Do not add ingredients that are already open on the list."
+        }
       }
     },
     "set_meal": {
       "name": "Set meal",
       "description": "Manually assigns a dish to a meal (without dish: remove).",
       "fields": {
-        "date": {"name": "Date", "description": "Day of the meal."},
-        "meal_type": {"name": "Meal", "description": "Type of meal."},
-        "dish": {"name": "Dish", "description": "Name or ID; leave empty to remove."},
-        "profiles": {"name": "People", "description": "Names or IDs; default: everyone."},
-        "servings": {"name": "Servings", "description": "Default: sum of the people's servings."}
+        "date": {
+          "name": "Date",
+          "description": "Day of the meal."
+        },
+        "meal_type": {
+          "name": "Meal",
+          "description": "Type of meal."
+        },
+        "dish": {
+          "name": "Dish",
+          "description": "Name or ID; leave empty to remove."
+        },
+        "profiles": {
+          "name": "People",
+          "description": "Names or IDs; default: everyone."
+        },
+        "servings": {
+          "name": "Servings",
+          "description": "Default: sum of the people's servings."
+        }
       }
     }
   },
   "exceptions": {
-    "not_loaded": {"message": "The meal planner is not loaded."},
-    "unknown_profile": {"message": "Unknown person: {profile}"},
-    "unknown_dish": {"message": "Unknown dish: {dish}"},
-    "no_shopping_list": {"message": "No shopping list selected (options or entity_id parameter)."},
-    "entity_not_found": {"message": "Entity not found: {entity_id}"}
+    "not_loaded": {
+      "message": "The meal planner is not loaded."
+    },
+    "unknown_profile": {
+      "message": "Unknown person: {profile}"
+    },
+    "unknown_dish": {
+      "message": "Unknown dish: {dish}"
+    },
+    "no_shopping_list": {
+      "message": "No shopping list selected (options or entity_id parameter)."
+    },
+    "entity_not_found": {
+      "message": "Entity not found: {entity_id}"
+    }
   }
 }

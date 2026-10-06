@@ -1,0 +1,314 @@
+# Startpaket: Frühstück
+#
+# Format:
+#   = Name
+#   mahlzeit: frühstück, mittag, abend, snack
+#   portionen: 2
+#   dauer: 10            (Minuten)
+#   tags: schnell, süß
+#   - 80 g Haferflocken #beilage      (Zutat, wie im Formular)
+#   1. Zubereitungsschritt
+
+= Porridge mit Banane
+mahlzeit: frühstück
+portionen: 2
+dauer: 10
+tags: süß, schnell, vegetarisch
+- 100 g Haferflocken #beilage
+- 400 ml Milch
+- 1 Banane
+- 1 Prise Salz
+- 1 TL Honig
+1. Haferflocken mit Milch und Salz aufkochen und 3–5 Minuten unter Rühren köcheln lassen.
+2. Banane in Scheiben schneiden, darauf verteilen und mit Honig beträufeln.
+
+= Overnight Oats mit Beeren
+mahlzeit: frühstück
+portionen: 2
+dauer: 5
+tags: süß, vorbereiten, vegetarisch
+- 100 g Haferflocken #beilage
+- 200 g Naturjoghurt
+- 150 ml Milch
+- 150 g Beeren
+- 1 EL Honig
+1. Haferflocken, Joghurt, Milch und Honig verrühren.
+2. Über Nacht abgedeckt in den Kühlschrank stellen.
+3. Morgens mit Beeren servieren.
+
+= Müsli mit Joghurt und Apfel
+mahlzeit: frühstück
+portionen: 2
+dauer: 5
+tags: süß, schnell, vegetarisch
+- 100 g Müsli #beilage
+- 300 g Naturjoghurt
+- 1 Apfel
+1. Apfel grob reiben oder würfeln.
+2. Müsli mit Joghurt und Apfel in Schüsseln anrichten.
+
+= Bircher Müsli
+mahlzeit: frühstück
+portionen: 2
+dauer: 10
+tags: süß, vorbereiten, vegetarisch
+- 80 g Haferflocken #beilage
+- 150 ml Apfelsaft
+- 150 g Naturjoghurt
+- 1 Apfel
+- 1 EL Haselnüsse
+- 1 TL Zitronensaft
+1. Haferflocken im Apfelsaft mindestens 1 Stunde (oder über Nacht) einweichen.
+2. Apfel reiben, mit Zitronensaft und Joghurt unterrühren.
+3. Mit gehackten Haselnüssen bestreuen.
+
+= Rührei mit Schnittlauch und Brot
+mahlzeit: frühstück
+portionen: 2
+dauer: 10
+tags: herzhaft, schnell, vegetarisch
+- 4 Eier #protein
+- 2 EL Milch
+- 1 TL Butter
+- 1 EL Schnittlauch
+- Salz
+- Pfeffer
+- 2 Scheiben Brot #beilage
+1. Eier mit Milch, Salz und Pfeffer verquirlen.
+2. Butter in der Pfanne schmelzen, Eier bei mittlerer Hitze unter langsamem Rühren stocken lassen.
+3. Mit Schnittlauch bestreuen und mit Brot servieren.
+
+= Spiegelei mit Speck
+mahlzeit: frühstück
+portionen: 2
+dauer: 10
+tags: herzhaft, schnell
+- 4 Eier #protein
+- 80 g Frühstücksspeck
+- 2 Scheiben Brot #beilage
+- Salz
+- Pfeffer
+1. Speck in einer Pfanne knusprig braten.
+2. Eier daneben aufschlagen und braten, bis das Eiweiß gestockt ist.
+3. Salzen, pfeffern und mit Brot servieren.
+
+= Gemüseomelett
+mahlzeit: frühstück, abend
+portionen: 2
+dauer: 15
+tags: herzhaft, vegetarisch, low carb
+- 5 Eier #protein
+- 1 Paprika
+- 1 Tomate
+- 50 g Blattspinat
+- 40 g Käse
+- 1 EL Öl
+- Salz
+- Pfeffer
+1. Paprika und Tomate klein schneiden, mit dem Spinat in Öl kurz andünsten.
+2. Eier verquirlen, würzen und über das Gemüse gießen.
+3. Mit Käse bestreuen und bei kleiner Hitze zugedeckt stocken lassen.
+
+= Pancakes
+mahlzeit: frühstück
+portionen: 2
+dauer: 20
+tags: süß, vegetarisch, kinder
+- 150 g Mehl #beilage
+- 1 Ei
+- 200 ml Milch
+- 1 EL Zucker
+- 1 TL Backpulver
+- 1 Prise Salz
+- 1 EL Butter
+- 2 EL Ahornsirup
+1. Mehl, Backpulver, Zucker und Salz mischen, Ei und Milch zu einem dicken Teig verrühren.
+2. Butter in einer Pfanne erhitzen, kleine Pancakes von beiden Seiten goldbraun backen.
+3. Mit Ahornsirup servieren.
+
+= Bananen-Haferflocken-Pfannkuchen
+mahlzeit: frühstück
+portionen: 2
+dauer: 15
+tags: süß, schnell, vegetarisch
+- 2 Bananen
+- 2 Eier #protein
+- 80 g Haferflocken #beilage
+- 1 TL Öl
+1. Bananen zerdrücken, mit Eiern und Haferflocken verrühren.
+2. In einer leicht geölten Pfanne kleine Pfannkuchen von beiden Seiten backen.
+
+= French Toast
+mahlzeit: frühstück
+portionen: 2
+dauer: 15
+tags: süß, vegetarisch
+- 4 Scheiben Toastbrot #beilage
+- 2 Eier
+- 100 ml Milch
+- 1 TL Zucker
+- 1 Prise Zimt
+- 1 EL Butter
+1. Eier, Milch, Zucker und Zimt verquirlen.
+2. Toastscheiben darin wenden und in Butter von beiden Seiten goldbraun braten.
+
+= Avocado-Toast mit Ei
+mahlzeit: frühstück
+portionen: 2
+dauer: 10
+tags: herzhaft, schnell, vegetarisch
+- 2 Scheiben Vollkornbrot #beilage
+- 1 Avocado
+- 2 Eier #protein
+- 1 TL Zitronensaft
+- Salz
+- Pfeffer
+1. Brot toasten, Eier pochieren oder als Spiegelei braten.
+2. Avocado mit Zitronensaft, Salz und Pfeffer zerdrücken und aufs Brot streichen.
+3. Ei darauflegen.
+
+= Topfenbrot mit Schnittlauch
+mahlzeit: frühstück, abend
+portionen: 2
+dauer: 5
+tags: herzhaft, schnell, vegetarisch
+- 4 Scheiben Brot #beilage
+- 250 g Topfen #protein
+- 2 EL Milch
+- 2 EL Schnittlauch
+- Salz
+1. Topfen mit Milch glatt rühren, salzen und Schnittlauch untermischen.
+2. Auf die Brotscheiben streichen.
+
+= Butterbrot mit Marmelade
+mahlzeit: frühstück
+portionen: 2
+dauer: 5
+tags: süß, schnell, vegetarisch
+- 4 Scheiben Brot #beilage
+- 30 g Butter
+- 4 EL Marmelade
+1. Brot mit Butter und Marmelade bestreichen.
+
+= Semmel mit Schinken und Käse
+mahlzeit: frühstück, abend
+portionen: 2
+dauer: 5
+tags: herzhaft, schnell, kalt
+- 4 Semmeln #beilage
+- 100 g Schinken #protein
+- 80 g Käse
+- 20 g Butter
+- 1 Tomate
+1. Semmeln aufschneiden und mit Butter bestreichen.
+2. Mit Schinken, Käse und Tomatenscheiben belegen.
+
+= Grießbrei
+mahlzeit: frühstück, snack
+portionen: 2
+dauer: 10
+tags: süß, schnell, vegetarisch, kinder
+- 500 ml Milch
+- 60 g Grieß #beilage
+- 1 EL Zucker
+- 1 Prise Salz
+- 1 Prise Zimt
+1. Milch mit Zucker und Salz aufkochen.
+2. Grieß unter Rühren einrieseln lassen und 3 Minuten quellen lassen.
+3. Mit Zimt bestreuen.
+
+= Joghurt mit Beeren und Granola
+mahlzeit: frühstück, snack
+portionen: 2
+dauer: 5
+tags: süß, schnell, vegetarisch
+- 300 g Naturjoghurt #protein
+- 150 g Beeren
+- 60 g Granola #beilage
+- 1 TL Honig
+1. Joghurt in Schalen füllen, mit Beeren und Granola bestreuen und mit Honig beträufeln.
+
+= Chia-Pudding
+mahlzeit: frühstück, snack
+portionen: 2
+dauer: 5
+tags: süß, vorbereiten, vegan
+- 40 g Chiasamen
+- 300 ml Haferdrink
+- 1 TL Ahornsirup
+- 100 g Beeren
+1. Chiasamen mit Haferdrink und Ahornsirup verrühren, nach 10 Minuten nochmals umrühren.
+2. Mindestens 2 Stunden kühlen, mit Beeren servieren.
+
+= Smoothie Bowl
+mahlzeit: frühstück
+portionen: 2
+dauer: 10
+tags: süß, schnell, vegetarisch
+- 2 Bananen
+- 200 g Beeren
+- 200 g Naturjoghurt
+- 40 g Haferflocken #beilage
+- 1 EL Kokosraspel
+1. Bananen, Beeren und Joghurt cremig pürieren.
+2. In Schalen füllen und mit Haferflocken und Kokosraspeln bestreuen.
+
+= Schinken-Käse-Toast
+mahlzeit: frühstück, abend, snack
+portionen: 2
+dauer: 10
+tags: herzhaft, schnell, kinder
+- 4 Scheiben Toastbrot #beilage
+- 4 Scheiben Schinken #protein
+- 4 Scheiben Käse
+- 1 EL Butter
+1. Toastbrot mit Schinken und Käse belegen und zuklappen.
+2. Außen dünn mit Butter bestreichen und im Sandwichmaker oder in der Pfanne goldbraun toasten.
+
+= Frühstückswrap mit Ei
+mahlzeit: frühstück
+portionen: 2
+dauer: 15
+tags: herzhaft, vegetarisch
+- 2 Tortillas #beilage
+- 4 Eier #protein
+- 1 Tomate
+- 40 g Käse
+- 1 Handvoll Blattspinat
+- Salz
+- Pfeffer
+1. Eier verquirlen, würzen und als Rührei braten.
+2. Tortillas kurz erwärmen, mit Spinat, Rührei, Tomatenwürfeln und Käse füllen und einrollen.
+
+= Shakshuka
+mahlzeit: frühstück, abend
+portionen: 2
+dauer: 25
+tags: herzhaft, vegetarisch, orientalisch
+- 4 Eier #protein
+- 1 Dose gehackte Tomaten
+- 1 Paprika
+- 1 Zwiebel
+- 1 Zehe Knoblauch
+- 1 TL Kreuzkümmel
+- 1 TL Paprikapulver
+- 1 EL Olivenöl
+- Salz
+- 2 Scheiben Brot #beilage
+1. Zwiebel, Knoblauch und Paprika klein schneiden und im Olivenöl andünsten.
+2. Gewürze und Tomaten zugeben, 10 Minuten einkochen, salzen.
+3. Mulden formen, Eier hineinschlagen und zugedeckt stocken lassen. Mit Brot servieren.
+
+= Milchreis
+mahlzeit: frühstück, mittag, snack
+portionen: 4
+dauer: 40
+tags: süß, vegetarisch, kinder
+- 250 g Milchreis #beilage
+- 1 l Milch
+- 2 EL Zucker
+- 1 Prise Salz
+- 1 Prise Zimt
+1. Milch mit Zucker und Salz aufkochen, Reis einrühren.
+2. Bei kleiner Hitze etwa 30 Minuten quellen lassen, dabei öfter umrühren.
+3. Mit Zimt bestreuen.

@@ -1,0 +1,303 @@
+# Startpaket: Italienisch
+
+= Spaghetti Bolognese
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 60
+tags: italienisch, klassiker, kinder
+- 500 g Faschiertes #protein
+- 400 g Spaghetti #beilage
+- 1 Zwiebel
+- 1 Karotte
+- 100 g Sellerie
+- 2 Zehen Knoblauch
+- 1 EL Tomatenmark
+- 2 Dosen gehackte Tomaten
+- 2 EL Olivenöl
+- 1 TL Oregano
+- 40 g Parmesan
+- Salz
+- Pfeffer
+1. Zwiebel, Karotte, Sellerie und Knoblauch fein würfeln und in Olivenöl anschwitzen.
+2. Faschiertes krümelig anbraten, Tomatenmark mitrösten, Tomaten und Oregano zugeben und 40 Minuten köcheln.
+3. Spaghetti kochen und mit Sauce und Parmesan servieren.
+
+= Spaghetti Carbonara
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 20
+tags: italienisch, schnell, klassiker
+- 400 g Spaghetti #beilage
+- 150 g Speck #protein
+- 4 Eier
+- 80 g Parmesan
+- Pfeffer
+- Salz
+1. Spaghetti in Salzwasser kochen. Speck würfeln und knusprig braten.
+2. Eier mit Parmesan und viel Pfeffer verquirlen.
+3. Heiße Nudeln mit Speck mischen, vom Herd nehmen und die Eimasse mit etwas Nudelwasser unterrühren, bis sie cremig ist.
+
+= Spaghetti Aglio e Olio
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 15
+tags: italienisch, schnell, vegan, günstig
+- 400 g Spaghetti #beilage
+- 4 Zehen Knoblauch
+- 6 EL Olivenöl
+- 1 TL Chiliflocken
+- 2 EL Petersilie
+- Salz
+1. Spaghetti kochen.
+2. Knoblauch in Scheiben im Olivenöl mit Chili sanft goldgelb braten.
+3. Nudeln mit dem Öl, etwas Nudelwasser und Petersilie mischen.
+
+= Pasta al Pomodoro
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 25
+tags: italienisch, schnell, vegetarisch, kinder
+- 400 g Penne #beilage
+- 2 Dosen gehackte Tomaten
+- 1 Zwiebel
+- 1 Zehe Knoblauch
+- 2 EL Olivenöl
+- 1 Handvoll Basilikum
+- 40 g Parmesan
+- Salz
+1. Zwiebel und Knoblauch in Olivenöl anschwitzen, Tomaten zugeben und 15 Minuten köcheln, salzen.
+2. Penne kochen, mit Sauce mischen und mit Basilikum und Parmesan servieren.
+
+= Penne all'Arrabbiata
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 25
+tags: italienisch, scharf, vegan
+- 400 g Penne #beilage
+- 2 Dosen gehackte Tomaten
+- 2 Zehen Knoblauch
+- 1 TL Chiliflocken
+- 3 EL Olivenöl
+- 2 EL Petersilie
+- Salz
+1. Knoblauch und Chili in Olivenöl anschwitzen, Tomaten zugeben und 15 Minuten einkochen.
+2. Penne kochen, mit der Sauce mischen und mit Petersilie bestreuen.
+
+= Lasagne
+mahlzeit: mittag, abend
+portionen: 6
+dauer: 100
+tags: italienisch, ofen, klassiker
+- 500 g Faschiertes #protein
+- 250 g Lasagneblätter #beilage
+- 1 Zwiebel
+- 2 Zehen Knoblauch
+- 2 Dosen gehackte Tomaten
+- 1 EL Tomatenmark
+- 50 g Butter
+- 50 g Mehl
+- 700 ml Milch
+- 1 Prise Muskat
+- 150 g Mozzarella
+- 50 g Parmesan
+- 2 EL Olivenöl
+- Salz
+1. Bolognese aus Zwiebel, Knoblauch, Faschiertem, Tomatenmark und Tomaten 30 Minuten köcheln.
+2. Béchamel aus Butter, Mehl und Milch kochen, mit Salz und Muskat würzen.
+3. Abwechselnd Sauce, Béchamel und Lasagneblätter schichten, mit Mozzarella und Parmesan abschließen und bei 180 °C 40 Minuten backen.
+
+= Pesto-Nudeln
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 15
+tags: italienisch, schnell, vegetarisch
+- 400 g Linguine #beilage
+- 1 Glas Pesto
+- 150 g Kirschtomaten
+- 40 g Parmesan
+- 30 g Pinienkerne
+1. Nudeln kochen, Pinienkerne ohne Fett rösten.
+2. Nudeln mit Pesto, halbierten Tomaten und etwas Nudelwasser mischen.
+3. Mit Parmesan und Pinienkernen bestreuen.
+
+= Gnocchi mit Salbeibutter
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 15
+tags: italienisch, schnell, vegetarisch
+- 800 g Gnocchi #beilage
+- 80 g Butter
+- 1 Handvoll Salbei
+- 50 g Parmesan
+- Salz
+1. Gnocchi in Salzwasser kochen, bis sie aufschwimmen.
+2. Butter mit Salbeiblättern aufschäumen lassen, Gnocchi darin schwenken.
+3. Mit Parmesan servieren.
+
+= Gnocchi-Pfanne mit Tomaten und Mozzarella
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 25
+tags: italienisch, schnell, vegetarisch
+- 800 g Gnocchi #beilage
+- 250 g Kirschtomaten
+- 125 g Mozzarella #protein
+- 100 g Blattspinat
+- 2 EL Olivenöl
+- 1 Zehe Knoblauch
+- Salz
+1. Gnocchi in Olivenöl goldbraun braten.
+2. Knoblauch, Tomaten und Spinat zugeben und kurz mitbraten.
+3. Mozzarella in Stücken darauf verteilen und zugedeckt schmelzen lassen.
+
+= Pilzrisotto
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: italienisch, vegetarisch
+- 300 g Risottoreis #beilage
+- 400 g Champignons
+- 1 Zwiebel
+- 100 ml Weißwein
+- 1 l Gemüsesuppe
+- 40 g Butter
+- 60 g Parmesan
+- 1 EL Olivenöl
+- Salz
+1. Pilze in Olivenöl braten und beiseitestellen.
+2. Zwiebel anschwitzen, Reis glasig dünsten, mit Wein ablöschen und nach und nach mit heißer Suppe 18 Minuten unter Rühren garen.
+3. Pilze, Butter und Parmesan unterrühren und abschmecken.
+
+= Pizza Margherita
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 90
+tags: italienisch, ofen, kinder
+- 500 g Mehl #beilage
+- 7 g Trockenhefe
+- 300 ml Wasser
+- 2 EL Olivenöl
+- 1 TL Salz
+- 400 g passierte Tomaten
+- 250 g Mozzarella #protein
+- 1 TL Oregano
+- 1 Handvoll Basilikum
+1. Mehl, Hefe, Wasser, Öl und Salz zu einem glatten Teig kneten und 1 Stunde gehen lassen.
+2. Teig dünn ausrollen, mit gewürzten Tomaten bestreichen und mit Mozzarella belegen.
+3. Bei 250 °C 10–12 Minuten backen und mit Basilikum belegen.
+
+= Lachs-Sahne-Nudeln
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 25
+tags: fisch, schnell
+- 400 g Tagliatelle #beilage
+- 400 g Lachsfilet #protein
+- 200 ml Schlagobers
+- 1 Zitrone
+- 100 g Blattspinat
+- 1 TL Dill
+- 1 EL Öl
+- Salz
+1. Nudeln kochen. Lachs würfeln und in Öl kurz anbraten.
+2. Obers, Zitronenabrieb, Dill und Spinat zugeben und kurz einkochen.
+3. Mit Nudeln mischen und mit Zitronensaft abschmecken.
+
+= Tortellini in Schinken-Obers-Sauce
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 20
+tags: italienisch, schnell, kinder
+- 500 g Tortellini #beilage
+- 150 g Schinken #protein
+- 200 ml Schlagobers
+- 100 g Erbsen
+- 40 g Parmesan
+- 1 EL Butter
+- Salz
+1. Tortellini kochen.
+2. Schinkenwürfel in Butter anbraten, Erbsen und Obers zugeben und einkochen.
+3. Tortellini untermischen und mit Parmesan servieren.
+
+= Spinat-Ricotta-Cannelloni
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 60
+tags: italienisch, ofen, vegetarisch
+- 250 g Cannelloni #beilage
+- 400 g Blattspinat
+- 250 g Ricotta #protein
+- 1 Ei
+- 2 Dosen passierte Tomaten
+- 125 g Mozzarella
+- 40 g Parmesan
+- 1 Zehe Knoblauch
+- Salz
+- 1 Prise Muskat
+1. Spinat dünsten, ausdrücken und hacken, mit Ricotta, Ei, Parmesan, Salz und Muskat mischen.
+2. Cannelloni füllen, in eine mit Tomatensauce bedeckte Form legen und mit Sauce übergießen.
+3. Mit Mozzarella belegen und bei 180 °C 35 Minuten backen.
+
+= Caprese mit Ciabatta
+mahlzeit: abend, snack
+portionen: 2
+dauer: 10
+tags: italienisch, kalt, vegetarisch, sommer
+- 250 g Mozzarella #protein
+- 3 Tomaten
+- 1 Handvoll Basilikum
+- 3 EL Olivenöl
+- 1 EL Balsamico
+- 1 Ciabatta #beilage
+- Salz
+1. Mozzarella und Tomaten in Scheiben schneiden und abwechselnd anrichten.
+2. Mit Basilikum, Olivenöl, Balsamico und Salz würzen, mit Ciabatta servieren.
+
+= Nudelsalat mit Pesto
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 25
+tags: kalt, salat, party, vegetarisch
+- 400 g Fusilli #beilage
+- 150 g Pesto
+- 250 g Kirschtomaten
+- 125 g Mozzarella #protein
+- 50 g Rucola
+- 30 g Pinienkerne
+- Salz
+1. Nudeln kochen, abschrecken und abkühlen lassen.
+2. Mit Pesto, halbierten Tomaten, Mozzarellawürfeln und Rucola mischen.
+3. Mit gerösteten Pinienkernen bestreuen.
+
+= Ofengnocchi mit Kürbis und Feta
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 35
+tags: ofen, vegetarisch, herbst
+- 800 g Gnocchi #beilage
+- 500 g Hokkaidokürbis
+- 1 rote Zwiebel
+- 200 g Feta #protein
+- 3 EL Olivenöl
+- 1 TL Thymian
+- Salz
+1. Kürbis würfeln, Zwiebel in Spalten schneiden, mit Gnocchi, Olivenöl, Thymian und Salz auf ein Blech geben.
+2. Bei 210 °C 20 Minuten backen, Feta darüberbröseln und weitere 5 Minuten backen.
+
+= Saltimbocca mit Rosmarinerdäpfeln
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: italienisch, fleisch
+- 8 kleine Kalbsschnitzel #protein
+- 8 Scheiben Rohschinken
+- 8 Salbeiblätter
+- 100 ml Weißwein
+- 2 EL Butter
+- 800 g kleine Erdäpfel #beilage
+- 2 EL Olivenöl
+- 1 TL Rosmarin
+- Salz
+1. Erdäpfel halbieren, mit Olivenöl, Rosmarin und Salz bei 200 °C 30 Minuten backen.
+2. Schnitzel mit Schinken und Salbei belegen und feststecken.
+3. In Butter von beiden Seiten kurz braten, mit Wein ablöschen und mit dem Saft servieren.

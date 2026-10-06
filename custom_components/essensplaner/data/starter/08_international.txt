@@ -1,0 +1,346 @@
+# Startpaket: International (Mexikanisch, Amerikanisch, Mediterran, Balkan, Orient)
+
+= Chili con Carne
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 60
+tags: mexikanisch, eintopf, scharf
+- 500 g Rinderhackfleisch #protein
+- 1 Dose Kidneybohnen
+- 1 Dose Mais
+- 2 Dosen gehackte Tomaten
+- 1 Zwiebel
+- 2 Zehen Knoblauch
+- 1 Paprika
+- 2 TL Chilipulver
+- 1 TL Kreuzkümmel
+- 2 EL Öl
+- 1 Baguette #beilage
+- Salz
+1. Zwiebel und Knoblauch in Öl anschwitzen, Hackfleisch krümelig braten.
+2. Gewürze, Paprika und Tomaten zugeben und 30 Minuten köcheln.
+3. Bohnen und Mais zugeben, 10 Minuten mitziehen lassen, mit Brot servieren.
+
+= Tacos mit Faschiertem
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: mexikanisch, kinder
+- 500 g Rinderhackfleisch #protein
+- 8 Taco-Schalen #beilage
+- 1 Eisbergsalat
+- 2 Tomaten
+- 100 g Cheddar
+- 150 g Sauerrahm
+- 1 Zwiebel
+- 2 TL Paprikapulver
+- 1 TL Kreuzkümmel
+- 1 EL Öl
+- Salz
+1. Zwiebel und Hackfleisch in Öl braten, mit Gewürzen und etwas Wasser saftig einkochen.
+2. Taco-Schalen im Ofen erwärmen.
+3. Mit Fleisch, Salat, Tomaten, Käse und Sauerrahm füllen.
+
+= Burritos mit Bohnen und Reis
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 35
+tags: mexikanisch, vegetarisch
+- 4 große Tortillas #beilage
+- 1 Dose schwarze Bohnen #protein
+- 150 g Reis
+- 1 Dose Mais
+- 1 Paprika
+- 100 g Cheddar
+- 100 g Sauerrahm
+- 1 TL Kreuzkümmel
+- 1 EL Limettensaft
+- Salz
+1. Reis kochen und mit Limettensaft würzen. Bohnen mit Kreuzkümmel erwärmen und leicht zerdrücken.
+2. Tortillas mit Reis, Bohnen, Mais, Paprika, Käse und Sauerrahm füllen.
+3. Einrollen und in einer Pfanne von beiden Seiten anrösten.
+
+= Quesadillas mit Huhn
+mahlzeit: mittag, abend, snack
+portionen: 4
+dauer: 25
+tags: mexikanisch, schnell, kinder
+- 8 Tortillas #beilage
+- 400 g Hühnerbrust #protein
+- 200 g Cheddar
+- 1 Paprika
+- 1 Dose Mais
+- 1 TL Paprikapulver
+- 1 EL Öl
+- 150 g Salsa
+1. Hühnerbrust würfeln, würzen und in Öl braten.
+2. Tortillas mit Käse, Huhn, Paprika und Mais belegen und mit einer zweiten Tortilla bedecken.
+3. In der Pfanne von beiden Seiten knusprig braten, in Stücke schneiden und mit Salsa servieren.
+
+= Burger mit Ofenpommes
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 50
+tags: amerikanisch, kinder
+- 600 g Rinderhackfleisch #protein
+- 4 Burgerbrötchen
+- 4 Scheiben Cheddar
+- 1 Tomate
+- 1 Eisbergsalat
+- 1 rote Zwiebel
+- 4 EL Ketchup
+- 1 kg Erdäpfel #beilage
+- 3 EL Öl
+- Salz
+- Pfeffer
+1. Erdäpfel in Stäbchen schneiden, mit Öl und Salz bei 220 °C 35 Minuten backen.
+2. Hackfleisch salzen, pfeffern, zu 4 Patties formen und 3–4 Minuten pro Seite braten, mit Käse belegen.
+3. Brötchen toasten und mit Ketchup, Salat, Tomate, Zwiebel und Patty belegen.
+
+= Mac and Cheese
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: amerikanisch, vegetarisch, kinder
+- 400 g Makkaroni #beilage
+- 40 g Butter
+- 40 g Mehl
+- 600 ml Milch
+- 200 g Cheddar #protein
+- 1 TL Senf
+- 50 g Semmelbrösel
+- Salz
+1. Makkaroni bissfest kochen.
+2. Butter schmelzen, Mehl anschwitzen, Milch einrühren und zu einer Sauce kochen, Käse und Senf darin schmelzen.
+3. Nudeln untermischen, in eine Form geben, mit Bröseln bestreuen und bei 200 °C 15 Minuten überbacken.
+
+= Ćevapčići mit Djuvec-Reis
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 45
+tags: balkan, grillen, fleisch
+- 600 g Faschiertes #protein
+- 2 Zehen Knoblauch
+- 1 TL Paprikapulver
+- 1 TL Natron
+- 250 g Reis #beilage
+- 1 Paprika
+- 1 Zwiebel
+- 1 EL Tomatenmark
+- 100 g Erbsen
+- 500 ml Gemüsesuppe
+- 1 Zwiebel
+- 100 g Ajvar
+- 2 EL Öl
+- Salz
+1. Faschiertes mit Knoblauch, Paprikapulver, Natron und Salz gut verkneten, kleine Würstchen formen und 30 Minuten kühlen.
+2. Für den Djuvec-Reis Zwiebel und Paprika anschwitzen, Reis und Tomatenmark zugeben, mit Suppe aufgießen, Erbsen zugeben und 18 Minuten garen.
+3. Ćevapčići grillen oder braten, mit roher Zwiebel und Ajvar servieren.
+
+= Gyros mit Reis und Tzatziki
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: griechisch, fleisch
+- 600 g Schweinsschnitzel #protein
+- 1 Zwiebel
+- 2 TL Gyrosgewürz
+- 3 EL Olivenöl
+- 250 g Reis #beilage
+- 400 g griechischer Joghurt
+- 1 Gurke
+- 1 Zehe Knoblauch
+- Salz
+1. Fleisch in feine Streifen schneiden, mit Gyrosgewürz und Öl marinieren und mit Zwiebelstreifen scharf braten.
+2. Reis kochen.
+3. Für Tzatziki Gurke reiben und ausdrücken, mit Joghurt, Knoblauch und Salz verrühren.
+
+= Moussaka
+mahlzeit: mittag, abend
+portionen: 6
+dauer: 100
+tags: griechisch, ofen
+- 2 Melanzani
+- 500 g Faschiertes #protein
+- 600 g Erdäpfel #beilage
+- 1 Zwiebel
+- 1 Dose gehackte Tomaten
+- 1 TL Zimt
+- 40 g Butter
+- 40 g Mehl
+- 500 ml Milch
+- 50 g Parmesan
+- 4 EL Olivenöl
+- Salz
+1. Melanzani und Erdäpfel in Scheiben schneiden und in Olivenöl braten oder im Ofen vorgaren.
+2. Faschiertes mit Zwiebel braten, Tomaten und Zimt zugeben und 20 Minuten köcheln.
+3. Béchamel kochen. Alles schichten, mit Béchamel und Parmesan abschließen und bei 180 °C 45 Minuten backen.
+
+= Falafel mit Fladenbrot und Salat
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 45
+tags: orientalisch, vegan
+- 2 Dosen Kichererbsen #protein
+- 1 Zwiebel
+- 2 Zehen Knoblauch
+- 1 Bund Petersilie
+- 1 TL Kreuzkümmel
+- 3 EL Mehl
+- 300 ml Öl
+- 2 Fladenbrote #beilage
+- 2 Tomaten
+- 1 Gurke
+- 150 g Hummus
+- Salz
+1. Kichererbsen gut abtropfen lassen und mit Zwiebel, Knoblauch, Petersilie, Gewürzen und Mehl grob pürieren.
+2. Bällchen formen und in heißem Öl goldbraun frittieren.
+3. Mit Fladenbrot, Salat und Hummus servieren.
+
+= Couscous-Salat mit Gemüse
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 20
+tags: orientalisch, kalt, vegan, salat
+- 250 g Couscous #beilage
+- 300 ml Gemüsesuppe
+- 1 Gurke
+- 2 Tomaten
+- 1 Paprika
+- 1 Dose Kichererbsen #protein
+- 1 Bund Petersilie
+- 1 Handvoll Minze
+- 3 EL Olivenöl
+- 3 EL Zitronensaft
+- Salz
+1. Couscous mit heißer Suppe übergießen und 5 Minuten quellen lassen, auflockern.
+2. Gemüse würfeln, Kräuter hacken und mit Kichererbsen unter den Couscous mischen.
+3. Mit Olivenöl, Zitronensaft und Salz abschmecken.
+
+= Paella
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 50
+tags: spanisch, fisch
+- 300 g Paellareis #beilage
+- 300 g Hühnerkeulen ohne Knochen #protein
+- 250 g Garnelen
+- 1 Paprika
+- 1 Zwiebel
+- 2 Zehen Knoblauch
+- 100 g Erbsen
+- 1 Dose gehackte Tomaten
+- 1 Pkg Safran
+- 900 ml Hühnersuppe
+- 3 EL Olivenöl
+- 1 Zitrone
+- Salz
+1. Huhn in Olivenöl anbraten, Zwiebel, Knoblauch und Paprika mitbraten.
+2. Reis und Tomaten zugeben, mit safranhaltiger Suppe aufgießen und ohne Rühren 15 Minuten köcheln.
+3. Garnelen und Erbsen darauf verteilen und weitere 8 Minuten garen. Mit Zitrone servieren.
+
+= Ratatouille mit Baguette
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 50
+tags: französisch, vegan
+- 1 Melanzani
+- 2 Zucchini
+- 2 Paprika
+- 1 Zwiebel
+- 2 Zehen Knoblauch
+- 1 Dose gehackte Tomaten
+- 4 EL Olivenöl
+- 1 TL Thymian
+- 1 Baguette #beilage
+- Salz
+1. Gemüse würfeln. Zwiebel und Knoblauch in Olivenöl anschwitzen.
+2. Melanzani, Paprika und Zucchini nacheinander zugeben und anbraten.
+3. Tomaten und Thymian zugeben und 25 Minuten schmoren. Mit Baguette servieren.
+
+= Ofengemüse mit Feta
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 45
+tags: ofen, vegetarisch, mediterran
+- 1 Süßkartoffel
+- 2 Zucchini
+- 2 Paprika
+- 1 rote Zwiebel
+- 200 g Kirschtomaten
+- 200 g Feta #protein
+- 4 EL Olivenöl
+- 1 TL Oregano
+- 1 Baguette #beilage
+- Salz
+1. Gemüse in Stücke schneiden, mit Olivenöl, Oregano und Salz mischen.
+2. Bei 200 °C 30 Minuten backen, Feta darüberbröseln und weitere 10 Minuten backen.
+3. Mit Baguette servieren.
+
+= Gefüllte Zucchini
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 50
+tags: ofen, low carb
+- 4 Zucchini
+- 400 g Faschiertes #protein
+- 1 Zwiebel
+- 1 Dose gehackte Tomaten
+- 100 g Käse
+- 1 TL Oregano
+- 1 EL Olivenöl
+- 150 g Reis #beilage
+- Salz
+1. Zucchini halbieren und aushöhlen, Fruchtfleisch hacken.
+2. Faschiertes mit Zwiebel und Zucchinifleisch braten, Tomaten und Oregano zugeben und einkochen.
+3. In die Zucchini füllen, mit Käse bestreuen und bei 200 °C 25 Minuten backen. Mit Reis servieren.
+
+= Ofenkartoffel mit Sauerrahm und Speck
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 70
+tags: ofen, einfach
+- 4 große Erdäpfel #beilage
+- 250 g Sauerrahm
+- 100 g Speck #protein
+- 2 EL Schnittlauch
+- 1 EL Öl
+- Salz
+1. Erdäpfel waschen, mit Öl einreiben, in Alufolie wickeln und bei 200 °C 60 Minuten backen.
+2. Speck knusprig braten. Sauerrahm mit Schnittlauch und Salz verrühren.
+3. Erdäpfel aufschneiden und mit Sauerrahm und Speck füllen.
+
+= Shepherd's Pie
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 75
+tags: britisch, ofen, fleisch
+- 500 g Lammfaschiertes #protein
+- 1 Zwiebel
+- 2 Karotten
+- 150 g Erbsen
+- 1 EL Tomatenmark
+- 250 ml Rindsuppe
+- 1 kg mehlige Erdäpfel #beilage
+- 150 ml Milch
+- 40 g Butter
+- 60 g Käse
+- Salz
+1. Faschiertes mit Zwiebel und Karotten anbraten, Tomatenmark zugeben, mit Suppe aufgießen und 20 Minuten köcheln, Erbsen zugeben.
+2. Erdäpfel kochen und mit Milch und Butter zu Püree stampfen.
+3. Fleisch in eine Form geben, Püree darauf verstreichen, mit Käse bestreuen und bei 200 °C 25 Minuten backen.
+
+= Flammkuchen
+mahlzeit: abend
+portionen: 4
+dauer: 30
+tags: elsässisch, ofen
+- 1 Pkg Flammkuchenteig #beilage
+- 200 g Crème fraîche
+- 150 g Speck #protein
+- 2 Zwiebeln
+- Salz
+- Pfeffer
+1. Ofen auf 250 °C vorheizen. Teig ausrollen und mit gewürzter Crème fraîche bestreichen.
+2. Mit Speckwürfeln und dünnen Zwiebelringen belegen.
+3. 10–12 Minuten knusprig backen.

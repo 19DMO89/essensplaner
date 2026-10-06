@@ -1,0 +1,300 @@
+# Startpaket: Geflügel
+
+= Hühnerreis mit Karotten
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: mild, schnell, kinder
+- 500 g Hühnerbrust #protein
+- 250 g Reis #beilage
+- 4 Karotten
+- 1 EL Öl
+- 1 EL Petersilie
+- Salz
+1. Reis nach Packungsangabe kochen.
+2. Hühnerbrust in Streifen schneiden und in Öl rundum braten, salzen.
+3. Karotten in Scheiben schneiden, weich dünsten und alles mit Petersilie vermischen.
+
+= Hühnerbrust mit Erdäpfelpüree und Karottengemüse
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: mild, klassiker, kinder
+- 600 g Hühnerbrust #protein
+- 1 kg mehlige Erdäpfel #beilage
+- 250 ml Milch
+- 40 g Butter
+- 500 g Karotten
+- 1 EL Öl
+- Salz
+1. Erdäpfel kochen und mit Milch und Butter zu Püree stampfen.
+2. Karotten in Scheiben schneiden und mit wenig Wasser und Salz weich dünsten.
+3. Hühnerbrust salzen und in Öl von beiden Seiten je 5–6 Minuten braten, kurz rasten lassen.
+
+= Ofenhuhn mit Erdäpfeln und Gemüse
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 60
+tags: ofen, einfach
+- 8 Hühnerkeulen #protein
+- 1 kg Erdäpfel #beilage
+- 2 Paprika
+- 1 Zucchini
+- 2 Zwiebeln
+- 3 EL Olivenöl
+- 1 TL Paprikapulver
+- 1 TL Rosmarin
+- Salz
+1. Ofen auf 200 °C vorheizen. Erdäpfel und Gemüse in Stücke schneiden.
+2. Alles mit Olivenöl und Gewürzen mischen, Keulen darauflegen.
+3. 45–50 Minuten backen, bis die Haut knusprig ist.
+
+= Hühnercurry mit Reis
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 35
+tags: indisch, curry
+- 600 g Hühnerbrust #protein
+- 400 ml Kokosmilch
+- 1 Zwiebel
+- 2 Zehen Knoblauch
+- 1 TL Ingwer
+- 2 EL Currypulver
+- 1 Dose gehackte Tomaten
+- 2 EL Öl
+- 250 g Basmatireis #beilage
+- Salz
+1. Zwiebel, Knoblauch und Ingwer in Öl anschwitzen, Currypulver kurz mitrösten.
+2. Hühnerwürfel zugeben und anbraten, mit Tomaten und Kokosmilch aufgießen und 15 Minuten köcheln.
+3. Mit Reis servieren.
+
+= Butter Chicken
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 45
+tags: indisch, curry
+- 600 g Hühnerbrust #protein
+- 150 g Naturjoghurt
+- 2 TL Garam Masala
+- 1 Zwiebel
+- 2 Zehen Knoblauch
+- 1 TL Ingwer
+- 400 g passierte Tomaten
+- 150 ml Schlagobers
+- 40 g Butter
+- 250 g Basmatireis #beilage
+- Salz
+1. Hühnerwürfel mit Joghurt und 1 TL Garam Masala 30 Minuten marinieren, dann scharf anbraten.
+2. Zwiebel, Knoblauch und Ingwer in Butter anschwitzen, restliches Garam Masala und Tomaten zugeben, 10 Minuten köcheln.
+3. Obers und Fleisch zugeben, kurz ziehen lassen. Mit Reis servieren.
+
+= Hühnergeschnetzeltes mit Nudeln
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: schnell, kinder
+- 600 g Hühnerbrust #protein
+- 250 g Champignons
+- 1 Zwiebel
+- 200 ml Schlagobers
+- 100 ml Hühnersuppe
+- 1 EL Öl
+- 400 g Bandnudeln #beilage
+- 1 EL Petersilie
+- Salz
+- Pfeffer
+1. Nudeln kochen. Hühnerbrust in Streifen schneiden und in Öl anbraten, herausnehmen.
+2. Zwiebel und Champignons anbraten, mit Suppe und Obers aufgießen und etwas einkochen.
+3. Fleisch zurückgeben, abschmecken und mit Nudeln und Petersilie servieren.
+
+= Hähnchen-Gemüse-Pfanne mit Reis
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: schnell, pfanne
+- 500 g Hühnerbrust #protein
+- 1 Brokkoli
+- 2 Karotten
+- 1 Paprika
+- 2 EL Sojasauce
+- 1 EL Öl
+- 250 g Reis #beilage
+1. Reis kochen. Hühnerbrust in Streifen schneiden und in Öl scharf anbraten.
+2. Gemüse klein schneiden, zugeben und bissfest braten.
+3. Mit Sojasauce abschmecken und mit Reis servieren.
+
+= Chicken Teriyaki mit Reis
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: japanisch, asiatisch
+- 600 g Hühnerkeulen ohne Knochen #protein
+- 4 EL Sojasauce
+- 2 EL Mirin
+- 1 EL Honig
+- 1 TL Ingwer
+- 1 EL Öl
+- 1 Brokkoli
+- 250 g Reis #beilage
+- 1 TL Sesam
+1. Reis kochen, Brokkoli dämpfen.
+2. Hühnerfleisch in Öl knusprig braten.
+3. Sojasauce, Mirin, Honig und Ingwer zugeben und sirupartig einkochen. Mit Sesam bestreuen.
+
+= Thai-Curry mit Huhn
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: thailändisch, curry, scharf
+- 500 g Hühnerbrust #protein
+- 400 ml Kokosmilch
+- 2 EL rote Currypaste
+- 1 Paprika
+- 150 g Zuckerschoten
+- 1 EL Fischsauce
+- 1 EL Öl
+- 1 Handvoll Basilikum
+- 250 g Jasminreis #beilage
+1. Currypaste in Öl anrösten, Kokosmilch zugeben und aufkochen.
+2. Hühnerstreifen und Gemüse zugeben und 10 Minuten köcheln.
+3. Mit Fischsauce abschmecken, Basilikum zugeben und mit Reis servieren.
+
+= Süß-saures Huhn
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 35
+tags: chinesisch, asiatisch, kinder
+- 500 g Hühnerbrust #protein
+- 2 EL Speisestärke
+- 1 Paprika
+- 1 Dose Ananas
+- 1 Zwiebel
+- 3 EL Ketchup
+- 2 EL Essig
+- 2 EL Zucker
+- 2 EL Sojasauce
+- 2 EL Öl
+- 250 g Reis #beilage
+1. Hühnerwürfel in Stärke wenden und in Öl knusprig braten.
+2. Gemüse und Ananas kurz anbraten, Ketchup, Essig, Zucker, Sojasauce und etwas Ananassaft zugeben.
+3. Fleisch untermischen und mit Reis servieren.
+
+= Chicken Wraps
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 25
+tags: schnell, kinder, mexikanisch
+- 500 g Hühnerbrust #protein
+- 4 Tortillas #beilage
+- 1 Eisbergsalat
+- 2 Tomaten
+- 1 Paprika
+- 100 g Sauerrahm
+- 80 g Käse
+- 1 TL Paprikapulver
+- 1 EL Öl
+- Salz
+1. Hühnerbrust in Streifen schneiden, würzen und in Öl braten.
+2. Tortillas erwärmen und mit Sauerrahm bestreichen.
+3. Mit Salat, Tomaten, Paprika, Fleisch und Käse füllen und einrollen.
+
+= Hühner-Nudel-Auflauf mit Brokkoli
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 50
+tags: auflauf, ofen, kinder
+- 400 g Hühnerbrust #protein
+- 350 g Penne #beilage
+- 1 Brokkoli
+- 250 ml Schlagobers
+- 150 ml Milch
+- 150 g Käse
+- 1 EL Öl
+- Salz
+- Pfeffer
+1. Penne bissfest kochen, Brokkoli die letzten 3 Minuten mitkochen.
+2. Hühnerwürfel in Öl anbraten.
+3. Alles mit Obers, Milch und Gewürzen in eine Form geben, mit Käse bestreuen und bei 200 °C 20 Minuten überbacken.
+
+= Putengeschnetzeltes mit Reis
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: schnell, mild
+- 600 g Putenbrust #protein
+- 1 Zwiebel
+- 200 ml Schlagobers
+- 150 ml Hühnersuppe
+- 1 TL Paprikapulver
+- 1 EL Öl
+- 250 g Reis #beilage
+- Salz
+1. Reis kochen, Putenbrust in Streifen schneiden und in Öl anbraten.
+2. Zwiebel mitbraten, Paprikapulver einrühren, mit Suppe und Obers aufgießen.
+3. Kurz einkochen lassen, abschmecken und mit Reis servieren.
+
+= Putenschnitzel natur mit Gemüsereis
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: mild, schnell
+- 4 Putenschnitzel #protein
+- 250 g Reis #beilage
+- 150 g Erbsen
+- 2 Karotten
+- 1 EL Butter
+- 1 EL Öl
+- Salz
+1. Reis kochen, Karotten würfeln und mit den Erbsen die letzten 8 Minuten mitkochen.
+2. Putenschnitzel salzen und in Öl von beiden Seiten je 3–4 Minuten braten.
+3. Reis mit Butter verfeinern und servieren.
+
+= Chicken Nuggets mit Ofenpommes
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 45
+tags: kinder, ofen
+- 500 g Hühnerbrust #protein
+- 2 Eier
+- 100 g Cornflakes
+- 50 g Mehl
+- 1 kg Erdäpfel #beilage
+- 3 EL Öl
+- 1 TL Paprikapulver
+- Salz
+1. Erdäpfel in Spalten schneiden, mit 2 EL Öl, Paprikapulver und Salz mischen und bei 220 °C 35 Minuten backen.
+2. Hühnerbrust in Stücke schneiden, in Mehl, Ei und zerbröselten Cornflakes panieren.
+3. Auf einem Blech mit dem restlichen Öl beträufeln und 15 Minuten mitbacken.
+
+= Huhn mit Kartoffeln und Rosmarin aus dem Ofen
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 55
+tags: ofen, mediterran
+- 600 g Hühnerbrust #protein
+- 1 kg kleine Erdäpfel #beilage
+- 1 Zitrone
+- 2 Zehen Knoblauch
+- 1 TL Rosmarin
+- 3 EL Olivenöl
+- Salz
+1. Erdäpfel halbieren, mit Olivenöl, Rosmarin, Knoblauch und Salz bei 200 °C 25 Minuten backen.
+2. Hühnerbrust würzen, mit Zitronenscheiben dazulegen und weitere 20 Minuten backen.
+
+= Hühnerspieße mit Reis und Joghurtsauce
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: grillen, sommer
+- 600 g Hühnerbrust #protein
+- 2 Paprika
+- 1 Zucchini
+- 3 EL Olivenöl
+- 1 TL Paprikapulver
+- 250 g Reis #beilage
+- 250 g Naturjoghurt
+- 1 Zehe Knoblauch
+- Salz
+1. Fleisch und Gemüse würfeln, mit Öl, Paprikapulver und Salz marinieren und auf Spieße stecken.
+2. Spieße grillen oder in der Pfanne rundum 10 Minuten braten.
+3. Joghurt mit Knoblauch und Salz verrühren. Mit Reis servieren.

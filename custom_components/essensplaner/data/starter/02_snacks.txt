@@ -1,0 +1,209 @@
+# Startpaket: Snacks und Kleinigkeiten
+
+= Apfel mit Erdnussbutter
+mahlzeit: snack
+portionen: 1
+dauer: 3
+tags: süß, schnell, vegan
+- 1 Apfel
+- 1 EL Erdnussbutter
+1. Apfel in Spalten schneiden und mit Erdnussbutter servieren.
+
+= Gemüsesticks mit Hummus
+mahlzeit: snack
+portionen: 2
+dauer: 10
+tags: herzhaft, schnell, vegan
+- 2 Karotten
+- 1 Gurke
+- 1 Paprika
+- 150 g Hummus
+1. Gemüse in Sticks schneiden und mit Hummus servieren.
+
+= Hummus
+mahlzeit: snack
+portionen: 4
+dauer: 10
+tags: herzhaft, vegan, orientalisch
+- 1 Dose Kichererbsen #protein
+- 2 EL Tahini
+- 1 Zehe Knoblauch
+- 2 EL Zitronensaft
+- 3 EL Olivenöl
+- 1 TL Kreuzkümmel
+- Salz
+1. Kichererbsen abgießen, etwas Flüssigkeit aufheben.
+2. Alle Zutaten fein pürieren, mit Kichererbsenwasser cremig rühren und abschmecken.
+
+= Obstsalat
+mahlzeit: snack, frühstück
+portionen: 4
+dauer: 15
+tags: süß, vegan
+- 2 Äpfel
+- 2 Bananen
+- 2 Orangen
+- 200 g Weintrauben
+- 2 Kiwis
+- 1 EL Zitronensaft
+1. Obst klein schneiden, mit Zitronensaft vermischen und kurz durchziehen lassen.
+
+= Reiswaffeln mit Topfen und Gurke
+mahlzeit: snack
+portionen: 1
+dauer: 5
+tags: herzhaft, schnell, vegetarisch
+- 3 Reiswaffeln #beilage
+- 80 g Topfen #protein
+- 0,5 Gurke
+- Salz
+1. Topfen salzen, auf die Reiswaffeln streichen und mit Gurkenscheiben belegen.
+
+= Bananenbrot
+mahlzeit: snack, frühstück
+portionen: 10
+dauer: 70
+tags: süß, backen, vegetarisch
+- 3 Bananen
+- 2 Eier
+- 80 g Butter
+- 80 g Zucker
+- 250 g Mehl #beilage
+- 1 TL Backpulver
+- 1 Prise Salz
+1. Ofen auf 175 °C vorheizen. Bananen zerdrücken, mit geschmolzener Butter, Zucker und Eiern verrühren.
+2. Mehl, Backpulver und Salz unterheben, in eine Kastenform füllen.
+3. Etwa 55 Minuten backen.
+
+= Käse mit Weintrauben
+mahlzeit: snack
+portionen: 2
+dauer: 5
+tags: herzhaft, schnell, kalt, vegetarisch
+- 150 g Käse #protein
+- 200 g Weintrauben
+- 4 Cracker #beilage
+1. Käse würfeln und mit Trauben und Crackern anrichten.
+
+= Bruschetta
+mahlzeit: snack, abend
+portionen: 4
+dauer: 15
+tags: herzhaft, vegan, italienisch
+- 1 Baguette #beilage
+- 4 Tomaten
+- 1 Zehe Knoblauch
+- 1 Handvoll Basilikum
+- 3 EL Olivenöl
+- Salz
+1. Baguette in Scheiben schneiden und im Ofen rösten.
+2. Tomaten würfeln, mit Basilikum, Olivenöl und Salz mischen.
+3. Brot mit Knoblauch einreiben und die Tomaten darauf verteilen.
+
+= Gefüllte Eier
+mahlzeit: snack
+portionen: 4
+dauer: 20
+tags: herzhaft, kalt, vegetarisch, party
+- 6 Eier #protein
+- 2 EL Mayonnaise
+- 1 TL Senf
+- 1 Prise Paprikapulver
+- Salz
+1. Eier hart kochen, schälen und halbieren.
+2. Eigelb mit Mayonnaise, Senf und Salz verrühren und in die Eiweißhälften füllen.
+3. Mit Paprikapulver bestäuben.
+
+= Guacamole mit Nachos
+mahlzeit: snack
+portionen: 4
+dauer: 10
+tags: herzhaft, vegan, mexikanisch, party
+- 2 Avocados
+- 1 Tomate
+- 0,5 Zwiebel
+- 1 EL Limettensaft
+- Salz
+- 150 g Nachos #beilage
+1. Avocados zerdrücken, mit fein gewürfelter Tomate, Zwiebel, Limettensaft und Salz mischen.
+2. Mit Nachos servieren.
+
+= Liptauer
+mahlzeit: snack, abend
+portionen: 4
+dauer: 10
+tags: herzhaft, vegetarisch, österreichisch
+- 250 g Topfen #protein
+- 50 g Butter
+- 1 EL Paprikapulver
+- 1 TL Senf
+- 1 EL Kapern
+- 0,5 Zwiebel
+- 1 TL Kümmel
+- Salz
+- 4 Scheiben Schwarzbrot #beilage
+1. Weiche Butter mit Topfen glatt rühren.
+2. Fein gehackte Zwiebel, Kapern und Gewürze unterrühren und abschmecken.
+3. Auf Schwarzbrot servieren.
+
+= Muffins mit Schokolade
+mahlzeit: snack
+portionen: 12
+dauer: 40
+tags: süß, backen, vegetarisch, kinder
+- 250 g Mehl #beilage
+- 120 g Zucker
+- 2 Eier
+- 100 ml Öl
+- 200 ml Milch
+- 2 TL Backpulver
+- 100 g Schokolade
+1. Ofen auf 180 °C vorheizen. Trockene und flüssige Zutaten getrennt mischen, dann kurz verrühren.
+2. Gehackte Schokolade unterheben, in Muffinförmchen füllen.
+3. 20–25 Minuten backen.
+
+= Edamame mit Meersalz
+mahlzeit: snack
+portionen: 2
+dauer: 10
+tags: herzhaft, schnell, vegan, asiatisch
+- 300 g Edamame #protein
+- 1 TL Meersalz
+1. Edamame 5 Minuten in Salzwasser kochen, abgießen und mit Meersalz bestreuen.
+
+= Popcorn
+mahlzeit: snack
+portionen: 2
+dauer: 10
+tags: schnell, vegan, kinder
+- 60 g Popcornmais #beilage
+- 1 EL Öl
+- 1 Prise Salz
+1. Öl in einem Topf erhitzen, Mais zugeben und zugedeckt poppen lassen, dabei den Topf rütteln.
+2. Salzen oder nach Wunsch zuckern.
+
+= Gurken-Joghurt-Dip mit Fladenbrot
+mahlzeit: snack
+portionen: 4
+dauer: 15
+tags: herzhaft, vegetarisch, griechisch
+- 1 Gurke
+- 400 g griechischer Joghurt #protein
+- 1 Zehe Knoblauch
+- 1 EL Olivenöl
+- 1 TL Dill
+- Salz
+- 1 Fladenbrot #beilage
+1. Gurke reiben, gut ausdrücken.
+2. Mit Joghurt, Knoblauch, Olivenöl und Dill verrühren und salzen.
+3. Mit Fladenbrot servieren.
+
+= Studentenfutter-Joghurt
+mahlzeit: snack
+portionen: 1
+dauer: 3
+tags: süß, schnell, vegetarisch
+- 150 g Naturjoghurt #protein
+- 30 g Studentenfutter
+- 1 TL Honig
+1. Joghurt mit Studentenfutter und Honig anrichten.

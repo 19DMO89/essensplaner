@@ -1,0 +1,291 @@
+# Startpaket: Suppen und Eintöpfe
+
+= Hühnersuppe mit Nudeln
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 75
+tags: suppe, klassiker
+- 600 g Hühnerkeulen #protein
+- 2 Karotten
+- 1 Petersilienwurzel
+- 100 g Sellerie
+- 1 Zwiebel
+- 120 g Suppennudeln #beilage
+- 1,5 l Wasser
+- Salz
+- 1 EL Petersilie
+1. Hühnerkeulen mit Wasser, geschälter Zwiebel und Salz aufkochen, Schaum abschöpfen und 45 Minuten köcheln.
+2. Gemüse klein schneiden, zugeben und 15 Minuten mitkochen.
+3. Fleisch auslösen und zurückgeben, Nudeln darin garen, mit Petersilie bestreuen.
+
+= Frittatensuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: suppe, österreichisch, klassiker
+- 1 l Rindsuppe
+- 100 g Mehl #beilage
+- 200 ml Milch
+- 2 Eier
+- 1 Prise Salz
+- 1 EL Öl
+- 1 EL Schnittlauch
+1. Mehl, Milch, Eier und Salz zu einem Palatschinkenteig verrühren und dünne Palatschinken backen.
+2. Palatschinken einrollen und in feine Streifen schneiden.
+3. In heiße Suppe geben und mit Schnittlauch bestreuen.
+
+= Grießnockerlsuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: suppe, österreichisch, klassiker
+- 1 l Rindsuppe
+- 50 g Butter
+- 1 Ei
+- 100 g Grieß #beilage
+- 1 Prise Salz
+- 1 Prise Muskat
+- 1 EL Schnittlauch
+1. Weiche Butter mit Ei schaumig rühren, Grieß, Salz und Muskat unterrühren, 15 Minuten rasten lassen.
+2. Mit zwei Löffeln Nockerl formen und in leicht wallender Suppe 15 Minuten ziehen lassen.
+3. Mit Schnittlauch servieren.
+
+= Leberknödelsuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 45
+tags: suppe, österreichisch, klassiker
+- 1 l Rindsuppe
+- 150 g Rindsleber #protein
+- 2 Semmeln #beilage
+- 1 Ei
+- 0,5 Zwiebel
+- 2 EL Semmelbrösel
+- 1 TL Majoran
+- Salz
+- Pfeffer
+1. Semmeln einweichen und ausdrücken, Zwiebel fein hacken und anschwitzen.
+2. Leber fein faschieren, mit Semmeln, Zwiebel, Ei, Bröseln und Gewürzen zu einer Masse verarbeiten.
+3. Knödel formen und in leicht wallendem Salzwasser 15 Minuten ziehen lassen, in heißer Suppe servieren.
+
+= Kürbiscremesuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 35
+tags: suppe, vegetarisch, herbst
+- 800 g Hokkaidokürbis
+- 1 Zwiebel
+- 2 Erdäpfel #beilage
+- 800 ml Gemüsesuppe
+- 100 ml Schlagobers
+- 1 EL Öl
+- Salz
+- 1 Prise Muskat
+- 1 EL Kürbiskernöl
+1. Kürbis, Zwiebel und Erdäpfel würfeln und im Öl anschwitzen.
+2. Mit Suppe aufgießen und 20 Minuten weich kochen.
+3. Obers zugeben, fein pürieren, abschmecken und mit Kürbiskernöl beträufeln.
+
+= Erdäpfelsuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: suppe, vegetarisch, österreichisch
+- 600 g Erdäpfel #beilage
+- 1 Zwiebel
+- 1 Karotte
+- 100 g Sellerie
+- 1 l Gemüsesuppe
+- 125 ml Sauerrahm
+- 1 TL Majoran
+- 1 TL Kümmel
+- 1 EL Butter
+- Salz
+1. Zwiebel in Butter anschwitzen, gewürfeltes Gemüse und Erdäpfel zugeben.
+2. Mit Suppe aufgießen, Majoran und Kümmel zugeben und 20 Minuten kochen.
+3. Teilweise pürieren, Sauerrahm einrühren und abschmecken.
+
+= Gemüsesuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 35
+tags: suppe, vegan, leicht
+- 2 Karotten
+- 1 Zucchini
+- 100 g Sellerie
+- 1 Lauch
+- 2 Erdäpfel #beilage
+- 100 g Erbsen
+- 1,2 l Gemüsesuppe
+- 1 EL Öl
+- Salz
+- 1 EL Petersilie
+1. Gemüse klein schneiden und im Öl kurz anschwitzen.
+2. Mit Suppe aufgießen und 20 Minuten köcheln lassen.
+3. Abschmecken und mit Petersilie bestreuen.
+
+= Erbsensuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 75
+tags: suppe, eintopf, deftig
+- 250 g getrocknete Erbsen #protein
+- 2 Erdäpfel #beilage
+- 1 Karotte
+- 1 Zwiebel
+- 100 g Speck
+- 1,5 l Gemüsesuppe
+- 1 TL Majoran
+- Salz
+- Pfeffer
+1. Erbsen über Nacht einweichen und abgießen.
+2. Zwiebel und Speck anbraten, Erbsen, Gemüse und Suppe zugeben.
+3. Etwa 60 Minuten weich kochen, teilweise pürieren und würzen.
+
+= Linsensuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: suppe, eintopf, vegan
+- 250 g rote Linsen #protein
+- 1 Zwiebel
+- 2 Karotten
+- 1 Zehe Knoblauch
+- 1 Dose gehackte Tomaten
+- 1 l Gemüsesuppe
+- 1 TL Kreuzkümmel
+- 1 EL Öl
+- 1 EL Zitronensaft
+- Salz
+1. Zwiebel, Knoblauch und Karotten in Öl andünsten, Kreuzkümmel kurz mitrösten.
+2. Linsen, Tomaten und Suppe zugeben und 20 Minuten köcheln.
+3. Pürieren, mit Zitronensaft und Salz abschmecken.
+
+= Tomatensuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: suppe, vegetarisch, schnell
+- 2 Dosen gehackte Tomaten
+- 1 Zwiebel
+- 1 Zehe Knoblauch
+- 500 ml Gemüsesuppe
+- 100 ml Schlagobers
+- 1 TL Zucker
+- 1 EL Olivenöl
+- 1 Handvoll Basilikum
+- Salz
+- 4 Scheiben Brot #beilage
+1. Zwiebel und Knoblauch in Olivenöl anschwitzen.
+2. Tomaten, Suppe und Zucker zugeben, 15 Minuten köcheln.
+3. Obers zugeben, pürieren, abschmecken und mit Basilikum und geröstetem Brot servieren.
+
+= Brokkolicremesuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 25
+tags: suppe, vegetarisch, schnell
+- 600 g Brokkoli
+- 1 Zwiebel
+- 1 Erdapfel #beilage
+- 800 ml Gemüsesuppe
+- 100 ml Schlagobers
+- 1 EL Butter
+- Salz
+- 1 Prise Muskat
+1. Zwiebel in Butter anschwitzen, Brokkoli und Erdapfel klein geschnitten zugeben.
+2. Mit Suppe aufgießen und 15 Minuten kochen.
+3. Obers zugeben, pürieren und abschmecken.
+
+= Karottencremesuppe mit Ingwer
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 30
+tags: suppe, vegan
+- 700 g Karotten
+- 1 Zwiebel
+- 1 TL Ingwer
+- 800 ml Gemüsesuppe
+- 200 ml Kokosmilch
+- 1 EL Öl
+- Salz
+- 4 Scheiben Brot #beilage
+1. Zwiebel und Ingwer in Öl anschwitzen, Karotten in Scheiben zugeben.
+2. Mit Suppe aufgießen und 20 Minuten weich kochen.
+3. Kokosmilch zugeben, pürieren und abschmecken.
+
+= Minestrone
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 45
+tags: suppe, vegetarisch, italienisch
+- 1 Zwiebel
+- 2 Karotten
+- 1 Zucchini
+- 100 g Sellerie
+- 1 Dose weiße Bohnen #protein
+- 1 Dose gehackte Tomaten
+- 100 g kleine Nudeln #beilage
+- 1 l Gemüsesuppe
+- 2 EL Olivenöl
+- 30 g Parmesan
+- Salz
+1. Gemüse würfeln und im Olivenöl anschwitzen.
+2. Tomaten und Suppe zugeben, 15 Minuten köcheln.
+3. Nudeln und Bohnen zugeben und garen. Mit Parmesan servieren.
+
+= Gulaschsuppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 90
+tags: suppe, eintopf, deftig, österreichisch
+- 500 g Rindfleisch #protein
+- 3 Zwiebeln
+- 3 Erdäpfel #beilage
+- 2 EL Paprikapulver
+- 1 EL Tomatenmark
+- 1 TL Kümmel
+- 1 TL Majoran
+- 1,2 l Rindsuppe
+- 2 EL Öl
+- Salz
+1. Zwiebeln in Öl goldbraun rösten, Fleischwürfel zugeben und anbraten.
+2. Paprikapulver und Tomatenmark kurz mitrösten, mit Suppe aufgießen, Gewürze zugeben und 60 Minuten köcheln.
+3. Erdäpfelwürfel zugeben und weitere 20 Minuten kochen.
+
+= Hühner-Reis-Suppe
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: suppe, leicht
+- 300 g Hühnerbrust #protein
+- 80 g Reis #beilage
+- 2 Karotten
+- 100 g Sellerie
+- 1,2 l Hühnersuppe
+- Salz
+- 1 EL Petersilie
+1. Suppe aufkochen, Hühnerbrust darin 15 Minuten ziehen lassen, herausnehmen und in Würfel schneiden.
+2. Reis und klein geschnittenes Gemüse in der Suppe 15 Minuten garen.
+3. Fleisch zurückgeben, abschmecken und mit Petersilie bestreuen.
+
+= Chili sin Carne
+mahlzeit: mittag, abend
+portionen: 4
+dauer: 40
+tags: eintopf, vegan, scharf, mexikanisch
+- 1 Dose Kidneybohnen #protein
+- 1 Dose schwarze Bohnen
+- 1 Dose Mais
+- 2 Dosen gehackte Tomaten
+- 1 Zwiebel
+- 2 Zehen Knoblauch
+- 1 Paprika
+- 2 TL Chilipulver
+- 1 TL Kreuzkümmel
+- 2 EL Öl
+- 250 g Reis #beilage
+- Salz
+1. Zwiebel, Knoblauch und Paprika in Öl andünsten, Gewürze kurz mitrösten.
+2. Tomaten, Bohnen und Mais zugeben und 20 Minuten köcheln.
+3. Reis nach Packungsangabe kochen und dazu servieren.

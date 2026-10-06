@@ -16,6 +16,7 @@ gemeinsamer Basis (gleiches Protein oder gleiche Beilage).
 2. „Essensplaner“ installieren und Home Assistant neu starten.
 3. *Einstellungen → Geräte & Dienste → Integration hinzufügen → Essensplaner*.
    - Personen eintragen (eine pro Zeile).
+   - Startpaket importieren (Standard: an): rund 190 fertige Gerichte, siehe unten.
    - Optional: Gerichte aus einer To-do-Liste (z. B. `todo.gerichte`) importieren.
      Es werden nur die Namen übernommen.
 
@@ -30,7 +31,17 @@ Manuell: Ordner `custom_components/essensplaner` nach `config/custom_components/
 | Einstellungen | Ziel-Einkaufsliste (`todo.*`), Standard-Mahlzeiten pro Tag |
 | Person hinzufügen / bearbeiten | Verträglich, nicht verträglich, nur in kleinen Mengen, Vorlieben, Abneigungen, max. Zubereitungszeit, Portionen |
 | Gericht hinzufügen / bearbeiten | Zutaten, Zubereitung, Mahlzeitentyp, Portionen, Dauer, Tags, „nur für“ |
+| Startpaket importieren | Mitgelieferte Gerichte übernehmen (gleichnamige werden übersprungen) |
 | Gerichte importieren | Namen aus einer To-do-Liste übernehmen |
+
+### Startpaket
+
+Rund 190 Gerichte mit Zutaten, Mengen, Zubereitung, Dauer und Tags. Dazu gehören
+österreichische und deutsche Hausmannskost, Italienisch, Asiatisch, International, Fisch,
+Vegetarisch/Vegan, Suppen, Salate, Süßspeisen, Frühstück und Snacks. Importierte Gerichte
+tragen den Tag „Startpaket“ und lassen sich frei bearbeiten oder löschen. Die Rezepte liegen
+als Textdateien in `custom_components/essensplaner/data/starter/`. Ergänzungen per Pull
+Request sind willkommen; `pytest tests/logic` prüft das Format.
 
 ### Zutaten eingeben
 

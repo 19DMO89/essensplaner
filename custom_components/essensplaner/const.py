@@ -11,6 +11,8 @@ DOMAIN: Final = "essensplaner"
 # Config-Entry-Daten (nur beim ersten Einrichten genutzt)
 CONF_INITIAL_PROFILES: Final = "profiles"
 CONF_IMPORT_TODO: Final = "import_todo"
+CONF_IMPORT_STARTER: Final = "import_starter"
+STARTER_TAG: Final = "Startpaket"
 
 # Optionen
 CONF_SHOPPING_LIST: Final = "shopping_list"

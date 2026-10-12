@@ -12,6 +12,7 @@ class GenerateDialog extends EpDialog {
     _for: { state: true },
     _overwrite: { state: true },
     _alternatives: { state: true },
+    _directions: { state: true },
     _busy: { state: true },
     _result: { state: true },
     _error: { state: true },
@@ -23,6 +24,7 @@ class GenerateDialog extends EpDialog {
     this._for = null;
     this._overwrite = false;
     this._alternatives = null;
+    this._directions = null;
     this._busy = false;
     this._result = null;
     this._error = null;
@@ -39,6 +41,8 @@ class GenerateDialog extends EpDialog {
       this._meals = Object.fromEntries(this._days.map((d) => [d, [...defaults]]));
       this._for = this.profiles.map((p) => p.id);
       this._alternatives = this.data.alternatives ?? 1;
+      // Zuletzt gewählte Richtungen der Personen vorbelegen.
+      this._directions = Object.fromEntries(this.profiles.map((p) => [p.id, [...(p.directions || [])]]));
     }
   }
 
@@ -64,6 +68,14 @@ class GenerateDialog extends EpDialog {
     this._for = this._for.includes(id) ? this._for.filter((x) => x !== id) : [...this._for, id];
   }
 
+  _toggleDirection(profileId, dir) {
+    const list = this._directions[profileId] || [];
+    this._directions = {
+      ...this._directions,
+      [profileId]: list.includes(dir) ? list.filter((d) => d !== dir) : [...list, dir],
+    };
+  }
+
   async _run() {
     this._busy = true;
     this._error = null;
@@ -75,6 +87,7 @@ class GenerateDialog extends EpDialog {
         profiles: this._for,
         overwrite: this._overwrite,
         alternatives: this._alternatives,
+        directions: Object.fromEntries(this._for.map((id) => [id, this._directions[id] || []])),
       });
       this._result = result;
     } catch (err) {
@@ -137,6 +150,8 @@ class GenerateDialog extends EpDialog {
         )}
       </div>
 
+      ${this.directions.length && this._for.length ? this._renderDirections() : ""}
+
       <label class="field alt">
         <span>${this.t("gen.alternatives")}</span>
         <select @change=${(e) => (this._alternatives = Number(e.target.value))}>
@@ -159,6 +174,27 @@ class GenerateDialog extends EpDialog {
       </button>
     `;
     return this.shell(this.t("gen.title"), body, footer);
+  }
+
+  _renderDirections() {
+    return html`
+      <h3>${this.t("gen.directions")}</h3>
+      <div class="help">${this.t("gen.directions_help")}</div>
+      ${this.profiles
+        .filter((p) => this._for.includes(p.id))
+        .map(
+          (p) => html`<div class="dir-row">
+            <span class="dir-name">${p.name}</span>
+            <div class="chips">
+              ${this.directions.map((d) => {
+                const on = (this._directions[p.id] || []).includes(d.id);
+                return html`<button class="chip ${on ? "on" : ""}" aria-pressed=${on}
+                  @click=${() => this._toggleDirection(p.id, d.id)}>${this.t(`dir.${d.id}`)}</button>`;
+              })}
+            </div>
+          </div>`
+        )}
+    `;
   }
 
   _renderResult() {
@@ -226,6 +262,20 @@ class GenerateDialog extends EpDialog {
       }
       .overwrite {
         align-items: flex-start;
+      }
+      .help {
+        margin-bottom: 8px;
+      }
+      .dir-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px 12px;
+        margin-bottom: 10px;
+      }
+      .dir-name {
+        min-width: 80px;
+        font-weight: 500;
       }
       .alt select {
         max-width: 160px;

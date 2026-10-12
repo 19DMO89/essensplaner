@@ -27,6 +27,10 @@ export class Api {
     return this.call("dish/save", { dish });
   }
 
+  estimateDish(dish) {
+    return this.call("dish/estimate", { dish });
+  }
+
   deleteDish(dishId) {
     return this.call("dish/delete", { dish_id: dishId });
   }
@@ -175,6 +179,18 @@ export function scaledAmount(ing, factor) {
   if (ing.unit === "g" && amount >= 1000) return `${formatNumber(amount / 1000)} kg`;
   if (ing.unit === "ml" && amount >= 1000) return `${formatNumber(amount / 1000)} l`;
   return ing.unit ? `${formatNumber(amount)} ${ing.unit}` : formatNumber(amount);
+}
+
+/** Tag vergleichbar machen ("Low-Carb" -> "low carb", "eiweißreich" -> "eiweissreich"). */
+export function normalizeTag(tag) {
+  return tag
+    .toLowerCase()
+    .replace(/ß/g, "ss")
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 }
 
 export function fireEvent(node, type, detail = {}) {

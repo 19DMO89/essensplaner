@@ -4,7 +4,7 @@
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: fisch, schnell, einfach
+tags: fisch, schnell, einfach, proteinreich
 - 4 Lachsfilets #protein
 - 250 g Reis #beilage
 - 1 Brokkoli
@@ -19,7 +19,7 @@ tags: fisch, schnell, einfach
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: fisch, kinder, schnell
+tags: fisch, kinder, schnell, ballaststoffreich
 - 20 Fischstäbchen #protein
 - 1 kg mehlige Erdäpfel #beilage
 - 250 ml Milch
@@ -35,7 +35,7 @@ tags: fisch, kinder, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: fisch, österreichisch, klassiker
+tags: fisch, österreichisch, klassiker, proteinreich, leicht
 - 4 Forellen #protein
 - 50 g Mehl
 - 60 g Butter
@@ -51,7 +51,7 @@ tags: fisch, österreichisch, klassiker
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: fisch
+tags: fisch, proteinreich, leicht, fettarm
 - 4 Zanderfilets #protein
 - 800 g Erdäpfel #beilage
 - 400 g Blattspinat
@@ -67,7 +67,7 @@ tags: fisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 20
-tags: fisch, schnell, günstig
+tags: fisch, schnell, günstig, proteinreich, fettarm
 - 400 g Penne #beilage
 - 2 Dosen Thunfisch #protein
 - 1 Dose gehackte Tomaten
@@ -84,7 +84,7 @@ tags: fisch, schnell, günstig
 mahlzeit: abend
 portionen: 4
 dauer: 15
-tags: fisch, schnell, spanisch
+tags: fisch, schnell, spanisch, proteinreich, leicht
 - 500 g Garnelen #protein
 - 4 Zehen Knoblauch
 - 6 EL Olivenöl
@@ -121,7 +121,7 @@ tags: fisch, klassiker
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: fisch, ofen, low carb
+tags: fisch, ofen, low carb, proteinreich, leicht
 - 4 Lachsfilets #protein
 - 2 Zucchini
 - 1 Paprika
@@ -139,7 +139,7 @@ tags: fisch, ofen, low carb
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: fisch, curry
+tags: fisch, curry, proteinreich
 - 600 g Kabeljaufilet #protein
 - 400 ml Kokosmilch
 - 2 EL Currypaste
@@ -174,7 +174,7 @@ tags: fisch, britisch
 mahlzeit: abend
 portionen: 2
 dauer: 15
-tags: fisch, salat, kalt, low carb
+tags: fisch, salat, kalt, low carb, proteinreich, leicht
 - 1 Dose Thunfisch #protein
 - 2 Eier
 - 1 Eisbergsalat

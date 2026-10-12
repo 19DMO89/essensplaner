@@ -4,7 +4,7 @@
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: mexikanisch, eintopf, scharf
+tags: mexikanisch, eintopf, scharf, proteinreich, ballaststoffreich
 - 500 g Rinderhackfleisch #protein
 - 1 Dose Kidneybohnen
 - 1 Dose Mais
@@ -45,7 +45,7 @@ tags: mexikanisch, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: mexikanisch, vegetarisch
+tags: mexikanisch, vegetarisch, ballaststoffreich, fettarm
 - 4 große Tortillas #beilage
 - 1 Dose schwarze Bohnen #protein
 - 150 g Reis
@@ -64,7 +64,7 @@ tags: mexikanisch, vegetarisch
 mahlzeit: mittag, abend, snack
 portionen: 4
 dauer: 25
-tags: mexikanisch, schnell, kinder
+tags: mexikanisch, schnell, kinder, proteinreich
 - 8 Tortillas #beilage
 - 400 g Hühnerbrust #protein
 - 200 g Cheddar
@@ -81,7 +81,7 @@ tags: mexikanisch, schnell, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 50
-tags: amerikanisch, kinder
+tags: amerikanisch, kinder, proteinreich, ballaststoffreich
 - 600 g Rinderhackfleisch #protein
 - 4 Burgerbrötchen
 - 4 Scheiben Cheddar
@@ -118,7 +118,7 @@ tags: amerikanisch, vegetarisch, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: balkan, grillen, fleisch
+tags: balkan, grillen, fleisch, proteinreich
 - 600 g Faschiertes #protein
 - 2 Zehen Knoblauch
 - 1 TL Paprikapulver
@@ -141,7 +141,7 @@ tags: balkan, grillen, fleisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: griechisch, fleisch
+tags: griechisch, fleisch, proteinreich
 - 600 g Schweinsschnitzel #protein
 - 1 Zwiebel
 - 2 TL Gyrosgewürz
@@ -180,7 +180,7 @@ tags: griechisch, ofen
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: orientalisch, vegan
+tags: orientalisch, vegan, ballaststoffreich
 - 2 Dosen Kichererbsen #protein
 - 1 Zwiebel
 - 2 Zehen Knoblauch
@@ -201,7 +201,7 @@ tags: orientalisch, vegan
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 20
-tags: orientalisch, kalt, vegan, salat
+tags: orientalisch, kalt, vegan, salat, ballaststoffreich, leicht, fettarm
 - 250 g Couscous #beilage
 - 300 ml Gemüsesuppe
 - 1 Gurke
@@ -221,7 +221,7 @@ tags: orientalisch, kalt, vegan, salat
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 50
-tags: spanisch, fisch
+tags: spanisch, fisch, proteinreich
 - 300 g Paellareis #beilage
 - 300 g Hühnerkeulen ohne Knochen #protein
 - 250 g Garnelen
@@ -243,7 +243,7 @@ tags: spanisch, fisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 50
-tags: französisch, vegan
+tags: französisch, vegan, leicht
 - 1 Melanzani
 - 2 Zucchini
 - 2 Paprika
@@ -262,7 +262,7 @@ tags: französisch, vegan
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: ofen, vegetarisch, mediterran
+tags: ofen, vegetarisch, mediterran, ballaststoffreich
 - 1 Süßkartoffel
 - 2 Zucchini
 - 2 Paprika
@@ -281,7 +281,7 @@ tags: ofen, vegetarisch, mediterran
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 50
-tags: ofen, low carb
+tags: ofen, low carb, proteinreich
 - 4 Zucchini
 - 400 g Faschiertes #protein
 - 1 Zwiebel
@@ -299,7 +299,7 @@ tags: ofen, low carb
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 70
-tags: ofen, einfach
+tags: ofen, einfach, leicht
 - 4 große Erdäpfel #beilage
 - 250 g Sauerrahm
 - 100 g Speck #protein
@@ -314,7 +314,7 @@ tags: ofen, einfach
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 75
-tags: britisch, ofen, fleisch
+tags: britisch, ofen, fleisch, ballaststoffreich
 - 500 g Lammfaschiertes #protein
 - 1 Zwiebel
 - 2 Karotten

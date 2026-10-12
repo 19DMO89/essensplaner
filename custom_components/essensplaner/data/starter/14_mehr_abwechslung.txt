@@ -4,7 +4,7 @@
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 75
-tags: österreichisch, kärnten, vegetarisch
+tags: österreichisch, kärnten, vegetarisch, fettarm
 - 400 g Mehl #beilage
 - 2 Eier
 - 150 ml Wasser
@@ -23,7 +23,7 @@ tags: österreichisch, kärnten, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: österreichisch, tirol, deftig, resteverwertung
+tags: österreichisch, tirol, deftig, resteverwertung, proteinreich, leicht
 - 800 g gekochte Erdäpfel #beilage
 - 300 g Schweinsbraten #protein
 - 2 Zwiebeln
@@ -41,7 +41,7 @@ tags: österreichisch, tirol, deftig, resteverwertung
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 90
-tags: österreichisch, ungarisch, deftig
+tags: österreichisch, ungarisch, deftig, proteinreich, ballaststoffreich
 - 700 g Schweinsschulter #protein
 - 600 g Sauerkraut
 - 2 Zwiebeln
@@ -60,7 +60,7 @@ tags: österreichisch, ungarisch, deftig
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: österreichisch, fleisch
+tags: österreichisch, fleisch, proteinreich
 - 4 Schweinsschnitzel #protein
 - 250 g Champignons
 - 200 ml Schlagobers
@@ -78,7 +78,7 @@ tags: österreichisch, fleisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: deutsch, fleisch
+tags: deutsch, fleisch, proteinreich
 - 4 Putenschnitzel #protein
 - 300 g Champignons
 - 1 Zwiebel
@@ -110,7 +110,7 @@ tags: österreichisch, deftig
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 120
-tags: österreichisch, ofen, grillen
+tags: österreichisch, ofen, grillen, proteinreich
 - 1,5 kg Schweinsripperl #protein
 - 3 Zehen Knoblauch
 - 2 EL Honig
@@ -127,7 +127,7 @@ tags: österreichisch, ofen, grillen
 mahlzeit: mittag
 portionen: 4
 dauer: 90
-tags: österreichisch, klassiker
+tags: österreichisch, klassiker, proteinreich
 - 800 g Kalbsschulter #protein
 - 2 Zwiebeln
 - 1 EL Paprikapulver
@@ -145,7 +145,7 @@ tags: österreichisch, klassiker
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: österreichisch, ungarisch, klassiker
+tags: österreichisch, ungarisch, klassiker, proteinreich
 - 1 kg Hühnerteile #protein
 - 2 Zwiebeln
 - 2 EL Paprikapulver
@@ -164,7 +164,7 @@ tags: österreichisch, ungarisch, klassiker
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 90
-tags: indisch, curry, fleisch
+tags: indisch, curry, fleisch, proteinreich
 - 700 g Lammschulter #protein
 - 2 Zwiebeln
 - 3 Zehen Knoblauch
@@ -183,7 +183,7 @@ tags: indisch, curry, fleisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: italienisch, schnell
+tags: italienisch, schnell, proteinreich
 - 400 g Penne #beilage
 - 400 g Hühnerbrust #protein
 - 200 g Blattspinat
@@ -200,7 +200,7 @@ tags: italienisch, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: italienisch, fisch, schnell
+tags: italienisch, fisch, schnell, proteinreich, fettarm
 - 400 g Spaghetti #beilage
 - 300 g Garnelen #protein
 - 2 Zucchini
@@ -217,7 +217,7 @@ tags: italienisch, fisch, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: italienisch, vegetarisch, herbst
+tags: italienisch, vegetarisch, herbst, leicht, fettarm
 - 300 g Risottoreis #beilage
 - 500 g Hokkaidokürbis
 - 1 Zwiebel
@@ -235,7 +235,7 @@ tags: italienisch, vegetarisch, herbst
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: italienisch, vegetarisch, frühling
+tags: italienisch, vegetarisch, frühling, leicht, fettarm
 - 300 g Risottoreis #beilage
 - 500 g grüner Spargel
 - 150 g Erbsen
@@ -253,7 +253,7 @@ tags: italienisch, vegetarisch, frühling
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: asiatisch, grillen
+tags: asiatisch, grillen, proteinreich
 - 600 g Hühnerbrust #protein
 - 2 EL Sojasauce
 - 1 TL Kurkuma
@@ -271,7 +271,7 @@ tags: asiatisch, grillen
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: japanisch, asiatisch, kinder
+tags: japanisch, asiatisch, kinder, proteinreich
 - 500 g Hühnerkeulen ohne Knochen #protein
 - 2 Erdäpfel
 - 2 Karotten
@@ -288,7 +288,7 @@ tags: japanisch, asiatisch, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: vietnamesisch, suppe, asiatisch
+tags: vietnamesisch, suppe, asiatisch, proteinreich, leicht, fettarm
 - 400 g Rinderhüfte #protein
 - 300 g Reisbandnudeln #beilage
 - 1,5 l Rindsuppe
@@ -308,7 +308,7 @@ tags: vietnamesisch, suppe, asiatisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: japanisch, asiatisch, vegetarisch
+tags: japanisch, asiatisch, vegetarisch, ballaststoffreich, fettarm
 - 600 g Udon-Nudeln #beilage
 - 2 Karotten
 - 1 Paprika
@@ -326,7 +326,7 @@ tags: japanisch, asiatisch, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 50
-tags: mexikanisch, ofen
+tags: mexikanisch, ofen, proteinreich, ballaststoffreich
 - 8 Tortillas #beilage
 - 500 g Hühnerbrust #protein
 - 1 Dose schwarze Bohnen
@@ -345,7 +345,7 @@ tags: mexikanisch, ofen
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: mexikanisch, schnell
+tags: mexikanisch, schnell, proteinreich, ballaststoffreich
 - 600 g Hühnerbrust #protein
 - 3 Paprika
 - 1 Zwiebel
@@ -364,7 +364,7 @@ tags: mexikanisch, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: orientalisch, bowl
+tags: orientalisch, bowl, proteinreich
 - 600 g Hühnerkeulen ohne Knochen #protein
 - 2 TL Shawarma-Gewürz
 - 3 EL Olivenöl
@@ -383,7 +383,7 @@ tags: orientalisch, bowl
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: türkisch, grillen
+tags: türkisch, grillen, proteinreich
 - 600 g Lammfaschiertes #protein
 - 1 Zwiebel
 - 1 Bund Petersilie
@@ -402,7 +402,7 @@ tags: türkisch, grillen
 mahlzeit: abend, snack
 portionen: 4
 dauer: 30
-tags: ofen, vegetarisch, party
+tags: ofen, vegetarisch, party, leicht, fettarm
 - 16 große Champignons
 - 250 g Topfen #protein
 - 1 Zehe Knoblauch
@@ -437,7 +437,7 @@ tags: ofen, vegetarisch, klassiker
 mahlzeit: mittag, abend
 portionen: 6
 dauer: 60
-tags: französisch, ofen
+tags: französisch, ofen, low carb
 - 1 Pkg Mürbteig #beilage
 - 200 g Speck #protein
 - 3 Eier
@@ -472,7 +472,7 @@ tags: kinder, klassiker
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: curry, fisch, asiatisch
+tags: curry, fisch, asiatisch, proteinreich
 - 500 g Garnelen #protein
 - 400 ml Kokosmilch
 - 2 EL gelbe Currypaste
@@ -489,7 +489,7 @@ tags: curry, fisch, asiatisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: fisch, ofen
+tags: fisch, ofen, proteinreich, leicht, fettarm
 - 4 Lachsforellenfilets #protein
 - 50 g Semmelbrösel
 - 40 g Butter
@@ -524,7 +524,7 @@ tags: österreichisch, jause
 mahlzeit: frühstück
 portionen: 2
 dauer: 20
-tags: süß, glutenfrei, vegetarisch
+tags: süß, glutenfrei, vegetarisch, ballaststoffreich
 - 120 g Buchweizenmehl #beilage
 - 1 Ei
 - 200 ml Milch
@@ -540,7 +540,7 @@ tags: süß, glutenfrei, vegetarisch
 mahlzeit: frühstück, snack
 portionen: 2
 dauer: 5
-tags: süß, schnell, vegetarisch
+tags: süß, schnell, vegetarisch, leicht
 - 300 g Naturjoghurt #protein
 - 1 Mango
 - 40 g Granola #beilage
@@ -551,7 +551,7 @@ tags: süß, schnell, vegetarisch
 mahlzeit: frühstück, snack
 portionen: 6
 dauer: 30
-tags: herzhaft, vorbereiten, vegetarisch, low carb
+tags: herzhaft, vorbereiten, vegetarisch, low carb, proteinreich, leicht
 - 8 Eier #protein
 - 1 Paprika
 - 100 g Blattspinat
@@ -595,7 +595,7 @@ tags: österreichisch, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: süß, österreichisch, vegetarisch
+tags: süß, österreichisch, vegetarisch, ballaststoffreich, leicht
 - 600 g Erdäpfelteig #beilage
 - 80 g Butter
 - 100 g gemahlener Mohn
@@ -609,7 +609,7 @@ tags: süß, österreichisch, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: suppe, österreichisch
+tags: suppe, österreichisch, proteinreich, low carb, leicht
 - 500 g Hühnerkeulen #protein
 - 2 Karotten
 - 100 g Sellerie
@@ -628,7 +628,7 @@ tags: suppe, österreichisch
 mahlzeit: frühstück, abend
 portionen: 2
 dauer: 15
-tags: gesund, kalt, vegetarisch
+tags: gesund, kalt, vegetarisch, ballaststoffreich
 - 4 Eier #protein
 - 1 Avocado
 - 1 TL Zitronensaft

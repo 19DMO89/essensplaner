@@ -63,7 +63,7 @@ tags: österreichisch, klassiker
 mahlzeit: mittag
 portionen: 4
 dauer: 180
-tags: österreichisch, klassiker, fleisch
+tags: österreichisch, klassiker, fleisch, proteinreich
 - 1,2 kg Tafelspitz #protein
 - 2 Karotten
 - 1 Petersilienwurzel
@@ -84,7 +84,7 @@ tags: österreichisch, klassiker, fleisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 150
-tags: österreichisch, klassiker, fleisch, deftig
+tags: österreichisch, klassiker, fleisch, deftig, proteinreich
 - 1 kg Rindswadschinken #protein
 - 1 kg Zwiebeln
 - 3 EL Paprikapulver
@@ -105,7 +105,7 @@ tags: österreichisch, klassiker, fleisch, deftig
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: österreichisch, beilage, vegetarisch
+tags: österreichisch, beilage, vegetarisch, leicht
 - 250 g Knödelbrot #beilage
 - 250 ml Milch
 - 3 Eier
@@ -121,7 +121,7 @@ tags: österreichisch, beilage, vegetarisch
 mahlzeit: mittag
 portionen: 4
 dauer: 150
-tags: österreichisch, klassiker, fleisch, sonntag
+tags: österreichisch, klassiker, fleisch, sonntag, proteinreich
 - 1,2 kg Schweinsschulter #protein
 - 3 Zehen Knoblauch
 - 1 EL Kümmel
@@ -158,7 +158,7 @@ tags: österreichisch, fleisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 75
-tags: österreichisch, fleisch, kinder
+tags: österreichisch, fleisch, kinder, proteinreich
 - 600 g Faschiertes #protein
 - 1 Semmel
 - 1 Ei
@@ -203,7 +203,7 @@ tags: österreichisch, fleisch, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: österreichisch, klassiker, fleisch
+tags: österreichisch, klassiker, fleisch, proteinreich
 - 4 Scheiben Beiried #protein
 - 3 Zwiebeln
 - 2 EL Mehl
@@ -221,7 +221,7 @@ tags: österreichisch, klassiker, fleisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: österreichisch, vegetarisch, günstig
+tags: österreichisch, vegetarisch, günstig, ballaststoffreich, fettarm
 - 400 g Fleckerl #beilage
 - 800 g Weißkraut
 - 1 Zwiebel
@@ -288,7 +288,7 @@ tags: vegetarisch, deftig, österreichisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: österreichisch, günstig, eintopf
+tags: österreichisch, günstig, eintopf, leicht
 - 1 kg speckige Erdäpfel #beilage
 - 4 Frankfurter #protein
 - 2 Zwiebeln
@@ -357,7 +357,7 @@ tags: österreichisch, schnell, deftig
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: deftig, schnell, fleisch
+tags: deftig, schnell, fleisch, ballaststoffreich
 - 8 Bratwürstel #protein
 - 500 g Sauerkraut
 - 1 Zwiebel
@@ -375,7 +375,7 @@ tags: deftig, schnell, fleisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: deutsch, klassiker, kinder
+tags: deutsch, klassiker, kinder, proteinreich
 - 600 g Hühnerbrust #protein
 - 200 g Champignons
 - 150 g Erbsen
@@ -395,7 +395,7 @@ tags: deutsch, klassiker, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 50
-tags: schwäbisch, deftig
+tags: schwäbisch, deftig, ballaststoffreich
 - 300 g Tellerlinsen #protein
 - 1 Karotte
 - 100 g Sellerie
@@ -415,7 +415,7 @@ tags: schwäbisch, deftig
 mahlzeit: mittag
 portionen: 4
 dauer: 120
-tags: deutsch, klassiker, fleisch, sonntag
+tags: deutsch, klassiker, fleisch, sonntag, proteinreich
 - 4 Rindsrouladen #protein
 - 4 TL Senf
 - 4 Scheiben Speck
@@ -436,7 +436,7 @@ tags: deutsch, klassiker, fleisch, sonntag
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 90
-tags: deftig, fleisch
+tags: deftig, fleisch, proteinreich, leicht
 - 1 Weißkraut
 - 500 g Faschiertes #protein
 - 100 g Reis #beilage
@@ -455,7 +455,7 @@ tags: deftig, fleisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: deutsch, klassiker, fleisch
+tags: deutsch, klassiker, fleisch, proteinreich
 - 600 g Faschiertes #protein
 - 1 Semmel
 - 1 Ei
@@ -476,7 +476,7 @@ tags: deutsch, klassiker, fleisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 75
-tags: österreichisch, fleisch, klassiker
+tags: österreichisch, fleisch, klassiker, proteinreich, ballaststoffreich
 - 8 grüne Paprika
 - 500 g Faschiertes #protein
 - 120 g Reis #beilage
@@ -514,7 +514,7 @@ tags: österreichisch, vegetarisch, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: österreichisch, vegetarisch, saison
+tags: österreichisch, vegetarisch, saison, leicht
 - 500 g Eierschwammerl
 - 1 Zwiebel
 - 250 ml Schlagobers
@@ -531,7 +531,7 @@ tags: österreichisch, vegetarisch, saison
 mahlzeit: mittag
 portionen: 4
 dauer: 120
-tags: österreichisch, fleisch, steirisch
+tags: österreichisch, fleisch, steirisch, proteinreich, ballaststoffreich
 - 1 kg Schweinsschulter #protein
 - 3 Karotten
 - 2 Gelbe Rüben

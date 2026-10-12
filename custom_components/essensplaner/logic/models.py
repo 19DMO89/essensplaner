@@ -102,6 +102,8 @@ class Profile:
     unknown_ingredients: str = UNKNOWN_EXCLUDE
     # Ausgeschlossene Zutatengruppen (Fleischsorten, Allergene), siehe groups.py
     excluded_groups: list[str] = field(default_factory=list)
+    # Bevorzugte Ernährungsrichtungen beim Planen (proteinreich, …), siehe nutrition.py
+    directions: list[str] = field(default_factory=list)
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> Profile:
@@ -121,6 +123,7 @@ class Profile:
             max_duration=int(max_duration) if max_duration else None,
             unknown_ingredients=mode if mode in UNKNOWN_MODES else UNKNOWN_EXCLUDE,
             excluded_groups=_str_list(data.get("excluded_groups")),
+            directions=_str_list(data.get("directions")),
         )
 
     def to_dict(self) -> dict[str, Any]:

@@ -4,7 +4,7 @@
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: gesund, bowl, fisch
+tags: gesund, bowl, fisch, proteinreich, ballaststoffreich
 - 150 g Quinoa #beilage
 - 2 Lachsfilets #protein
 - 1 Avocado
@@ -22,7 +22,7 @@ tags: gesund, bowl, fisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: gesund, curry, vegan
+tags: gesund, curry, vegan, ballaststoffreich
 - 250 g rote Linsen #protein
 - 300 g Blattspinat
 - 1 Zwiebel
@@ -42,7 +42,7 @@ tags: gesund, curry, vegan
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 15
-tags: gesund, salat, kalt, vegetarisch
+tags: gesund, salat, kalt, vegetarisch, ballaststoffreich
 - 1 Dose Kichererbsen #protein
 - 1 Gurke
 - 200 g Kirschtomaten
@@ -60,7 +60,7 @@ tags: gesund, salat, kalt, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 20
-tags: gesund, schnell, vegetarisch
+tags: gesund, schnell, vegetarisch, ballaststoffreich
 - 400 g Vollkornnudeln #beilage
 - 2 Brokkoli
 - 40 g Pinienkerne
@@ -76,7 +76,7 @@ tags: gesund, schnell, vegetarisch
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 35
-tags: gesund, ofen, fisch
+tags: gesund, ofen, fisch, ballaststoffreich
 - 2 Lachsfilets #protein
 - 2 Süßkartoffeln #beilage
 - 250 g Fisolen
@@ -90,7 +90,7 @@ tags: gesund, ofen, fisch
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 40
-tags: gesund, ofen
+tags: gesund, ofen, proteinreich, fettarm
 - 300 g Hühnerbrust #protein
 - 120 g Quinoa #beilage
 - 1 Zucchini
@@ -107,7 +107,7 @@ tags: gesund, ofen
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: gesund, salat, kalt, vegan, orientalisch
+tags: gesund, salat, kalt, vegan, orientalisch, leicht
 - 150 g Bulgur #beilage
 - 2 Bund Petersilie
 - 1 Bund Minze
@@ -125,7 +125,7 @@ tags: gesund, salat, kalt, vegan, orientalisch
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 55
-tags: gesund, ofen, vegetarisch
+tags: gesund, ofen, vegetarisch, ballaststoffreich
 - 2 Süßkartoffeln #beilage
 - 1 Dose schwarze Bohnen #protein
 - 1 Dose Mais
@@ -141,7 +141,7 @@ tags: gesund, ofen, vegetarisch
 mahlzeit: frühstück, abend
 portionen: 2
 dauer: 25
-tags: gesund, vegetarisch
+tags: gesund, vegetarisch, proteinreich, low carb, leicht
 - 4 Eier #protein
 - 200 g Blattspinat
 - 1 Zucchini
@@ -158,7 +158,7 @@ tags: gesund, vegetarisch
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: gesund, vegan, glutenfrei
+tags: gesund, vegan, glutenfrei, ballaststoffreich
 - 120 g Hirse #beilage
 - 1 Paprika
 - 1 Zucchini
@@ -175,7 +175,7 @@ tags: gesund, vegan, glutenfrei
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: gesund, suppe, vegan
+tags: gesund, suppe, vegan, ballaststoffreich, leicht, fettarm
 - 2 Dosen Kichererbsen #protein
 - 1 Zwiebel
 - 1 Zehe Knoblauch
@@ -194,7 +194,7 @@ tags: gesund, suppe, vegan
 mahlzeit: frühstück
 portionen: 2
 dauer: 5
-tags: gesund, süß, vorbereiten, vegetarisch
+tags: gesund, süß, vorbereiten, vegetarisch, ballaststoffreich
 - 100 g Haferflocken #beilage
 - 250 g Naturjoghurt
 - 100 ml Milch
@@ -208,7 +208,7 @@ tags: gesund, süß, vorbereiten, vegetarisch
 mahlzeit: frühstück, abend
 portionen: 2
 dauer: 5
-tags: gesund, schnell, kalt, vegetarisch
+tags: gesund, schnell, kalt, vegetarisch, leicht, fettarm
 - 4 Scheiben Vollkornbrot #beilage
 - 200 g Hüttenkäse #protein
 - 1 Bund Radieschen
@@ -233,7 +233,7 @@ tags: gesund, süß, schnell, vegetarisch
 mahlzeit: frühstück, mittag, abend
 portionen: 4
 dauer: 35
-tags: gesund, ofen, vegetarisch, low carb
+tags: gesund, ofen, vegetarisch, low carb, leicht
 - 8 Eier #protein
 - 1 Zucchini
 - 1 Paprika
@@ -250,7 +250,7 @@ tags: gesund, ofen, vegetarisch, low carb
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: gesund, bowl, vegan, asiatisch
+tags: gesund, bowl, vegan, asiatisch, ballaststoffreich
 - 200 g Tofu #protein
 - 150 g Naturreis #beilage
 - 1 Karotte
@@ -268,7 +268,7 @@ tags: gesund, bowl, vegan, asiatisch
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 10
-tags: gesund, salat, kalt, fisch
+tags: gesund, salat, kalt, fisch, proteinreich, ballaststoffreich, leicht, fettarm
 - 1 Dose Thunfisch #protein
 - 1 Dose weiße Bohnen
 - 0,5 rote Zwiebel
@@ -285,7 +285,7 @@ tags: gesund, salat, kalt, fisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: gesund, curry, vegan
+tags: gesund, curry, vegan, ballaststoffreich
 - 2 Süßkartoffeln
 - 200 g rote Linsen #protein
 - 400 ml Kokosmilch
@@ -303,7 +303,7 @@ tags: gesund, curry, vegan
 mahlzeit: abend
 portionen: 2
 dauer: 15
-tags: gesund, salat, kalt, vegetarisch
+tags: gesund, salat, kalt, vegetarisch, ballaststoffreich
 - 400 g gekochte Rote Rüben
 - 100 g Ziegenkäse #protein
 - 50 g Rucola
@@ -321,7 +321,7 @@ tags: gesund, salat, kalt, vegetarisch
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 15
-tags: gesund, schnell, vegan
+tags: gesund, schnell, vegan, ballaststoffreich
 - 4 Vollkorn-Tortillas #beilage
 - 200 g Hummus #protein
 - 1 Karotte
@@ -335,7 +335,7 @@ tags: gesund, schnell, vegan
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: gesund, vegetarisch
+tags: gesund, vegetarisch, leicht
 - 2 Zucchini
 - 2 Eier #protein
 - 4 EL Vollkornmehl #beilage
@@ -352,7 +352,7 @@ tags: gesund, vegetarisch
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 35
-tags: gesund, ofen, vegan, orientalisch
+tags: gesund, ofen, vegan, orientalisch, ballaststoffreich
 - 1 Karfiol
 - 1 Dose Kichererbsen #protein
 - 2 EL Olivenöl
@@ -386,7 +386,7 @@ tags: gesund, fisch, schnell
 mahlzeit: frühstück
 portionen: 2
 dauer: 10
-tags: gesund, süß, vegetarisch
+tags: gesund, süß, vegetarisch, ballaststoffreich
 - 100 g Haferflocken #beilage
 - 400 ml Milch
 - 150 g Beeren
@@ -399,7 +399,7 @@ tags: gesund, süß, vegetarisch
 mahlzeit: frühstück, snack
 portionen: 2
 dauer: 5
-tags: gesund, schnell, vegan
+tags: gesund, schnell, vegan, ballaststoffreich, leicht, fettarm
 - 2 Bananen
 - 100 g Babyspinat
 - 1 Apfel
@@ -412,7 +412,7 @@ tags: gesund, schnell, vegan
 mahlzeit: snack
 portionen: 1
 dauer: 3
-tags: gesund, schnell, vegetarisch
+tags: gesund, schnell, vegetarisch, proteinreich, leicht
 - 200 g Hüttenkäse #protein
 - 1 Apfel
 - 1 Prise Zimt
@@ -422,7 +422,7 @@ tags: gesund, schnell, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: gesund, vegetarisch
+tags: gesund, vegetarisch, leicht
 - 150 g Vollkornmehl #beilage
 - 3 Eier
 - 300 ml Milch
@@ -439,7 +439,7 @@ tags: gesund, vegetarisch
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 25
-tags: gesund, vegan, glutenfrei
+tags: gesund, vegan, glutenfrei, ballaststoffreich, leicht
 - 150 g Buchweizen #beilage
 - 300 g Champignons
 - 1 Zwiebel
@@ -454,7 +454,7 @@ tags: gesund, vegan, glutenfrei
 mahlzeit: abend
 portionen: 2
 dauer: 15
-tags: gesund, suppe, japanisch, vegan
+tags: gesund, suppe, japanisch, vegan, leicht, fettarm
 - 800 ml Wasser
 - 2 EL Misopaste
 - 150 g Seidentofu #protein
@@ -469,7 +469,7 @@ tags: gesund, suppe, japanisch, vegan
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 20
-tags: gesund, salat, asiatisch, vegan
+tags: gesund, salat, asiatisch, vegan, ballaststoffreich, leicht, fettarm
 - 180 g Soba-Nudeln #beilage
 - 150 g Edamame #protein
 - 1 Karotte
@@ -486,7 +486,7 @@ tags: gesund, salat, asiatisch, vegan
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 35
-tags: gesund, fisch, ofen
+tags: gesund, fisch, ofen, proteinreich, leicht, fettarm
 - 2 Forellen #protein
 - 500 g kleine Erdäpfel #beilage
 - 1 Zucchini
@@ -502,7 +502,7 @@ tags: gesund, fisch, ofen
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 20
-tags: gesund, salat, sommer
+tags: gesund, salat, sommer, proteinreich, ballaststoffreich
 - 300 g Putenbrust #protein
 - 250 g Erdbeeren
 - 100 g Rucola
@@ -519,7 +519,7 @@ tags: gesund, salat, sommer
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: gesund, vegetarisch, kinder
+tags: gesund, vegetarisch, kinder, leicht
 - 200 g Haferflocken #beilage
 - 300 ml Gemüsesuppe
 - 2 Karotten
@@ -536,7 +536,7 @@ tags: gesund, vegetarisch, kinder
 mahlzeit: snack
 portionen: 12
 dauer: 15
-tags: gesund, süß, vegan, vorbereiten
+tags: gesund, süß, vegan, vorbereiten, low carb, leicht
 - 150 g Datteln
 - 100 g Haferflocken #beilage
 - 50 g Mandeln
@@ -549,7 +549,7 @@ tags: gesund, süß, vegan, vorbereiten
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: gesund, salat, vegetarisch
+tags: gesund, salat, vegetarisch, proteinreich, ballaststoffreich
 - 150 g Berglinsen #protein
 - 2 Eier
 - 1 Paprika
@@ -567,7 +567,7 @@ tags: gesund, salat, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 55
-tags: gesund, ofen
+tags: gesund, ofen, proteinreich, ballaststoffreich
 - 8 Hühnerkeulen #protein
 - 2 Süßkartoffeln #beilage
 - 1 Brokkoli

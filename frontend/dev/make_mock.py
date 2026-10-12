@@ -19,6 +19,7 @@ from logic.compat import check_dish  # noqa: E402
 from logic.groups import GROUPS, in_group  # noqa: E402
 from logic.ingredients import ingredient_overview  # noqa: E402
 from logic.models import Dish, Profile, plan_to_dict  # noqa: E402
+from logic.nutrition import DIRECTION_TAGS, DIRECTIONS, TAG_ALIASES  # noqa: E402
 from logic.planner import Planner, shared_base  # noqa: E402
 from logic.shopping import build_shopping_list  # noqa: E402
 from logic.starter import parse_dish_file  # noqa: E402
@@ -90,6 +91,10 @@ mock = {
         "shopping_list": "todo.einkaufsliste",
         "groups": [g.to_dict() for g in GROUPS.values()],
         "alternatives": 1,
+        "directions": [
+            {"id": d, "tag": DIRECTION_TAGS[d], "aliases": [a for a, t in TAG_ALIASES.items() if t == d]}
+            for d in DIRECTIONS
+        ],
     },
     "compat": {d.id: {p.id: check_dish(d, p).status for p in profiles} for d in dishes},
     "checks": {d.id: {p.id: check_dish(d, p).to_dict() for p in profiles} for d in dishes},

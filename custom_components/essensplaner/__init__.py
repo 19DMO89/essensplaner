@@ -37,6 +37,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: EssensplanerConfigEntry)
     await manager.async_load()
     entry.runtime_data = manager
     await manager.async_initialize()
+    await manager.async_add_direction_tags()
     entry.async_on_unload(manager.async_start())
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     await async_register_panel(hass)

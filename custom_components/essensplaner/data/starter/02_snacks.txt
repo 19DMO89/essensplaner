@@ -4,7 +4,7 @@
 mahlzeit: snack
 portionen: 1
 dauer: 3
-tags: süß, schnell, vegan
+tags: süß, schnell, vegan, leicht
 - 1 Apfel
 - 1 EL Erdnussbutter
 1. Apfel in Spalten schneiden und mit Erdnussbutter servieren.
@@ -13,7 +13,7 @@ tags: süß, schnell, vegan
 mahlzeit: snack
 portionen: 2
 dauer: 10
-tags: herzhaft, schnell, vegan
+tags: herzhaft, schnell, vegan, ballaststoffreich, leicht
 - 2 Karotten
 - 1 Gurke
 - 1 Paprika
@@ -24,7 +24,7 @@ tags: herzhaft, schnell, vegan
 mahlzeit: snack
 portionen: 4
 dauer: 10
-tags: herzhaft, vegan, orientalisch
+tags: herzhaft, vegan, orientalisch, low carb, leicht
 - 1 Dose Kichererbsen #protein
 - 2 EL Tahini
 - 1 Zehe Knoblauch
@@ -39,7 +39,7 @@ tags: herzhaft, vegan, orientalisch
 mahlzeit: snack, frühstück
 portionen: 4
 dauer: 15
-tags: süß, vegan
+tags: süß, vegan, ballaststoffreich, leicht, fettarm
 - 2 Äpfel
 - 2 Bananen
 - 2 Orangen
@@ -52,7 +52,7 @@ tags: süß, vegan
 mahlzeit: snack
 portionen: 1
 dauer: 5
-tags: herzhaft, schnell, vegetarisch
+tags: herzhaft, schnell, vegetarisch, proteinreich, leicht, fettarm
 - 3 Reiswaffeln #beilage
 - 80 g Topfen #protein
 - 0,5 Gurke
@@ -63,7 +63,7 @@ tags: herzhaft, schnell, vegetarisch
 mahlzeit: snack, frühstück
 portionen: 10
 dauer: 70
-tags: süß, backen, vegetarisch
+tags: süß, backen, vegetarisch, leicht
 - 3 Bananen
 - 2 Eier
 - 80 g Butter
@@ -79,7 +79,7 @@ tags: süß, backen, vegetarisch
 mahlzeit: snack
 portionen: 2
 dauer: 5
-tags: herzhaft, schnell, kalt, vegetarisch
+tags: herzhaft, schnell, kalt, vegetarisch, proteinreich
 - 150 g Käse #protein
 - 200 g Weintrauben
 - 4 Cracker #beilage
@@ -89,7 +89,7 @@ tags: herzhaft, schnell, kalt, vegetarisch
 mahlzeit: snack, abend
 portionen: 4
 dauer: 15
-tags: herzhaft, vegan, italienisch
+tags: herzhaft, vegan, italienisch, leicht
 - 1 Baguette #beilage
 - 4 Tomaten
 - 1 Zehe Knoblauch
@@ -104,7 +104,7 @@ tags: herzhaft, vegan, italienisch
 mahlzeit: snack
 portionen: 4
 dauer: 20
-tags: herzhaft, kalt, vegetarisch, party
+tags: herzhaft, kalt, vegetarisch, party, low carb, leicht
 - 6 Eier #protein
 - 2 EL Mayonnaise
 - 1 TL Senf
@@ -118,7 +118,7 @@ tags: herzhaft, kalt, vegetarisch, party
 mahlzeit: snack
 portionen: 4
 dauer: 10
-tags: herzhaft, vegan, mexikanisch, party
+tags: herzhaft, vegan, mexikanisch, party, ballaststoffreich
 - 2 Avocados
 - 1 Tomate
 - 0,5 Zwiebel
@@ -132,7 +132,7 @@ tags: herzhaft, vegan, mexikanisch, party
 mahlzeit: snack, abend
 portionen: 4
 dauer: 10
-tags: herzhaft, vegetarisch, österreichisch
+tags: herzhaft, vegetarisch, österreichisch, low carb, leicht
 - 250 g Topfen #protein
 - 50 g Butter
 - 1 EL Paprikapulver
@@ -150,7 +150,7 @@ tags: herzhaft, vegetarisch, österreichisch
 mahlzeit: snack
 portionen: 12
 dauer: 40
-tags: süß, backen, vegetarisch, kinder
+tags: süß, backen, vegetarisch, kinder, leicht
 - 250 g Mehl #beilage
 - 120 g Zucker
 - 2 Eier
@@ -166,7 +166,7 @@ tags: süß, backen, vegetarisch, kinder
 mahlzeit: snack
 portionen: 2
 dauer: 10
-tags: herzhaft, schnell, vegan, asiatisch
+tags: herzhaft, schnell, vegan, asiatisch, proteinreich, ballaststoffreich, low carb, leicht
 - 300 g Edamame #protein
 - 1 TL Meersalz
 1. Edamame 5 Minuten in Salzwasser kochen, abgießen und mit Meersalz bestreuen.
@@ -175,7 +175,7 @@ tags: herzhaft, schnell, vegan, asiatisch
 mahlzeit: snack
 portionen: 2
 dauer: 10
-tags: schnell, vegan, kinder
+tags: schnell, vegan, kinder, leicht
 - 60 g Popcornmais #beilage
 - 1 EL Öl
 - 1 Prise Salz
@@ -202,7 +202,7 @@ tags: herzhaft, vegetarisch, griechisch
 mahlzeit: snack
 portionen: 1
 dauer: 3
-tags: süß, schnell, vegetarisch
+tags: süß, schnell, vegetarisch, low carb, leicht
 - 150 g Naturjoghurt #protein
 - 30 g Studentenfutter
 - 1 TL Honig

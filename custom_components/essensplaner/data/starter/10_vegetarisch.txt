@@ -4,7 +4,7 @@
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: vegetarisch, kinder
+tags: vegetarisch, kinder, leicht
 - 2 Zucchini
 - 2 Karotten
 - 2 Erdäpfel #beilage
@@ -63,7 +63,7 @@ tags: vegetarisch, ofen
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: vegan, italienisch, günstig
+tags: vegan, italienisch, günstig, ballaststoffreich, fettarm
 - 200 g rote Linsen #protein
 - 400 g Spaghetti #beilage
 - 1 Zwiebel
@@ -98,7 +98,7 @@ tags: vegetarisch, klassiker
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: resteverwertung, schnell
+tags: resteverwertung, schnell, leicht
 - 8 Eier #protein
 - 600 g gekochte Erdäpfel #beilage
 - 1 Zwiebel
@@ -115,7 +115,7 @@ tags: resteverwertung, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: vegetarisch, ofen, österreichisch
+tags: vegetarisch, ofen, österreichisch, leicht
 - 1 Pkg Blätterteig #beilage
 - 2 Karotten
 - 1 Zucchini
@@ -133,7 +133,7 @@ tags: vegetarisch, ofen, österreichisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: vegetarisch, italienisch
+tags: vegetarisch, italienisch, leicht
 - 250 g Polenta #beilage
 - 1 l Gemüsesuppe
 - 50 g Parmesan
@@ -151,7 +151,7 @@ tags: vegetarisch, italienisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: vegetarisch, ofen, mediterran
+tags: vegetarisch, ofen, mediterran, leicht
 - 4 rote Paprika
 - 150 g Couscous #beilage
 - 200 g Feta #protein
@@ -168,7 +168,7 @@ tags: vegetarisch, ofen, mediterran
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: vegan, bowl
+tags: vegan, bowl, ballaststoffreich
 - 2 Süßkartoffeln
 - 1 Dose Kichererbsen #protein
 - 200 g Quinoa #beilage
@@ -188,7 +188,7 @@ tags: vegan, bowl
 mahlzeit: mittag, abend
 portionen: 6
 dauer: 60
-tags: vegetarisch, ofen
+tags: vegetarisch, ofen, low carb, leicht
 - 1 Pkg Mürbteig #beilage
 - 300 g Blattspinat
 - 200 g Feta #protein
@@ -205,7 +205,7 @@ tags: vegetarisch, ofen
 mahlzeit: abend
 portionen: 2
 dauer: 20
-tags: vegan, low carb, schnell
+tags: vegan, low carb, schnell, ballaststoffreich, leicht
 - 3 Zucchini
 - 1 Dose gehackte Tomaten
 - 1 Zehe Knoblauch
@@ -221,7 +221,7 @@ tags: vegan, low carb, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: vegan, schnell, günstig
+tags: vegan, schnell, günstig, leicht, fettarm
 - 250 g Reis #beilage
 - 1 Zucchini
 - 1 Paprika
@@ -240,7 +240,7 @@ tags: vegan, schnell, günstig
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: vegetarisch, auflauf, ofen
+tags: vegetarisch, auflauf, ofen, ballaststoffreich
 - 1 kg Erdäpfel #beilage
 - 1 Brokkoli
 - 250 ml Schlagobers
@@ -257,7 +257,7 @@ tags: vegetarisch, auflauf, ofen
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: vegetarisch, schnell
+tags: vegetarisch, schnell, leicht
 - 600 g Champignons
 - 1 Zwiebel
 - 1 EL Paprikapulver

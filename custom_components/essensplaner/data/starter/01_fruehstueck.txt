@@ -13,7 +13,7 @@
 mahlzeit: frühstück
 portionen: 2
 dauer: 10
-tags: süß, schnell, vegetarisch
+tags: süß, schnell, vegetarisch, ballaststoffreich
 - 100 g Haferflocken #beilage
 - 400 ml Milch
 - 1 Banane
@@ -26,7 +26,7 @@ tags: süß, schnell, vegetarisch
 mahlzeit: frühstück
 portionen: 2
 dauer: 5
-tags: süß, vorbereiten, vegetarisch
+tags: süß, vorbereiten, vegetarisch, ballaststoffreich
 - 100 g Haferflocken #beilage
 - 200 g Naturjoghurt
 - 150 ml Milch
@@ -40,7 +40,7 @@ tags: süß, vorbereiten, vegetarisch
 mahlzeit: frühstück
 portionen: 2
 dauer: 5
-tags: süß, schnell, vegetarisch
+tags: süß, schnell, vegetarisch, ballaststoffreich
 - 100 g Müsli #beilage
 - 300 g Naturjoghurt
 - 1 Apfel
@@ -51,7 +51,7 @@ tags: süß, schnell, vegetarisch
 mahlzeit: frühstück
 portionen: 2
 dauer: 10
-tags: süß, vorbereiten, vegetarisch
+tags: süß, vorbereiten, vegetarisch, ballaststoffreich
 - 80 g Haferflocken #beilage
 - 150 ml Apfelsaft
 - 150 g Naturjoghurt
@@ -66,7 +66,7 @@ tags: süß, vorbereiten, vegetarisch
 mahlzeit: frühstück
 portionen: 2
 dauer: 10
-tags: herzhaft, schnell, vegetarisch
+tags: herzhaft, schnell, vegetarisch, proteinreich, leicht
 - 4 Eier #protein
 - 2 EL Milch
 - 1 TL Butter
@@ -82,7 +82,7 @@ tags: herzhaft, schnell, vegetarisch
 mahlzeit: frühstück
 portionen: 2
 dauer: 10
-tags: herzhaft, schnell
+tags: herzhaft, schnell, proteinreich
 - 4 Eier #protein
 - 80 g Frühstücksspeck
 - 2 Scheiben Brot #beilage
@@ -96,7 +96,7 @@ tags: herzhaft, schnell
 mahlzeit: frühstück, abend
 portionen: 2
 dauer: 15
-tags: herzhaft, vegetarisch, low carb
+tags: herzhaft, vegetarisch, low carb, leicht
 - 5 Eier #protein
 - 1 Paprika
 - 1 Tomate
@@ -130,7 +130,7 @@ tags: süß, vegetarisch, kinder
 mahlzeit: frühstück
 portionen: 2
 dauer: 15
-tags: süß, schnell, vegetarisch
+tags: süß, schnell, vegetarisch, ballaststoffreich
 - 2 Bananen
 - 2 Eier #protein
 - 80 g Haferflocken #beilage
@@ -156,7 +156,7 @@ tags: süß, vegetarisch
 mahlzeit: frühstück
 portionen: 2
 dauer: 10
-tags: herzhaft, schnell, vegetarisch
+tags: herzhaft, schnell, vegetarisch, ballaststoffreich
 - 2 Scheiben Vollkornbrot #beilage
 - 1 Avocado
 - 2 Eier #protein
@@ -171,7 +171,7 @@ tags: herzhaft, schnell, vegetarisch
 mahlzeit: frühstück, abend
 portionen: 2
 dauer: 5
-tags: herzhaft, schnell, vegetarisch
+tags: herzhaft, schnell, vegetarisch, leicht, fettarm
 - 4 Scheiben Brot #beilage
 - 250 g Topfen #protein
 - 2 EL Milch
@@ -194,7 +194,7 @@ tags: süß, schnell, vegetarisch
 mahlzeit: frühstück, abend
 portionen: 2
 dauer: 5
-tags: herzhaft, schnell, kalt
+tags: herzhaft, schnell, kalt, proteinreich
 - 4 Semmeln #beilage
 - 100 g Schinken #protein
 - 80 g Käse
@@ -207,7 +207,7 @@ tags: herzhaft, schnell, kalt
 mahlzeit: frühstück, snack
 portionen: 2
 dauer: 10
-tags: süß, schnell, vegetarisch, kinder
+tags: süß, schnell, vegetarisch, kinder, leicht
 - 500 ml Milch
 - 60 g Grieß #beilage
 - 1 EL Zucker
@@ -221,7 +221,7 @@ tags: süß, schnell, vegetarisch, kinder
 mahlzeit: frühstück, snack
 portionen: 2
 dauer: 5
-tags: süß, schnell, vegetarisch
+tags: süß, schnell, vegetarisch, leicht
 - 300 g Naturjoghurt #protein
 - 150 g Beeren
 - 60 g Granola #beilage
@@ -232,7 +232,7 @@ tags: süß, schnell, vegetarisch
 mahlzeit: frühstück, snack
 portionen: 2
 dauer: 5
-tags: süß, vorbereiten, vegan
+tags: süß, vorbereiten, vegan, ballaststoffreich, leicht
 - 40 g Chiasamen
 - 300 ml Haferdrink
 - 1 TL Ahornsirup
@@ -244,7 +244,7 @@ tags: süß, vorbereiten, vegan
 mahlzeit: frühstück
 portionen: 2
 dauer: 10
-tags: süß, schnell, vegetarisch
+tags: süß, schnell, vegetarisch, ballaststoffreich
 - 2 Bananen
 - 200 g Beeren
 - 200 g Naturjoghurt
@@ -257,7 +257,7 @@ tags: süß, schnell, vegetarisch
 mahlzeit: frühstück, abend, snack
 portionen: 2
 dauer: 10
-tags: herzhaft, schnell, kinder
+tags: herzhaft, schnell, kinder, leicht
 - 4 Scheiben Toastbrot #beilage
 - 4 Scheiben Schinken #protein
 - 4 Scheiben Käse
@@ -269,7 +269,7 @@ tags: herzhaft, schnell, kinder
 mahlzeit: frühstück
 portionen: 2
 dauer: 15
-tags: herzhaft, vegetarisch
+tags: herzhaft, vegetarisch, proteinreich
 - 2 Tortillas #beilage
 - 4 Eier #protein
 - 1 Tomate
@@ -284,7 +284,7 @@ tags: herzhaft, vegetarisch
 mahlzeit: frühstück, abend
 portionen: 2
 dauer: 25
-tags: herzhaft, vegetarisch, orientalisch
+tags: herzhaft, vegetarisch, orientalisch, leicht
 - 4 Eier #protein
 - 1 Dose gehackte Tomaten
 - 1 Paprika
@@ -303,7 +303,7 @@ tags: herzhaft, vegetarisch, orientalisch
 mahlzeit: frühstück, mittag, snack
 portionen: 4
 dauer: 40
-tags: süß, vegetarisch, kinder
+tags: süß, vegetarisch, kinder, leicht, fettarm
 - 250 g Milchreis #beilage
 - 1 l Milch
 - 2 EL Zucker

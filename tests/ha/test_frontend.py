@@ -413,3 +413,76 @@ async def test_choose_meal_service(hass: HomeAssistant, manager: EssensplanerMan
             {"date": today, "meal_type": "lunch", "dish": "Gulasch"},
             blocking=True,
         )
+
+
+async def test_directions_remembered_and_estimate(
+    hass: HomeAssistant, manager: EssensplanerManager, hass_ws_client: Any
+) -> None:
+    client = await hass_ws_client(hass)
+    anna, ben = manager.profiles
+    data = (await _call(client, type="essensplaner/data"))["result"]
+    assert [d["id"] for d in data["directions"]] == ["protein", "fiber", "low_carb", "light", "low_fat"]
+    assert data["directions"][0]["tag"] == "proteinreich"
+
+    msg = await _call(
+        client,
+        type="essensplaner/plan/generate",
+        start_date=dt_util.now().date().isoformat(),
+        days=1,
+        directions={anna: ["fiber", "protein"], ben: []},
+    )
+    assert msg["success"], msg
+    assert manager.profiles[anna].directions == ["protein", "fiber"]
+    assert manager.profiles[ben].directions == []
+
+    # Profil bearbeiten (ohne Richtungen im Formular) behält die gemerkte Auswahl
+    manager.save_profile({"id": anna, "name": "Anna"})
+    assert manager.profiles[anna].directions == ["protein", "fiber"]
+
+    msg = await _call(
+        client,
+        type="essensplaner/plan/generate",
+        start_date=dt_util.now().date().isoformat(),
+        directions={anna: ["unbekannt"]},
+    )
+    assert not msg["success"]
+
+    msg = await _call(
+        client,
+        type="essensplaner/dish/estimate",
+        dish={
+            "name": "Huhn mit Reis",
+            "base_servings": 2,
+            "ingredients": [
+                {"name": "Hühnerbrust", "amount": 300, "unit": "g"},
+                {"name": "Reis", "amount": 120, "unit": "g"},
+                {"name": "Brokkoli", "amount": 300, "unit": "g"},
+            ],
+        },
+    )
+    assert msg["success"], msg
+    assert "protein" in msg["result"]["directions"]
+    assert msg["result"]["nutrition"]["kcal"] > 0
+
+
+async def test_added_dishes_get_direction_tags(
+    hass: HomeAssistant, manager: EssensplanerManager
+) -> None:
+    manager.add_dishes(
+        [
+            {
+                "name": "Linsensuppe",
+                "tags": ["suppe"],
+                "base_servings": 4,
+                "ingredients": [
+                    {"name": "Berglinsen", "amount": 250, "unit": "g"},
+                    {"name": "Karotten", "amount": 3},
+                ],
+            },
+            {"name": "Nur ein Name"},
+        ]
+    )
+    by_name = {d.name: d for d in manager.dishes.values()}
+    assert by_name["Linsensuppe"].tags[0] == "suppe"
+    assert "ballaststoffreich" in by_name["Linsensuppe"].tags
+    assert by_name["Nur ein Name"].tags == []

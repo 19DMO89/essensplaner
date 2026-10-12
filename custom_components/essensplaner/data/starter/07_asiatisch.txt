@@ -4,7 +4,7 @@
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: asiatisch, schnell, resteverwertung, vegetarisch
+tags: asiatisch, schnell, resteverwertung, vegetarisch, leicht, fettarm
 - 300 g Reis #beilage
 - 4 Eier #protein
 - 150 g Erbsen
@@ -20,7 +20,7 @@ tags: asiatisch, schnell, resteverwertung, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: asiatisch, schnell, vegan
+tags: asiatisch, schnell, vegan, leicht, fettarm
 - 300 g Mie-Nudeln #beilage
 - 2 Karotten
 - 1 Paprika
@@ -38,7 +38,7 @@ tags: asiatisch, schnell, vegan
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: chinesisch, asiatisch, fleisch
+tags: chinesisch, asiatisch, fleisch, proteinreich, leicht, fettarm
 - 500 g Rinderhüfte #protein
 - 1 Brokkoli
 - 2 Zehen Knoblauch
@@ -56,7 +56,7 @@ tags: chinesisch, asiatisch, fleisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: thailändisch, asiatisch
+tags: thailändisch, asiatisch, fettarm
 - 250 g Reisnudeln #beilage
 - 300 g Garnelen #protein
 - 2 Eier
@@ -76,7 +76,7 @@ tags: thailändisch, asiatisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: indisch, vegan, günstig
+tags: indisch, vegan, günstig, ballaststoffreich
 - 250 g rote Linsen #protein
 - 1 Zwiebel
 - 2 Zehen Knoblauch
@@ -96,7 +96,7 @@ tags: indisch, vegan, günstig
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: indisch, curry, vegan
+tags: indisch, curry, vegan, ballaststoffreich
 - 2 Dosen Kichererbsen #protein
 - 1 Zwiebel
 - 2 Zehen Knoblauch
@@ -116,7 +116,7 @@ tags: indisch, curry, vegan
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: curry, vegan
+tags: curry, vegan, ballaststoffreich
 - 1 Süßkartoffel
 - 1 Brokkoli
 - 1 Paprika
@@ -134,7 +134,7 @@ tags: curry, vegan
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: japanisch, fisch, schnell
+tags: japanisch, fisch, schnell, proteinreich
 - 4 Lachsfilets #protein
 - 4 EL Sojasauce
 - 2 EL Mirin
@@ -151,7 +151,7 @@ tags: japanisch, fisch, schnell
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: japanisch, fisch, kalt
+tags: japanisch, fisch, kalt, ballaststoffreich
 - 150 g Sushireis #beilage
 - 200 g Lachs in Sushiqualität #protein
 - 1 Avocado
@@ -168,7 +168,7 @@ tags: japanisch, fisch, kalt
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: koreanisch, asiatisch
+tags: koreanisch, asiatisch, proteinreich
 - 400 g Rinderhackfleisch #protein
 - 250 g Reis #beilage
 - 200 g Blattspinat
@@ -187,7 +187,7 @@ tags: koreanisch, asiatisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: asiatisch, vegan
+tags: asiatisch, vegan, leicht, fettarm
 - 400 g Tofu #protein
 - 1 Brokkoli
 - 1 Paprika
@@ -206,7 +206,7 @@ tags: asiatisch, vegan
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: japanisch, suppe
+tags: japanisch, suppe, proteinreich, leicht, fettarm
 - 400 g Hühnerbrust #protein
 - 300 g Ramen-Nudeln #beilage
 - 1,5 l Hühnersuppe
@@ -224,7 +224,7 @@ tags: japanisch, suppe
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: asiatisch, schnell
+tags: asiatisch, schnell, proteinreich
 - 600 g Hühnerbrust #protein
 - 3 EL Erdnussbutter
 - 200 ml Kokosmilch
@@ -242,7 +242,7 @@ tags: asiatisch, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: chinesisch, scharf
+tags: chinesisch, scharf, leicht
 - 400 g Seidentofu #protein
 - 200 g Schweinefaschiertes
 - 2 EL Chili-Bohnenpaste
@@ -261,7 +261,7 @@ tags: chinesisch, scharf
 mahlzeit: abend, snack
 portionen: 4
 dauer: 40
-tags: vietnamesisch, kalt, sommer
+tags: vietnamesisch, kalt, sommer, leicht, fettarm
 - 12 Reispapierblätter #beilage
 - 200 g Garnelen #protein
 - 100 g Reisnudeln

@@ -4,7 +4,7 @@
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 75
-tags: suppe, klassiker
+tags: suppe, klassiker, proteinreich, leicht
 - 600 g Hühnerkeulen #protein
 - 2 Karotten
 - 1 Petersilienwurzel
@@ -22,7 +22,7 @@ tags: suppe, klassiker
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: suppe, österreichisch, klassiker
+tags: suppe, österreichisch, klassiker, low carb, leicht
 - 1 l Rindsuppe
 - 100 g Mehl #beilage
 - 200 ml Milch
@@ -38,7 +38,7 @@ tags: suppe, österreichisch, klassiker
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: suppe, österreichisch, klassiker
+tags: suppe, österreichisch, klassiker, low carb, leicht
 - 1 l Rindsuppe
 - 50 g Butter
 - 1 Ei
@@ -54,7 +54,7 @@ tags: suppe, österreichisch, klassiker
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: suppe, österreichisch, klassiker
+tags: suppe, österreichisch, klassiker, low carb, leicht, fettarm
 - 1 l Rindsuppe
 - 150 g Rindsleber #protein
 - 2 Semmeln #beilage
@@ -72,7 +72,7 @@ tags: suppe, österreichisch, klassiker
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: suppe, vegetarisch, herbst
+tags: suppe, vegetarisch, herbst, leicht
 - 800 g Hokkaidokürbis
 - 1 Zwiebel
 - 2 Erdäpfel #beilage
@@ -90,7 +90,7 @@ tags: suppe, vegetarisch, herbst
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: suppe, vegetarisch, österreichisch
+tags: suppe, vegetarisch, österreichisch, leicht
 - 600 g Erdäpfel #beilage
 - 1 Zwiebel
 - 1 Karotte
@@ -109,7 +109,7 @@ tags: suppe, vegetarisch, österreichisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: suppe, vegan, leicht
+tags: suppe, vegan, leicht, low carb, fettarm
 - 2 Karotten
 - 1 Zucchini
 - 100 g Sellerie
@@ -128,7 +128,7 @@ tags: suppe, vegan, leicht
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 75
-tags: suppe, eintopf, deftig
+tags: suppe, eintopf, deftig, ballaststoffreich, leicht, fettarm
 - 250 g getrocknete Erbsen #protein
 - 2 Erdäpfel #beilage
 - 1 Karotte
@@ -146,7 +146,7 @@ tags: suppe, eintopf, deftig
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: suppe, eintopf, vegan
+tags: suppe, eintopf, vegan, ballaststoffreich, leicht, fettarm
 - 250 g rote Linsen #protein
 - 1 Zwiebel
 - 2 Karotten
@@ -165,7 +165,7 @@ tags: suppe, eintopf, vegan
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: suppe, vegetarisch, schnell
+tags: suppe, vegetarisch, schnell, leicht
 - 2 Dosen gehackte Tomaten
 - 1 Zwiebel
 - 1 Zehe Knoblauch
@@ -184,7 +184,7 @@ tags: suppe, vegetarisch, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: suppe, vegetarisch, schnell
+tags: suppe, vegetarisch, schnell, low carb, leicht
 - 600 g Brokkoli
 - 1 Zwiebel
 - 1 Erdapfel #beilage
@@ -201,7 +201,7 @@ tags: suppe, vegetarisch, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: suppe, vegan
+tags: suppe, vegan, leicht
 - 700 g Karotten
 - 1 Zwiebel
 - 1 TL Ingwer
@@ -218,7 +218,7 @@ tags: suppe, vegan
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: suppe, vegetarisch, italienisch
+tags: suppe, vegetarisch, italienisch, ballaststoffreich, leicht, fettarm
 - 1 Zwiebel
 - 2 Karotten
 - 1 Zucchini
@@ -238,7 +238,7 @@ tags: suppe, vegetarisch, italienisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 90
-tags: suppe, eintopf, deftig, österreichisch
+tags: suppe, eintopf, deftig, österreichisch, proteinreich, low carb, leicht
 - 500 g Rindfleisch #protein
 - 3 Zwiebeln
 - 3 Erdäpfel #beilage
@@ -257,7 +257,7 @@ tags: suppe, eintopf, deftig, österreichisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: suppe, leicht
+tags: suppe, leicht, low carb, fettarm
 - 300 g Hühnerbrust #protein
 - 80 g Reis #beilage
 - 2 Karotten
@@ -273,7 +273,7 @@ tags: suppe, leicht
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: eintopf, vegan, scharf, mexikanisch
+tags: eintopf, vegan, scharf, mexikanisch, ballaststoffreich, leicht, fettarm
 - 1 Dose Kidneybohnen #protein
 - 1 Dose schwarze Bohnen
 - 1 Dose Mais

@@ -4,7 +4,7 @@
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: mild, schnell, kinder
+tags: mild, schnell, kinder, proteinreich, leicht, fettarm
 - 500 g Hühnerbrust #protein
 - 250 g Reis #beilage
 - 4 Karotten
@@ -19,7 +19,7 @@ tags: mild, schnell, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: mild, klassiker, kinder
+tags: mild, klassiker, kinder, proteinreich, ballaststoffreich, fettarm
 - 600 g Hühnerbrust #protein
 - 1 kg mehlige Erdäpfel #beilage
 - 250 ml Milch
@@ -35,7 +35,7 @@ tags: mild, klassiker, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: ofen, einfach
+tags: ofen, einfach, proteinreich
 - 8 Hühnerkeulen #protein
 - 1 kg Erdäpfel #beilage
 - 2 Paprika
@@ -53,7 +53,7 @@ tags: ofen, einfach
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: indisch, curry
+tags: indisch, curry, proteinreich
 - 600 g Hühnerbrust #protein
 - 400 ml Kokosmilch
 - 1 Zwiebel
@@ -72,7 +72,7 @@ tags: indisch, curry
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: indisch, curry
+tags: indisch, curry, proteinreich
 - 600 g Hühnerbrust #protein
 - 150 g Naturjoghurt
 - 2 TL Garam Masala
@@ -92,7 +92,7 @@ tags: indisch, curry
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: schnell, kinder
+tags: schnell, kinder, proteinreich
 - 600 g Hühnerbrust #protein
 - 250 g Champignons
 - 1 Zwiebel
@@ -111,7 +111,7 @@ tags: schnell, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: schnell, pfanne
+tags: schnell, pfanne, proteinreich, leicht, fettarm
 - 500 g Hühnerbrust #protein
 - 1 Brokkoli
 - 2 Karotten
@@ -127,7 +127,7 @@ tags: schnell, pfanne
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: japanisch, asiatisch
+tags: japanisch, asiatisch, proteinreich
 - 600 g Hühnerkeulen ohne Knochen #protein
 - 4 EL Sojasauce
 - 2 EL Mirin
@@ -145,7 +145,7 @@ tags: japanisch, asiatisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: thailändisch, curry, scharf
+tags: thailändisch, curry, scharf, proteinreich
 - 500 g Hühnerbrust #protein
 - 400 ml Kokosmilch
 - 2 EL rote Currypaste
@@ -163,7 +163,7 @@ tags: thailändisch, curry, scharf
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: chinesisch, asiatisch, kinder
+tags: chinesisch, asiatisch, kinder, proteinreich, fettarm
 - 500 g Hühnerbrust #protein
 - 2 EL Speisestärke
 - 1 Paprika
@@ -183,7 +183,7 @@ tags: chinesisch, asiatisch, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: schnell, kinder, mexikanisch
+tags: schnell, kinder, mexikanisch, proteinreich, leicht
 - 500 g Hühnerbrust #protein
 - 4 Tortillas #beilage
 - 1 Eisbergsalat
@@ -202,7 +202,7 @@ tags: schnell, kinder, mexikanisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 50
-tags: auflauf, ofen, kinder
+tags: auflauf, ofen, kinder, proteinreich
 - 400 g Hühnerbrust #protein
 - 350 g Penne #beilage
 - 1 Brokkoli
@@ -220,7 +220,7 @@ tags: auflauf, ofen, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: schnell, mild
+tags: schnell, mild, proteinreich
 - 600 g Putenbrust #protein
 - 1 Zwiebel
 - 200 ml Schlagobers
@@ -237,7 +237,7 @@ tags: schnell, mild
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: mild, schnell
+tags: mild, schnell, proteinreich, leicht, fettarm
 - 4 Putenschnitzel #protein
 - 250 g Reis #beilage
 - 150 g Erbsen
@@ -253,7 +253,7 @@ tags: mild, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 45
-tags: kinder, ofen
+tags: kinder, ofen, proteinreich, fettarm
 - 500 g Hühnerbrust #protein
 - 2 Eier
 - 100 g Cornflakes
@@ -270,7 +270,7 @@ tags: kinder, ofen
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 55
-tags: ofen, mediterran
+tags: ofen, mediterran, proteinreich, leicht, fettarm
 - 600 g Hühnerbrust #protein
 - 1 kg kleine Erdäpfel #beilage
 - 1 Zitrone
@@ -285,7 +285,7 @@ tags: ofen, mediterran
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: grillen, sommer
+tags: grillen, sommer, proteinreich, fettarm
 - 600 g Hühnerbrust #protein
 - 2 Paprika
 - 1 Zucchini

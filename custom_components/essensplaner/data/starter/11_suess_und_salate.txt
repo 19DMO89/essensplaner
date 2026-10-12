@@ -22,7 +22,7 @@ tags: süß, österreichisch, klassiker, vegetarisch
 mahlzeit: mittag, abend, frühstück
 portionen: 4
 dauer: 30
-tags: süß, österreichisch, kinder, vegetarisch
+tags: süß, österreichisch, kinder, vegetarisch, fettarm
 - 200 g Mehl #beilage
 - 3 Eier
 - 400 ml Milch
@@ -38,7 +38,7 @@ tags: süß, österreichisch, kinder, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 50
-tags: süß, österreichisch, ofen, vegetarisch
+tags: süß, österreichisch, ofen, vegetarisch, proteinreich, fettarm
 - 8 Palatschinken #beilage
 - 500 g Topfen #protein
 - 2 Eier
@@ -55,7 +55,7 @@ tags: süß, österreichisch, ofen, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: süß, österreichisch, sommer, vegetarisch
+tags: süß, österreichisch, sommer, vegetarisch, ballaststoffreich
 - 500 g Topfen #protein
 - 150 g Mehl #beilage
 - 50 g Grieß
@@ -144,7 +144,7 @@ tags: süß, österreichisch, ofen, vegetarisch
 mahlzeit: mittag, abend, frühstück
 portionen: 4
 dauer: 20
-tags: süß, resteverwertung, vegetarisch
+tags: süß, resteverwertung, vegetarisch, leicht
 - 8 Scheiben altbackenes Weißbrot #beilage
 - 3 Eier
 - 250 ml Milch
@@ -160,7 +160,7 @@ tags: süß, resteverwertung, vegetarisch
 mahlzeit: abend
 portionen: 4
 dauer: 15
-tags: salat, griechisch, kalt, vegetarisch
+tags: salat, griechisch, kalt, vegetarisch, leicht
 - 4 Tomaten
 - 1 Gurke
 - 1 Paprika
@@ -180,7 +180,7 @@ tags: salat, griechisch, kalt, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: salat, amerikanisch
+tags: salat, amerikanisch, proteinreich, low carb, leicht
 - 500 g Hühnerbrust #protein
 - 2 Römersalate
 - 4 Scheiben Toastbrot #beilage
@@ -199,7 +199,7 @@ tags: salat, amerikanisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: salat, vegetarisch, kalt
+tags: salat, vegetarisch, kalt, ballaststoffreich
 - 250 g Berglinsen #protein
 - 1 rote Paprika
 - 1 rote Zwiebel
@@ -218,7 +218,7 @@ tags: salat, vegetarisch, kalt
 mahlzeit: abend
 portionen: 4
 dauer: 15
-tags: salat, kalt, deftig, jause
+tags: salat, kalt, deftig, jause, low carb
 - 400 g Extrawurst #protein
 - 2 Essiggurken
 - 1 Zwiebel
@@ -237,7 +237,7 @@ tags: salat, kalt, deftig, jause
 mahlzeit: abend
 portionen: 4
 dauer: 15
-tags: salat, steirisch, vegan, kalt
+tags: salat, steirisch, vegan, kalt, ballaststoffreich, leicht
 - 2 Dosen Käferbohnen #protein
 - 1 rote Zwiebel
 - 4 EL Kürbiskernöl

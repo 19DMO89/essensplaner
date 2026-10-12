@@ -13,6 +13,7 @@ class DishEditor extends EpDialog {
     _error: { state: true },
     _confirmDelete: { state: true },
     _imageUrlInput: { state: true },
+    _estimate: { state: true },
   };
 
   constructor() {
@@ -23,12 +24,16 @@ class DishEditor extends EpDialog {
     this._error = null;
     this._confirmDelete = false;
     this._imageUrlInput = "";
+    this._estimate = null;
+    this._dirTouched = false;
     this._initFor = undefined;
   }
 
   willUpdate() {
     if (this.data && this._initFor !== this.dishId) {
       this._initFor = this.dishId;
+      this._estimate = null;
+      this._dirTouched = false;
       const d = this.dishId ? this.dish(this.dishId) : null;
       this._form = {
         name: d ? d.name : "",
@@ -52,6 +57,60 @@ class DishEditor extends EpDialog {
   _toggle(key, value) {
     const list = this._form[key];
     this._set(key, list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
+  }
+
+  _tagList() {
+    return this._form.tags.split(",").map((t) => t.trim()).filter(Boolean);
+  }
+
+  _hasDirection(id) {
+    return this._tagList().some((t) => this.tagDirection(t) === id);
+  }
+
+  /** Tags so setzen, dass genau die Richtungen ``ids`` enthalten sind. */
+  _setDirections(ids) {
+    const rest = this._tagList().filter((t) => !this.tagDirection(t));
+    const added = this.directions.filter((d) => ids.includes(d.id)).map((d) => d.tag);
+    this._set("tags", [...rest, ...added].join(", "));
+  }
+
+  _toggleDirection(id) {
+    this._dirTouched = true;
+    const current = this.directions.map((d) => d.id).filter((d) => this._hasDirection(d));
+    this._setDirections(current.includes(id) ? current.filter((d) => d !== id) : [...current, id]);
+  }
+
+  async _runEstimate(ingredients) {
+    const f = this._form;
+    return this.api.estimateDish({
+      name: f.name.trim() || "?",
+      meal_types: f.meal_types.length ? f.meal_types : ["lunch", "dinner"],
+      base_servings: Number(f.base_servings) || 2,
+      ingredients,
+    });
+  }
+
+  async _estimateClicked() {
+    this._error = null;
+    try {
+      const result = await this._runEstimate(await this.api.parseIngredients(this._form.ingredients));
+      this._estimate = result;
+      if (result.nutrition.kcal > 0 && result.nutrition.known >= 0.7) {
+        this._dirTouched = true;
+        this._setDirections(result.directions);
+      }
+    } catch (err) {
+      this._error = err.message || String(err);
+    }
+  }
+
+  _estimateText() {
+    const n = this._estimate.nutrition;
+    if (!(n.kcal > 0) || n.known < 0.7) return this.t("edit.estimate_unknown");
+    const r = (v) => String(Math.round(v));
+    return this.t("edit.estimate_result", {
+      kcal: r(n.kcal), protein: r(n.protein), carbs: r(n.carbs), fat: r(n.fat), fiber: r(n.fiber),
+    });
   }
 
   async _upload(ev) {
@@ -104,6 +163,11 @@ class DishEditor extends EpDialog {
         source_url: f.source_url.trim() || null,
         image: f.image || null,
       };
+      // Neues Gericht ohne gewählte Richtung: anhand der Zutaten einstufen.
+      if (!this.dishId && !this._dirTouched && !dish.tags.some((t) => this.tagDirection(t))) {
+        const est = await this._runEstimate(ingredients);
+        dish.tags.push(...this.directions.filter((d) => est.directions.includes(d.id)).map((d) => d.tag));
+      }
       if (this.dishId) dish.id = this.dishId;
       const saved = await this.api.saveDish(dish);
       this.emit("ep-open", { type: "recipe", dishId: saved.id });
@@ -213,6 +277,23 @@ class DishEditor extends EpDialog {
         <span>${this.t("edit.steps")}</span>
         <textarea rows="6" .value=${f.steps} @input=${(e) => this._set("steps", e.target.value)}></textarea>
       </label>
+
+      ${this.directions.length
+        ? html`<div class="field">
+            <span class="label">${this.t("edit.directions")}</span>
+            <div class="chips">
+              ${this.directions.map((d) => {
+                const on = this._hasDirection(d.id);
+                return html`<button class="chip ${on ? "on" : ""}" aria-pressed=${on}
+                  @click=${() => this._toggleDirection(d.id)}>${this.t(`dir.${d.id}`)}</button>`;
+              })}
+              <button class="btn flat" @click=${this._estimateClicked}>
+                <ha-icon icon="mdi:calculator-variant-outline"></ha-icon>${this.t("edit.estimate")}
+              </button>
+            </div>
+            ${this._estimate ? html`<div class="help">${this._estimateText()}</div>` : ""}
+          </div>`
+        : ""}
 
       <label class="field">
         <span>${this.t("edit.tags")}</span>

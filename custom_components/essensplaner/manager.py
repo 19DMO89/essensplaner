@@ -49,11 +49,20 @@ from .logic.models import (
 from .logic.groups import GROUP_IDS, group_overview
 from .logic.ingredients import ingredient_overview, set_ingredient_state
 from .logic.normalize import normalize_name
+from .logic.nutrition import (
+    DIRECTIONS,
+    dish_directions,
+    estimate_dish,
+    with_direction_tags,
+)
 from .logic.planner import Planner, PlanResult, shared_base
 from .logic.shopping import ShoppingItem, build_shopping_list
 from .logic.starter import parse_dish_file
 
 _LOGGER = logging.getLogger(__name__)
+
+# Version der automatischen Einstufung (proteinreich, …) bestehender Gerichte.
+DIRECTION_TAGS_VERSION = 1
 
 
 STARTER_DIR = Path(__file__).parent / "data" / "starter"
@@ -120,6 +129,31 @@ class EssensplanerManager:
                 _LOGGER.warning("Import aus %s fehlgeschlagen", source, exc_info=True)
         self.meta["initialized"] = True
         self._changed(STORAGE_KEY_PROFILES)
+
+    async def async_add_direction_tags(self) -> None:
+        """Einmalig: Gerichte als proteinreich, ballaststoffreich, … einstufen.
+
+        Gerichte aus dem Startpaket bekommen die Tags der mitgelieferten Dateien,
+        alle anderen eine Schätzung aus den Zutaten. Vorhandene Tags bleiben.
+        """
+        if self.meta.get("direction_tags", 0) >= DIRECTION_TAGS_VERSION:
+            return
+        starter = await self.hass.async_add_executor_job(read_starter_dishes)
+        starter_tags = {normalize_name(d["name"]): d.get("tags", []) for d in starter}
+        count = 0
+        for dish in self.dishes.values():
+            key = normalize_name(dish.name)
+            if key in starter_tags:
+                directions = dish_directions(Dish(id="", name="", tags=starter_tags[key]))
+            else:
+                directions = estimate_dish(dish)[1]
+            tags = with_direction_tags(dish.tags, directions)
+            if tags != dish.tags:
+                dish.tags = tags
+                count += 1
+        _LOGGER.debug("%s Gerichte nach Ernährungsrichtung eingestuft", count)
+        self.meta["direction_tags"] = DIRECTION_TAGS_VERSION
+        self._changed(STORAGE_KEY_DISHES, STORAGE_KEY_PROFILES)
 
     @callback
     def async_start(self) -> CALLBACK_TYPE:
@@ -221,6 +255,10 @@ class EssensplanerManager:
     @callback
     def save_profile(self, data: dict[str, Any]) -> Profile:
         profile = Profile.from_dict(data)
+        existing = self.profiles.get(profile.id)
+        if existing and "directions" not in data:
+            # Die gemerkten Richtungen werden im Planungsdialog gesetzt.
+            profile.directions = existing.directions
         self.profiles[profile.id] = profile
         self._changed(STORAGE_KEY_PROFILES)
         return profile
@@ -311,9 +349,20 @@ class EssensplanerManager:
         self._changed(STORAGE_KEY_DISHES)
         return dish
 
+    def estimate_dish(self, data: dict[str, Any]) -> dict[str, Any]:
+        """Geschätzte Nährwerte je Portion und passende Richtungen eines Gerichts."""
+        nutrition, directions = estimate_dish(Dish.from_dict(data))
+        return {
+            "nutrition": nutrition.to_dict(),
+            "directions": [d for d in DIRECTIONS if d in directions],
+        }
+
     @callback
     def add_dishes(self, dishes: list[dict[str, Any]], tag: str | None = None) -> int:
-        """Mehrere neue Gerichte anlegen; gleichnamige werden übersprungen."""
+        """Mehrere neue Gerichte anlegen; gleichnamige werden übersprungen.
+
+        Gerichte ohne Richtungs-Tags werden anhand der Zutaten eingestuft.
+        """
         known = {normalize_name(d.name) for d in self.dishes.values()}
         count = 0
         for data in dishes:
@@ -324,7 +373,9 @@ class EssensplanerManager:
             data = {**data, "id": None}
             if tag:
                 data["tags"] = [*data.get("tags", []), tag]
-            self._put_dish(data)
+            dish = self._put_dish(data)
+            if not dish_directions(dish):
+                dish.tags = with_direction_tags(dish.tags, estimate_dish(dish)[1])
             count += 1
         if count:
             self._changed(STORAGE_KEY_DISHES)
@@ -491,8 +542,13 @@ class EssensplanerManager:
         seed: int | None = None,
         meals_by_date: dict[str, list[str]] | None = None,
         alternatives: int | None = None,
+        directions: dict[str, list[str]] | None = None,
     ) -> PlanResult:
-        """Plan erzeugen. ``meals_by_date`` legt die Mahlzeiten je Tag einzeln fest."""
+        """Plan erzeugen. ``meals_by_date`` legt die Mahlzeiten je Tag einzeln fest.
+
+        ``directions`` (Person -> Richtungen) wird bei den Personen gemerkt; ohne
+        Angabe gelten die zuletzt gewählten Richtungen.
+        """
         meal_types = [m for m in MEAL_TYPES if m in (meal_types or self.default_meal_types)]
         if meals_by_date is None:
             meals_by_date = {day: meal_types for day in date_range(start, days)}
@@ -504,9 +560,22 @@ class EssensplanerManager:
         planner = Planner(self.dishes.values(), self.profiles.values(), random.Random(seed))
         if alternatives is None:
             alternatives = self.default_alternatives
-        result = planner.generate(self.plan, meals_by_date, profile_ids, overwrite, alternatives)
+        changed = [STORAGE_KEY_PLAN]
+        if directions is not None:
+            for ref, wanted in directions.items():
+                profile = self.profiles[self.resolve_profile(ref)]
+                profile.directions = [d for d in DIRECTIONS if d in wanted]
+            changed.append(STORAGE_KEY_PROFILES)
+        result = planner.generate(
+            self.plan,
+            meals_by_date,
+            profile_ids,
+            overwrite,
+            alternatives,
+            {p.id: p.directions for p in self.profiles.values() if p.directions},
+        )
         self.plan = result.plan
-        self._changed(STORAGE_KEY_PLAN)
+        self._changed(*changed)
         return result
 
     def today_meals(self, profile_id: str) -> dict[str, list[dict[str, Any]]]:

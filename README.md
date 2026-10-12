@@ -31,6 +31,9 @@ Nach der Einrichtung erscheint **Essensplaner** in der Seitenleiste (auch in der
   festlegen, welche Mahlzeiten gebraucht werden. Zu jedem Gericht schlägt der Planer
   **Alternativen** vor (Standard 1, einstellbar 0–3), die für dieselben Personen passen –
   mit ✓ wählst du, was es gibt. Bis dahin wird für den Einkauf der erste Vorschlag verwendet.
+  Pro Person lässt sich eine **Richtung** wählen – *proteinreich*, *ballaststoffreich*,
+  *Low Carb*, *leicht* oder *fettarm*. Passende Gerichte werden deutlich bevorzugt, die Auswahl
+  wird gemerkt (siehe [Ernährungsrichtungen](#ernährungsrichtungen)).
 - **Gerichte**: Suche, Filter nach Mahlzeit und „passt für“, Rezeptansicht mit
   Portionsrechner und Begründung, warum ein Gericht für eine Person (nicht) passt.
   Gerichte anlegen und bearbeiten, inklusive Foto (Upload oder Bild-URL übernehmen).
@@ -103,6 +106,31 @@ Petersilie
 
 `#protein` und `#beilage` markieren die Basis, über die zwei Gerichte als
 „gemeinsam kochbar“ erkannt werden.
+
+### Ernährungsrichtungen
+
+Ob ein Gericht proteinreich, ballaststoffreich, Low Carb, leicht oder fettarm ist, steht in
+seinen **Tags** (`proteinreich`, `ballaststoffreich`, `low carb`, `leicht`, `fettarm`). Im
+Gericht-Editor lassen sie sich per Schalter setzen; *Aus Zutaten schätzen* schlägt sie vor und
+zeigt die geschätzten Nährwerte pro Portion. Neue Gerichte werden beim Speichern automatisch
+eingestuft, solange keine Richtung gewählt wurde; bestehende Gerichte wurden beim Update einmalig
+eingestuft. Eigene Änderungen an den Tags bleiben erhalten.
+
+Die Schätzung nutzt typische Nährwerte gängiger Zutaten und Standardgewichte (Stück, Dose,
+Esslöffel …) und ist nur eine **grobe Orientierung**. Grenzwerte pro Portion (Hauptmahlzeit /
+Frühstück und Snack):
+
+| Richtung | Bedingung |
+|---|---|
+| proteinreich | ≥ 25 g / 12 g Eiweiß und ≥ 20 % der Energie aus Eiweiß |
+| ballaststoffreich | ≥ 8 g / 5 g Ballaststoffe |
+| Low Carb | ≤ 25 g / 15 g Kohlenhydrate |
+| leicht | ≤ 500 / 300 kcal |
+| fettarm | ≤ 18 g / 8 g Fett und ≤ 30 % der Energie aus Fett |
+
+Beim Planen ist eine Richtung eine Vorliebe, kein Filter: Die Verträglichkeit geht immer vor,
+und ein gemeinsames Gericht für mehrere Personen bleibt wichtiger als die Richtung einer
+einzelnen Person. Die Aktion `generate_plan` nutzt die zuletzt im Panel gewählten Richtungen.
 
 ### Wie Profile ausgewertet werden
 

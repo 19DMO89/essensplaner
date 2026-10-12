@@ -11,6 +11,7 @@ from typing import Any
 from .compat import STATUS_WARN, CompatResult, check_dish
 from .models import BASE_ROLES, Assignment, Dish, Plan, Profile
 from .normalize import normalize_name
+from .nutrition import dish_directions
 
 # Gewichte der Bewertung. Abdeckung mehrerer Profile mit einem Gericht zählt am
 # meisten (nur einmal kochen), danach gemeinsame Basis und Abwechslung.
@@ -22,6 +23,10 @@ W_REPEAT_WEEK = 6.0
 W_REPEAT_DAY = 4.0
 W_RANDOM = 2.0
 W_REPEAT_ALT = 3.0  # Alternativen sollen sich ebenfalls abwechseln
+# Gewünschte Richtungen (proteinreich, …) einer Person: voller Bonus, wenn das
+# Gericht alle erfüllt, anteilig bei einem Teil. Deutlich, aber kleiner als
+# W_COVER, damit gemeinsames Kochen wichtiger bleibt.
+W_DIRECTION = 12.0
 
 
 def base_components(dish: Dish) -> set[str]:
@@ -68,6 +73,8 @@ class Planner:
         self._base = {d.id: base_components(d) for d in self.dishes.values()}
         self._alt_usage: Counter[str] = Counter()
         self._alternatives = 0
+        self._dish_directions = {d.id: dish_directions(d) for d in self.dishes.values()}
+        self._wanted: dict[str, set[str]] = {}
 
     def compat(self, dish_id: str, profile_id: str) -> CompatResult:
         key = (dish_id, profile_id)
@@ -82,15 +89,18 @@ class Planner:
         profile_ids: list[str] | None = None,
         overwrite: bool = False,
         alternatives: int = 0,
+        directions: dict[str, list[str]] | None = None,
     ) -> PlanResult:
         """Fülle die angefragten Mahlzeiten.
 
         Ohne ``overwrite`` bleiben belegte Mahlzeiten unverändert. Mit ``overwrite``
         werden nur manuell gesetzte (``locked``) Zuweisungen behalten.
         ``alternatives`` legt fest, wie viele Alternativ-Gerichte je Zuweisung
-        zur Auswahl vorgeschlagen werden.
+        zur Auswahl vorgeschlagen werden. ``directions`` (Profil-ID -> Richtungen)
+        bevorzugt passende Gerichte, ohne andere auszuschließen.
         """
         self._alternatives = max(0, alternatives)
+        self._wanted = {p: set(d) for p, d in (directions or {}).items()}
         self._alt_usage = Counter()
         profile_ids = [p for p in (profile_ids or list(self.profiles)) if p in self.profiles]
         new_plan: Plan = {day: dict(meals) for day, meals in plan.items()}
@@ -179,6 +189,9 @@ class Planner:
                     score += W_LIKE * res.likes
                     if res.status == STATUS_WARN:
                         score -= W_WARN
+                    if wanted := self._wanted.get(p):
+                        matched = len(wanted & self._dish_directions[dish.id])
+                        score += W_DIRECTION * matched / len(wanted)
                 base = self._base[dish.id]
                 if slot_base:
                     score += W_SHARED * min(2, len(base & slot_base))

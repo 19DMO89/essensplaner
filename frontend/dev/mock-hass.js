@@ -69,6 +69,10 @@ async function callWS(msg) {
       return {};
     }
     case "plan/generate":
+      for (const [id, dirs] of Object.entries(msg.directions || {})) {
+        const profile = mock.data.profiles.find((p) => p.id === id);
+        if (profile) profile.directions = dirs;
+      }
       notify();
       return { days: mock.plan, warnings: mock.warnings };
     case "shopping/preview":
@@ -125,6 +129,8 @@ async function callWS(msg) {
       notify();
       return dish;
     }
+    case "dish/estimate":
+      return { nutrition: { kcal: 480, protein: 32, fat: 12, carbs: 55, fiber: 9, known: 1 }, directions: ["protein", "fiber", "light", "low_fat"] };
     case "dish/delete":
       mock.data.dishes = mock.data.dishes.filter((d) => d.id !== msg.dish_id);
       notify();

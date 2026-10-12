@@ -8,7 +8,7 @@
 mahlzeit: frühstück
 portionen: 2
 dauer: 10
-tags: schonkost, darmfreundlich, mild, vegan
+tags: schonkost, darmfreundlich, mild, vegan, leicht, fettarm
 - 60 g Haferflocken #beilage
 - 500 ml Wasser
 - 1 Prise Salz
@@ -19,7 +19,7 @@ tags: schonkost, darmfreundlich, mild, vegan
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 35
-tags: schonkost, darmfreundlich, mild, vegan
+tags: schonkost, darmfreundlich, mild, vegan, leicht, fettarm
 - 80 g Reis #beilage
 - 2 Karotten
 - 800 ml Wasser
@@ -32,7 +32,7 @@ tags: schonkost, darmfreundlich, mild, vegan
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, darmfreundlich, mild
+tags: schonkost, darmfreundlich, mild, proteinreich, ballaststoffreich, leicht, fettarm
 - 300 g Putenbrust #protein
 - 400 g Erdäpfel #beilage
 - 300 g Karotten
@@ -47,7 +47,7 @@ tags: schonkost, darmfreundlich, mild
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, darmfreundlich, fisch, mild
+tags: schonkost, darmfreundlich, fisch, mild, proteinreich, leicht, fettarm
 - 2 Forellenfilets #protein
 - 500 g Erdäpfel #beilage
 - 1 Zucchini
@@ -62,7 +62,7 @@ tags: schonkost, darmfreundlich, fisch, mild
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, darmfreundlich, fisch, mild
+tags: schonkost, darmfreundlich, fisch, mild, proteinreich, fettarm
 - 250 g Lachsfilet #protein
 - 150 g Reis #beilage
 - 1 Zucchini
@@ -77,7 +77,7 @@ tags: schonkost, darmfreundlich, fisch, mild
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, darmfreundlich, mild
+tags: schonkost, darmfreundlich, mild, proteinreich, ballaststoffreich, leicht, fettarm
 - 2 Kalbsschnitzel #protein
 - 400 g Karotten
 - 200 g Erdäpfel #beilage
@@ -91,7 +91,7 @@ tags: schonkost, darmfreundlich, mild
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 90
-tags: schonkost, darmfreundlich, suppe, mild
+tags: schonkost, darmfreundlich, suppe, mild, proteinreich, low carb, leicht
 - 800 g Hühnerkeulen #protein
 - 4 Karotten
 - 1 Petersilienwurzel
@@ -107,7 +107,7 @@ tags: schonkost, darmfreundlich, suppe, mild
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: schonkost, darmfreundlich, suppe, vegan
+tags: schonkost, darmfreundlich, suppe, vegan, low carb, leicht, fettarm
 - 600 g Hokkaidokürbis
 - 300 g Karotten
 - 1 Erdapfel #beilage
@@ -123,7 +123,7 @@ tags: schonkost, darmfreundlich, suppe, vegan
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: schonkost, darmfreundlich, suppe, vegetarisch
+tags: schonkost, darmfreundlich, suppe, vegetarisch, low carb, leicht, fettarm
 - 3 Zucchini
 - 2 Erdäpfel #beilage
 - 900 ml Wasser
@@ -139,7 +139,7 @@ tags: schonkost, darmfreundlich, suppe, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: schonkost, darmfreundlich, suppe, vegetarisch
+tags: schonkost, darmfreundlich, suppe, vegetarisch, low carb, leicht
 - 600 g Pastinaken
 - 1 Erdapfel #beilage
 - 1 l Wasser
@@ -155,7 +155,7 @@ tags: schonkost, darmfreundlich, suppe, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: schonkost, darmfreundlich, suppe, vegan
+tags: schonkost, darmfreundlich, suppe, vegan, leicht, fettarm
 - 500 g Erdäpfel #beilage
 - 300 g Karotten
 - 1 l Wasser
@@ -170,7 +170,7 @@ tags: schonkost, darmfreundlich, suppe, vegan
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, darmfreundlich, mild
+tags: schonkost, darmfreundlich, mild, proteinreich, fettarm
 - 300 g Putenbrust #protein
 - 150 g Reis #beilage
 - 2 Zucchini
@@ -185,7 +185,7 @@ tags: schonkost, darmfreundlich, mild
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, darmfreundlich, fisch, mild
+tags: schonkost, darmfreundlich, fisch, mild, proteinreich, leicht, fettarm
 - 300 g Kabeljaufilet #protein
 - 600 g mehlige Erdäpfel #beilage
 - 150 ml Milch
@@ -200,7 +200,7 @@ tags: schonkost, darmfreundlich, fisch, mild
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, mild, kinder
+tags: schonkost, mild, kinder, proteinreich, fettarm
 - 300 g Hühnerbrust #protein
 - 200 g Bandnudeln #beilage
 - 200 ml Milch
@@ -230,7 +230,7 @@ tags: schonkost, darmfreundlich, süß, vegetarisch
 mahlzeit: snack, frühstück
 portionen: 2
 dauer: 25
-tags: schonkost, darmfreundlich, süß, vegan
+tags: schonkost, darmfreundlich, süß, vegan, leicht, fettarm
 - 80 g Reis #beilage
 - 400 ml Wasser
 - 1 Banane
@@ -241,7 +241,7 @@ tags: schonkost, darmfreundlich, süß, vegan
 mahlzeit: snack
 portionen: 4
 dauer: 20
-tags: schonkost, darmfreundlich, süß, vegan
+tags: schonkost, darmfreundlich, süß, vegan, ballaststoffreich, leicht, fettarm
 - 1 kg Äpfel
 - 100 ml Wasser
 - 1 Prise Zimt
@@ -253,7 +253,7 @@ tags: schonkost, darmfreundlich, süß, vegan
 mahlzeit: snack
 portionen: 2
 dauer: 15
-tags: schonkost, darmfreundlich, süß, vegan
+tags: schonkost, darmfreundlich, süß, vegan, leicht, fettarm
 - 2 Birnen
 - 100 ml Wasser
 - 1 Prise Zimt
@@ -264,7 +264,7 @@ tags: schonkost, darmfreundlich, süß, vegan
 mahlzeit: snack
 portionen: 1
 dauer: 5
-tags: schonkost, darmfreundlich, schnell, vegan
+tags: schonkost, darmfreundlich, schnell, vegan, leicht, fettarm
 - 4 Zwieback #beilage
 - 1 Banane
 1. Banane zerdrücken und auf den Zwieback streichen.
@@ -273,7 +273,7 @@ tags: schonkost, darmfreundlich, schnell, vegan
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 25
-tags: schonkost, darmfreundlich, vegetarisch, glutenfrei
+tags: schonkost, darmfreundlich, vegetarisch, glutenfrei, ballaststoffreich, leicht, fettarm
 - 120 g Polenta #beilage
 - 500 ml Wasser
 - 400 g Karotten
@@ -288,7 +288,7 @@ tags: schonkost, darmfreundlich, vegetarisch, glutenfrei
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 25
-tags: schonkost, darmfreundlich, vegetarisch
+tags: schonkost, darmfreundlich, vegetarisch, leicht
 - 600 g mehlige Erdäpfel #beilage
 - 150 ml Milch
 - 1 TL Butter
@@ -302,7 +302,7 @@ tags: schonkost, darmfreundlich, vegetarisch
 mahlzeit: frühstück, abend
 portionen: 2
 dauer: 10
-tags: schonkost, mild, schnell, vegetarisch
+tags: schonkost, mild, schnell, vegetarisch, leicht
 - 4 Eier #protein
 - 2 EL Milch
 - 1 TL Butter
@@ -315,7 +315,7 @@ tags: schonkost, mild, schnell, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: schonkost, mild, kinder
+tags: schonkost, mild, kinder, proteinreich
 - 500 g Putenfaschiertes #protein
 - 1 Ei
 - 3 EL Semmelbrösel
@@ -333,7 +333,7 @@ tags: schonkost, mild, kinder
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, fisch, mild
+tags: schonkost, fisch, mild, proteinreich
 - 250 g Lachsfilet #protein
 - 1 Ei
 - 2 EL Semmelbrösel
@@ -348,7 +348,7 @@ tags: schonkost, fisch, mild
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 20
-tags: schonkost, mild, vegetarisch, schnell
+tags: schonkost, mild, vegetarisch, schnell, fettarm
 - 200 g Penne #beilage
 - 2 Zucchini
 - 100 g Frischkäse #protein
@@ -363,7 +363,7 @@ tags: schonkost, mild, vegetarisch, schnell
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 20
-tags: schonkost, mild, glutenfrei, asiatisch
+tags: schonkost, mild, glutenfrei, asiatisch, proteinreich, fettarm
 - 150 g Reisnudeln #beilage
 - 250 g Hühnerbrust #protein
 - 2 Karotten
@@ -378,7 +378,7 @@ tags: schonkost, mild, glutenfrei, asiatisch
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, darmfreundlich, mild, herbst
+tags: schonkost, darmfreundlich, mild, herbst, proteinreich, leicht, fettarm
 - 300 g Hühnerbrust #protein
 - 500 g Hokkaidokürbis
 - 1 Erdapfel #beilage
@@ -392,7 +392,7 @@ tags: schonkost, darmfreundlich, mild, herbst
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 25
-tags: schonkost, darmfreundlich, vegan, glutenfrei
+tags: schonkost, darmfreundlich, vegan, glutenfrei, ballaststoffreich, leicht, fettarm
 - 120 g Hirse #beilage
 - 300 ml Wasser
 - 2 Karotten
@@ -408,7 +408,7 @@ tags: schonkost, darmfreundlich, vegan, glutenfrei
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 150
-tags: schonkost, suppe, österreichisch
+tags: schonkost, suppe, österreichisch, proteinreich, low carb, leicht, fettarm
 - 600 g Suppenfleisch vom Rind #protein
 - 3 Karotten
 - 1 Petersilienwurzel
@@ -424,7 +424,7 @@ tags: schonkost, suppe, österreichisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 55
-tags: schonkost, auflauf, vegetarisch
+tags: schonkost, auflauf, vegetarisch, leicht, fettarm
 - 800 g Erdäpfel #beilage
 - 2 Zucchini
 - 300 ml Milch
@@ -440,7 +440,7 @@ tags: schonkost, auflauf, vegetarisch
 mahlzeit: snack, frühstück
 portionen: 2
 dauer: 5
-tags: schonkost, süß, schnell, vegetarisch
+tags: schonkost, süß, schnell, vegetarisch, proteinreich, leicht, fettarm
 - 250 g Topfen #protein
 - 4 EL Milch
 - 1 Banane
@@ -452,7 +452,7 @@ tags: schonkost, süß, schnell, vegetarisch
 mahlzeit: snack, frühstück
 portionen: 1
 dauer: 5
-tags: schonkost, darmfreundlich, süß, schnell, vegetarisch
+tags: schonkost, darmfreundlich, süß, schnell, vegetarisch, leicht, fettarm
 - 150 g Naturjoghurt #protein
 - 1 Apfel
 - 1 Prise Zimt
@@ -462,7 +462,7 @@ tags: schonkost, darmfreundlich, süß, schnell, vegetarisch
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, mild
+tags: schonkost, mild, proteinreich
 - 300 g Kalbfleisch #protein
 - 150 g Reis #beilage
 - 150 ml Schlagobers
@@ -478,7 +478,7 @@ tags: schonkost, mild
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, fisch, mild
+tags: schonkost, fisch, mild, proteinreich, leicht, fettarm
 - 300 g Seelachsfilet #protein
 - 500 g Erdäpfel #beilage
 - 200 ml Milch
@@ -494,7 +494,7 @@ tags: schonkost, fisch, mild
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 35
-tags: schonkost, mild, kinder
+tags: schonkost, mild, kinder, proteinreich, fettarm
 - 500 g Putenbrust #protein
 - 300 g Karotten
 - 150 g Erbsen
@@ -511,7 +511,7 @@ tags: schonkost, mild, kinder
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 25
-tags: schonkost, mild
+tags: schonkost, mild, proteinreich, leicht, fettarm
 - 120 g Couscous #beilage
 - 250 g Hühnerbrust #protein
 - 1 Zucchini
@@ -527,7 +527,7 @@ tags: schonkost, mild
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, darmfreundlich, mild, glutenfrei
+tags: schonkost, darmfreundlich, mild, glutenfrei, proteinreich, ballaststoffreich, fettarm
 - 300 g Hühnerbrust #protein
 - 2 Süßkartoffeln #beilage
 - 1 Karotte
@@ -541,7 +541,7 @@ tags: schonkost, darmfreundlich, mild, glutenfrei
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 30
-tags: schonkost, darmfreundlich, vegan, glutenfrei
+tags: schonkost, darmfreundlich, vegan, glutenfrei, leicht, fettarm
 - 150 g Reis #beilage
 - 1 Fenchel
 - 3 Karotten
@@ -556,7 +556,7 @@ tags: schonkost, darmfreundlich, vegan, glutenfrei
 mahlzeit: mittag
 portionen: 4
 dauer: 150
-tags: schonkost, österreichisch, mild
+tags: schonkost, österreichisch, mild, proteinreich, leicht, fettarm
 - 800 g Tafelspitz #protein
 - 4 Karotten
 - 1 Petersilienwurzel
@@ -572,7 +572,7 @@ tags: schonkost, österreichisch, mild
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 50
-tags: schonkost, auflauf, mild
+tags: schonkost, auflauf, mild, proteinreich, leicht, fettarm
 - 400 g Hühnerbrust #protein
 - 800 g Erdäpfel #beilage
 - 2 Karotten
@@ -588,7 +588,7 @@ tags: schonkost, auflauf, mild
 mahlzeit: snack
 portionen: 1
 dauer: 3
-tags: schonkost, darmfreundlich, schnell, vegan
+tags: schonkost, darmfreundlich, schnell, vegan, leicht, fettarm
 - 3 Reiswaffeln #beilage
 - 1 Banane
 1. Banane in Scheiben schneiden und auf die Reiswaffeln legen.
@@ -597,7 +597,7 @@ tags: schonkost, darmfreundlich, schnell, vegan
 mahlzeit: abend, frühstück
 portionen: 2
 dauer: 5
-tags: schonkost, kalt, schnell
+tags: schonkost, kalt, schnell, leicht
 - 4 Scheiben Weißbrot #beilage
 - 100 g Putenschinken #protein
 - 20 g Butter
@@ -608,7 +608,7 @@ tags: schonkost, kalt, schnell
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: schonkost, darmfreundlich, suppe
+tags: schonkost, darmfreundlich, suppe, low carb, leicht, fettarm
 - 60 g Grieß #beilage
 - 2 Karotten
 - 1 l Wasser
@@ -624,7 +624,7 @@ tags: schonkost, darmfreundlich, suppe
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: schonkost, mild
+tags: schonkost, mild, proteinreich, leicht, fettarm
 - 500 g Hühnerbrust #protein
 - 250 g Reis #beilage
 - 3 Karotten
@@ -642,7 +642,7 @@ tags: schonkost, mild
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 30
-tags: schonkost, darmfreundlich, suppe, vegan
+tags: schonkost, darmfreundlich, suppe, vegan, low carb, leicht, fettarm
 - 2 Karotten
 - 1 Zucchini
 - 200 g Hokkaidokürbis
@@ -658,7 +658,7 @@ tags: schonkost, darmfreundlich, suppe, vegan
 mahlzeit: mittag, abend
 portionen: 2
 dauer: 40
-tags: schonkost, ofen, vegetarisch
+tags: schonkost, ofen, vegetarisch, leicht
 - 400 g Erdäpfel #beilage
 - 2 Karotten
 - 1 Ei #protein
@@ -674,7 +674,7 @@ tags: schonkost, ofen, vegetarisch
 mahlzeit: snack, frühstück
 portionen: 12
 dauer: 35
-tags: schonkost, süß, backen, vegetarisch
+tags: schonkost, süß, backen, vegetarisch, leicht, fettarm
 - 3 Bananen
 - 2 Eier
 - 200 g Haferflocken #beilage

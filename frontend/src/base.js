@@ -1,7 +1,7 @@
 // Basisklasse: Übersetzung und gemeinsame Daten für alle Ansichten.
 import { LitElement, html } from "lit";
 import { localize } from "./i18n.js";
-import { imageUrl } from "./api.js";
+import { imageUrl, normalizeTag } from "./api.js";
 
 export class EpElement extends LitElement {
   static properties = {
@@ -41,6 +41,18 @@ export class EpElement extends LitElement {
     if (!group) return id;
     const lang = (this.hass && this.hass.language) || "de";
     return lang.startsWith("de") ? group.label_de : group.label_en;
+  }
+
+  /** Ernährungsrichtungen (proteinreich, …) mit ihrem Tag. */
+  get directions() {
+    return (this.data && this.data.directions) || [];
+  }
+
+  /** Richtung, für die ein Tag steht (oder null). */
+  tagDirection(tag) {
+    const key = normalizeTag(tag);
+    const dir = this.directions.find((d) => [d.tag, ...d.aliases].some((a) => normalizeTag(a) === key));
+    return dir ? dir.id : null;
   }
 
   /** Schnellauswahl: Fleischsorten (an = isst es) und Allergene (an = ausgeschlossen). */

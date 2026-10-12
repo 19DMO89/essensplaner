@@ -4,7 +4,7 @@
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: italienisch, klassiker, kinder
+tags: italienisch, klassiker, kinder, proteinreich
 - 500 g Faschiertes #protein
 - 400 g Spaghetti #beilage
 - 1 Zwiebel
@@ -56,7 +56,7 @@ tags: italienisch, schnell, vegan, günstig
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: italienisch, schnell, vegetarisch, kinder
+tags: italienisch, schnell, vegetarisch, kinder, fettarm
 - 400 g Penne #beilage
 - 2 Dosen gehackte Tomaten
 - 1 Zwiebel
@@ -72,7 +72,7 @@ tags: italienisch, schnell, vegetarisch, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 25
-tags: italienisch, scharf, vegan
+tags: italienisch, scharf, vegan, leicht, fettarm
 - 400 g Penne #beilage
 - 2 Dosen gehackte Tomaten
 - 2 Zehen Knoblauch
@@ -87,7 +87,7 @@ tags: italienisch, scharf, vegan
 mahlzeit: mittag, abend
 portionen: 6
 dauer: 100
-tags: italienisch, ofen, klassiker
+tags: italienisch, ofen, klassiker, proteinreich
 - 500 g Faschiertes #protein
 - 250 g Lasagneblätter #beilage
 - 1 Zwiebel
@@ -154,7 +154,7 @@ tags: italienisch, schnell, vegetarisch
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: italienisch, vegetarisch
+tags: italienisch, vegetarisch, leicht
 - 300 g Risottoreis #beilage
 - 400 g Champignons
 - 1 Zwiebel
@@ -223,7 +223,7 @@ tags: italienisch, schnell, kinder
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 60
-tags: italienisch, ofen, vegetarisch
+tags: italienisch, ofen, vegetarisch, proteinreich
 - 250 g Cannelloni #beilage
 - 400 g Blattspinat
 - 250 g Ricotta #protein
@@ -288,7 +288,7 @@ tags: ofen, vegetarisch, herbst
 mahlzeit: mittag, abend
 portionen: 4
 dauer: 40
-tags: italienisch, fleisch
+tags: italienisch, fleisch, proteinreich
 - 8 kleine Kalbsschnitzel #protein
 - 8 Scheiben Rohschinken
 - 8 Salbeiblätter

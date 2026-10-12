@@ -18,6 +18,7 @@ from .logic.compat import check_dish
 from .logic.groups import GROUP_IDS, GROUPS
 from .logic.ingredients import STATES
 from .logic.normalize import parse_ingredient_line
+from .logic.nutrition import DIRECTION_TAGS, DIRECTIONS, TAG_ALIASES
 from .logic.models import MEAL_TYPES
 from .manager import EssensplanerManager
 from .schemas import ASSIGNMENT_SCHEMA, DISH_SCHEMA, PROFILE_SCHEMA
@@ -36,6 +37,7 @@ def async_register_websocket(hass: HomeAssistant) -> None:
         ws_dish_save,
         ws_dish_delete,
         ws_dish_check,
+        ws_dish_estimate,
         ws_profile_save,
         ws_profile_delete,
         ws_plan_get,
@@ -89,6 +91,14 @@ def _data(manager: EssensplanerManager) -> dict[str, Any]:
         "shopping_list": manager.shopping_list_entity,
         "groups": [g.to_dict() for g in GROUPS.values()],
         "alternatives": manager.default_alternatives,
+        "directions": [
+            {
+                "id": d,
+                "tag": DIRECTION_TAGS[d],
+                "aliases": [a for a, target in TAG_ALIASES.items() if target == d],
+            }
+            for d in DIRECTIONS
+        ],
     }
 
 
@@ -125,6 +135,15 @@ async def ws_dish_delete(manager: EssensplanerManager, msg: dict[str, Any]) -> N
 async def ws_dish_check(manager: EssensplanerManager, msg: dict[str, Any]) -> dict[str, Any]:
     dish = manager.dishes[manager.resolve_dish(msg["dish_id"])]
     return {pid: check_dish(dish, p).to_dict() for pid, p in manager.profiles.items()}
+
+
+@websocket_api.websocket_command(
+    {vol.Required("type"): "essensplaner/dish/estimate", vol.Required("dish"): DISH_SCHEMA}
+)
+@websocket_api.async_response
+@_with_manager
+async def ws_dish_estimate(manager: EssensplanerManager, msg: dict[str, Any]) -> dict[str, Any]:
+    return manager.estimate_dish(msg["dish"])
 
 
 @websocket_api.websocket_command(
@@ -177,6 +196,8 @@ async def ws_plan_set_meal(manager: EssensplanerManager, msg: dict[str, Any]) ->
         # Mahlzeiten je Tag: {"2026-10-06": ["lunch", "dinner"], ...}
         vol.Optional("meals"): {cv.string: [vol.In(MEAL_TYPES)]},
         vol.Optional("alternatives"): vol.All(vol.Coerce(int), vol.Range(min=0, max=MAX_ALTERNATIVES)),
+        # Bevorzugte Richtungen je Person: {"<profil_id>": ["protein", "fiber"], ...}
+        vol.Optional("directions"): {str: [vol.In(DIRECTIONS)]},
     }
 )
 @websocket_api.async_response
@@ -193,6 +214,7 @@ async def ws_plan_generate(manager: EssensplanerManager, msg: dict[str, Any]) ->
         msg["overwrite"],
         meals_by_date=meals,
         alternatives=msg.get("alternatives"),
+        directions=msg.get("directions"),
     )
     return {
         "days": manager.days_view(msg["start_date"], msg["days"]),
